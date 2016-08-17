@@ -29,6 +29,7 @@ import org.xml.sax.SAXException;
 import org.xmlpull.v1.XmlPullParserException;
 
 import soot.Main;
+import soot.MethodOrMethodContext;
 import soot.PackManager;
 import soot.Scene;
 import soot.SootClass;
@@ -43,6 +44,8 @@ import soot.jimple.infoflow.android.config.SootConfigForAndroid;
 import soot.jimple.infoflow.android.data.AndroidMethod;
 import soot.jimple.infoflow.android.data.parsers.PermissionMethodParser;
 import soot.jimple.infoflow.android.manifest.ProcessManifest;
+import soot.jimple.infoflow.android.nu.FlowTriggerEventAnalyzer;
+import soot.jimple.infoflow.android.nu.FlowTriggerEventObject;
 import soot.jimple.infoflow.android.resources.ARSCFileParser;
 import soot.jimple.infoflow.android.resources.ARSCFileParser.AbstractResource;
 import soot.jimple.infoflow.android.resources.ARSCFileParser.StringResource;
@@ -63,6 +66,9 @@ import soot.jimple.infoflow.source.data.ISourceSinkDefinitionProvider;
 import soot.jimple.infoflow.source.data.SourceSinkDefinition;
 import soot.jimple.infoflow.taintWrappers.ITaintPropagationWrapper;
 import soot.options.Options;
+import soot.toolkits.graph.ExceptionalUnitGraph;
+import soot.toolkits.graph.UnitGraph;
+import soot.util.queue.QueueReader;
 
 public class SetupApplication {
 
@@ -98,6 +104,11 @@ public class SetupApplication {
 	
 	private Set<Stmt> collectedSources = null;
 	private Set<Stmt> collectedSinks = null;
+	
+	//XIANG
+	private FlowTriggerEventAnalyzer flowTriggerEventAnalyzer = null;
+	
+	//Done XIANG
 
 	private String callbackFile = "AndroidCallbacks.txt"; 
 	
@@ -834,6 +845,11 @@ public class SetupApplication {
 		this.collectedSources = info.getCollectedSources();
 		this.collectedSinks = info.getCollectedSinks();
 
+		//XIANG
+		flowTriggerEventAnalyzer = new FlowTriggerEventAnalyzer(info.getResults(), apkFileLocation);
+		flowTriggerEventAnalyzer.analyzeRegistrationCalls();
+		//Done XIANG
+		
 		return info.getResults();
 	}
 
