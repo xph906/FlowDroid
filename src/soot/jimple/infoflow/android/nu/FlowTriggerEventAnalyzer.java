@@ -2,6 +2,9 @@ package soot.jimple.infoflow.android.nu;
 
 import java.io.IOException;
 import java.text.MessageFormat;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -17,6 +20,13 @@ import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import nu.analysis.DefAnalysisMap;
+import nu.analysis.IntraProcedureAnalysis;
+import nu.analysis.values.CallRetValue;
+import nu.analysis.values.ConstantValue;
+import nu.analysis.values.InstanceFieldValue;
+import nu.analysis.values.RightValue;
 
 import com.sun.xml.internal.bind.v2.model.core.ID;
 
@@ -73,6 +83,7 @@ import soot.jimple.infoflow.results.InfoflowResults;
 import soot.jimple.infoflow.results.ResultSinkInfo;
 import soot.jimple.infoflow.results.ResultSourceInfo;
 import soot.jimple.internal.ImmediateBox;
+import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.shimple.ShimpleExpr;
 import soot.toolkits.graph.ExceptionalUnitGraph;
@@ -93,6 +104,18 @@ public class FlowTriggerEventAnalyzer {
 	        return MessageFormat.format(record.getMessage(), record.getParameters());
 	    }
 	}
+
+	public class EventRegisterElem{
+		public SootMethod method;
+		public Unit unit;
+		public ResultSourceInfo source;
+		public EventRegisterElem(SootMethod m, Unit u, ResultSourceInfo source){
+			this.method = m;
+			this.unit = u;
+			this.source = source;
+		}
+	}
+
 	
 	private static final Logger log = Logger.getLogger("NUFlow");
 	{
@@ -100,7 +123,20 @@ public class FlowTriggerEventAnalyzer {
 		//	h.setFormatter(new MyFormatter());
 		log.setLevel(Level.ALL);
 	}
-
+	private String[] EventNames = {
+			"onClick", "onLongClick", "onFocusChange", "onKey", 
+			"onTouch", "onKeyDown", "onKeyUp", "onTrackballEvent",
+			"onTouchEvent", "onFocusChanged"};
+	private Set<String> userEvents;
+	
+	private String[] SetEventListenerMethodNames = {
+			"setOnDragListener", "setOnClickListener", "setOnApplyWindowInsetsListener",
+			"setOnCreateContextMenuListener", "setOnEditorActionListener", "setOnFocusChangeListener",
+			"setOnGenericMotionListener", "setOnHoverListener", "setOnKeyListener",
+			"setOnLongClickListener", "setOnSystemUiVisibilityChangeListener", "setOnTouchListener"};
+	private Set<String> setEventListenerMethods;
+	private Map<Stmt, ResultSourceInfo> stmt2Source;
+	private Set<Stmt> sourceStmts;
 	private List<ResPackage> resourcePackages;
 	private InfoflowResults savedInfoFlow;
 	private HashMap<String, FlowTriggerEventObject> flowTriggerEventObjectMap;
@@ -109,6 +145,9 @@ public class FlowTriggerEventAnalyzer {
 	ProcessManifest processMan;
 	ARSCFileParser resParser;
 	private Map<Integer, List<String>> id2Text;
+	private Map<ResultSourceInfo, SootMethod> triggers ;
+	private List<EventRegisterElem> eventRegisterElemList;
+	private Map<ResultSourceInfo, List<String>> source2Texts;
 	
 	public FlowTriggerEventAnalyzer( InfoflowResults savedInfoFlow, String apkFileLocation){
 		this.flowTriggerEventObjectMap = new HashMap<String, FlowTriggerEventObject>();
@@ -136,6 +175,14 @@ public class FlowTriggerEventAnalyzer {
 		}
 		this.resourcePackages = resParser.getPackages();	
 		id2Text = null;
+		
+		stmt2Source = new HashMap<Stmt, ResultSourceInfo>();
+		sourceStmts = new HashSet<Stmt>();
+		userEvents = new HashSet<String>(Arrays.asList(EventNames));
+		setEventListenerMethods = new HashSet<String>(Arrays.asList(SetEventListenerMethodNames));
+		triggers = new HashMap<ResultSourceInfo, SootMethod>();
+		eventRegisterElemList = new ArrayList<EventRegisterElem>();
+		source2Texts = new HashMap<ResultSourceInfo, List<String>>();
 	}
 	
 	//DEBUG function, can be removed after testing.
@@ -167,19 +214,169 @@ public class FlowTriggerEventAnalyzer {
 		return null;
 	}
 	
-	/* LIMITATION: 
-	 *   1. Only works for intra-procedure analysis.
-	 *   2. The View's layout has to be set by setContentView.
-	 * */
+	private Integer extractIDFromCallRetValue(CallRetValue crv){
+		try{
+			Pattern p = Pattern.compile("^\\d+$");
+			if(crv.getMethod().getName().equals("findViewById")){
+				Set<RightValue> args = crv.getArgs(0);
+				for(RightValue a : args){
+					if(a instanceof ConstantValue){
+						ConstantValue c = (ConstantValue)a;
+						String val = c.getOriginalValue().toString();
+						Matcher m = p.matcher(val);
+						if(m.matches()){
+							System.out.println("    found one ID: "+c.getOriginalValue().toString());
+							return Integer.valueOf(val);
+						}
+					}
+				}
+			}
+		}
+		catch(Exception e){
+			System.out.println("ERROR: extractIDFromCallRetValue: "+e);
+		}
+		return null;
+	}
+	
+	public void findFlowTriggerView(Map<SootMethod, IntraProcedureAnalysis> intraAnalysis){
+		for(EventRegisterElem elem : eventRegisterElemList){
+			System.out.println("start analyze trigger method: "+elem.method);
+			if(intraAnalysis.containsKey(elem.method)){
+				IntraProcedureAnalysis analysis = intraAnalysis.get(elem.method);
+				DefAnalysisMap dam = analysis.getFlowAfter(elem.unit);
+				InvokeExpr expr = ((Stmt)elem.unit).getInvokeExpr();
+				if(expr instanceof InstanceInvokeExpr){
+					InstanceInvokeExpr iie = (InstanceInvokeExpr)expr;
+					Value base = iie.getBase();
+					Set<RightValue> rvs = dam.get(base);
+					for(RightValue rv : rvs){
+						//System.out.println("  RS: this flow's trigger is registered on: "+rv);
+						if(rv instanceof CallRetValue){
+							Integer id = extractIDFromCallRetValue((CallRetValue)rv);
+							if(id != null){
+								List<String> texts = id2Text.get(id);
+								if(texts != null){
+									for(String text : texts){
+										System.out.println("  RS: "+id+"["+texts.size()+"]"+elem.source+" => "+text);
+									}
+								}
+								else{
+									System.out.println(" ALERT: cannot find texts for view "+id);
+								}
+							}
+							break;
+						}
+						else if(rv instanceof InstanceFieldValue){
+							InstanceFieldValue ifv = (InstanceFieldValue)rv;
+							for(SootMethod sm : intraAnalysis.keySet()){
+								if(!sm.getName().equals(elem.method.getName()) &&
+										sm.getDeclaringClass().getName().equals(elem.method.getDeclaringClass().getName())){	
+									IntraProcedureAnalysis analysis2 = intraAnalysis.get(sm);
+									if(!analysis2.getWriteFields().contains(ifv)) continue;
+									System.out.println("    found method:"+sm);
+									List<Unit> units = analysis2.getGraph().getTails();
+									for(Unit u : units){
+										DefAnalysisMap dam2 = analysis2.getFlowAfter(u);
+										if(dam2.containsKey(ifv)){
+											Set<RightValue> rvs2 = dam2.get(ifv);
+											for(RightValue rv2 : rvs2){
+												System.out.println("    FFF:"+rv2+" ");
+												if(rv2 instanceof CallRetValue){
+													Integer id = extractIDFromCallRetValue((CallRetValue)rv2);
+													if(id != null){
+														List<String> texts = id2Text.get(id);
+														if(texts != null){
+											
+															for(String text : texts){
+																System.out.println("  RS: "+id+"["+texts.size()+"]"+elem.source+" => "+text );
+															}
+														}
+														else{
+															System.out.println(" ALERT: cannot find texts for view "+id);
+														}
+													}
+													break;
+												}
+													
+											}
+										}
+									}
+								}
+								else{
+									//System.out.println("    other method: "+sm);
+								}
+							}
+						}
+					}
+				}
+				else
+					System.out.println("  ALERT: InvokeExpr is not InstanceInvokeExpr");
+			}
+			else{
+				System.out.println("  ALERT: cannot find such this method's analysis:"+elem.method);
+			}
+		}
+	}
+	
+	private SootMethod findPrecessorTrigger(SootMethod method){
+		CallGraph cg = Scene.v().getCallGraph();
+		ArrayDeque<SootMethod> queue = new ArrayDeque<SootMethod>();
+		Set<String> visited = new HashSet<String>();
+		SootMethod triggerMethod = null;
+		queue.add(method);
+		while(!queue.isEmpty()){
+			SootMethod target = queue.poll();
+			if(userEvents.contains(target.getName()) ){
+				triggerMethod = target;
+				break;
+			}
+			visited.add(target.getSignature());
+			Iterator<Edge> edges = cg.edgesInto(target);
+			while(edges.hasNext()){
+				Edge edge = edges.next();
+				SootMethod precessor = edge.getSrc().method();
+				if(precessor == null)
+					continue;
+				//System.out.println("  CG:"+precessor+" => "+target);
+				if(!visited.contains(precessor.getSignature()))
+					queue.add(precessor);
+			}
+		}
+		return triggerMethod;
+	}
+	
+	private void analyzeFlowSroucesHelper(){
+		CallGraph cg = Scene.v().getCallGraph();
+		for(ResultSinkInfo sink: savedInfoFlow.getResults().keySet()){
+			Set<ResultSourceInfo> sources = savedInfoFlow.getResults().get(sink);
+			for(ResultSourceInfo source : sources){
+				//System.out.println("SOURCE: "+source.getSource()+" M:");
+				if(source.getSource().containsInvokeExpr()){
+					InvokeExpr ie = source.getSource().getInvokeExpr();
+					Iterator<Edge> edges = cg.edgesInto(ie.getMethod());				
+					if(edges.hasNext()){
+						SootMethod sm = findPrecessorTrigger(ie.getMethod());
+						if(sm != null)
+							triggers.put(source, sm);
+					}
+					else{
+						stmt2Source.put(source.getSource(), source);
+					}
+				}
+			}
+		}
+	}
+	
 	public void analyzeRegistrationCalls(){
 		Map<String, String> view2Layout = new HashMap<String, String>();
-		
+		CallGraph cg = Scene.v().getCallGraph();
+		//find all sources' triggers.
+		analyzeFlowSroucesHelper();
 		for (QueueReader<MethodOrMethodContext> rdr =
 				Scene.v().getReachableMethods().listener(); rdr.hasNext(); ) {
 			SootMethod m = rdr.next().method();
 			if(!m.hasActiveBody())
 				continue;
-			String cls = m.getDeclaringClass().getName();
 			UnitGraph g = new ExceptionalUnitGraph(m.getActiveBody());
 		    LocalDefs localDefs = LocalDefs.Factory.newLocalDefs(g);
 		    Orderer<Unit> orderer = new PseudoTopologicalOrderer<Unit>();
@@ -187,192 +384,49 @@ public class FlowTriggerEventAnalyzer {
 		    //System.err.println("DEBUG=======================Start Method:"+m.getName()+" ==============");
 		    for (Unit u : orderer.newList(g, false)) {
 		    	Stmt s = (Stmt)u;
-		    	//System.err.println("DEBUG: RunAnalysi Statement: "+s+" || "+s.getClass().getTypeName());
+		    	if(stmt2Source.containsKey(s)){
+		    		//note that for all the sources in sourceStmts,
+		    		//we cannot find its precessor trigger via its method.
+		    		//so we use its enclosing method.
+		    		System.out.println("Found one source: "+s+" "+m+" // "+cg.edgesInto(m).hasNext());
+		    		SootMethod sm = findPrecessorTrigger(m);
+		    		if(sm != null) triggers.put(stmt2Source.get(s), sm);
+		    	}
+		    }
+		}
+		
+		//find all triggers' event listener register units.
+		HashMap<String, ResultSourceInfo> eventListenerClsMap = new HashMap<String, ResultSourceInfo>();
+		for(ResultSourceInfo source : triggers.keySet()){
+			SootMethod sm = triggers.get(source);
+			if(sm.getDeclaringClass() != null)
+				eventListenerClsMap.put(sm.getDeclaringClass().getType().toString(), source);
+		}
+		for (QueueReader<MethodOrMethodContext> rdr =
+				Scene.v().getReachableMethods().listener(); rdr.hasNext(); ) {
+			SootMethod m = rdr.next().method();
+			if(!m.hasActiveBody())
+				continue;
+			UnitGraph g = new ExceptionalUnitGraph(m.getActiveBody());
+		    Orderer<Unit> orderer = new PseudoTopologicalOrderer<Unit>();
+		    for (Unit u : orderer.newList(g, false)) {
+		    	Stmt s = (Stmt)u;
 		    	if(s.containsInvokeExpr()){
 		    		InvokeExpr expr = s.getInvokeExpr();
 		    		SootMethod invokedM = expr.getMethod();
-		    		
-		    		//findViewById
-		    		if(invokedM.getName().equals(FlowTriggerEventObject.onClickRegisterMethodName)){
-		    			//setOnClickListener: find association of view and click event listener (source).
-		    			//System.err.println("DEBUG setOnClickListener0: "+u);
-		    			changed = true;
-		    			Value arg = expr.getArg(0);
-		    			if (! (arg instanceof Local) ) {
-		    				System.err.println("error: setOnClickListener arg is not Local.");
-		    				continue;   
+		    		if(setEventListenerMethods.contains(invokedM.getName())){
+		    			if(invokedM.getParameterCount() == 1){
+		    				Value arg = expr.getArg(0);
+		    				String type = arg.getType().toString();
+		    				if(eventListenerClsMap.containsKey(type)){
+		    					System.out.println("DDD: "+invokedM+" "+type);
+		    					eventRegisterElemList.add(new EventRegisterElem(m, u, eventListenerClsMap.get(type)));
+		    				}
 		    			}
-		    			Local larg = (Local)arg;
-	    				List<Unit> defsOfUse = localDefs.getDefsOfAt(larg, u);
-	    				if (defsOfUse.size() != 1){
-	    					System.err.println("error: cannot find setOnClickListener arg defs");
-	    					continue;
-	    				}
-	    				DefinitionStmt defStmt = (DefinitionStmt) defsOfUse.get(0);
-	    				
-	    				SootClass viewClass = invokedM.getDeclaringClass();
-	    				String eventListenerClassName = defStmt.getRightOp().getType().toString();
-	    				
-	    				//V1.setOnClickListener(V2);
-	    				List<ValueBox> values = u.getUseBoxes();
-	    				if(values.size() != 3){
-	    					System.err.println("error: the size of UseBoxes is not 2: "+values.size());
-	    					continue;
-	    				}
-	    				Value obj = values.get(1).getValue();
-	    				if(! (obj instanceof Local) ){
-	    					System.err.println("error: setOnClickListener is not registered on a local variable.");
-	    					continue;
-	    				}
-	    				
-	    				Local lObj = (Local)obj;
-	    				defsOfUse = localDefs.getDefsOfAt(lObj, u);
-	    				if (defsOfUse.size() != 1){
-	    					System.err.println("error: cannot find setOnClickListener source obj defs");
-	    					continue;
-	    				}
-	    				defStmt = (DefinitionStmt) defsOfUse.get(0);
-	    				//System.err.println("DEBUG setOnClickListener: "+lObj);
-	    				
-	    				Set<Unit> visitedStmts = new HashSet<Unit>();
-	    				Queue<DefinitionStmt> stmtQueue = new LinkedBlockingQueue<DefinitionStmt>();
-	    				visitedStmts.add(defStmt);
-	    				stmtQueue.add(defStmt);
-	    				//System.err.println("DEBUG start to find source of setOnClickListener: ");
-	    				while(!stmtQueue.isEmpty()){
-	    					defStmt = stmtQueue.poll();
-	    					//System.err.println("  DEBUG find setOnClickListener Origin defOfView:"+defStmt);
-	    					if(defStmt.getRightOp() instanceof ConcreteRef || 
-	    							defStmt.getRightOp() instanceof CastExpr ||
-	    							defStmt.getRightOp() instanceof Local){
-	    						Value right = defStmt.getRightOp();
-	    						if(defStmt.getRightOp() instanceof CastExpr ){
-	    							CastExpr castExpr = (CastExpr)defStmt.getRightOp();
-	    							right = castExpr.getOp();
-	    						}
-	    						
-	    						for(Unit pred : g.getPredsOf(defStmt)){
-	    							if(visitedStmts.contains(pred))
-	    								continue;
-	    							visitedStmts.add(pred);
-	    							if(! (pred instanceof DefinitionStmt))
-	    								continue;
-	    							else {
-	    								DefinitionStmt newDefStmt = (DefinitionStmt)pred;
-	    								if(!newDefStmt.getLeftOp().equivTo(right))
-	    									continue;
-	    								stmtQueue.add(newDefStmt);
-	    							}
-	    						}
-	    					}
-	    					else if(defStmt.getRightOp() instanceof ThisRef){
-	    						ThisRef tr = (ThisRef)(defStmt.getRightOp());
-	    						String type = tr.getType().getEscapedName();
-	    						//System.err.println("  THISREF: "+defStmt+" "+type+" "+cls);
-	    						if (!flowTriggerEventObjectMap.containsKey(eventListenerClassName)){
-    								//TODO: currently only works for onClick.
-    								FlowTriggerEventObject eventObj = 
-    										new FlowTriggerEventObject(EventID.onClick, eventListenerClassName);
-    								flowTriggerEventObjectMap.put(eventListenerClassName, eventObj);
-    								//TODO: the type is most generic one (e.g., View)/
-    								eventObj.addTriggerEventSrcObject("-", type, cls, 0);
-    							}
-    							else
-    								flowTriggerEventObjectMap.get(eventListenerClassName)
-    									.addTriggerEventSrcObject("-", type, cls, 0);
-	    					}
-	    					else if(defStmt.getRightOp() instanceof ParameterRef){
-	    						System.err.println("  GIVEUP. cannot find the origin of setOnClickListener: only do intra-procedure analysis.");
-	    						break;
-	    					}
-	    					else if(defStmt.getRightOp() instanceof InvokeExpr){
-	    						InvokeExpr ie = (InvokeExpr)(defStmt.getRightOp());
-	    						if(ie.getMethod().getName().equals("findViewById")){
-	    							String type = defStmt.getLeftOp().getType().toString();	
-	    							int id = 0;
-	    							try{
-	    								id = Integer.valueOf(ie.getArg(0).toString());
-	    							}
-	    							catch(Exception e){
-	    								System.err.println("error: findViewById's arg is not integer. "+ie);
-	    							}
-	    							//System.err.println("  SUCC: found source of setOnClickListener: "+ id+" T:"+type+" "+m.getDeclaringClass()+" "+
-	    							//		" "+eventListenerClassName);
-	    							
-	    							if (!flowTriggerEventObjectMap.containsKey(eventListenerClassName)){
-	    								//TODO: currently only works for onClick.
-	    								FlowTriggerEventObject eventObj = 
-	    										new FlowTriggerEventObject(EventID.onClick, eventListenerClassName);
-	    								flowTriggerEventObjectMap.put(eventListenerClassName, eventObj);
-	    								//TODO: the type is most generic one (e.g., View)/
-	    								eventObj.addTriggerEventSrcObject("", type, cls, id);
-	    							}
-	    							else
-	    								flowTriggerEventObjectMap.get(eventListenerClassName)
-	    									.addTriggerEventSrcObject("", type, cls, id);
-	    						}
-	    						else{
-	    							System.err.println("  GIVEUP. cannot find the origin of setOnClickListener: unknown function call:"+ defStmt);
-	    						}
-	    					}
-	    					else {
-	    						System.err.println("  GIVEUP. cannot find the origin of setOnClickListener: unknown right op: "+defStmt);
-	    						break;
-	    					}
-	    				}
-		    		} //setOnClickListener
-		    		else if(invokedM.getName().equals("setContentView")){
-		    			//System.err.println("DEBUG setContentView: "+u);
-		    			changed = true;
-		    			Value arg = expr.getArg(0);
-		    			if(! (arg instanceof IntConstant) ){
-		    				System.err.println("error: setContentView arg is not integer.");
-		    				continue;
-		    			}
-		    			IntConstant ib = (IntConstant)arg;
-		    			
-		    			//System.err.println("DEBUG setContentView: "+arg);
-		    			List<ValueBox> values = u.getUseBoxes();
-		    			if(values.size() != 3){
-		    				System.err.println("error: setContentView invoke has "+values.size()+" use boexs. Should be 3.");
-		    				continue;
-		    			}
-		    			Value obj = values.get(1).getValue();
-	    				if(! (obj instanceof Local) ){
-	    					System.err.println("error: setContentView is not called on a local variable.");
-	    					continue;
-	    				}
-	    				Local lObj = (Local)obj;
-	    				List<Unit> defsOfUse = localDefs.getDefsOfAt(lObj, u);
-	    				if (defsOfUse.size() != 1){
-	    					System.err.println("error: cannot find setContentView source obj defs");
-	    					continue;
-	    				}
-	    				
-	    				DefinitionStmt defStmt = (DefinitionStmt) defsOfUse.get(0);
-	    				String viewClsName = defStmt.getRightOp().getType().toString();
-	    				int layoutID = ib.value;
-	    				
-		    			for(ARSCFileParser.ResPackage rp : resourcePackages){
-    						for (ResType rt : rp.getDeclaredTypes()){
-    							if(!rt.getTypeName().equals("layout"))
-    								continue;
-    							for (ResConfig rc : rt.getConfigurations())
-    								for (AbstractResource res : rc.getResources()){
-    									if(res.getResourceID() == layoutID){
-    										view2Layout.put(viewClsName, res.getResourceName());
-    										//System.out.println("VIEW2LAYOUT: "+viewClsName+" "+res.getResourceName());
-    									}
-    								}
-    						}
-    					}
-		    		} //setContentView
-		    		//TODO: there are other setting view functions. such as addView or inflate.
+		    		}
 		    	}
 		    	
 		    }
-		    //if(changed)
-		    //	displayGraph(g, m.getName(), null, false );
 		}
 		
 		LayoutFileParserForTextExtraction lfp = null;
@@ -408,16 +462,14 @@ public class FlowTriggerEventAnalyzer {
 			System.out.println();
 		}
 		
-		for(ResultSinkInfo sink: savedInfoFlow.getResults().keySet()){
-			Set<ResultSourceInfo> sources = savedInfoFlow.getResults().get(sink);
-			for(ResultSourceInfo source : sources){
-				System.out.println("SOURCE: "+source.getSource());
-			}
-		}
 		
 		//TODO:
 		//We still need to go back from source to the DummyMain class
 		//Then we can start to associate each source to texts
+		
+		for(ResultSourceInfo source : triggers.keySet()){
+			System.out.println("TRIGGER: "+source+" => "+triggers.get(source));
+		}
 	}
 	
 	/* The type could be "id" or "string" */

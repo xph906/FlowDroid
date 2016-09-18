@@ -12,10 +12,12 @@ package soot.jimple.infoflow.android;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -23,17 +25,25 @@ import java.util.Set;
 
 import javax.activation.UnsupportedDataTypeException;
 
+import nu.analysis.IntraProcedureAnalysis;
+import nu.analysis.MethodRWAnalyzer;
+import nu.analysis.values.RightValue;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
 import org.xmlpull.v1.XmlPullParserException;
 
+import soot.Body;
+import soot.BodyTransformer;
 import soot.Main;
 import soot.MethodOrMethodContext;
 import soot.PackManager;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
+import soot.Transform;
+import soot.Unit;
 import soot.jimple.Stmt;
 import soot.jimple.infoflow.AbstractInfoflow;
 import soot.jimple.infoflow.Infoflow;
@@ -73,7 +83,7 @@ import soot.util.queue.QueueReader;
 public class SetupApplication {
 
 	private final Logger logger = LoggerFactory.getLogger(getClass());
-
+	
 	private ISourceSinkDefinitionProvider sourceSinkProvider;
 	private final Map<String, Set<SootMethodAndClass>> callbackMethods =
 			new HashMap<String, Set<SootMethodAndClass>>(10000);
@@ -514,7 +524,8 @@ public class SetupApplication {
 			PackManager.v().getPack("wjpp").apply();
 			PackManager.v().getPack("cg").apply();
 			PackManager.v().getPack("wjtp").apply();
-
+			//PackManager.v().getPack("jtp").apply();
+			
 			// Collect the results of the soot-based phases
 			for (Entry<String, Set<SootMethodAndClass>> entry : jimpleClass.getCallbackMethods().entrySet()) {
 				Set<SootMethodAndClass> curCallbacks = this.callbackMethods.get(entry.getKey());
@@ -846,8 +857,15 @@ public class SetupApplication {
 		this.collectedSinks = info.getCollectedSinks();
 
 		//XIANG
+		
+		//For unknown reason, the startAnalysisInFlowDroid has to be called after analyzeRegistrationCalls
+		//otherwise, analyzeRegistrationCalls can only access limited number of methods.
 		flowTriggerEventAnalyzer = new FlowTriggerEventAnalyzer(info.getResults(), apkFileLocation);
 		flowTriggerEventAnalyzer.analyzeRegistrationCalls();
+		MethodRWAnalyzer analyzer = new MethodRWAnalyzer();
+		Map<SootMethod, IntraProcedureAnalysis> results = analyzer.startAnalysisInFlowDroid();
+		flowTriggerEventAnalyzer.findFlowTriggerView(results);
+		
 		//Done XIANG
 		
 		return info.getResults();
