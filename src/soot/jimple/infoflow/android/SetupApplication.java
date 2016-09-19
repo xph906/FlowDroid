@@ -864,8 +864,9 @@ public class SetupApplication {
 		flowTriggerEventAnalyzer.analyzeRegistrationCalls();
 		MethodRWAnalyzer analyzer = new MethodRWAnalyzer();
 		Map<SootMethod, IntraProcedureAnalysis> results = analyzer.startAnalysisInFlowDroid();
-		flowTriggerEventAnalyzer.findFlowTriggerView(results);
 		
+		//flowTriggerEventAnalyzer.findFlowTriggerView(results);
+		flowTriggerEventAnalyzer.findFlowTriggerView(results);
 		//Done XIANG
 		
 		return info.getResults();
