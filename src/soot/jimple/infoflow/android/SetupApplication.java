@@ -857,7 +857,13 @@ public class SetupApplication {
 		this.collectedSinks = info.getCollectedSinks();
 
 		//XIANG
+		extractTextsForFlowTrigger(info);
 		
+		return info.getResults();
+	}
+	
+	//XIANG: this method extracts the texts associated with each flow
+	private void extractTextsForFlowTrigger(Infoflow info){
 		//For unknown reason, the startAnalysisInFlowDroid has to be called after analyzeRegistrationCalls
 		//otherwise, analyzeRegistrationCalls can only access limited number of methods.
 		flowTriggerEventAnalyzer = new FlowTriggerEventAnalyzer(info.getResults(), apkFileLocation);
@@ -868,8 +874,6 @@ public class SetupApplication {
 		//flowTriggerEventAnalyzer.findFlowTriggerView(results);
 		flowTriggerEventAnalyzer.findFlowTriggerView(results);
 		//Done XIANG
-		
-		return info.getResults();
 	}
 
 	private AndroidEntryPointCreator createEntryPointCreator() {

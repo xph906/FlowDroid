@@ -106,7 +106,11 @@ public class FlowTriggerEventAnalyzer {
 	}
 
 	public class EventRegisterElem{
-		public SootMethod method;
+		//In method, unit contains method, which is event listener register.
+		//e.g., method: onCreate
+		//      unit: $r1.setOnClickListener($r2)
+		//      source: $r0.<com.android.insecurebankv2.DoLogin: android.content.Intent getIntent()>
+		public SootMethod method; 
 		public Unit unit;
 		public ResultSourceInfo source;
 		public EventRegisterElem(SootMethod m, Unit u, ResultSourceInfo source){
@@ -115,7 +119,6 @@ public class FlowTriggerEventAnalyzer {
 			this.source = source;
 		}
 	}
-
 	
 	private static final Logger log = Logger.getLogger("NUFlow");
 	{
@@ -225,7 +228,7 @@ public class FlowTriggerEventAnalyzer {
 						String val = c.getOriginalValue().toString();
 						Matcher m = p.matcher(val);
 						if(m.matches()){
-							System.out.println("    found one ID: "+c.getOriginalValue().toString());
+							//System.out.println("    found one ID: "+c.getOriginalValue().toString());
 							return Integer.valueOf(val);
 						}
 					}
@@ -238,9 +241,15 @@ public class FlowTriggerEventAnalyzer {
 		return null;
 	}
 	
+	//For A.setOnClickListener(B)
+	//this method goes through all the findViewById methods: A = findViewById(ID)
+	//then it can associates B and ID
 	public void findFlowTriggerView(Map<SootMethod, IntraProcedureAnalysis> intraAnalysis){
+		int count = 0;
 		for(EventRegisterElem elem : eventRegisterElemList){
-			System.out.println("start analyze trigger method: "+elem.method);
+			count++;
+			System.out.println("[NUTEXT] Start analyzing trigger texts for source: "+elem.source);
+			SootMethod triggerMethod = triggers.get(elem.source);
 			if(intraAnalysis.containsKey(elem.method)){
 				IntraProcedureAnalysis analysis = intraAnalysis.get(elem.method);
 				DefAnalysisMap dam = analysis.getFlowAfter(elem.unit);
@@ -255,13 +264,17 @@ public class FlowTriggerEventAnalyzer {
 							Integer id = extractIDFromCallRetValue((CallRetValue)rv);
 							if(id != null){
 								List<String> texts = id2Text.get(id);
+								StringBuilder sb = new StringBuilder();
 								if(texts != null){
-									for(String text : texts){
-										System.out.println("  RS: "+id+"["+texts.size()+"]"+elem.source+" => "+text);
-									}
+									for(String text : texts)
+										sb.append("{"+text+"} ");
+								}
+								if(sb.length() > 0){
+									System.out.println("[NUTEXT] RS    ["+count+"] Source:"+elem.source+" || Texts:"+sb.toString());
+									System.out.println("[NUTEXT] DETAIL["+count+"] Trigger:"+triggerMethod.getSignature()+" || ViewId:"+id);
 								}
 								else{
-									System.out.println(" ALERT: cannot find texts for view "+id);
+									System.out.println("[NUTEXT] ALERT  cannot find texts for view "+id);
 								}
 							}
 							break;
@@ -273,26 +286,27 @@ public class FlowTriggerEventAnalyzer {
 										sm.getDeclaringClass().getName().equals(elem.method.getDeclaringClass().getName())){	
 									IntraProcedureAnalysis analysis2 = intraAnalysis.get(sm);
 									if(!analysis2.getWriteFields().contains(ifv)) continue;
-									System.out.println("    found method:"+sm);
 									List<Unit> units = analysis2.getGraph().getTails();
 									for(Unit u : units){
 										DefAnalysisMap dam2 = analysis2.getFlowAfter(u);
 										if(dam2.containsKey(ifv)){
 											Set<RightValue> rvs2 = dam2.get(ifv);
 											for(RightValue rv2 : rvs2){
-												System.out.println("    FFF:"+rv2+" ");
 												if(rv2 instanceof CallRetValue){
 													Integer id = extractIDFromCallRetValue((CallRetValue)rv2);
 													if(id != null){
 														List<String> texts = id2Text.get(id);
+														StringBuilder sb = new StringBuilder();
 														if(texts != null){
-											
-															for(String text : texts){
-																System.out.println("  RS: "+id+"["+texts.size()+"]"+elem.source+" => "+text );
-															}
+															for(String text : texts)
+																sb.append("{"+text+"} ");
+														}
+														if(sb.length() > 0){
+															System.out.println("[NUTEXT] RS    ["+count+"] Source:"+elem.source+" || Texts:"+sb.toString());
+															System.out.println("[NUTEXT] DETAIL["+count+"] Trigger:"+triggerMethod.getSignature()+" || ViewId:"+id);
 														}
 														else{
-															System.out.println(" ALERT: cannot find texts for view "+id);
+															System.out.println("[NUTEXT] ALERT  cannot find texts for view "+id);
 														}
 													}
 													break;
@@ -398,7 +412,7 @@ public class FlowTriggerEventAnalyzer {
 		//find all triggers' event listener register units.
 		HashMap<String, ResultSourceInfo> eventListenerClsMap = new HashMap<String, ResultSourceInfo>();
 		for(ResultSourceInfo source : triggers.keySet()){
-			SootMethod sm = triggers.get(source);
+			SootMethod sm = triggers.get(source); //e.g., onClick
 			if(sm.getDeclaringClass() != null)
 				eventListenerClsMap.put(sm.getDeclaringClass().getType().toString(), source);
 		}
@@ -415,8 +429,8 @@ public class FlowTriggerEventAnalyzer {
 		    		InvokeExpr expr = s.getInvokeExpr();
 		    		SootMethod invokedM = expr.getMethod();
 		    		if(setEventListenerMethods.contains(invokedM.getName())){
-		    			if(invokedM.getParameterCount() == 1){
-		    				Value arg = expr.getArg(0);
+		    			if(invokedM.getParameterCount() == 1){ //e.g., setOnClickListener
+		    				Value arg = expr.getArg(0); 
 		    				String type = arg.getType().toString();
 		    				if(eventListenerClsMap.containsKey(type)){
 		    					System.out.println("DDD: "+invokedM+" "+type);
@@ -461,11 +475,6 @@ public class FlowTriggerEventAnalyzer {
 			}
 			System.out.println();
 		}
-		
-		
-		//TODO:
-		//We still need to go back from source to the DummyMain class
-		//Then we can start to associate each source to texts
 		
 		for(ResultSourceInfo source : triggers.keySet()){
 			System.out.println("TRIGGER: "+source+" => "+triggers.get(source));
