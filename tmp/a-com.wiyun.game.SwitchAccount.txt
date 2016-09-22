@@ -1,0 +1,440 @@
+@@Start analyzing:a
+READ: Param@0.a
+READ: THIS
+READ: THIS.f
+  --Done analyzing:a     public void a(com.wiyun.game.b.e)
+    {
+        com.wiyun.game.SwitchAccount $r0;
+        com.wiyun.game.b.e $r1;
+        int $i0;
+        boolean $z0;
+        com.wiyun.game.cm $r2;
+
+        $r0 := @this: com.wiyun.game.SwitchAccount;
+
+        $r1 := @parameter0: com.wiyun.game.b.e;
+
+        $i0 = $r1.<com.wiyun.game.b.e: int a>;
+
+        lookupswitch($i0)
+        {
+            case 19: goto label2;
+            default: goto label1;
+        };
+
+     label1:
+        return;
+
+     label2:
+        $z0 = $r0.<com.wiyun.game.SwitchAccount: boolean f>;
+
+        if $z0 == 0 goto label3;
+
+        $r2 = new com.wiyun.game.cm;
+
+        specialinvoke $r2.<com.wiyun.game.cm: void <init>(com.wiyun.game.SwitchAccount)>($r0);
+
+        virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void runOnUiThread(java.lang.Runnable)>($r2);
+
+     label3:
+        return;
+    }
+
+  --Method Body:    public void a(com.wiyun.game.b.e)
+    {
+        com.wiyun.game.SwitchAccount $r0;
+        com.wiyun.game.b.e $r1;
+        int $i0;
+        boolean $z0;
+        com.wiyun.game.cm $r2;
+
+        $r0 := @this: com.wiyun.game.SwitchAccount;
+
+        $r1 := @parameter0: com.wiyun.game.b.e;
+
+        $i0 = $r1.<com.wiyun.game.b.e: int a>;
+
+        lookupswitch($i0)
+        {
+            case 19: goto label2;
+            default: goto label1;
+        };
+
+     label1:
+        return;
+
+     label2:
+        $z0 = $r0.<com.wiyun.game.SwitchAccount: boolean f>;
+
+        if $z0 == 0 goto label3;
+
+        $r2 = new com.wiyun.game.cm;
+
+        specialinvoke $r2.<com.wiyun.game.cm: void <init>(com.wiyun.game.SwitchAccount)>($r0);
+
+        virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void runOnUiThread(java.lang.Runnable)>($r2);
+
+     label3:
+        return;
+    }
+
+  --Start displaying:a 
+  UNIT:0 $r0 := @this: com.wiyun.game.SwitchAccount
+      [BEFOR]RS:0
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+
+      [AFTER]RS:0
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+
+  UNIT:1 $r1 := @parameter0: com.wiyun.game.b.e
+      [BEFOR]RS:1
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:1
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r1:[Param@0,]
+                           $r0:[THIS,]
+
+  UNIT:2 $i0 = $r1.<com.wiyun.game.b.e: int a>
+      [BEFOR]RS:2
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r1:[Param@0,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:2
+                           $i0:[Param@0.a,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r1:[Param@0,]
+                           $r0:[THIS,]
+
+  UNIT:3 lookupswitch($i0) {     case 19: goto $z0 = $r0.<com.wiyun.game.SwitchAccount: boolean f>;     default: goto return; }
+      [BEFOR]RS:3
+                           $i0:[Param@0.a,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r1:[Param@0,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:3
+                           $i0:[Param@0.a,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r1:[Param@0,]
+                           $r0:[THIS,]
+
+  UNIT:4 return
+      [BEFOR]RS:4
+                           $i0:[Param@0.a,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r1:[Param@0,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:4
+                           $i0:[Param@0.a,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r1:[Param@0,]
+                           $r0:[THIS,]
+
+  UNIT:5 $z0 = $r0.<com.wiyun.game.SwitchAccount: boolean f>
+      [BEFOR]RS:5
+                           $i0:[Param@0.a,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r1:[Param@0,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:5
+                           $i0:[Param@0.a,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r1:[Param@0,]
+                           $r0:[THIS,]
+                           $z0:[THIS.f,]
+
+  UNIT:6 if $z0 == 0 goto return
+      [BEFOR]RS:6
+                           $i0:[Param@0.a,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r1:[Param@0,]
+                           $r0:[THIS,]
+                           $z0:[THIS.f,]
+
+      [AFTER]RS:6
+                           $i0:[Param@0.a,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r1:[Param@0,]
+                           $r0:[THIS,]
+                           $z0:[THIS.f,]
+
+  UNIT:7 $r2 = new com.wiyun.game.cm
+      [BEFOR]RS:7
+                           $i0:[Param@0.a,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r1:[Param@0,]
+                           $r0:[THIS,]
+                           $z0:[THIS.f,]
+
+      [AFTER]RS:7
+                           $i0:[Param@0.a,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r1:[Param@0,]
+                           $r0:[THIS,]
+                           $z0:[THIS.f,]
+                           $r2:[NewValue1569331735,]
+
+  UNIT:8 specialinvoke $r2.<com.wiyun.game.cm: void <init>(com.wiyun.game.SwitchAccount)>($r0)
+      [BEFOR]RS:8
+                           $i0:[Param@0.a,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r1:[Param@0,]
+                           $r0:[THIS,]
+                           $z0:[THIS.f,]
+                           $r2:[NewValue1569331735,]
+
+      [AFTER]RS:8
+                           $i0:[Param@0.a,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r1:[Param@0,]
+                           $r0:[THIS,]
+                           $z0:[THIS.f,]
+                           $r2:[NewValue1569331735,]
+specialinvoke $r2.<com.wiyun.game.cm: void <init>(com.wiyun.game.SwitchAccount)>($r0):[<init>([THIS:NewValue1569331735][@0:THIS]),]
+
+  UNIT:9 virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void runOnUiThread(java.lang.Runnable)>($r2)
+      [BEFOR]RS:9
+                           $i0:[Param@0.a,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r1:[Param@0,]
+                           $r0:[THIS,]
+                           $z0:[THIS.f,]
+                           $r2:[NewValue1569331735,]
+specialinvoke $r2.<com.wiyun.game.cm: void <init>(com.wiyun.game.SwitchAccount)>($r0):[<init>([THIS:NewValue1569331735][@0:THIS]),]
+
+      [AFTER]RS:9
+                           $i0:[Param@0.a,]
+virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void runOnUiThread(java.lang.Runnable)>($r2):[runOnUiThread([THIS:THIS][@0:NewValue1569331735]),]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r1:[Param@0,]
+                           $r0:[THIS,]
+                           $z0:[THIS.f,]
+                           $r2:[NewValue1569331735,]
+specialinvoke $r2.<com.wiyun.game.cm: void <init>(com.wiyun.game.SwitchAccount)>($r0):[<init>([THIS:NewValue1569331735][@0:THIS]),]
+
+  UNIT:10 return
+      [BEFOR]RS:10
+                           $i0:[Param@0.a,]
+virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void runOnUiThread(java.lang.Runnable)>($r2):[runOnUiThread([THIS:THIS][@0:NewValue1569331735]),]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r1:[Param@0,]
+                           $r0:[THIS,]
+                           $z0:[THIS.f,]
+                           $r2:[NewValue1569331735,]
+specialinvoke $r2.<com.wiyun.game.cm: void <init>(com.wiyun.game.SwitchAccount)>($r0):[<init>([THIS:NewValue1569331735][@0:THIS]),]
+
+      [AFTER]RS:10
+                           $i0:[Param@0.a,]
+virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void runOnUiThread(java.lang.Runnable)>($r2):[runOnUiThread([THIS:THIS][@0:NewValue1569331735]),]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r1:[Param@0,]
+                           $r0:[THIS,]
+                           $z0:[THIS.f,]
+                           $r2:[NewValue1569331735,]
+specialinvoke $r2.<com.wiyun.game.cm: void <init>(com.wiyun.game.SwitchAccount)>($r0):[<init>([THIS:NewValue1569331735][@0:THIS]),]
+
+@@End a======================

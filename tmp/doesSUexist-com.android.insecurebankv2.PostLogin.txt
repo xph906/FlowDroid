@@ -1,0 +1,1094 @@
+@@Start analyzing:doesSUexist
+  --Done analyzing:doesSUexist     private boolean doesSUexist()
+    {
+        com.android.insecurebankv2.PostLogin $r0;
+        java.io.BufferedReader $r1;
+        java.lang.Throwable $r2;
+        java.lang.Process $r3, $r6;
+        java.lang.Runtime $r4;
+        java.lang.String[] $r5;
+        java.io.InputStreamReader $r7;
+        java.io.InputStream $r8;
+        java.lang.String $r9;
+
+        $r0 := @this: com.android.insecurebankv2.PostLogin;
+
+        $r3 = null;
+
+     label1:
+        $r4 = staticinvoke <java.lang.Runtime: java.lang.Runtime getRuntime()>();
+
+        $r5 = newarray (java.lang.String)[2];
+
+        $r5[0] = "/system/xbin/which";
+
+        $r5[1] = "su";
+
+        $r6 = virtualinvoke $r4.<java.lang.Runtime: java.lang.Process exec(java.lang.String[])>($r5);
+
+     label2:
+        $r3 = $r6;
+
+     label3:
+        $r1 = new java.io.BufferedReader;
+
+        $r7 = new java.io.InputStreamReader;
+
+        $r8 = virtualinvoke $r6.<java.lang.Process: java.io.InputStream getInputStream()>();
+
+        specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8);
+
+        specialinvoke $r1.<java.io.BufferedReader: void <init>(java.io.Reader)>($r7);
+
+        $r9 = virtualinvoke $r1.<java.io.BufferedReader: java.lang.String readLine()>();
+
+     label4:
+        if $r9 == null goto label5;
+
+        if $r6 == null goto label9;
+
+        virtualinvoke $r6.<java.lang.Process: void destroy()>();
+
+        return 1;
+
+     label5:
+        if $r6 == null goto label6;
+
+        virtualinvoke $r6.<java.lang.Process: void destroy()>();
+
+     label6:
+        return 0;
+
+     label7:
+        $r2 := @caughtexception;
+
+        if $r3 == null goto label8;
+
+        virtualinvoke $r3.<java.lang.Process: void destroy()>();
+
+     label8:
+        return 0;
+
+     label9:
+        return 1;
+
+        catch java.lang.Throwable from label1 to label2 with label7;
+        catch java.lang.Throwable from label3 to label4 with label7;
+    }
+
+  --Method Body:    private boolean doesSUexist()
+    {
+        com.android.insecurebankv2.PostLogin $r0;
+        java.io.BufferedReader $r1;
+        java.lang.Throwable $r2;
+        java.lang.Process $r3, $r6;
+        java.lang.Runtime $r4;
+        java.lang.String[] $r5;
+        java.io.InputStreamReader $r7;
+        java.io.InputStream $r8;
+        java.lang.String $r9;
+
+        $r0 := @this: com.android.insecurebankv2.PostLogin;
+
+        $r3 = null;
+
+     label1:
+        $r4 = staticinvoke <java.lang.Runtime: java.lang.Runtime getRuntime()>();
+
+        $r5 = newarray (java.lang.String)[2];
+
+        $r5[0] = "/system/xbin/which";
+
+        $r5[1] = "su";
+
+        $r6 = virtualinvoke $r4.<java.lang.Runtime: java.lang.Process exec(java.lang.String[])>($r5);
+
+     label2:
+        $r3 = $r6;
+
+     label3:
+        $r1 = new java.io.BufferedReader;
+
+        $r7 = new java.io.InputStreamReader;
+
+        $r8 = virtualinvoke $r6.<java.lang.Process: java.io.InputStream getInputStream()>();
+
+        specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8);
+
+        specialinvoke $r1.<java.io.BufferedReader: void <init>(java.io.Reader)>($r7);
+
+        $r9 = virtualinvoke $r1.<java.io.BufferedReader: java.lang.String readLine()>();
+
+     label4:
+        if $r9 == null goto label5;
+
+        if $r6 == null goto label9;
+
+        virtualinvoke $r6.<java.lang.Process: void destroy()>();
+
+        return 1;
+
+     label5:
+        if $r6 == null goto label6;
+
+        virtualinvoke $r6.<java.lang.Process: void destroy()>();
+
+     label6:
+        return 0;
+
+     label7:
+        $r2 := @caughtexception;
+
+        if $r3 == null goto label8;
+
+        virtualinvoke $r3.<java.lang.Process: void destroy()>();
+
+     label8:
+        return 0;
+
+     label9:
+        return 1;
+
+        catch java.lang.Throwable from label1 to label2 with label7;
+        catch java.lang.Throwable from label3 to label4 with label7;
+    }
+
+  --Start displaying:doesSUexist 
+  UNIT:0 $r0 := @this: com.android.insecurebankv2.PostLogin
+      [BEFOR]RS:0
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                    THIS.uname:[THIS.uname,]
+
+      [AFTER]RS:0
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                    THIS.uname:[THIS.uname,]
+
+  UNIT:1 $r3 = null
+      [BEFOR]RS:1
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                    THIS.uname:[THIS.uname,]
+
+      [AFTER]RS:1
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r3:[CONST,]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                    THIS.uname:[THIS.uname,]
+
+  UNIT:2 $r4 = staticinvoke <java.lang.Runtime: java.lang.Runtime getRuntime()>()
+      [BEFOR]RS:2
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r3:[CONST,]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                    THIS.uname:[THIS.uname,]
+
+      [AFTER]RS:2
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r3:[CONST,]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                    THIS.uname:[THIS.uname,]
+                           $r4:[getRuntime(),]
+
+  UNIT:3 $r5 = newarray (java.lang.String)[2]
+      [BEFOR]RS:3
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r3:[CONST,]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                    THIS.uname:[THIS.uname,]
+                           $r4:[getRuntime(),]
+
+      [AFTER]RS:3
+                           $r5:[NewValue337463369,]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r3:[CONST,]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                    THIS.uname:[THIS.uname,]
+                           $r4:[getRuntime(),]
+
+  UNIT:4 $r5[0] = "/system/xbin/which"
+      [BEFOR]RS:4
+                           $r5:[NewValue337463369,]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r3:[CONST,]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                    THIS.uname:[THIS.uname,]
+                           $r4:[getRuntime(),]
+
+      [AFTER]RS:4
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r3:[CONST,]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r4:[getRuntime(),]
+
+  UNIT:5 $r5[1] = "su"
+      [BEFOR]RS:5
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r3:[CONST,]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r4:[getRuntime(),]
+
+      [AFTER]RS:5
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r3:[CONST,]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r4:[getRuntime(),]
+
+  UNIT:6 $r6 = virtualinvoke $r4.<java.lang.Runtime: java.lang.Process exec(java.lang.String[])>($r5)
+      [BEFOR]RS:6
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r3:[CONST,]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r4:[getRuntime(),]
+
+      [AFTER]RS:6
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r3:[CONST,]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r4:[getRuntime(),]
+
+  UNIT:7 $r3 = $r6
+      [BEFOR]RS:7
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r3:[CONST,]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r4:[getRuntime(),]
+
+      [AFTER]RS:7
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r3:[exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r4:[getRuntime(),]
+
+  UNIT:8 $r1 = new java.io.BufferedReader
+      [BEFOR]RS:8
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r3:[exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r4:[getRuntime(),]
+
+      [AFTER]RS:8
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r4:[getRuntime(),]
+
+  UNIT:9 $r7 = new java.io.InputStreamReader
+      [BEFOR]RS:9
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r4:[getRuntime(),]
+
+      [AFTER]RS:9
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+  UNIT:10 $r8 = virtualinvoke $r6.<java.lang.Process: java.io.InputStream getInputStream()>()
+      [BEFOR]RS:10
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+      [AFTER]RS:10
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                           $r8:[getInputStream([THIS:NewValue337463369]),]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+  UNIT:11 specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8)
+      [BEFOR]RS:11
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                           $r8:[getInputStream([THIS:NewValue337463369]),]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+      [AFTER]RS:11
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8):[<init>([THIS:NewValue54812692][@0:NewValue337463369]),]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                           $r8:[getInputStream([THIS:NewValue337463369]),]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+  UNIT:12 specialinvoke $r1.<java.io.BufferedReader: void <init>(java.io.Reader)>($r7)
+      [BEFOR]RS:12
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8):[<init>([THIS:NewValue54812692][@0:NewValue337463369]),]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                           $r8:[getInputStream([THIS:NewValue337463369]),]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+      [AFTER]RS:12
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8):[<init>([THIS:NewValue54812692][@0:NewValue337463369]),]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                           $r8:[getInputStream([THIS:NewValue337463369]),]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+specialinvoke $r1.<java.io.BufferedReader: void <init>(java.io.Reader)>($r7):[<init>([THIS:NewValue1055315907][@0:NewValue54812692]),]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+  UNIT:13 $r9 = virtualinvoke $r1.<java.io.BufferedReader: java.lang.String readLine()>()
+      [BEFOR]RS:13
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8):[<init>([THIS:NewValue54812692][@0:NewValue337463369]),]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                           $r8:[getInputStream([THIS:NewValue337463369]),]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+specialinvoke $r1.<java.io.BufferedReader: void <init>(java.io.Reader)>($r7):[<init>([THIS:NewValue1055315907][@0:NewValue54812692]),]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+      [AFTER]RS:13
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8):[<init>([THIS:NewValue54812692][@0:NewValue337463369]),]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                           $r8:[getInputStream([THIS:NewValue337463369]),]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r9:[readLine([THIS:NewValue1055315907]),]
+specialinvoke $r1.<java.io.BufferedReader: void <init>(java.io.Reader)>($r7):[<init>([THIS:NewValue1055315907][@0:NewValue54812692]),]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+  UNIT:14 if $r9 == null goto (branch)
+      [BEFOR]RS:14
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8):[<init>([THIS:NewValue54812692][@0:NewValue337463369]),]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                           $r8:[getInputStream([THIS:NewValue337463369]),]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r9:[readLine([THIS:NewValue1055315907]),]
+specialinvoke $r1.<java.io.BufferedReader: void <init>(java.io.Reader)>($r7):[<init>([THIS:NewValue1055315907][@0:NewValue54812692]),]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+      [AFTER]RS:14
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8):[<init>([THIS:NewValue54812692][@0:NewValue337463369]),]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                           $r8:[getInputStream([THIS:NewValue337463369]),]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r9:[readLine([THIS:NewValue1055315907]),]
+specialinvoke $r1.<java.io.BufferedReader: void <init>(java.io.Reader)>($r7):[<init>([THIS:NewValue1055315907][@0:NewValue54812692]),]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+  UNIT:15 if $r6 == null goto return 1
+      [BEFOR]RS:15
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8):[<init>([THIS:NewValue54812692][@0:NewValue337463369]),]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                           $r8:[getInputStream([THIS:NewValue337463369]),]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r9:[readLine([THIS:NewValue1055315907]),]
+specialinvoke $r1.<java.io.BufferedReader: void <init>(java.io.Reader)>($r7):[<init>([THIS:NewValue1055315907][@0:NewValue54812692]),]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+      [AFTER]RS:15
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8):[<init>([THIS:NewValue54812692][@0:NewValue337463369]),]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                           $r8:[getInputStream([THIS:NewValue337463369]),]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r9:[readLine([THIS:NewValue1055315907]),]
+specialinvoke $r1.<java.io.BufferedReader: void <init>(java.io.Reader)>($r7):[<init>([THIS:NewValue1055315907][@0:NewValue54812692]),]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+  UNIT:16 virtualinvoke $r6.<java.lang.Process: void destroy()>()
+      [BEFOR]RS:16
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8):[<init>([THIS:NewValue54812692][@0:NewValue337463369]),]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                           $r8:[getInputStream([THIS:NewValue337463369]),]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r9:[readLine([THIS:NewValue1055315907]),]
+specialinvoke $r1.<java.io.BufferedReader: void <init>(java.io.Reader)>($r7):[<init>([THIS:NewValue1055315907][@0:NewValue54812692]),]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+      [AFTER]RS:16
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8):[<init>([THIS:NewValue54812692][@0:NewValue337463369]),]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+virtualinvoke $r6.<java.lang.Process: void destroy()>():[destroy([THIS:NewValue337463369]),]
+                           $r8:[getInputStream([THIS:NewValue337463369]),]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r9:[readLine([THIS:NewValue1055315907]),]
+specialinvoke $r1.<java.io.BufferedReader: void <init>(java.io.Reader)>($r7):[<init>([THIS:NewValue1055315907][@0:NewValue54812692]),]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+  UNIT:17 return 1
+      [BEFOR]RS:17
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8):[<init>([THIS:NewValue54812692][@0:NewValue337463369]),]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+virtualinvoke $r6.<java.lang.Process: void destroy()>():[destroy([THIS:NewValue337463369]),]
+                           $r8:[getInputStream([THIS:NewValue337463369]),]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r9:[readLine([THIS:NewValue1055315907]),]
+specialinvoke $r1.<java.io.BufferedReader: void <init>(java.io.Reader)>($r7):[<init>([THIS:NewValue1055315907][@0:NewValue54812692]),]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+      [AFTER]RS:17
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8):[<init>([THIS:NewValue54812692][@0:NewValue337463369]),]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+virtualinvoke $r6.<java.lang.Process: void destroy()>():[destroy([THIS:NewValue337463369]),]
+                           $r8:[getInputStream([THIS:NewValue337463369]),]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r9:[readLine([THIS:NewValue1055315907]),]
+specialinvoke $r1.<java.io.BufferedReader: void <init>(java.io.Reader)>($r7):[<init>([THIS:NewValue1055315907][@0:NewValue54812692]),]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+  UNIT:18 if $r6 == null goto return 0
+      [BEFOR]RS:18
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8):[<init>([THIS:NewValue54812692][@0:NewValue337463369]),]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                           $r8:[getInputStream([THIS:NewValue337463369]),]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r9:[readLine([THIS:NewValue1055315907]),]
+specialinvoke $r1.<java.io.BufferedReader: void <init>(java.io.Reader)>($r7):[<init>([THIS:NewValue1055315907][@0:NewValue54812692]),]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+      [AFTER]RS:18
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8):[<init>([THIS:NewValue54812692][@0:NewValue337463369]),]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                           $r8:[getInputStream([THIS:NewValue337463369]),]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r9:[readLine([THIS:NewValue1055315907]),]
+specialinvoke $r1.<java.io.BufferedReader: void <init>(java.io.Reader)>($r7):[<init>([THIS:NewValue1055315907][@0:NewValue54812692]),]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+  UNIT:19 virtualinvoke $r6.<java.lang.Process: void destroy()>()
+      [BEFOR]RS:19
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8):[<init>([THIS:NewValue54812692][@0:NewValue337463369]),]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                           $r8:[getInputStream([THIS:NewValue337463369]),]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r9:[readLine([THIS:NewValue1055315907]),]
+specialinvoke $r1.<java.io.BufferedReader: void <init>(java.io.Reader)>($r7):[<init>([THIS:NewValue1055315907][@0:NewValue54812692]),]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+      [AFTER]RS:19
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8):[<init>([THIS:NewValue54812692][@0:NewValue337463369]),]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+virtualinvoke $r6.<java.lang.Process: void destroy()>():[destroy([THIS:NewValue337463369]),]
+                           $r8:[getInputStream([THIS:NewValue337463369]),]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r9:[readLine([THIS:NewValue1055315907]),]
+specialinvoke $r1.<java.io.BufferedReader: void <init>(java.io.Reader)>($r7):[<init>([THIS:NewValue1055315907][@0:NewValue54812692]),]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+  UNIT:20 return 0
+      [BEFOR]RS:20
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8):[<init>([THIS:NewValue54812692][@0:NewValue337463369]),]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+virtualinvoke $r6.<java.lang.Process: void destroy()>():[destroy([THIS:NewValue337463369]),]
+                           $r8:[getInputStream([THIS:NewValue337463369]),]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r9:[readLine([THIS:NewValue1055315907]),]
+specialinvoke $r1.<java.io.BufferedReader: void <init>(java.io.Reader)>($r7):[<init>([THIS:NewValue1055315907][@0:NewValue54812692]),]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+      [AFTER]RS:20
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8):[<init>([THIS:NewValue54812692][@0:NewValue337463369]),]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+virtualinvoke $r6.<java.lang.Process: void destroy()>():[destroy([THIS:NewValue337463369]),]
+                           $r8:[getInputStream([THIS:NewValue337463369]),]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r9:[readLine([THIS:NewValue1055315907]),]
+specialinvoke $r1.<java.io.BufferedReader: void <init>(java.io.Reader)>($r7):[<init>([THIS:NewValue1055315907][@0:NewValue54812692]),]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+  UNIT:21 $r2 := @caughtexception
+      [BEFOR]RS:21
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8):[<init>([THIS:NewValue54812692][@0:NewValue337463369]),]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[CONST,exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                           $r8:[getInputStream([THIS:NewValue337463369]),]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r9:[readLine([THIS:NewValue1055315907]),]
+specialinvoke $r1.<java.io.BufferedReader: void <init>(java.io.Reader)>($r7):[<init>([THIS:NewValue1055315907][@0:NewValue54812692]),]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+      [AFTER]RS:21
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8):[<init>([THIS:NewValue54812692][@0:NewValue337463369]),]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[CONST,exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                           $r8:[getInputStream([THIS:NewValue337463369]),]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r9:[readLine([THIS:NewValue1055315907]),]
+specialinvoke $r1.<java.io.BufferedReader: void <init>(java.io.Reader)>($r7):[<init>([THIS:NewValue1055315907][@0:NewValue54812692]),]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+  UNIT:22 if $r3 == null goto return 0
+      [BEFOR]RS:22
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8):[<init>([THIS:NewValue54812692][@0:NewValue337463369]),]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[CONST,exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                           $r8:[getInputStream([THIS:NewValue337463369]),]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r9:[readLine([THIS:NewValue1055315907]),]
+specialinvoke $r1.<java.io.BufferedReader: void <init>(java.io.Reader)>($r7):[<init>([THIS:NewValue1055315907][@0:NewValue54812692]),]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+      [AFTER]RS:22
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8):[<init>([THIS:NewValue54812692][@0:NewValue337463369]),]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[CONST,exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                           $r8:[getInputStream([THIS:NewValue337463369]),]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r9:[readLine([THIS:NewValue1055315907]),]
+specialinvoke $r1.<java.io.BufferedReader: void <init>(java.io.Reader)>($r7):[<init>([THIS:NewValue1055315907][@0:NewValue54812692]),]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+  UNIT:23 virtualinvoke $r3.<java.lang.Process: void destroy()>()
+      [BEFOR]RS:23
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8):[<init>([THIS:NewValue54812692][@0:NewValue337463369]),]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[CONST,exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                           $r8:[getInputStream([THIS:NewValue337463369]),]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r9:[readLine([THIS:NewValue1055315907]),]
+specialinvoke $r1.<java.io.BufferedReader: void <init>(java.io.Reader)>($r7):[<init>([THIS:NewValue1055315907][@0:NewValue54812692]),]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+      [AFTER]RS:23
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8):[<init>([THIS:NewValue54812692][@0:NewValue337463369]),]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[CONST,exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+virtualinvoke $r3.<java.lang.Process: void destroy()>():[destroy([THIS:CONST,NewValue337463369]),]
+                           $r8:[getInputStream([THIS:NewValue337463369]),]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r9:[readLine([THIS:NewValue1055315907]),]
+specialinvoke $r1.<java.io.BufferedReader: void <init>(java.io.Reader)>($r7):[<init>([THIS:NewValue1055315907][@0:NewValue54812692]),]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+  UNIT:24 return 0
+      [BEFOR]RS:24
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8):[<init>([THIS:NewValue54812692][@0:NewValue337463369]),]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[CONST,exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+virtualinvoke $r3.<java.lang.Process: void destroy()>():[destroy([THIS:CONST,NewValue337463369]),]
+                           $r8:[getInputStream([THIS:NewValue337463369]),]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r9:[readLine([THIS:NewValue1055315907]),]
+specialinvoke $r1.<java.io.BufferedReader: void <init>(java.io.Reader)>($r7):[<init>([THIS:NewValue1055315907][@0:NewValue54812692]),]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+      [AFTER]RS:24
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8):[<init>([THIS:NewValue54812692][@0:NewValue337463369]),]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[CONST,exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+virtualinvoke $r3.<java.lang.Process: void destroy()>():[destroy([THIS:CONST,NewValue337463369]),]
+                           $r8:[getInputStream([THIS:NewValue337463369]),]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r9:[readLine([THIS:NewValue1055315907]),]
+specialinvoke $r1.<java.io.BufferedReader: void <init>(java.io.Reader)>($r7):[<init>([THIS:NewValue1055315907][@0:NewValue54812692]),]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+  UNIT:25 return 1
+      [BEFOR]RS:25
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8):[<init>([THIS:NewValue54812692][@0:NewValue337463369]),]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                           $r8:[getInputStream([THIS:NewValue337463369]),]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r9:[readLine([THIS:NewValue1055315907]),]
+specialinvoke $r1.<java.io.BufferedReader: void <init>(java.io.Reader)>($r7):[<init>([THIS:NewValue1055315907][@0:NewValue54812692]),]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+      [AFTER]RS:25
+                           $r5:[NewValue337463369,]
+                        $r5[0]:[CONST,]
+                        $r5[1]:[CONST,]
+specialinvoke $r7.<java.io.InputStreamReader: void <init>(java.io.InputStream)>($r8):[<init>([THIS:NewValue54812692][@0:NewValue337463369]),]
+              THIS.root_status:[THIS.root_status,]
+      THIS.changepasswd_button:[THIS.changepasswd_button,]
+                           $r1:[NewValue1055315907,]
+                           $r3:[exec([THIS][@0:NewValue337463369]),]
+                           $r6:[exec([THIS][@0:NewValue337463369]),]
+                           $r0:[THIS,]
+         THIS.statement_button:[THIS.statement_button,]
+          THIS.transfer_button:[THIS.transfer_button,]
+                           $r8:[getInputStream([THIS:NewValue337463369]),]
+                ARRAY-DATA-KEY:[ARR:NewValue337463369[CONST,NewValue337463369,],]
+                    THIS.uname:[THIS.uname,]
+                           $r9:[readLine([THIS:NewValue1055315907]),]
+specialinvoke $r1.<java.io.BufferedReader: void <init>(java.io.Reader)>($r7):[<init>([THIS:NewValue1055315907][@0:NewValue54812692]),]
+                           $r7:[NewValue54812692,]
+                           $r4:[getRuntime(),]
+
+@@End doesSUexist======================

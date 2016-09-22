@@ -1,0 +1,379 @@
+@@Start analyzing:<init>
+READ: THIS
+WRITE: THIS.j
+WRITE: THIS.k
+  --Done analyzing:<init>     public void <init>()
+    {
+        com.wiyun.game.FullImageGallery $r0;
+        com.wiyun.game.gm $r1;
+        com.wiyun.game.gj $r2;
+
+        $r0 := @this: com.wiyun.game.FullImageGallery;
+
+        specialinvoke $r0.<android.app.Activity: void <init>()>();
+
+        $r1 = new com.wiyun.game.gm;
+
+        specialinvoke $r1.<com.wiyun.game.gm: void <init>(com.wiyun.game.FullImageGallery)>($r0);
+
+        $r0.<com.wiyun.game.FullImageGallery: android.os.Handler j> = $r1;
+
+        $r2 = new com.wiyun.game.gj;
+
+        specialinvoke $r2.<com.wiyun.game.gj: void <init>(com.wiyun.game.FullImageGallery)>($r0);
+
+        $r0.<com.wiyun.game.FullImageGallery: android.content.BroadcastReceiver k> = $r2;
+
+        return;
+    }
+
+  --Method Body:    public void <init>()
+    {
+        com.wiyun.game.FullImageGallery $r0;
+        com.wiyun.game.gm $r1;
+        com.wiyun.game.gj $r2;
+
+        $r0 := @this: com.wiyun.game.FullImageGallery;
+
+        specialinvoke $r0.<android.app.Activity: void <init>()>();
+
+        $r1 = new com.wiyun.game.gm;
+
+        specialinvoke $r1.<com.wiyun.game.gm: void <init>(com.wiyun.game.FullImageGallery)>($r0);
+
+        $r0.<com.wiyun.game.FullImageGallery: android.os.Handler j> = $r1;
+
+        $r2 = new com.wiyun.game.gj;
+
+        specialinvoke $r2.<com.wiyun.game.gj: void <init>(com.wiyun.game.FullImageGallery)>($r0);
+
+        $r0.<com.wiyun.game.FullImageGallery: android.content.BroadcastReceiver k> = $r2;
+
+        return;
+    }
+
+  --Start displaying:<init> 
+  UNIT:0 $r0 := @this: com.wiyun.game.FullImageGallery
+      [BEFOR]RS:0
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+
+      [AFTER]RS:0
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+
+  UNIT:1 specialinvoke $r0.<android.app.Activity: void <init>()>()
+      [BEFOR]RS:1
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+
+      [AFTER]RS:1
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+specialinvoke $r0.<android.app.Activity: void <init>()>():[<init>([THIS:THIS]),]
+
+  UNIT:2 $r1 = new com.wiyun.game.gm
+      [BEFOR]RS:2
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+specialinvoke $r0.<android.app.Activity: void <init>()>():[<init>([THIS:THIS]),]
+
+      [AFTER]RS:2
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                           $r1:[NewValue1832421503,]
+specialinvoke $r0.<android.app.Activity: void <init>()>():[<init>([THIS:THIS]),]
+
+  UNIT:3 specialinvoke $r1.<com.wiyun.game.gm: void <init>(com.wiyun.game.FullImageGallery)>($r0)
+      [BEFOR]RS:3
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                           $r1:[NewValue1832421503,]
+specialinvoke $r0.<android.app.Activity: void <init>()>():[<init>([THIS:THIS]),]
+
+      [AFTER]RS:3
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                           $r1:[NewValue1832421503,]
+specialinvoke $r0.<android.app.Activity: void <init>()>():[<init>([THIS:THIS]),]
+specialinvoke $r1.<com.wiyun.game.gm: void <init>(com.wiyun.game.FullImageGallery)>($r0):[<init>([THIS:NewValue1832421503][@0:THIS]),]
+
+  UNIT:4 $r0.<com.wiyun.game.FullImageGallery: android.os.Handler j> = $r1
+      [BEFOR]RS:4
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                           $r1:[NewValue1832421503,]
+specialinvoke $r0.<android.app.Activity: void <init>()>():[<init>([THIS:THIS]),]
+specialinvoke $r1.<com.wiyun.game.gm: void <init>(com.wiyun.game.FullImageGallery)>($r0):[<init>([THIS:NewValue1832421503][@0:THIS]),]
+
+      [AFTER]RS:4
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[NewValue1832421503,]
+                        THIS.k:[THIS.k,]
+                           $r1:[NewValue1832421503,]
+specialinvoke $r0.<android.app.Activity: void <init>()>():[<init>([THIS:THIS]),]
+$r0.<com.wiyun.game.FullImageGallery: android.os.Handler j>:[NewValue1832421503,]
+specialinvoke $r1.<com.wiyun.game.gm: void <init>(com.wiyun.game.FullImageGallery)>($r0):[<init>([THIS:NewValue1832421503][@0:THIS]),]
+
+  UNIT:5 $r2 = new com.wiyun.game.gj
+      [BEFOR]RS:5
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[NewValue1832421503,]
+                        THIS.k:[THIS.k,]
+                           $r1:[NewValue1832421503,]
+specialinvoke $r0.<android.app.Activity: void <init>()>():[<init>([THIS:THIS]),]
+$r0.<com.wiyun.game.FullImageGallery: android.os.Handler j>:[NewValue1832421503,]
+specialinvoke $r1.<com.wiyun.game.gm: void <init>(com.wiyun.game.FullImageGallery)>($r0):[<init>([THIS:NewValue1832421503][@0:THIS]),]
+
+      [AFTER]RS:5
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[NewValue1832421503,]
+                        THIS.k:[THIS.k,]
+                           $r1:[NewValue1832421503,]
+                           $r2:[NewValue1833773627,]
+specialinvoke $r0.<android.app.Activity: void <init>()>():[<init>([THIS:THIS]),]
+$r0.<com.wiyun.game.FullImageGallery: android.os.Handler j>:[NewValue1832421503,]
+specialinvoke $r1.<com.wiyun.game.gm: void <init>(com.wiyun.game.FullImageGallery)>($r0):[<init>([THIS:NewValue1832421503][@0:THIS]),]
+
+  UNIT:6 specialinvoke $r2.<com.wiyun.game.gj: void <init>(com.wiyun.game.FullImageGallery)>($r0)
+      [BEFOR]RS:6
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[NewValue1832421503,]
+                        THIS.k:[THIS.k,]
+                           $r1:[NewValue1832421503,]
+                           $r2:[NewValue1833773627,]
+specialinvoke $r0.<android.app.Activity: void <init>()>():[<init>([THIS:THIS]),]
+$r0.<com.wiyun.game.FullImageGallery: android.os.Handler j>:[NewValue1832421503,]
+specialinvoke $r1.<com.wiyun.game.gm: void <init>(com.wiyun.game.FullImageGallery)>($r0):[<init>([THIS:NewValue1832421503][@0:THIS]),]
+
+      [AFTER]RS:6
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[NewValue1832421503,]
+                        THIS.k:[THIS.k,]
+                           $r1:[NewValue1832421503,]
+                           $r2:[NewValue1833773627,]
+specialinvoke $r0.<android.app.Activity: void <init>()>():[<init>([THIS:THIS]),]
+$r0.<com.wiyun.game.FullImageGallery: android.os.Handler j>:[NewValue1832421503,]
+specialinvoke $r1.<com.wiyun.game.gm: void <init>(com.wiyun.game.FullImageGallery)>($r0):[<init>([THIS:NewValue1832421503][@0:THIS]),]
+specialinvoke $r2.<com.wiyun.game.gj: void <init>(com.wiyun.game.FullImageGallery)>($r0):[<init>([THIS:NewValue1833773627][@0:THIS]),]
+
+  UNIT:7 $r0.<com.wiyun.game.FullImageGallery: android.content.BroadcastReceiver k> = $r2
+      [BEFOR]RS:7
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[NewValue1832421503,]
+                        THIS.k:[THIS.k,]
+                           $r1:[NewValue1832421503,]
+                           $r2:[NewValue1833773627,]
+specialinvoke $r0.<android.app.Activity: void <init>()>():[<init>([THIS:THIS]),]
+$r0.<com.wiyun.game.FullImageGallery: android.os.Handler j>:[NewValue1832421503,]
+specialinvoke $r1.<com.wiyun.game.gm: void <init>(com.wiyun.game.FullImageGallery)>($r0):[<init>([THIS:NewValue1832421503][@0:THIS]),]
+specialinvoke $r2.<com.wiyun.game.gj: void <init>(com.wiyun.game.FullImageGallery)>($r0):[<init>([THIS:NewValue1833773627][@0:THIS]),]
+
+      [AFTER]RS:7
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[NewValue1832421503,]
+                        THIS.k:[NewValue1833773627,]
+                           $r1:[NewValue1832421503,]
+                           $r2:[NewValue1833773627,]
+specialinvoke $r0.<android.app.Activity: void <init>()>():[<init>([THIS:THIS]),]
+$r0.<com.wiyun.game.FullImageGallery: android.content.BroadcastReceiver k>:[NewValue1833773627,]
+$r0.<com.wiyun.game.FullImageGallery: android.os.Handler j>:[NewValue1832421503,]
+specialinvoke $r1.<com.wiyun.game.gm: void <init>(com.wiyun.game.FullImageGallery)>($r0):[<init>([THIS:NewValue1832421503][@0:THIS]),]
+specialinvoke $r2.<com.wiyun.game.gj: void <init>(com.wiyun.game.FullImageGallery)>($r0):[<init>([THIS:NewValue1833773627][@0:THIS]),]
+
+  UNIT:8 return
+      [BEFOR]RS:8
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[NewValue1832421503,]
+                        THIS.k:[NewValue1833773627,]
+                           $r1:[NewValue1832421503,]
+                           $r2:[NewValue1833773627,]
+specialinvoke $r0.<android.app.Activity: void <init>()>():[<init>([THIS:THIS]),]
+$r0.<com.wiyun.game.FullImageGallery: android.content.BroadcastReceiver k>:[NewValue1833773627,]
+$r0.<com.wiyun.game.FullImageGallery: android.os.Handler j>:[NewValue1832421503,]
+specialinvoke $r1.<com.wiyun.game.gm: void <init>(com.wiyun.game.FullImageGallery)>($r0):[<init>([THIS:NewValue1832421503][@0:THIS]),]
+specialinvoke $r2.<com.wiyun.game.gj: void <init>(com.wiyun.game.FullImageGallery)>($r0):[<init>([THIS:NewValue1833773627][@0:THIS]),]
+
+      [AFTER]RS:8
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[NewValue1832421503,]
+                        THIS.k:[NewValue1833773627,]
+                           $r1:[NewValue1832421503,]
+                           $r2:[NewValue1833773627,]
+specialinvoke $r0.<android.app.Activity: void <init>()>():[<init>([THIS:THIS]),]
+$r0.<com.wiyun.game.FullImageGallery: android.content.BroadcastReceiver k>:[NewValue1833773627,]
+$r0.<com.wiyun.game.FullImageGallery: android.os.Handler j>:[NewValue1832421503,]
+specialinvoke $r1.<com.wiyun.game.gm: void <init>(com.wiyun.game.FullImageGallery)>($r0):[<init>([THIS:NewValue1832421503][@0:THIS]),]
+specialinvoke $r2.<com.wiyun.game.gj: void <init>(com.wiyun.game.FullImageGallery)>($r0):[<init>([THIS:NewValue1833773627][@0:THIS]),]
+
+@@End <init>======================

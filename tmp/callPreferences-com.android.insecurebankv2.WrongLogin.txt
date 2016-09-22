@@ -1,0 +1,85 @@
+@@Start analyzing:callPreferences
+READ: THIS
+  --Done analyzing:callPreferences     public void callPreferences()
+    {
+        com.android.insecurebankv2.WrongLogin $r0;
+        android.content.Intent $r1;
+
+        $r0 := @this: com.android.insecurebankv2.WrongLogin;
+
+        $r1 = new android.content.Intent;
+
+        specialinvoke $r1.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/FilePrefActivity");
+
+        virtualinvoke $r0.<com.android.insecurebankv2.WrongLogin: void startActivity(android.content.Intent)>($r1);
+
+        return;
+    }
+
+  --Method Body:    public void callPreferences()
+    {
+        com.android.insecurebankv2.WrongLogin $r0;
+        android.content.Intent $r1;
+
+        $r0 := @this: com.android.insecurebankv2.WrongLogin;
+
+        $r1 = new android.content.Intent;
+
+        specialinvoke $r1.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/FilePrefActivity");
+
+        virtualinvoke $r0.<com.android.insecurebankv2.WrongLogin: void startActivity(android.content.Intent)>($r1);
+
+        return;
+    }
+
+  --Start displaying:callPreferences 
+  UNIT:0 $r0 := @this: com.android.insecurebankv2.WrongLogin
+      [BEFOR]RS:0
+
+      [AFTER]RS:0
+                           $r0:[THIS,]
+
+  UNIT:1 $r1 = new android.content.Intent
+      [BEFOR]RS:1
+                           $r0:[THIS,]
+
+      [AFTER]RS:1
+                           $r0:[THIS,]
+                           $r1:[NewValue1117174922,]
+
+  UNIT:2 specialinvoke $r1.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/FilePrefActivity")
+      [BEFOR]RS:2
+                           $r0:[THIS,]
+                           $r1:[NewValue1117174922,]
+
+      [AFTER]RS:2
+                           $r0:[THIS,]
+                           $r1:[NewValue1117174922,]
+specialinvoke $r1.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/FilePrefActivity"):[<init>([THIS:NewValue1117174922][@0:THIS][@1:CONST]),]
+
+  UNIT:3 virtualinvoke $r0.<com.android.insecurebankv2.WrongLogin: void startActivity(android.content.Intent)>($r1)
+      [BEFOR]RS:3
+                           $r0:[THIS,]
+                           $r1:[NewValue1117174922,]
+specialinvoke $r1.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/FilePrefActivity"):[<init>([THIS:NewValue1117174922][@0:THIS][@1:CONST]),]
+
+      [AFTER]RS:3
+virtualinvoke $r0.<com.android.insecurebankv2.WrongLogin: void startActivity(android.content.Intent)>($r1):[startActivity([THIS:THIS][@0:NewValue1117174922]),]
+                           $r0:[THIS,]
+                           $r1:[NewValue1117174922,]
+specialinvoke $r1.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/FilePrefActivity"):[<init>([THIS:NewValue1117174922][@0:THIS][@1:CONST]),]
+
+  UNIT:4 return
+      [BEFOR]RS:4
+virtualinvoke $r0.<com.android.insecurebankv2.WrongLogin: void startActivity(android.content.Intent)>($r1):[startActivity([THIS:THIS][@0:NewValue1117174922]),]
+                           $r0:[THIS,]
+                           $r1:[NewValue1117174922,]
+specialinvoke $r1.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/FilePrefActivity"):[<init>([THIS:NewValue1117174922][@0:THIS][@1:CONST]),]
+
+      [AFTER]RS:4
+virtualinvoke $r0.<com.android.insecurebankv2.WrongLogin: void startActivity(android.content.Intent)>($r1):[startActivity([THIS:THIS][@0:NewValue1117174922]),]
+                           $r0:[THIS,]
+                           $r1:[NewValue1117174922,]
+specialinvoke $r1.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/FilePrefActivity"):[<init>([THIS:NewValue1117174922][@0:THIS][@1:CONST]),]
+
+@@End callPreferences======================

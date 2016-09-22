@@ -1,0 +1,213 @@
+@@Start analyzing:m
+READ: THIS
+  --Done analyzing:m     public final void m()
+    {
+        com.andfly.jewelsmagic.JewelsMagic $r0;
+        com.andfly.jewelsmagic.bj $r1;
+        java.lang.Void[] $r2;
+
+        $r0 := @this: com.andfly.jewelsmagic.JewelsMagic;
+
+        staticinvoke <com.andfly.b.a: void a()>();
+
+        $r1 = new com.andfly.jewelsmagic.bj;
+
+        specialinvoke $r1.<com.andfly.jewelsmagic.bj: void <init>(com.andfly.jewelsmagic.JewelsMagic)>($r0);
+
+        $r2 = newarray (java.lang.Void)[0];
+
+        virtualinvoke $r1.<android.os.AsyncTask: android.os.AsyncTask execute(java.lang.Object[])>($r2);
+
+        return;
+    }
+
+  --Method Body:    public final void m()
+    {
+        com.andfly.jewelsmagic.JewelsMagic $r0;
+        com.andfly.jewelsmagic.bj $r1;
+        java.lang.Void[] $r2;
+
+        $r0 := @this: com.andfly.jewelsmagic.JewelsMagic;
+
+        staticinvoke <com.andfly.b.a: void a()>();
+
+        $r1 = new com.andfly.jewelsmagic.bj;
+
+        specialinvoke $r1.<com.andfly.jewelsmagic.bj: void <init>(com.andfly.jewelsmagic.JewelsMagic)>($r0);
+
+        $r2 = newarray (java.lang.Void)[0];
+
+        virtualinvoke $r1.<android.os.AsyncTask: android.os.AsyncTask execute(java.lang.Object[])>($r2);
+
+        return;
+    }
+
+  --Start displaying:m 
+  UNIT:0 $r0 := @this: com.andfly.jewelsmagic.JewelsMagic
+      [BEFOR]RS:0
+                        THIS.n:[THIS.n,]
+                        THIS.r:[THIS.r,]
+com.andfly.jewelsmagic.JewelsMagic.j:[com.andfly.jewelsmagic.JewelsMagic.j,]
+com.andfly.jewelsmagic.JewelsMagic.k:[com.andfly.jewelsmagic.JewelsMagic.k,]
+com.andfly.jewelsmagic.JewelsMagic.l:[com.andfly.jewelsmagic.JewelsMagic.l,]
+com.andfly.jewelsmagic.JewelsMagic.m:[com.andfly.jewelsmagic.JewelsMagic.m,]
+
+      [AFTER]RS:0
+                        THIS.n:[THIS.n,]
+                        THIS.r:[THIS.r,]
+com.andfly.jewelsmagic.JewelsMagic.j:[com.andfly.jewelsmagic.JewelsMagic.j,]
+com.andfly.jewelsmagic.JewelsMagic.k:[com.andfly.jewelsmagic.JewelsMagic.k,]
+com.andfly.jewelsmagic.JewelsMagic.l:[com.andfly.jewelsmagic.JewelsMagic.l,]
+com.andfly.jewelsmagic.JewelsMagic.m:[com.andfly.jewelsmagic.JewelsMagic.m,]
+                           $r0:[THIS,]
+
+  UNIT:1 staticinvoke <com.andfly.b.a: void a()>()
+      [BEFOR]RS:1
+                        THIS.n:[THIS.n,]
+                        THIS.r:[THIS.r,]
+com.andfly.jewelsmagic.JewelsMagic.j:[com.andfly.jewelsmagic.JewelsMagic.j,]
+com.andfly.jewelsmagic.JewelsMagic.k:[com.andfly.jewelsmagic.JewelsMagic.k,]
+com.andfly.jewelsmagic.JewelsMagic.l:[com.andfly.jewelsmagic.JewelsMagic.l,]
+com.andfly.jewelsmagic.JewelsMagic.m:[com.andfly.jewelsmagic.JewelsMagic.m,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:1
+                        THIS.n:[THIS.n,]
+                        THIS.r:[THIS.r,]
+com.andfly.jewelsmagic.JewelsMagic.j:[com.andfly.jewelsmagic.JewelsMagic.j,]
+com.andfly.jewelsmagic.JewelsMagic.k:[com.andfly.jewelsmagic.JewelsMagic.k,]
+com.andfly.jewelsmagic.JewelsMagic.l:[com.andfly.jewelsmagic.JewelsMagic.l,]
+com.andfly.jewelsmagic.JewelsMagic.m:[com.andfly.jewelsmagic.JewelsMagic.m,]
+staticinvoke <com.andfly.b.a: void a()>():[a(),]
+                           $r0:[THIS,]
+
+  UNIT:2 $r1 = new com.andfly.jewelsmagic.bj
+      [BEFOR]RS:2
+                        THIS.n:[THIS.n,]
+                        THIS.r:[THIS.r,]
+com.andfly.jewelsmagic.JewelsMagic.j:[com.andfly.jewelsmagic.JewelsMagic.j,]
+com.andfly.jewelsmagic.JewelsMagic.k:[com.andfly.jewelsmagic.JewelsMagic.k,]
+com.andfly.jewelsmagic.JewelsMagic.l:[com.andfly.jewelsmagic.JewelsMagic.l,]
+com.andfly.jewelsmagic.JewelsMagic.m:[com.andfly.jewelsmagic.JewelsMagic.m,]
+staticinvoke <com.andfly.b.a: void a()>():[a(),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:2
+                        THIS.n:[THIS.n,]
+                        THIS.r:[THIS.r,]
+com.andfly.jewelsmagic.JewelsMagic.j:[com.andfly.jewelsmagic.JewelsMagic.j,]
+com.andfly.jewelsmagic.JewelsMagic.k:[com.andfly.jewelsmagic.JewelsMagic.k,]
+com.andfly.jewelsmagic.JewelsMagic.l:[com.andfly.jewelsmagic.JewelsMagic.l,]
+com.andfly.jewelsmagic.JewelsMagic.m:[com.andfly.jewelsmagic.JewelsMagic.m,]
+staticinvoke <com.andfly.b.a: void a()>():[a(),]
+                           $r0:[THIS,]
+                           $r1:[NewValue1650424142,]
+
+  UNIT:3 specialinvoke $r1.<com.andfly.jewelsmagic.bj: void <init>(com.andfly.jewelsmagic.JewelsMagic)>($r0)
+      [BEFOR]RS:3
+                        THIS.n:[THIS.n,]
+                        THIS.r:[THIS.r,]
+com.andfly.jewelsmagic.JewelsMagic.j:[com.andfly.jewelsmagic.JewelsMagic.j,]
+com.andfly.jewelsmagic.JewelsMagic.k:[com.andfly.jewelsmagic.JewelsMagic.k,]
+com.andfly.jewelsmagic.JewelsMagic.l:[com.andfly.jewelsmagic.JewelsMagic.l,]
+com.andfly.jewelsmagic.JewelsMagic.m:[com.andfly.jewelsmagic.JewelsMagic.m,]
+staticinvoke <com.andfly.b.a: void a()>():[a(),]
+                           $r0:[THIS,]
+                           $r1:[NewValue1650424142,]
+
+      [AFTER]RS:3
+specialinvoke $r1.<com.andfly.jewelsmagic.bj: void <init>(com.andfly.jewelsmagic.JewelsMagic)>($r0):[<init>([THIS:NewValue1650424142][@0:THIS]),]
+                        THIS.n:[THIS.n,]
+                        THIS.r:[THIS.r,]
+com.andfly.jewelsmagic.JewelsMagic.j:[com.andfly.jewelsmagic.JewelsMagic.j,]
+com.andfly.jewelsmagic.JewelsMagic.k:[com.andfly.jewelsmagic.JewelsMagic.k,]
+com.andfly.jewelsmagic.JewelsMagic.l:[com.andfly.jewelsmagic.JewelsMagic.l,]
+com.andfly.jewelsmagic.JewelsMagic.m:[com.andfly.jewelsmagic.JewelsMagic.m,]
+staticinvoke <com.andfly.b.a: void a()>():[a(),]
+                           $r0:[THIS,]
+                           $r1:[NewValue1650424142,]
+
+  UNIT:4 $r2 = newarray (java.lang.Void)[0]
+      [BEFOR]RS:4
+specialinvoke $r1.<com.andfly.jewelsmagic.bj: void <init>(com.andfly.jewelsmagic.JewelsMagic)>($r0):[<init>([THIS:NewValue1650424142][@0:THIS]),]
+                        THIS.n:[THIS.n,]
+                        THIS.r:[THIS.r,]
+com.andfly.jewelsmagic.JewelsMagic.j:[com.andfly.jewelsmagic.JewelsMagic.j,]
+com.andfly.jewelsmagic.JewelsMagic.k:[com.andfly.jewelsmagic.JewelsMagic.k,]
+com.andfly.jewelsmagic.JewelsMagic.l:[com.andfly.jewelsmagic.JewelsMagic.l,]
+com.andfly.jewelsmagic.JewelsMagic.m:[com.andfly.jewelsmagic.JewelsMagic.m,]
+staticinvoke <com.andfly.b.a: void a()>():[a(),]
+                           $r0:[THIS,]
+                           $r1:[NewValue1650424142,]
+
+      [AFTER]RS:4
+specialinvoke $r1.<com.andfly.jewelsmagic.bj: void <init>(com.andfly.jewelsmagic.JewelsMagic)>($r0):[<init>([THIS:NewValue1650424142][@0:THIS]),]
+                        THIS.n:[THIS.n,]
+                        THIS.r:[THIS.r,]
+com.andfly.jewelsmagic.JewelsMagic.j:[com.andfly.jewelsmagic.JewelsMagic.j,]
+com.andfly.jewelsmagic.JewelsMagic.k:[com.andfly.jewelsmagic.JewelsMagic.k,]
+com.andfly.jewelsmagic.JewelsMagic.l:[com.andfly.jewelsmagic.JewelsMagic.l,]
+com.andfly.jewelsmagic.JewelsMagic.m:[com.andfly.jewelsmagic.JewelsMagic.m,]
+staticinvoke <com.andfly.b.a: void a()>():[a(),]
+                           $r0:[THIS,]
+                           $r2:[NewValue1020899138,]
+                           $r1:[NewValue1650424142,]
+
+  UNIT:5 virtualinvoke $r1.<android.os.AsyncTask: android.os.AsyncTask execute(java.lang.Object[])>($r2)
+      [BEFOR]RS:5
+specialinvoke $r1.<com.andfly.jewelsmagic.bj: void <init>(com.andfly.jewelsmagic.JewelsMagic)>($r0):[<init>([THIS:NewValue1650424142][@0:THIS]),]
+                        THIS.n:[THIS.n,]
+                        THIS.r:[THIS.r,]
+com.andfly.jewelsmagic.JewelsMagic.j:[com.andfly.jewelsmagic.JewelsMagic.j,]
+com.andfly.jewelsmagic.JewelsMagic.k:[com.andfly.jewelsmagic.JewelsMagic.k,]
+com.andfly.jewelsmagic.JewelsMagic.l:[com.andfly.jewelsmagic.JewelsMagic.l,]
+com.andfly.jewelsmagic.JewelsMagic.m:[com.andfly.jewelsmagic.JewelsMagic.m,]
+staticinvoke <com.andfly.b.a: void a()>():[a(),]
+                           $r0:[THIS,]
+                           $r2:[NewValue1020899138,]
+                           $r1:[NewValue1650424142,]
+
+      [AFTER]RS:5
+virtualinvoke $r1.<android.os.AsyncTask: android.os.AsyncTask execute(java.lang.Object[])>($r2):[execute([THIS:NewValue1650424142][@0:NewValue1020899138]),]
+specialinvoke $r1.<com.andfly.jewelsmagic.bj: void <init>(com.andfly.jewelsmagic.JewelsMagic)>($r0):[<init>([THIS:NewValue1650424142][@0:THIS]),]
+                        THIS.n:[THIS.n,]
+                        THIS.r:[THIS.r,]
+com.andfly.jewelsmagic.JewelsMagic.j:[com.andfly.jewelsmagic.JewelsMagic.j,]
+com.andfly.jewelsmagic.JewelsMagic.k:[com.andfly.jewelsmagic.JewelsMagic.k,]
+com.andfly.jewelsmagic.JewelsMagic.l:[com.andfly.jewelsmagic.JewelsMagic.l,]
+com.andfly.jewelsmagic.JewelsMagic.m:[com.andfly.jewelsmagic.JewelsMagic.m,]
+staticinvoke <com.andfly.b.a: void a()>():[a(),]
+                           $r0:[THIS,]
+                           $r2:[NewValue1020899138,]
+                           $r1:[NewValue1650424142,]
+
+  UNIT:6 return
+      [BEFOR]RS:6
+virtualinvoke $r1.<android.os.AsyncTask: android.os.AsyncTask execute(java.lang.Object[])>($r2):[execute([THIS:NewValue1650424142][@0:NewValue1020899138]),]
+specialinvoke $r1.<com.andfly.jewelsmagic.bj: void <init>(com.andfly.jewelsmagic.JewelsMagic)>($r0):[<init>([THIS:NewValue1650424142][@0:THIS]),]
+                        THIS.n:[THIS.n,]
+                        THIS.r:[THIS.r,]
+com.andfly.jewelsmagic.JewelsMagic.j:[com.andfly.jewelsmagic.JewelsMagic.j,]
+com.andfly.jewelsmagic.JewelsMagic.k:[com.andfly.jewelsmagic.JewelsMagic.k,]
+com.andfly.jewelsmagic.JewelsMagic.l:[com.andfly.jewelsmagic.JewelsMagic.l,]
+com.andfly.jewelsmagic.JewelsMagic.m:[com.andfly.jewelsmagic.JewelsMagic.m,]
+staticinvoke <com.andfly.b.a: void a()>():[a(),]
+                           $r0:[THIS,]
+                           $r2:[NewValue1020899138,]
+                           $r1:[NewValue1650424142,]
+
+      [AFTER]RS:6
+virtualinvoke $r1.<android.os.AsyncTask: android.os.AsyncTask execute(java.lang.Object[])>($r2):[execute([THIS:NewValue1650424142][@0:NewValue1020899138]),]
+specialinvoke $r1.<com.andfly.jewelsmagic.bj: void <init>(com.andfly.jewelsmagic.JewelsMagic)>($r0):[<init>([THIS:NewValue1650424142][@0:THIS]),]
+                        THIS.n:[THIS.n,]
+                        THIS.r:[THIS.r,]
+com.andfly.jewelsmagic.JewelsMagic.j:[com.andfly.jewelsmagic.JewelsMagic.j,]
+com.andfly.jewelsmagic.JewelsMagic.k:[com.andfly.jewelsmagic.JewelsMagic.k,]
+com.andfly.jewelsmagic.JewelsMagic.l:[com.andfly.jewelsmagic.JewelsMagic.l,]
+com.andfly.jewelsmagic.JewelsMagic.m:[com.andfly.jewelsmagic.JewelsMagic.m,]
+staticinvoke <com.andfly.b.a: void a()>():[a(),]
+                           $r0:[THIS,]
+                           $r2:[NewValue1020899138,]
+                           $r1:[NewValue1650424142,]
+
+@@End m======================

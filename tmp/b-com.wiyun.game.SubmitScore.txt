@@ -1,0 +1,1235 @@
+@@Start analyzing:b
+READ: Param@0.a
+READ: Param@0
+READ: Param@0.d
+READ: Param@0.c
+READ: Param@0.h
+READ: THIS.h
+READ: Param@0.k
+READ: THIS
+WRITE: Param@0.d
+  --Done analyzing:b     public void b(com.wiyun.game.b.e)
+    {
+        com.wiyun.game.SubmitScore $r0;
+        com.wiyun.game.b.e $r1;
+        long $l0, $l2;
+        int $i1;
+        byte $b3;
+        boolean $z0;
+        com.wiyun.game.ck $r2;
+        com.wiyun.game.cl $r3;
+        com.wiyun.game.cj $r4;
+
+        $r0 := @this: com.wiyun.game.SubmitScore;
+
+        $r1 := @parameter0: com.wiyun.game.b.e;
+
+        $i1 = $r1.<com.wiyun.game.b.e: int a>;
+
+        lookupswitch($i1)
+        {
+            case 17: goto label2;
+            default: goto label1;
+        };
+
+     label1:
+        return;
+
+     label2:
+        $l2 = $r1.<com.wiyun.game.b.e: long k>;
+
+        $l0 = $r0.<com.wiyun.game.SubmitScore: long h>;
+
+        $b3 = $l2 cmp $l0;
+
+        if $b3 != 0 goto label5;
+
+        $r1.<com.wiyun.game.b.e: boolean d> = 0;
+
+        $z0 = $r1.<com.wiyun.game.b.e: boolean c>;
+
+        if $z0 == 0 goto label3;
+
+        $r2 = new com.wiyun.game.ck;
+
+        specialinvoke $r2.<com.wiyun.game.ck: void <init>(com.wiyun.game.SubmitScore)>($r0);
+
+        virtualinvoke $r0.<com.wiyun.game.SubmitScore: void runOnUiThread(java.lang.Runnable)>($r2);
+
+        return;
+
+     label3:
+        $i1 = $r1.<com.wiyun.game.b.e: int h>;
+
+        if $i1 != 0 goto label4;
+
+        $r3 = new com.wiyun.game.cl;
+
+        specialinvoke $r3.<com.wiyun.game.cl: void <init>(com.wiyun.game.SubmitScore,com.wiyun.game.b.e)>($r0, $r1);
+
+        virtualinvoke $r0.<com.wiyun.game.SubmitScore: void runOnUiThread(java.lang.Runnable)>($r3);
+
+        return;
+
+     label4:
+        $r4 = new com.wiyun.game.cj;
+
+        specialinvoke $r4.<com.wiyun.game.cj: void <init>(com.wiyun.game.SubmitScore,com.wiyun.game.b.e)>($r0, $r1);
+
+        virtualinvoke $r0.<com.wiyun.game.SubmitScore: void runOnUiThread(java.lang.Runnable)>($r4);
+
+     label5:
+        return;
+    }
+
+  --Method Body:    public void b(com.wiyun.game.b.e)
+    {
+        com.wiyun.game.SubmitScore $r0;
+        com.wiyun.game.b.e $r1;
+        long $l0, $l2;
+        int $i1;
+        byte $b3;
+        boolean $z0;
+        com.wiyun.game.ck $r2;
+        com.wiyun.game.cl $r3;
+        com.wiyun.game.cj $r4;
+
+        $r0 := @this: com.wiyun.game.SubmitScore;
+
+        $r1 := @parameter0: com.wiyun.game.b.e;
+
+        $i1 = $r1.<com.wiyun.game.b.e: int a>;
+
+        lookupswitch($i1)
+        {
+            case 17: goto label2;
+            default: goto label1;
+        };
+
+     label1:
+        return;
+
+     label2:
+        $l2 = $r1.<com.wiyun.game.b.e: long k>;
+
+        $l0 = $r0.<com.wiyun.game.SubmitScore: long h>;
+
+        $b3 = $l2 cmp $l0;
+
+        if $b3 != 0 goto label5;
+
+        $r1.<com.wiyun.game.b.e: boolean d> = 0;
+
+        $z0 = $r1.<com.wiyun.game.b.e: boolean c>;
+
+        if $z0 == 0 goto label3;
+
+        $r2 = new com.wiyun.game.ck;
+
+        specialinvoke $r2.<com.wiyun.game.ck: void <init>(com.wiyun.game.SubmitScore)>($r0);
+
+        virtualinvoke $r0.<com.wiyun.game.SubmitScore: void runOnUiThread(java.lang.Runnable)>($r2);
+
+        return;
+
+     label3:
+        $i1 = $r1.<com.wiyun.game.b.e: int h>;
+
+        if $i1 != 0 goto label4;
+
+        $r3 = new com.wiyun.game.cl;
+
+        specialinvoke $r3.<com.wiyun.game.cl: void <init>(com.wiyun.game.SubmitScore,com.wiyun.game.b.e)>($r0, $r1);
+
+        virtualinvoke $r0.<com.wiyun.game.SubmitScore: void runOnUiThread(java.lang.Runnable)>($r3);
+
+        return;
+
+     label4:
+        $r4 = new com.wiyun.game.cj;
+
+        specialinvoke $r4.<com.wiyun.game.cj: void <init>(com.wiyun.game.SubmitScore,com.wiyun.game.b.e)>($r0, $r1);
+
+        virtualinvoke $r0.<com.wiyun.game.SubmitScore: void runOnUiThread(java.lang.Runnable)>($r4);
+
+     label5:
+        return;
+    }
+
+  --Start displaying:b 
+  UNIT:0 $r0 := @this: com.wiyun.game.SubmitScore
+      [BEFOR]RS:0
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                     Param@0.d:[Param@0.d,]
+
+      [AFTER]RS:0
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                     Param@0.d:[Param@0.d,]
+
+  UNIT:1 $r1 := @parameter0: com.wiyun.game.b.e
+      [BEFOR]RS:1
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                     Param@0.d:[Param@0.d,]
+
+      [AFTER]RS:1
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                     Param@0.d:[Param@0.d,]
+
+  UNIT:2 $i1 = $r1.<com.wiyun.game.b.e: int a>
+      [BEFOR]RS:2
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                     Param@0.d:[Param@0.d,]
+
+      [AFTER]RS:2
+                           $r0:[THIS,]
+                           $i1:[Param@0.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                     Param@0.d:[Param@0.d,]
+
+  UNIT:3 lookupswitch($i1) {     case 17: goto $l2 = $r1.<com.wiyun.game.b.e: long k>;     default: goto return; }
+      [BEFOR]RS:3
+                           $r0:[THIS,]
+                           $i1:[Param@0.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                     Param@0.d:[Param@0.d,]
+
+      [AFTER]RS:3
+                           $r0:[THIS,]
+                           $i1:[Param@0.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                     Param@0.d:[Param@0.d,]
+
+  UNIT:4 return
+      [BEFOR]RS:4
+                           $r0:[THIS,]
+                           $i1:[Param@0.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                     Param@0.d:[Param@0.d,]
+
+      [AFTER]RS:4
+                           $r0:[THIS,]
+                           $i1:[Param@0.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                     Param@0.d:[Param@0.d,]
+
+  UNIT:5 $l2 = $r1.<com.wiyun.game.b.e: long k>
+      [BEFOR]RS:5
+                           $r0:[THIS,]
+                           $i1:[Param@0.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                     Param@0.d:[Param@0.d,]
+
+      [AFTER]RS:5
+                           $r0:[THIS,]
+                           $i1:[Param@0.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l2:[Param@0.k,]
+                     Param@0.d:[Param@0.d,]
+
+  UNIT:6 $l0 = $r0.<com.wiyun.game.SubmitScore: long h>
+      [BEFOR]RS:6
+                           $r0:[THIS,]
+                           $i1:[Param@0.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l2:[Param@0.k,]
+                     Param@0.d:[Param@0.d,]
+
+      [AFTER]RS:6
+                           $r0:[THIS,]
+                           $i1:[Param@0.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                     Param@0.d:[Param@0.d,]
+
+  UNIT:7 $b3 = $l2 cmp $l0
+      [BEFOR]RS:7
+                           $r0:[THIS,]
+                           $i1:[Param@0.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                     Param@0.d:[Param@0.d,]
+
+      [AFTER]RS:7
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                     Param@0.d:[Param@0.d,]
+
+  UNIT:8 if $b3 != 0 goto return
+      [BEFOR]RS:8
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                     Param@0.d:[Param@0.d,]
+
+      [AFTER]RS:8
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                     Param@0.d:[Param@0.d,]
+
+  UNIT:9 $r1.<com.wiyun.game.b.e: boolean d> = 0
+      [BEFOR]RS:9
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                     Param@0.d:[Param@0.d,]
+
+      [AFTER]RS:9
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                     Param@0.d:[CONST,]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+  UNIT:10 $z0 = $r1.<com.wiyun.game.b.e: boolean c>
+      [BEFOR]RS:10
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                     Param@0.d:[CONST,]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+      [AFTER]RS:10
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                           $z0:[Param@0.c,]
+                     Param@0.d:[CONST,]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+  UNIT:11 if $z0 == 0 goto $i1 = $r1.<com.wiyun.game.b.e: int h>
+      [BEFOR]RS:11
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                           $z0:[Param@0.c,]
+                     Param@0.d:[CONST,]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+      [AFTER]RS:11
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                           $z0:[Param@0.c,]
+                     Param@0.d:[CONST,]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+  UNIT:12 $r2 = new com.wiyun.game.ck
+      [BEFOR]RS:12
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                           $z0:[Param@0.c,]
+                     Param@0.d:[CONST,]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+      [AFTER]RS:12
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                           $z0:[Param@0.c,]
+                           $r2:[NewValue406613185,]
+                     Param@0.d:[CONST,]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+  UNIT:13 specialinvoke $r2.<com.wiyun.game.ck: void <init>(com.wiyun.game.SubmitScore)>($r0)
+      [BEFOR]RS:13
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                           $z0:[Param@0.c,]
+                           $r2:[NewValue406613185,]
+                     Param@0.d:[CONST,]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+      [AFTER]RS:13
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                           $z0:[Param@0.c,]
+                           $r2:[NewValue406613185,]
+                     Param@0.d:[CONST,]
+specialinvoke $r2.<com.wiyun.game.ck: void <init>(com.wiyun.game.SubmitScore)>($r0):[<init>([THIS:NewValue406613185][@0:THIS]),]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+  UNIT:14 virtualinvoke $r0.<com.wiyun.game.SubmitScore: void runOnUiThread(java.lang.Runnable)>($r2)
+      [BEFOR]RS:14
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                           $z0:[Param@0.c,]
+                           $r2:[NewValue406613185,]
+                     Param@0.d:[CONST,]
+specialinvoke $r2.<com.wiyun.game.ck: void <init>(com.wiyun.game.SubmitScore)>($r0):[<init>([THIS:NewValue406613185][@0:THIS]),]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+      [AFTER]RS:14
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                           $z0:[Param@0.c,]
+                           $r2:[NewValue406613185,]
+                     Param@0.d:[CONST,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void runOnUiThread(java.lang.Runnable)>($r2):[runOnUiThread([THIS:THIS][@0:NewValue406613185]),]
+specialinvoke $r2.<com.wiyun.game.ck: void <init>(com.wiyun.game.SubmitScore)>($r0):[<init>([THIS:NewValue406613185][@0:THIS]),]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+  UNIT:15 return
+      [BEFOR]RS:15
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                           $z0:[Param@0.c,]
+                           $r2:[NewValue406613185,]
+                     Param@0.d:[CONST,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void runOnUiThread(java.lang.Runnable)>($r2):[runOnUiThread([THIS:THIS][@0:NewValue406613185]),]
+specialinvoke $r2.<com.wiyun.game.ck: void <init>(com.wiyun.game.SubmitScore)>($r0):[<init>([THIS:NewValue406613185][@0:THIS]),]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+      [AFTER]RS:15
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                           $z0:[Param@0.c,]
+                           $r2:[NewValue406613185,]
+                     Param@0.d:[CONST,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void runOnUiThread(java.lang.Runnable)>($r2):[runOnUiThread([THIS:THIS][@0:NewValue406613185]),]
+specialinvoke $r2.<com.wiyun.game.ck: void <init>(com.wiyun.game.SubmitScore)>($r0):[<init>([THIS:NewValue406613185][@0:THIS]),]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+  UNIT:16 $i1 = $r1.<com.wiyun.game.b.e: int h>
+      [BEFOR]RS:16
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                           $z0:[Param@0.c,]
+                     Param@0.d:[CONST,]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+      [AFTER]RS:16
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.h,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                           $z0:[Param@0.c,]
+                     Param@0.d:[CONST,]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+  UNIT:17 if $i1 != 0 goto $r4 = new com.wiyun.game.cj
+      [BEFOR]RS:17
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.h,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                           $z0:[Param@0.c,]
+                     Param@0.d:[CONST,]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+      [AFTER]RS:17
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.h,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                           $z0:[Param@0.c,]
+                     Param@0.d:[CONST,]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+  UNIT:18 $r3 = new com.wiyun.game.cl
+      [BEFOR]RS:18
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.h,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                           $z0:[Param@0.c,]
+                     Param@0.d:[CONST,]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+      [AFTER]RS:18
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.h,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                           $z0:[Param@0.c,]
+                           $r3:[NewValue150626123,]
+                     Param@0.d:[CONST,]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+  UNIT:19 specialinvoke $r3.<com.wiyun.game.cl: void <init>(com.wiyun.game.SubmitScore,com.wiyun.game.b.e)>($r0, $r1)
+      [BEFOR]RS:19
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.h,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                           $z0:[Param@0.c,]
+                           $r3:[NewValue150626123,]
+                     Param@0.d:[CONST,]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+      [AFTER]RS:19
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.h,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                           $z0:[Param@0.c,]
+                           $r3:[NewValue150626123,]
+                     Param@0.d:[CONST,]
+specialinvoke $r3.<com.wiyun.game.cl: void <init>(com.wiyun.game.SubmitScore,com.wiyun.game.b.e)>($r0, $r1):[<init>([THIS:NewValue150626123][@0:THIS][@1:Param@0]),]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+  UNIT:20 virtualinvoke $r0.<com.wiyun.game.SubmitScore: void runOnUiThread(java.lang.Runnable)>($r3)
+      [BEFOR]RS:20
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.h,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                           $z0:[Param@0.c,]
+                           $r3:[NewValue150626123,]
+                     Param@0.d:[CONST,]
+specialinvoke $r3.<com.wiyun.game.cl: void <init>(com.wiyun.game.SubmitScore,com.wiyun.game.b.e)>($r0, $r1):[<init>([THIS:NewValue150626123][@0:THIS][@1:Param@0]),]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+      [AFTER]RS:20
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.h,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                           $z0:[Param@0.c,]
+                           $r3:[NewValue150626123,]
+                     Param@0.d:[CONST,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void runOnUiThread(java.lang.Runnable)>($r3):[runOnUiThread([THIS:THIS][@0:NewValue150626123]),]
+specialinvoke $r3.<com.wiyun.game.cl: void <init>(com.wiyun.game.SubmitScore,com.wiyun.game.b.e)>($r0, $r1):[<init>([THIS:NewValue150626123][@0:THIS][@1:Param@0]),]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+  UNIT:21 return
+      [BEFOR]RS:21
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.h,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                           $z0:[Param@0.c,]
+                           $r3:[NewValue150626123,]
+                     Param@0.d:[CONST,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void runOnUiThread(java.lang.Runnable)>($r3):[runOnUiThread([THIS:THIS][@0:NewValue150626123]),]
+specialinvoke $r3.<com.wiyun.game.cl: void <init>(com.wiyun.game.SubmitScore,com.wiyun.game.b.e)>($r0, $r1):[<init>([THIS:NewValue150626123][@0:THIS][@1:Param@0]),]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+      [AFTER]RS:21
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.h,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                           $z0:[Param@0.c,]
+                           $r3:[NewValue150626123,]
+                     Param@0.d:[CONST,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void runOnUiThread(java.lang.Runnable)>($r3):[runOnUiThread([THIS:THIS][@0:NewValue150626123]),]
+specialinvoke $r3.<com.wiyun.game.cl: void <init>(com.wiyun.game.SubmitScore,com.wiyun.game.b.e)>($r0, $r1):[<init>([THIS:NewValue150626123][@0:THIS][@1:Param@0]),]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+  UNIT:22 $r4 = new com.wiyun.game.cj
+      [BEFOR]RS:22
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.h,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                           $z0:[Param@0.c,]
+                     Param@0.d:[CONST,]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+      [AFTER]RS:22
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.h,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                           $z0:[Param@0.c,]
+                           $r4:[NewValue161057272,]
+                     Param@0.d:[CONST,]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+  UNIT:23 specialinvoke $r4.<com.wiyun.game.cj: void <init>(com.wiyun.game.SubmitScore,com.wiyun.game.b.e)>($r0, $r1)
+      [BEFOR]RS:23
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.h,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                           $z0:[Param@0.c,]
+                           $r4:[NewValue161057272,]
+                     Param@0.d:[CONST,]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+      [AFTER]RS:23
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.h,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                           $z0:[Param@0.c,]
+                           $r4:[NewValue161057272,]
+                     Param@0.d:[CONST,]
+specialinvoke $r4.<com.wiyun.game.cj: void <init>(com.wiyun.game.SubmitScore,com.wiyun.game.b.e)>($r0, $r1):[<init>([THIS:NewValue161057272][@0:THIS][@1:Param@0]),]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+  UNIT:24 virtualinvoke $r0.<com.wiyun.game.SubmitScore: void runOnUiThread(java.lang.Runnable)>($r4)
+      [BEFOR]RS:24
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.h,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                           $z0:[Param@0.c,]
+                           $r4:[NewValue161057272,]
+                     Param@0.d:[CONST,]
+specialinvoke $r4.<com.wiyun.game.cj: void <init>(com.wiyun.game.SubmitScore,com.wiyun.game.b.e)>($r0, $r1):[<init>([THIS:NewValue161057272][@0:THIS][@1:Param@0]),]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+      [AFTER]RS:24
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.h,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                           $z0:[Param@0.c,]
+                           $r4:[NewValue161057272,]
+                     Param@0.d:[CONST,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void runOnUiThread(java.lang.Runnable)>($r4):[runOnUiThread([THIS:THIS][@0:NewValue161057272]),]
+specialinvoke $r4.<com.wiyun.game.cj: void <init>(com.wiyun.game.SubmitScore,com.wiyun.game.b.e)>($r0, $r1):[<init>([THIS:NewValue161057272][@0:THIS][@1:Param@0]),]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+  UNIT:25 return
+      [BEFOR]RS:25
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.a,Param@0.h,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                           $z0:[Param@0.c,]
+                           $r4:[NewValue161057272,]
+                     Param@0.d:[CONST,Param@0.d,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void runOnUiThread(java.lang.Runnable)>($r4):[runOnUiThread([THIS:THIS][@0:NewValue161057272]),]
+specialinvoke $r4.<com.wiyun.game.cj: void <init>(com.wiyun.game.SubmitScore,com.wiyun.game.b.e)>($r0, $r1):[<init>([THIS:NewValue161057272][@0:THIS][@1:Param@0]),]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+      [AFTER]RS:25
+                           $b3:[Param@0.k,THIS.h,]
+                           $r0:[THIS,]
+                           $i1:[Param@0.a,Param@0.h,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[Param@0,]
+                           $l0:[THIS.h,]
+                           $l2:[Param@0.k,]
+                           $z0:[Param@0.c,]
+                           $r4:[NewValue161057272,]
+                     Param@0.d:[CONST,Param@0.d,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void runOnUiThread(java.lang.Runnable)>($r4):[runOnUiThread([THIS:THIS][@0:NewValue161057272]),]
+specialinvoke $r4.<com.wiyun.game.cj: void <init>(com.wiyun.game.SubmitScore,com.wiyun.game.b.e)>($r0, $r1):[<init>([THIS:NewValue161057272][@0:THIS][@1:Param@0]),]
+$r1.<com.wiyun.game.b.e: boolean d>:[CONST,]
+
+@@End b======================

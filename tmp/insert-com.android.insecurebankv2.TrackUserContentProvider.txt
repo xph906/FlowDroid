@@ -1,0 +1,1011 @@
+@@Start analyzing:insert
+READ: com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI
+READ: Param@1
+READ: THIS
+READ: Param@0
+READ: THIS.db
+  --Done analyzing:insert     public android.net.Uri insert(android.net.Uri, android.content.ContentValues)
+    {
+        com.android.insecurebankv2.TrackUserContentProvider $r0;
+        android.net.Uri $r1;
+        android.content.ContentValues $r2;
+        android.database.sqlite.SQLiteDatabase $r3;
+        long $l0;
+        byte $b1;
+        android.content.Context $r4;
+        android.content.ContentResolver $r5;
+        android.database.SQLException $r6;
+        java.lang.StringBuilder $r7;
+        java.lang.String $r8;
+
+        $r0 := @this: com.android.insecurebankv2.TrackUserContentProvider;
+
+        $r1 := @parameter0: android.net.Uri;
+
+        $r2 := @parameter1: android.content.ContentValues;
+
+        $r3 = $r0.<com.android.insecurebankv2.TrackUserContentProvider: android.database.sqlite.SQLiteDatabase db>;
+
+        $l0 = virtualinvoke $r3.<android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>("names", "", $r2);
+
+        $b1 = $l0 cmp 0L;
+
+        if $b1 <= 0 goto label1;
+
+        $r1 = <com.android.insecurebankv2.TrackUserContentProvider: android.net.Uri CONTENT_URI>;
+
+        $r1 = staticinvoke <android.content.ContentUris: android.net.Uri withAppendedId(android.net.Uri,long)>($r1, $l0);
+
+        $r4 = virtualinvoke $r0.<com.android.insecurebankv2.TrackUserContentProvider: android.content.Context getContext()>();
+
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.ContentResolver getContentResolver()>();
+
+        virtualinvoke $r5.<android.content.ContentResolver: void notifyChange(android.net.Uri,android.database.ContentObserver)>($r1, null);
+
+        return $r1;
+
+     label1:
+        $r6 = new android.database.SQLException;
+
+        $r7 = new java.lang.StringBuilder;
+
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>()>();
+
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Failed to add a record into ");
+
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r1);
+
+        $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        specialinvoke $r6.<android.database.SQLException: void <init>(java.lang.String)>($r8);
+
+        throw $r6;
+    }
+
+  --Method Body:    public android.net.Uri insert(android.net.Uri, android.content.ContentValues)
+    {
+        com.android.insecurebankv2.TrackUserContentProvider $r0;
+        android.net.Uri $r1;
+        android.content.ContentValues $r2;
+        android.database.sqlite.SQLiteDatabase $r3;
+        long $l0;
+        byte $b1;
+        android.content.Context $r4;
+        android.content.ContentResolver $r5;
+        android.database.SQLException $r6;
+        java.lang.StringBuilder $r7;
+        java.lang.String $r8;
+
+        $r0 := @this: com.android.insecurebankv2.TrackUserContentProvider;
+
+        $r1 := @parameter0: android.net.Uri;
+
+        $r2 := @parameter1: android.content.ContentValues;
+
+        $r3 = $r0.<com.android.insecurebankv2.TrackUserContentProvider: android.database.sqlite.SQLiteDatabase db>;
+
+        $l0 = virtualinvoke $r3.<android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>("names", "", $r2);
+
+        $b1 = $l0 cmp 0L;
+
+        if $b1 <= 0 goto label1;
+
+        $r1 = <com.android.insecurebankv2.TrackUserContentProvider: android.net.Uri CONTENT_URI>;
+
+        $r1 = staticinvoke <android.content.ContentUris: android.net.Uri withAppendedId(android.net.Uri,long)>($r1, $l0);
+
+        $r4 = virtualinvoke $r0.<com.android.insecurebankv2.TrackUserContentProvider: android.content.Context getContext()>();
+
+        $r5 = virtualinvoke $r4.<android.content.Context: android.content.ContentResolver getContentResolver()>();
+
+        virtualinvoke $r5.<android.content.ContentResolver: void notifyChange(android.net.Uri,android.database.ContentObserver)>($r1, null);
+
+        return $r1;
+
+     label1:
+        $r6 = new android.database.SQLException;
+
+        $r7 = new java.lang.StringBuilder;
+
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>()>();
+
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Failed to add a record into ");
+
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r1);
+
+        $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        specialinvoke $r6.<android.database.SQLException: void <init>(java.lang.String)>($r8);
+
+        throw $r6;
+    }
+
+  --Start displaying:insert 
+  UNIT:0 $r0 := @this: com.android.insecurebankv2.TrackUserContentProvider
+      [BEFOR]RS:0
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+      [AFTER]RS:0
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+  UNIT:1 $r1 := @parameter0: android.net.Uri
+      [BEFOR]RS:1
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+      [AFTER]RS:1
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r1:[Param@0,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+  UNIT:2 $r2 := @parameter1: android.content.ContentValues
+      [BEFOR]RS:2
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r1:[Param@0,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+      [AFTER]RS:2
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r1:[Param@0,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+  UNIT:3 $r3 = $r0.<com.android.insecurebankv2.TrackUserContentProvider: android.database.sqlite.SQLiteDatabase db>
+      [BEFOR]RS:3
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r1:[Param@0,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+      [AFTER]RS:3
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r3:[THIS.db,]
+                           $r1:[Param@0,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+  UNIT:4 $l0 = virtualinvoke $r3.<android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>("names", "", $r2)
+      [BEFOR]RS:4
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r3:[THIS.db,]
+                           $r1:[Param@0,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+      [AFTER]RS:4
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r3:[THIS.db,]
+                           $r1:[Param@0,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+  UNIT:5 $b1 = $l0 cmp 0L
+      [BEFOR]RS:5
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r3:[THIS.db,]
+                           $r1:[Param@0,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+      [AFTER]RS:5
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $b1:[CONST,insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r3:[THIS.db,]
+                           $r1:[Param@0,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+  UNIT:6 if $b1 <= 0 goto $r6 = new android.database.SQLException
+      [BEFOR]RS:6
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $b1:[CONST,insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r3:[THIS.db,]
+                           $r1:[Param@0,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+      [AFTER]RS:6
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $b1:[CONST,insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r3:[THIS.db,]
+                           $r1:[Param@0,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+  UNIT:7 $r1 = <com.android.insecurebankv2.TrackUserContentProvider: android.net.Uri CONTENT_URI>
+      [BEFOR]RS:7
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $b1:[CONST,insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r3:[THIS.db,]
+                           $r1:[Param@0,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+      [AFTER]RS:7
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $b1:[CONST,insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r3:[THIS.db,]
+                           $r1:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+  UNIT:8 $r1 = staticinvoke <android.content.ContentUris: android.net.Uri withAppendedId(android.net.Uri,long)>($r1, $l0)
+      [BEFOR]RS:8
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $b1:[CONST,insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r3:[THIS.db,]
+                           $r1:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+      [AFTER]RS:8
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $b1:[CONST,insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r3:[THIS.db,]
+                           $r1:[withAppendedId([THIS:null][@0:com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI][@1:CONST,Param@1,THIS.db]),]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+  UNIT:9 $r4 = virtualinvoke $r0.<com.android.insecurebankv2.TrackUserContentProvider: android.content.Context getContext()>()
+      [BEFOR]RS:9
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $b1:[CONST,insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r3:[THIS.db,]
+                           $r1:[withAppendedId([THIS:null][@0:com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI][@1:CONST,Param@1,THIS.db]),]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+      [AFTER]RS:9
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $b1:[CONST,insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+                           $r4:[getContext([THIS:THIS]),]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r3:[THIS.db,]
+                           $r1:[withAppendedId([THIS:null][@0:com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI][@1:CONST,Param@1,THIS.db]),]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+  UNIT:10 $r5 = virtualinvoke $r4.<android.content.Context: android.content.ContentResolver getContentResolver()>()
+      [BEFOR]RS:10
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $b1:[CONST,insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+                           $r4:[getContext([THIS:THIS]),]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r3:[THIS.db,]
+                           $r1:[withAppendedId([THIS:null][@0:com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI][@1:CONST,Param@1,THIS.db]),]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+      [AFTER]RS:10
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $b1:[CONST,insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+                           $r4:[getContext([THIS:THIS]),]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r5:[getContentResolver([THIS:THIS]),]
+                           $r3:[THIS.db,]
+                           $r1:[withAppendedId([THIS:null][@0:com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI][@1:CONST,Param@1,THIS.db]),]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+  UNIT:11 virtualinvoke $r5.<android.content.ContentResolver: void notifyChange(android.net.Uri,android.database.ContentObserver)>($r1, null)
+      [BEFOR]RS:11
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $b1:[CONST,insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+                           $r4:[getContext([THIS:THIS]),]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r5:[getContentResolver([THIS:THIS]),]
+                           $r3:[THIS.db,]
+                           $r1:[withAppendedId([THIS:null][@0:com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI][@1:CONST,Param@1,THIS.db]),]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+      [AFTER]RS:11
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $b1:[CONST,insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+                           $r4:[getContext([THIS:THIS]),]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+virtualinvoke $r5.<android.content.ContentResolver: void notifyChange(android.net.Uri,android.database.ContentObserver)>($r1, null):[notifyChange([THIS:THIS][@0:CONST,Param@1,THIS.db,com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r5:[getContentResolver([THIS:THIS]),]
+                           $r3:[THIS.db,]
+                           $r1:[withAppendedId([THIS:null][@0:com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI][@1:CONST,Param@1,THIS.db]),]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+  UNIT:12 return $r1
+      [BEFOR]RS:12
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $b1:[CONST,insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+                           $r4:[getContext([THIS:THIS]),]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+virtualinvoke $r5.<android.content.ContentResolver: void notifyChange(android.net.Uri,android.database.ContentObserver)>($r1, null):[notifyChange([THIS:THIS][@0:CONST,Param@1,THIS.db,com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r5:[getContentResolver([THIS:THIS]),]
+                           $r3:[THIS.db,]
+                           $r1:[withAppendedId([THIS:null][@0:com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI][@1:CONST,Param@1,THIS.db]),]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+      [AFTER]RS:12
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $b1:[CONST,insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+                           $r4:[getContext([THIS:THIS]),]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+virtualinvoke $r5.<android.content.ContentResolver: void notifyChange(android.net.Uri,android.database.ContentObserver)>($r1, null):[notifyChange([THIS:THIS][@0:CONST,Param@1,THIS.db,com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r5:[getContentResolver([THIS:THIS]),]
+                           $r3:[THIS.db,]
+                           $r1:[withAppendedId([THIS:null][@0:com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI][@1:CONST,Param@1,THIS.db]),]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+  UNIT:13 $r6 = new android.database.SQLException
+      [BEFOR]RS:13
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $b1:[CONST,insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r3:[THIS.db,]
+                           $r1:[Param@0,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+      [AFTER]RS:13
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $b1:[CONST,insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+                           $r6:[NewValue822292648,]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r3:[THIS.db,]
+                           $r1:[Param@0,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+  UNIT:14 $r7 = new java.lang.StringBuilder
+      [BEFOR]RS:14
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $b1:[CONST,insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+                           $r6:[NewValue822292648,]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r3:[THIS.db,]
+                           $r1:[Param@0,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+      [AFTER]RS:14
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $b1:[CONST,insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+                           $r7:[NewValue1415295439,]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+                           $r6:[NewValue822292648,]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r3:[THIS.db,]
+                           $r1:[Param@0,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+  UNIT:15 specialinvoke $r7.<java.lang.StringBuilder: void <init>()>()
+      [BEFOR]RS:15
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $b1:[CONST,insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+                           $r7:[NewValue1415295439,]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+                           $r6:[NewValue822292648,]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r3:[THIS.db,]
+                           $r1:[Param@0,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+      [AFTER]RS:15
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $b1:[CONST,insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+                           $r7:[NewValue1415295439,]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+                           $r6:[NewValue822292648,]
+specialinvoke $r7.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue1415295439]),]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r3:[THIS.db,]
+                           $r1:[Param@0,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+  UNIT:16 $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Failed to add a record into ")
+      [BEFOR]RS:16
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $b1:[CONST,insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+                           $r7:[NewValue1415295439,]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+                           $r6:[NewValue822292648,]
+specialinvoke $r7.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue1415295439]),]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r3:[THIS.db,]
+                           $r1:[Param@0,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+      [AFTER]RS:16
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $b1:[CONST,insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+                           $r7:[append([THIS:NewValue1415295439][@0:CONST]),]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+                           $r6:[NewValue822292648,]
+specialinvoke $r7.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue1415295439]),]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r3:[THIS.db,]
+                           $r1:[Param@0,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+  UNIT:17 $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r1)
+      [BEFOR]RS:17
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $b1:[CONST,insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+                           $r7:[append([THIS:NewValue1415295439][@0:CONST]),]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+                           $r6:[NewValue822292648,]
+specialinvoke $r7.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue1415295439]),]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r3:[THIS.db,]
+                           $r1:[Param@0,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+      [AFTER]RS:17
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $b1:[CONST,insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+                           $r7:[append([THIS:CONST,NewValue1415295439][@0:Param@0]),]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+                           $r6:[NewValue822292648,]
+specialinvoke $r7.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue1415295439]),]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r3:[THIS.db,]
+                           $r1:[Param@0,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+  UNIT:18 $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>()
+      [BEFOR]RS:18
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $b1:[CONST,insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+                           $r7:[append([THIS:CONST,NewValue1415295439][@0:Param@0]),]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+                           $r6:[NewValue822292648,]
+specialinvoke $r7.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue1415295439]),]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r3:[THIS.db,]
+                           $r1:[Param@0,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+      [AFTER]RS:18
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $b1:[CONST,insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+                           $r7:[append([THIS:CONST,NewValue1415295439][@0:Param@0]),]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+                           $r6:[NewValue822292648,]
+                           $r8:[toString([THIS:CONST,NewValue1415295439,Param@0]),]
+specialinvoke $r7.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue1415295439]),]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r3:[THIS.db,]
+                           $r1:[Param@0,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+  UNIT:19 specialinvoke $r6.<android.database.SQLException: void <init>(java.lang.String)>($r8)
+      [BEFOR]RS:19
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $b1:[CONST,insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+                           $r7:[append([THIS:CONST,NewValue1415295439][@0:Param@0]),]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+                           $r6:[NewValue822292648,]
+                           $r8:[toString([THIS:CONST,NewValue1415295439,Param@0]),]
+specialinvoke $r7.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue1415295439]),]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r3:[THIS.db,]
+                           $r1:[Param@0,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+      [AFTER]RS:19
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $b1:[CONST,insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+                           $r7:[append([THIS:CONST,NewValue1415295439][@0:Param@0]),]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+specialinvoke $r6.<android.database.SQLException: void <init>(java.lang.String)>($r8):[<init>([THIS:NewValue822292648][@0:CONST,NewValue1415295439,Param@0]),]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+                           $r6:[NewValue822292648,]
+                           $r8:[toString([THIS:CONST,NewValue1415295439,Param@0]),]
+specialinvoke $r7.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue1415295439]),]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r3:[THIS.db,]
+                           $r1:[Param@0,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+  UNIT:20 throw $r6
+      [BEFOR]RS:20
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $b1:[CONST,insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+                           $r7:[append([THIS:CONST,NewValue1415295439][@0:Param@0]),]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+specialinvoke $r6.<android.database.SQLException: void <init>(java.lang.String)>($r8):[<init>([THIS:NewValue822292648][@0:CONST,NewValue1415295439,Param@0]),]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+                           $r6:[NewValue822292648,]
+                           $r8:[toString([THIS:CONST,NewValue1415295439,Param@0]),]
+specialinvoke $r7.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue1415295439]),]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r3:[THIS.db,]
+                           $r1:[Param@0,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+      [AFTER]RS:20
+com.android.insecurebankv2.TrackUserContentProvider.values:[com.android.insecurebankv2.TrackUserContentProvider.values,]
+                           $b1:[CONST,insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r0:[THIS,]
+com.android.insecurebankv2.TrackUserContentProvider.uriMatcher:[com.android.insecurebankv2.TrackUserContentProvider.uriMatcher,]
+                           $r7:[append([THIS:CONST,NewValue1415295439][@0:Param@0]),]
+com.android.insecurebankv2.TrackUserContentProvider.uriCode:[com.android.insecurebankv2.TrackUserContentProvider.uriCode,]
+com.android.insecurebankv2.TrackUserContentProvider.URL:[com.android.insecurebankv2.TrackUserContentProvider.URL,]
+com.android.insecurebankv2.TrackUserContentProvider.name:[com.android.insecurebankv2.TrackUserContentProvider.name,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_VERSION,]
+specialinvoke $r6.<android.database.SQLException: void <init>(java.lang.String)>($r8):[<init>([THIS:NewValue822292648][@0:CONST,NewValue1415295439,Param@0]),]
+                           $l0:[insert([THIS:THIS.db][@0:CONST][@1:CONST][@2:Param@1]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI:[com.android.insecurebankv2.TrackUserContentProvider.CONTENT_URI,]
+com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.DATABASE_NAME,]
+                       THIS.db:[THIS.db,]
+                           $r6:[NewValue822292648,]
+                           $r8:[toString([THIS:CONST,NewValue1415295439,Param@0]),]
+specialinvoke $r7.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue1415295439]),]
+com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE:[com.android.insecurebankv2.TrackUserContentProvider.CREATE_DB_TABLE,]
+com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME:[com.android.insecurebankv2.TrackUserContentProvider.PROVIDER_NAME,]
+                           $r3:[THIS.db,]
+                           $r1:[Param@0,]
+com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME:[com.android.insecurebankv2.TrackUserContentProvider.TABLE_NAME,]
+
+@@End insert======================

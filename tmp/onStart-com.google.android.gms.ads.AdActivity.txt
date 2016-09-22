@@ -1,0 +1,272 @@
+@@Start analyzing:onStart
+READ: THIS.zznG
+READ: THIS
+  --Done analyzing:onStart     protected void onStart()
+    {
+        com.google.android.gms.ads.AdActivity $r0;
+        com.google.android.gms.internal.zzex $r1;
+        android.os.RemoteException $r2;
+
+        $r0 := @this: com.google.android.gms.ads.AdActivity;
+
+        specialinvoke $r0.<android.app.Activity: void onStart()>();
+
+        $r1 = $r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>;
+
+        if $r1 == null goto label4;
+
+        $r1 = $r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>;
+
+     label1:
+        interfaceinvoke $r1.<com.google.android.gms.internal.zzex: void onStart()>();
+
+     label2:
+        return;
+
+     label3:
+        $r2 := @caughtexception;
+
+        staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onStart to ad overlay:", $r2);
+
+        virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>();
+
+     label4:
+        return;
+
+        catch android.os.RemoteException from label1 to label2 with label3;
+    }
+
+  --Method Body:    protected void onStart()
+    {
+        com.google.android.gms.ads.AdActivity $r0;
+        com.google.android.gms.internal.zzex $r1;
+        android.os.RemoteException $r2;
+
+        $r0 := @this: com.google.android.gms.ads.AdActivity;
+
+        specialinvoke $r0.<android.app.Activity: void onStart()>();
+
+        $r1 = $r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>;
+
+        if $r1 == null goto label4;
+
+        $r1 = $r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>;
+
+     label1:
+        interfaceinvoke $r1.<com.google.android.gms.internal.zzex: void onStart()>();
+
+     label2:
+        return;
+
+     label3:
+        $r2 := @caughtexception;
+
+        staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onStart to ad overlay:", $r2);
+
+        virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>();
+
+     label4:
+        return;
+
+        catch android.os.RemoteException from label1 to label2 with label3;
+    }
+
+  --Start displaying:onStart 
+  UNIT:0 $r0 := @this: com.google.android.gms.ads.AdActivity
+      [BEFOR]RS:0
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                     THIS.zznG:[THIS.zznG,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+      [AFTER]RS:0
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+  UNIT:1 specialinvoke $r0.<android.app.Activity: void onStart()>()
+      [BEFOR]RS:1
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+      [AFTER]RS:1
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+specialinvoke $r0.<android.app.Activity: void onStart()>():[onStart([THIS:THIS]),]
+
+  UNIT:2 $r1 = $r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>
+      [BEFOR]RS:2
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+specialinvoke $r0.<android.app.Activity: void onStart()>():[onStart([THIS:THIS]),]
+
+      [AFTER]RS:2
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+specialinvoke $r0.<android.app.Activity: void onStart()>():[onStart([THIS:THIS]),]
+
+  UNIT:3 if $r1 == null goto return
+      [BEFOR]RS:3
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+specialinvoke $r0.<android.app.Activity: void onStart()>():[onStart([THIS:THIS]),]
+
+      [AFTER]RS:3
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+specialinvoke $r0.<android.app.Activity: void onStart()>():[onStart([THIS:THIS]),]
+
+  UNIT:4 $r1 = $r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>
+      [BEFOR]RS:4
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+specialinvoke $r0.<android.app.Activity: void onStart()>():[onStart([THIS:THIS]),]
+
+      [AFTER]RS:4
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+specialinvoke $r0.<android.app.Activity: void onStart()>():[onStart([THIS:THIS]),]
+
+  UNIT:5 interfaceinvoke $r1.<com.google.android.gms.internal.zzex: void onStart()>()
+      [BEFOR]RS:5
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+specialinvoke $r0.<android.app.Activity: void onStart()>():[onStart([THIS:THIS]),]
+
+      [AFTER]RS:5
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+interfaceinvoke $r1.<com.google.android.gms.internal.zzex: void onStart()>():[onStart([THIS:THIS.zznG]),]
+specialinvoke $r0.<android.app.Activity: void onStart()>():[onStart([THIS:THIS]),]
+
+  UNIT:6 return
+      [BEFOR]RS:6
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+interfaceinvoke $r1.<com.google.android.gms.internal.zzex: void onStart()>():[onStart([THIS:THIS.zznG]),]
+specialinvoke $r0.<android.app.Activity: void onStart()>():[onStart([THIS:THIS]),]
+
+      [AFTER]RS:6
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+interfaceinvoke $r1.<com.google.android.gms.internal.zzex: void onStart()>():[onStart([THIS:THIS.zznG]),]
+specialinvoke $r0.<android.app.Activity: void onStart()>():[onStart([THIS:THIS]),]
+
+  UNIT:7 $r2 := @caughtexception
+      [BEFOR]RS:7
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+interfaceinvoke $r1.<com.google.android.gms.internal.zzex: void onStart()>():[onStart([THIS:THIS.zznG]),]
+specialinvoke $r0.<android.app.Activity: void onStart()>():[onStart([THIS:THIS]),]
+
+      [AFTER]RS:7
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+interfaceinvoke $r1.<com.google.android.gms.internal.zzex: void onStart()>():[onStart([THIS:THIS.zznG]),]
+specialinvoke $r0.<android.app.Activity: void onStart()>():[onStart([THIS:THIS]),]
+
+  UNIT:8 staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onStart to ad overlay:", $r2)
+      [BEFOR]RS:8
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+interfaceinvoke $r1.<com.google.android.gms.internal.zzex: void onStart()>():[onStart([THIS:THIS.zznG]),]
+specialinvoke $r0.<android.app.Activity: void onStart()>():[onStart([THIS:THIS]),]
+
+      [AFTER]RS:8
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+interfaceinvoke $r1.<com.google.android.gms.internal.zzex: void onStart()>():[onStart([THIS:THIS.zznG]),]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onStart to ad overlay:", $r2):[zzd([THIS:null][@0:CONST][@1:]),]
+specialinvoke $r0.<android.app.Activity: void onStart()>():[onStart([THIS:THIS]),]
+
+  UNIT:9 virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>()
+      [BEFOR]RS:9
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+interfaceinvoke $r1.<com.google.android.gms.internal.zzex: void onStart()>():[onStart([THIS:THIS.zznG]),]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onStart to ad overlay:", $r2):[zzd([THIS:null][@0:CONST][@1:]),]
+specialinvoke $r0.<android.app.Activity: void onStart()>():[onStart([THIS:THIS]),]
+
+      [AFTER]RS:9
+virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>():[finish([THIS:THIS]),]
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+interfaceinvoke $r1.<com.google.android.gms.internal.zzex: void onStart()>():[onStart([THIS:THIS.zznG]),]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onStart to ad overlay:", $r2):[zzd([THIS:null][@0:CONST][@1:]),]
+specialinvoke $r0.<android.app.Activity: void onStart()>():[onStart([THIS:THIS]),]
+
+  UNIT:10 return
+      [BEFOR]RS:10
+virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>():[finish([THIS:THIS]),]
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+interfaceinvoke $r1.<com.google.android.gms.internal.zzex: void onStart()>():[onStart([THIS:THIS.zznG]),]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onStart to ad overlay:", $r2):[zzd([THIS:null][@0:CONST][@1:]),]
+specialinvoke $r0.<android.app.Activity: void onStart()>():[onStart([THIS:THIS]),]
+
+      [AFTER]RS:10
+virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>():[finish([THIS:THIS]),]
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+interfaceinvoke $r1.<com.google.android.gms.internal.zzex: void onStart()>():[onStart([THIS:THIS.zznG]),]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onStart to ad overlay:", $r2):[zzd([THIS:null][@0:CONST][@1:]),]
+specialinvoke $r0.<android.app.Activity: void onStart()>():[onStart([THIS:THIS]),]
+
+@@End onStart======================

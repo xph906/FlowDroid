@@ -1,0 +1,1272 @@
+@@Start analyzing:getContactNameFromNumber
+READ: THIS
+READ: android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI
+READ: Param@0
+  --Done analyzing:getContactNameFromNumber     public java.lang.String[] getContactNameFromNumber(java.lang.String[][], int)
+    {
+        com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService $r0;
+        java.lang.String[][] $r1;
+        int $i0, $i1, $i2;
+        java.lang.String[] $r2, $r3, $r5;
+        android.net.Uri $r4;
+        java.lang.String $r6;
+        android.content.ContentResolver $r7;
+        android.database.Cursor $r8;
+        boolean $z0;
+
+        $r0 := @this: com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService;
+
+        $r1 := @parameter0: java.lang.String[][];
+
+        $i0 := @parameter1: int;
+
+        $r3 = newarray (java.lang.String)[$i0];
+
+        $i1 = 0;
+
+     label1:
+        if $i1 < $i0 goto label2;
+
+        return $r3;
+
+     label2:
+        $r2 = newarray (java.lang.String)[1];
+
+        $r2[0] = "display_name";
+
+        $r4 = <android.provider.ContactsContract$PhoneLookup: android.net.Uri CONTENT_FILTER_URI>;
+
+        $r5 = $r1[$i1];
+
+        $r6 = $r5[0];
+
+        $r6 = staticinvoke <android.net.Uri: java.lang.String encode(java.lang.String)>($r6);
+
+        $r4 = staticinvoke <android.net.Uri: android.net.Uri withAppendedPath(android.net.Uri,java.lang.String)>($r4, $r6);
+
+        $r7 = virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService: android.content.ContentResolver getContentResolver()>();
+
+        $r8 = virtualinvoke $r7.<android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)>($r4, $r2, null, null, null);
+
+        if $r8 == null goto label3;
+
+        $z0 = interfaceinvoke $r8.<android.database.Cursor: boolean moveToFirst()>();
+
+        if $z0 == 0 goto label4;
+
+        $i2 = interfaceinvoke $r8.<android.database.Cursor: int getColumnIndex(java.lang.String)>("display_name");
+
+        $r6 = interfaceinvoke $r8.<android.database.Cursor: java.lang.String getString(int)>($i2);
+
+        $r3[$i1] = $r6;
+
+     label3:
+        interfaceinvoke $r8.<android.database.Cursor: void close()>();
+
+        $i1 = $i1 + 1;
+
+        goto label1;
+
+     label4:
+        $r3[$i1] = "Unknown";
+
+        goto label3;
+    }
+
+  --Method Body:    public java.lang.String[] getContactNameFromNumber(java.lang.String[][], int)
+    {
+        com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService $r0;
+        java.lang.String[][] $r1;
+        int $i0, $i1, $i2;
+        java.lang.String[] $r2, $r3, $r5;
+        android.net.Uri $r4;
+        java.lang.String $r6;
+        android.content.ContentResolver $r7;
+        android.database.Cursor $r8;
+        boolean $z0;
+
+        $r0 := @this: com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService;
+
+        $r1 := @parameter0: java.lang.String[][];
+
+        $i0 := @parameter1: int;
+
+        $r3 = newarray (java.lang.String)[$i0];
+
+        $i1 = 0;
+
+     label1:
+        if $i1 < $i0 goto label2;
+
+        return $r3;
+
+     label2:
+        $r2 = newarray (java.lang.String)[1];
+
+        $r2[0] = "display_name";
+
+        $r4 = <android.provider.ContactsContract$PhoneLookup: android.net.Uri CONTENT_FILTER_URI>;
+
+        $r5 = $r1[$i1];
+
+        $r6 = $r5[0];
+
+        $r6 = staticinvoke <android.net.Uri: java.lang.String encode(java.lang.String)>($r6);
+
+        $r4 = staticinvoke <android.net.Uri: android.net.Uri withAppendedPath(android.net.Uri,java.lang.String)>($r4, $r6);
+
+        $r7 = virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService: android.content.ContentResolver getContentResolver()>();
+
+        $r8 = virtualinvoke $r7.<android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)>($r4, $r2, null, null, null);
+
+        if $r8 == null goto label3;
+
+        $z0 = interfaceinvoke $r8.<android.database.Cursor: boolean moveToFirst()>();
+
+        if $z0 == 0 goto label4;
+
+        $i2 = interfaceinvoke $r8.<android.database.Cursor: int getColumnIndex(java.lang.String)>("display_name");
+
+        $r6 = interfaceinvoke $r8.<android.database.Cursor: java.lang.String getString(int)>($i2);
+
+        $r3[$i1] = $r6;
+
+     label3:
+        interfaceinvoke $r8.<android.database.Cursor: void close()>();
+
+        $i1 = $i1 + 1;
+
+        goto label1;
+
+     label4:
+        $r3[$i1] = "Unknown";
+
+        goto label3;
+    }
+
+  --Start displaying:getContactNameFromNumber 
+  UNIT:0 $r0 := @this: com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService
+      [BEFOR]RS:0
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+              THIS.mlocManager:[THIS.mlocManager,]
+
+      [AFTER]RS:0
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r0:[THIS,]
+
+  UNIT:1 $r1 := @parameter0: java.lang.String[][]
+      [BEFOR]RS:1
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:1
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r0:[THIS,]
+
+  UNIT:2 $i0 := @parameter1: int
+      [BEFOR]RS:2
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:2
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $i0:[Param@1,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r0:[THIS,]
+
+  UNIT:3 $r3 = newarray (java.lang.String)[$i0]
+      [BEFOR]RS:3
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $i0:[Param@1,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:3
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r3:[NewValue1416015795,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $i0:[Param@1,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r0:[THIS,]
+
+  UNIT:4 $i1 = 0
+      [BEFOR]RS:4
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r3:[NewValue1416015795,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $i0:[Param@1,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:4
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r3:[NewValue1416015795,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r0:[THIS,]
+
+  UNIT:5 if $i1 < $i0 goto $r2 = newarray (java.lang.String)[1]
+      [BEFOR]RS:5
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:5
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+  UNIT:6 return $r3
+      [BEFOR]RS:6
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:6
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+  UNIT:7 $r2 = newarray (java.lang.String)[1]
+      [BEFOR]RS:7
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:7
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+  UNIT:8 $r2[0] = "display_name"
+      [BEFOR]RS:8
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:8
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+  UNIT:9 $r4 = <android.provider.ContactsContract$PhoneLookup: android.net.Uri CONTENT_FILTER_URI>
+      [BEFOR]RS:9
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:9
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI,]
+                           $r0:[THIS,]
+
+  UNIT:10 $r5 = $r1[$i1]
+      [BEFOR]RS:10
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:10
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI,]
+                           $r0:[THIS,]
+
+  UNIT:11 $r6 = $r5[0]
+      [BEFOR]RS:11
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:11
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[Param@0,]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI,]
+                           $r0:[THIS,]
+
+  UNIT:12 $r6 = staticinvoke <android.net.Uri: java.lang.String encode(java.lang.String)>($r6)
+      [BEFOR]RS:12
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[Param@0,]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:12
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI,]
+                           $r0:[THIS,]
+
+  UNIT:13 $r4 = staticinvoke <android.net.Uri: android.net.Uri withAppendedPath(android.net.Uri,java.lang.String)>($r4, $r6)
+      [BEFOR]RS:13
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:13
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+  UNIT:14 $r7 = virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService: android.content.ContentResolver getContentResolver()>()
+      [BEFOR]RS:14
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:14
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+  UNIT:15 $r8 = virtualinvoke $r7.<android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)>($r4, $r2, null, null, null)
+      [BEFOR]RS:15
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:15
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+  UNIT:16 if $r8 == null goto interfaceinvoke $r8.<android.database.Cursor: void close()>()
+      [BEFOR]RS:16
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:16
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+  UNIT:17 $z0 = interfaceinvoke $r8.<android.database.Cursor: boolean moveToFirst()>()
+      [BEFOR]RS:17
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:17
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+  UNIT:18 if $z0 == 0 goto $r3[$i1] = "Unknown"
+      [BEFOR]RS:18
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:18
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+  UNIT:19 $i2 = interfaceinvoke $r8.<android.database.Cursor: int getColumnIndex(java.lang.String)>("display_name")
+      [BEFOR]RS:19
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:19
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+  UNIT:20 $r6 = interfaceinvoke $r8.<android.database.Cursor: java.lang.String getString(int)>($i2)
+      [BEFOR]RS:20
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:20
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+  UNIT:21 $r3[$i1] = $r6
+      [BEFOR]RS:21
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:21
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                      $r3[$i1]:[getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+  UNIT:22 interfaceinvoke $r8.<android.database.Cursor: void close()>()
+      [BEFOR]RS:22
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:22
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+  UNIT:23 $i1 = $i1 + 1
+      [BEFOR]RS:23
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:23
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+  UNIT:24 goto [?= (branch)]
+      [BEFOR]RS:24
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:24
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+  UNIT:25 $r3[$i1] = "Unknown"
+      [BEFOR]RS:25
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),]
+                      $r3[$i1]:[CONST,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:25
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),]
+                      $r3[$i1]:[CONST,]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+  UNIT:26 goto [?= interfaceinvoke $r8.<android.database.Cursor: void close()>()]
+      [BEFOR]RS:26
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),]
+                      $r3[$i1]:[CONST,]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:26
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r2:[NewValue189864804,]
+                           $r3:[NewValue1416015795,]
+                           $r5:[Param@0,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r8:[query([THIS:THIS][@0:Param@0,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:NewValue189864804][@2:CONST][@3:CONST][@4:CONST]),]
+                        $r2[0]:[CONST,]
+                           $i0:[Param@1,]
+                           $i1:[CONST,]
+                           $i2:[getColumnIndex([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r1:[Param@0,]
+                           $z0:[moveToFirst([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1416015795[CONST,NewValue1416015795,getString([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@0:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),],ARR:NewValue189864804[CONST,NewValue189864804,],]
+interfaceinvoke $r8.<android.database.Cursor: void close()>():[close([THIS:CONST,NewValue189864804,Param@0,THIS,android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI]),]
+                           $r6:[encode([THIS:null][@0:Param@0]),]
+                      $r3[$i1]:[CONST,]
+                           $r7:[getContentResolver([THIS:THIS]),]
+                           $r4:[withAppendedPath([THIS:null][@0:android.provider.ContactsContract$PhoneLookup.CONTENT_FILTER_URI][@1:Param@0]),]
+                           $r0:[THIS,]
+
+@@End getContactNameFromNumber======================

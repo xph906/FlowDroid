@@ -1,0 +1,529 @@
+@@Start analyzing:<init>
+READ: THIS
+WRITE: THIS.tempMessage
+WRITE: THIS.indexOfCommand
+WRITE: THIS.WHICH_ACCOUNT
+WRITE: THIS.messageFrom
+WRITE: THIS.phoneNumber
+WRITE: THIS.messages
+WRITE: THIS.messageCommand
+  --Done analyzing:<init>     public void <init>()
+    {
+        com.activedevelopers.android.androidcontrollerviasms.CommandReceiver $r0;
+        java.lang.String[] $r1;
+
+        $r0 := @this: com.activedevelopers.android.androidcontrollerviasms.CommandReceiver;
+
+        specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>();
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messages> = "";
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messageFrom> = "";
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String tempMessage> = "";
+
+        $r1 = newarray (java.lang.String)[2];
+
+        $r1[0] = "";
+
+        $r1[1] = "";
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String[] phoneNumber> = $r1;
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: short indexOfCommand> = 0;
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: int messageCommand> = 0;
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: boolean WHICH_ACCOUNT> = 1;
+
+        return;
+    }
+
+  --Method Body:    public void <init>()
+    {
+        com.activedevelopers.android.androidcontrollerviasms.CommandReceiver $r0;
+        java.lang.String[] $r1;
+
+        $r0 := @this: com.activedevelopers.android.androidcontrollerviasms.CommandReceiver;
+
+        specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>();
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messages> = "";
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messageFrom> = "";
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String tempMessage> = "";
+
+        $r1 = newarray (java.lang.String)[2];
+
+        $r1[0] = "";
+
+        $r1[1] = "";
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String[] phoneNumber> = $r1;
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: short indexOfCommand> = 0;
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: int messageCommand> = 0;
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: boolean WHICH_ACCOUNT> = 1;
+
+        return;
+    }
+
+  --Start displaying:<init> 
+  UNIT:0 $r0 := @this: com.activedevelopers.android.androidcontrollerviasms.CommandReceiver
+      [BEFOR]RS:0
+              THIS.messageFrom:[THIS.messageFrom,]
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+              THIS.tempMessage:[THIS.tempMessage,]
+           THIS.messageCommand:[THIS.messageCommand,]
+                 THIS.messages:[THIS.messages,]
+            THIS.WHICH_ACCOUNT:[THIS.WHICH_ACCOUNT,]
+              THIS.phoneNumber:[THIS.phoneNumber,]
+           THIS.indexOfCommand:[THIS.indexOfCommand,]
+
+      [AFTER]RS:0
+              THIS.messageFrom:[THIS.messageFrom,]
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+              THIS.tempMessage:[THIS.tempMessage,]
+           THIS.messageCommand:[THIS.messageCommand,]
+                 THIS.messages:[THIS.messages,]
+                           $r0:[THIS,]
+            THIS.WHICH_ACCOUNT:[THIS.WHICH_ACCOUNT,]
+              THIS.phoneNumber:[THIS.phoneNumber,]
+           THIS.indexOfCommand:[THIS.indexOfCommand,]
+
+  UNIT:1 specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>()
+      [BEFOR]RS:1
+              THIS.messageFrom:[THIS.messageFrom,]
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+              THIS.tempMessage:[THIS.tempMessage,]
+           THIS.messageCommand:[THIS.messageCommand,]
+                 THIS.messages:[THIS.messages,]
+                           $r0:[THIS,]
+            THIS.WHICH_ACCOUNT:[THIS.WHICH_ACCOUNT,]
+              THIS.phoneNumber:[THIS.phoneNumber,]
+           THIS.indexOfCommand:[THIS.indexOfCommand,]
+
+      [AFTER]RS:1
+              THIS.messageFrom:[THIS.messageFrom,]
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+              THIS.tempMessage:[THIS.tempMessage,]
+           THIS.messageCommand:[THIS.messageCommand,]
+                 THIS.messages:[THIS.messages,]
+                           $r0:[THIS,]
+            THIS.WHICH_ACCOUNT:[THIS.WHICH_ACCOUNT,]
+specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>():[<init>([THIS:THIS]),]
+              THIS.phoneNumber:[THIS.phoneNumber,]
+           THIS.indexOfCommand:[THIS.indexOfCommand,]
+
+  UNIT:2 $r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messages> = ""
+      [BEFOR]RS:2
+              THIS.messageFrom:[THIS.messageFrom,]
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+              THIS.tempMessage:[THIS.tempMessage,]
+           THIS.messageCommand:[THIS.messageCommand,]
+                 THIS.messages:[THIS.messages,]
+                           $r0:[THIS,]
+            THIS.WHICH_ACCOUNT:[THIS.WHICH_ACCOUNT,]
+specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>():[<init>([THIS:THIS]),]
+              THIS.phoneNumber:[THIS.phoneNumber,]
+           THIS.indexOfCommand:[THIS.indexOfCommand,]
+
+      [AFTER]RS:2
+              THIS.messageFrom:[THIS.messageFrom,]
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+              THIS.tempMessage:[THIS.tempMessage,]
+           THIS.messageCommand:[THIS.messageCommand,]
+                 THIS.messages:[CONST,]
+                           $r0:[THIS,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messages>:[CONST,]
+            THIS.WHICH_ACCOUNT:[THIS.WHICH_ACCOUNT,]
+specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>():[<init>([THIS:THIS]),]
+              THIS.phoneNumber:[THIS.phoneNumber,]
+           THIS.indexOfCommand:[THIS.indexOfCommand,]
+
+  UNIT:3 $r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messageFrom> = ""
+      [BEFOR]RS:3
+              THIS.messageFrom:[THIS.messageFrom,]
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+              THIS.tempMessage:[THIS.tempMessage,]
+           THIS.messageCommand:[THIS.messageCommand,]
+                 THIS.messages:[CONST,]
+                           $r0:[THIS,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messages>:[CONST,]
+            THIS.WHICH_ACCOUNT:[THIS.WHICH_ACCOUNT,]
+specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>():[<init>([THIS:THIS]),]
+              THIS.phoneNumber:[THIS.phoneNumber,]
+           THIS.indexOfCommand:[THIS.indexOfCommand,]
+
+      [AFTER]RS:3
+              THIS.messageFrom:[CONST,]
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messageFrom>:[CONST,]
+              THIS.tempMessage:[THIS.tempMessage,]
+           THIS.messageCommand:[THIS.messageCommand,]
+                 THIS.messages:[CONST,]
+                           $r0:[THIS,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messages>:[CONST,]
+            THIS.WHICH_ACCOUNT:[THIS.WHICH_ACCOUNT,]
+specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>():[<init>([THIS:THIS]),]
+              THIS.phoneNumber:[THIS.phoneNumber,]
+           THIS.indexOfCommand:[THIS.indexOfCommand,]
+
+  UNIT:4 $r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String tempMessage> = ""
+      [BEFOR]RS:4
+              THIS.messageFrom:[CONST,]
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messageFrom>:[CONST,]
+              THIS.tempMessage:[THIS.tempMessage,]
+           THIS.messageCommand:[THIS.messageCommand,]
+                 THIS.messages:[CONST,]
+                           $r0:[THIS,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messages>:[CONST,]
+            THIS.WHICH_ACCOUNT:[THIS.WHICH_ACCOUNT,]
+specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>():[<init>([THIS:THIS]),]
+              THIS.phoneNumber:[THIS.phoneNumber,]
+           THIS.indexOfCommand:[THIS.indexOfCommand,]
+
+      [AFTER]RS:4
+              THIS.messageFrom:[CONST,]
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messageFrom>:[CONST,]
+              THIS.tempMessage:[CONST,]
+           THIS.messageCommand:[THIS.messageCommand,]
+                 THIS.messages:[CONST,]
+                           $r0:[THIS,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messages>:[CONST,]
+            THIS.WHICH_ACCOUNT:[THIS.WHICH_ACCOUNT,]
+specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>():[<init>([THIS:THIS]),]
+              THIS.phoneNumber:[THIS.phoneNumber,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String tempMessage>:[CONST,]
+           THIS.indexOfCommand:[THIS.indexOfCommand,]
+
+  UNIT:5 $r1 = newarray (java.lang.String)[2]
+      [BEFOR]RS:5
+              THIS.messageFrom:[CONST,]
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messageFrom>:[CONST,]
+              THIS.tempMessage:[CONST,]
+           THIS.messageCommand:[THIS.messageCommand,]
+                 THIS.messages:[CONST,]
+                           $r0:[THIS,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messages>:[CONST,]
+            THIS.WHICH_ACCOUNT:[THIS.WHICH_ACCOUNT,]
+specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>():[<init>([THIS:THIS]),]
+              THIS.phoneNumber:[THIS.phoneNumber,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String tempMessage>:[CONST,]
+           THIS.indexOfCommand:[THIS.indexOfCommand,]
+
+      [AFTER]RS:5
+              THIS.messageFrom:[CONST,]
+                           $r1:[NewValue1787765431,]
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messageFrom>:[CONST,]
+              THIS.tempMessage:[CONST,]
+           THIS.messageCommand:[THIS.messageCommand,]
+                 THIS.messages:[CONST,]
+                           $r0:[THIS,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messages>:[CONST,]
+            THIS.WHICH_ACCOUNT:[THIS.WHICH_ACCOUNT,]
+specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>():[<init>([THIS:THIS]),]
+              THIS.phoneNumber:[THIS.phoneNumber,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String tempMessage>:[CONST,]
+           THIS.indexOfCommand:[THIS.indexOfCommand,]
+
+  UNIT:6 $r1[0] = ""
+      [BEFOR]RS:6
+              THIS.messageFrom:[CONST,]
+                           $r1:[NewValue1787765431,]
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messageFrom>:[CONST,]
+              THIS.tempMessage:[CONST,]
+           THIS.messageCommand:[THIS.messageCommand,]
+                 THIS.messages:[CONST,]
+                           $r0:[THIS,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messages>:[CONST,]
+            THIS.WHICH_ACCOUNT:[THIS.WHICH_ACCOUNT,]
+specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>():[<init>([THIS:THIS]),]
+              THIS.phoneNumber:[THIS.phoneNumber,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String tempMessage>:[CONST,]
+           THIS.indexOfCommand:[THIS.indexOfCommand,]
+
+      [AFTER]RS:6
+              THIS.messageFrom:[CONST,]
+                           $r1:[NewValue1787765431,]
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messageFrom>:[CONST,]
+                        $r1[0]:[CONST,]
+              THIS.tempMessage:[CONST,]
+           THIS.messageCommand:[THIS.messageCommand,]
+                 THIS.messages:[CONST,]
+                ARRAY-DATA-KEY:[ARR:NewValue1787765431[CONST,NewValue1787765431,],]
+                           $r0:[THIS,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messages>:[CONST,]
+            THIS.WHICH_ACCOUNT:[THIS.WHICH_ACCOUNT,]
+specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>():[<init>([THIS:THIS]),]
+              THIS.phoneNumber:[THIS.phoneNumber,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String tempMessage>:[CONST,]
+           THIS.indexOfCommand:[THIS.indexOfCommand,]
+
+  UNIT:7 $r1[1] = ""
+      [BEFOR]RS:7
+              THIS.messageFrom:[CONST,]
+                           $r1:[NewValue1787765431,]
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messageFrom>:[CONST,]
+                        $r1[0]:[CONST,]
+              THIS.tempMessage:[CONST,]
+           THIS.messageCommand:[THIS.messageCommand,]
+                 THIS.messages:[CONST,]
+                ARRAY-DATA-KEY:[ARR:NewValue1787765431[CONST,NewValue1787765431,],]
+                           $r0:[THIS,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messages>:[CONST,]
+            THIS.WHICH_ACCOUNT:[THIS.WHICH_ACCOUNT,]
+specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>():[<init>([THIS:THIS]),]
+              THIS.phoneNumber:[THIS.phoneNumber,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String tempMessage>:[CONST,]
+           THIS.indexOfCommand:[THIS.indexOfCommand,]
+
+      [AFTER]RS:7
+              THIS.messageFrom:[CONST,]
+                           $r1:[NewValue1787765431,]
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messageFrom>:[CONST,]
+                        $r1[0]:[CONST,]
+                        $r1[1]:[CONST,]
+              THIS.tempMessage:[CONST,]
+           THIS.messageCommand:[THIS.messageCommand,]
+                 THIS.messages:[CONST,]
+                ARRAY-DATA-KEY:[ARR:NewValue1787765431[CONST,NewValue1787765431,],]
+                           $r0:[THIS,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messages>:[CONST,]
+            THIS.WHICH_ACCOUNT:[THIS.WHICH_ACCOUNT,]
+specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>():[<init>([THIS:THIS]),]
+              THIS.phoneNumber:[THIS.phoneNumber,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String tempMessage>:[CONST,]
+           THIS.indexOfCommand:[THIS.indexOfCommand,]
+
+  UNIT:8 $r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String[] phoneNumber> = $r1
+      [BEFOR]RS:8
+              THIS.messageFrom:[CONST,]
+                           $r1:[NewValue1787765431,]
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messageFrom>:[CONST,]
+                        $r1[0]:[CONST,]
+                        $r1[1]:[CONST,]
+              THIS.tempMessage:[CONST,]
+           THIS.messageCommand:[THIS.messageCommand,]
+                 THIS.messages:[CONST,]
+                ARRAY-DATA-KEY:[ARR:NewValue1787765431[CONST,NewValue1787765431,],]
+                           $r0:[THIS,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messages>:[CONST,]
+            THIS.WHICH_ACCOUNT:[THIS.WHICH_ACCOUNT,]
+specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>():[<init>([THIS:THIS]),]
+              THIS.phoneNumber:[THIS.phoneNumber,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String tempMessage>:[CONST,]
+           THIS.indexOfCommand:[THIS.indexOfCommand,]
+
+      [AFTER]RS:8
+              THIS.messageFrom:[CONST,]
+                           $r1:[NewValue1787765431,]
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messageFrom>:[CONST,]
+                        $r1[0]:[CONST,]
+                        $r1[1]:[CONST,]
+              THIS.tempMessage:[CONST,]
+           THIS.messageCommand:[THIS.messageCommand,]
+                 THIS.messages:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String[] phoneNumber>:[NewValue1787765431,]
+                ARRAY-DATA-KEY:[ARR:NewValue1787765431[CONST,NewValue1787765431,],]
+                           $r0:[THIS,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messages>:[CONST,]
+            THIS.WHICH_ACCOUNT:[THIS.WHICH_ACCOUNT,]
+specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>():[<init>([THIS:THIS]),]
+              THIS.phoneNumber:[NewValue1787765431,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String tempMessage>:[CONST,]
+           THIS.indexOfCommand:[THIS.indexOfCommand,]
+
+  UNIT:9 $r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: short indexOfCommand> = 0
+      [BEFOR]RS:9
+              THIS.messageFrom:[CONST,]
+                           $r1:[NewValue1787765431,]
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messageFrom>:[CONST,]
+                        $r1[0]:[CONST,]
+                        $r1[1]:[CONST,]
+              THIS.tempMessage:[CONST,]
+           THIS.messageCommand:[THIS.messageCommand,]
+                 THIS.messages:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String[] phoneNumber>:[NewValue1787765431,]
+                ARRAY-DATA-KEY:[ARR:NewValue1787765431[CONST,NewValue1787765431,],]
+                           $r0:[THIS,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messages>:[CONST,]
+            THIS.WHICH_ACCOUNT:[THIS.WHICH_ACCOUNT,]
+specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>():[<init>([THIS:THIS]),]
+              THIS.phoneNumber:[NewValue1787765431,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String tempMessage>:[CONST,]
+           THIS.indexOfCommand:[THIS.indexOfCommand,]
+
+      [AFTER]RS:9
+              THIS.messageFrom:[CONST,]
+                           $r1:[NewValue1787765431,]
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messageFrom>:[CONST,]
+                        $r1[0]:[CONST,]
+                        $r1[1]:[CONST,]
+              THIS.tempMessage:[CONST,]
+           THIS.messageCommand:[THIS.messageCommand,]
+                 THIS.messages:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String[] phoneNumber>:[NewValue1787765431,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: short indexOfCommand>:[CONST,]
+                ARRAY-DATA-KEY:[ARR:NewValue1787765431[CONST,NewValue1787765431,],]
+                           $r0:[THIS,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messages>:[CONST,]
+            THIS.WHICH_ACCOUNT:[THIS.WHICH_ACCOUNT,]
+specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>():[<init>([THIS:THIS]),]
+              THIS.phoneNumber:[NewValue1787765431,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String tempMessage>:[CONST,]
+           THIS.indexOfCommand:[CONST,]
+
+  UNIT:10 $r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: int messageCommand> = 0
+      [BEFOR]RS:10
+              THIS.messageFrom:[CONST,]
+                           $r1:[NewValue1787765431,]
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messageFrom>:[CONST,]
+                        $r1[0]:[CONST,]
+                        $r1[1]:[CONST,]
+              THIS.tempMessage:[CONST,]
+           THIS.messageCommand:[THIS.messageCommand,]
+                 THIS.messages:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String[] phoneNumber>:[NewValue1787765431,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: short indexOfCommand>:[CONST,]
+                ARRAY-DATA-KEY:[ARR:NewValue1787765431[CONST,NewValue1787765431,],]
+                           $r0:[THIS,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messages>:[CONST,]
+            THIS.WHICH_ACCOUNT:[THIS.WHICH_ACCOUNT,]
+specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>():[<init>([THIS:THIS]),]
+              THIS.phoneNumber:[NewValue1787765431,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String tempMessage>:[CONST,]
+           THIS.indexOfCommand:[CONST,]
+
+      [AFTER]RS:10
+              THIS.messageFrom:[CONST,]
+                           $r1:[NewValue1787765431,]
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messageFrom>:[CONST,]
+                        $r1[0]:[CONST,]
+                        $r1[1]:[CONST,]
+              THIS.tempMessage:[CONST,]
+           THIS.messageCommand:[CONST,]
+                 THIS.messages:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: int messageCommand>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String[] phoneNumber>:[NewValue1787765431,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: short indexOfCommand>:[CONST,]
+                ARRAY-DATA-KEY:[ARR:NewValue1787765431[CONST,NewValue1787765431,],]
+                           $r0:[THIS,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messages>:[CONST,]
+            THIS.WHICH_ACCOUNT:[THIS.WHICH_ACCOUNT,]
+specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>():[<init>([THIS:THIS]),]
+              THIS.phoneNumber:[NewValue1787765431,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String tempMessage>:[CONST,]
+           THIS.indexOfCommand:[CONST,]
+
+  UNIT:11 $r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: boolean WHICH_ACCOUNT> = 1
+      [BEFOR]RS:11
+              THIS.messageFrom:[CONST,]
+                           $r1:[NewValue1787765431,]
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messageFrom>:[CONST,]
+                        $r1[0]:[CONST,]
+                        $r1[1]:[CONST,]
+              THIS.tempMessage:[CONST,]
+           THIS.messageCommand:[CONST,]
+                 THIS.messages:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: int messageCommand>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String[] phoneNumber>:[NewValue1787765431,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: short indexOfCommand>:[CONST,]
+                ARRAY-DATA-KEY:[ARR:NewValue1787765431[CONST,NewValue1787765431,],]
+                           $r0:[THIS,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messages>:[CONST,]
+            THIS.WHICH_ACCOUNT:[THIS.WHICH_ACCOUNT,]
+specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>():[<init>([THIS:THIS]),]
+              THIS.phoneNumber:[NewValue1787765431,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String tempMessage>:[CONST,]
+           THIS.indexOfCommand:[CONST,]
+
+      [AFTER]RS:11
+              THIS.messageFrom:[CONST,]
+                           $r1:[NewValue1787765431,]
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messageFrom>:[CONST,]
+                        $r1[0]:[CONST,]
+                        $r1[1]:[CONST,]
+              THIS.tempMessage:[CONST,]
+           THIS.messageCommand:[CONST,]
+                 THIS.messages:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: int messageCommand>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String[] phoneNumber>:[NewValue1787765431,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: short indexOfCommand>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: boolean WHICH_ACCOUNT>:[CONST,]
+                ARRAY-DATA-KEY:[ARR:NewValue1787765431[CONST,NewValue1787765431,],]
+                           $r0:[THIS,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messages>:[CONST,]
+            THIS.WHICH_ACCOUNT:[CONST,]
+specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>():[<init>([THIS:THIS]),]
+              THIS.phoneNumber:[NewValue1787765431,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String tempMessage>:[CONST,]
+           THIS.indexOfCommand:[CONST,]
+
+  UNIT:12 return
+      [BEFOR]RS:12
+              THIS.messageFrom:[CONST,]
+                           $r1:[NewValue1787765431,]
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messageFrom>:[CONST,]
+                        $r1[0]:[CONST,]
+                        $r1[1]:[CONST,]
+              THIS.tempMessage:[CONST,]
+           THIS.messageCommand:[CONST,]
+                 THIS.messages:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: int messageCommand>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String[] phoneNumber>:[NewValue1787765431,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: short indexOfCommand>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: boolean WHICH_ACCOUNT>:[CONST,]
+                ARRAY-DATA-KEY:[ARR:NewValue1787765431[CONST,NewValue1787765431,],]
+                           $r0:[THIS,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messages>:[CONST,]
+            THIS.WHICH_ACCOUNT:[CONST,]
+specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>():[<init>([THIS:THIS]),]
+              THIS.phoneNumber:[NewValue1787765431,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String tempMessage>:[CONST,]
+           THIS.indexOfCommand:[CONST,]
+
+      [AFTER]RS:12
+              THIS.messageFrom:[CONST,]
+                           $r1:[NewValue1787765431,]
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messageFrom>:[CONST,]
+                        $r1[0]:[CONST,]
+                        $r1[1]:[CONST,]
+              THIS.tempMessage:[CONST,]
+           THIS.messageCommand:[CONST,]
+                 THIS.messages:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: int messageCommand>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String[] phoneNumber>:[NewValue1787765431,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: short indexOfCommand>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: boolean WHICH_ACCOUNT>:[CONST,]
+                ARRAY-DATA-KEY:[ARR:NewValue1787765431[CONST,NewValue1787765431,],]
+                           $r0:[THIS,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String messages>:[CONST,]
+            THIS.WHICH_ACCOUNT:[CONST,]
+specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>():[<init>([THIS:THIS]),]
+              THIS.phoneNumber:[NewValue1787765431,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.CommandReceiver: java.lang.String tempMessage>:[CONST,]
+           THIS.indexOfCommand:[CONST,]
+
+@@End <init>======================

@@ -1,0 +1,1029 @@
+@@Start analyzing:changeGuestPreference
+READ: THIS.swGuest
+READ: THIS.btGuestSettings
+READ: THIS
+READ: THIS.btChangeGuestPassword
+  --Done analyzing:changeGuestPreference     public void changeGuestPreference()
+    {
+        com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity $r0;
+        android.content.SharedPreferences $r1;
+        android.content.SharedPreferences$Editor $r2;
+        android.widget.CompoundButton $r3;
+        boolean $z0;
+        android.widget.Button $r4;
+
+        $r0 := @this: com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity;
+
+        $r1 = staticinvoke <android.preference.PreferenceManager: android.content.SharedPreferences getDefaultSharedPreferences(android.content.Context)>($r0);
+
+        $r2 = interfaceinvoke $r1.<android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()>();
+
+        $r3 = $r0.<com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity: android.widget.CompoundButton swGuest>;
+
+        $z0 = virtualinvoke $r3.<android.widget.CompoundButton: boolean isChecked()>();
+
+        if $z0 == 0 goto label1;
+
+        interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 1);
+
+        interfaceinvoke $r2.<android.content.SharedPreferences$Editor: boolean commit()>();
+
+        $r4 = $r0.<com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity: android.widget.Button btGuestSettings>;
+
+        virtualinvoke $r4.<android.widget.Button: void setEnabled(boolean)>(1);
+
+        $r4 = $r0.<com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity: android.widget.Button btChangeGuestPassword>;
+
+        virtualinvoke $r4.<android.widget.Button: void setEnabled(boolean)>(1);
+
+        return;
+
+     label1:
+        $r3 = $r0.<com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity: android.widget.CompoundButton swGuest>;
+
+        $z0 = virtualinvoke $r3.<android.widget.CompoundButton: boolean isChecked()>();
+
+        if $z0 != 0 goto label2;
+
+        interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 0);
+
+        interfaceinvoke $r2.<android.content.SharedPreferences$Editor: boolean commit()>();
+
+        $r4 = $r0.<com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity: android.widget.Button btGuestSettings>;
+
+        virtualinvoke $r4.<android.widget.Button: void setEnabled(boolean)>(0);
+
+        $r4 = $r0.<com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity: android.widget.Button btChangeGuestPassword>;
+
+        virtualinvoke $r4.<android.widget.Button: void setEnabled(boolean)>(0);
+
+     label2:
+        return;
+    }
+
+  --Method Body:    public void changeGuestPreference()
+    {
+        com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity $r0;
+        android.content.SharedPreferences $r1;
+        android.content.SharedPreferences$Editor $r2;
+        android.widget.CompoundButton $r3;
+        boolean $z0;
+        android.widget.Button $r4;
+
+        $r0 := @this: com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity;
+
+        $r1 = staticinvoke <android.preference.PreferenceManager: android.content.SharedPreferences getDefaultSharedPreferences(android.content.Context)>($r0);
+
+        $r2 = interfaceinvoke $r1.<android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()>();
+
+        $r3 = $r0.<com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity: android.widget.CompoundButton swGuest>;
+
+        $z0 = virtualinvoke $r3.<android.widget.CompoundButton: boolean isChecked()>();
+
+        if $z0 == 0 goto label1;
+
+        interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 1);
+
+        interfaceinvoke $r2.<android.content.SharedPreferences$Editor: boolean commit()>();
+
+        $r4 = $r0.<com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity: android.widget.Button btGuestSettings>;
+
+        virtualinvoke $r4.<android.widget.Button: void setEnabled(boolean)>(1);
+
+        $r4 = $r0.<com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity: android.widget.Button btChangeGuestPassword>;
+
+        virtualinvoke $r4.<android.widget.Button: void setEnabled(boolean)>(1);
+
+        return;
+
+     label1:
+        $r3 = $r0.<com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity: android.widget.CompoundButton swGuest>;
+
+        $z0 = virtualinvoke $r3.<android.widget.CompoundButton: boolean isChecked()>();
+
+        if $z0 != 0 goto label2;
+
+        interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 0);
+
+        interfaceinvoke $r2.<android.content.SharedPreferences$Editor: boolean commit()>();
+
+        $r4 = $r0.<com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity: android.widget.Button btGuestSettings>;
+
+        virtualinvoke $r4.<android.widget.Button: void setEnabled(boolean)>(0);
+
+        $r4 = $r0.<com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity: android.widget.Button btChangeGuestPassword>;
+
+        virtualinvoke $r4.<android.widget.Button: void setEnabled(boolean)>(0);
+
+     label2:
+        return;
+    }
+
+  --Start displaying:changeGuestPreference 
+  UNIT:0 $r0 := @this: com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity
+      [BEFOR]RS:0
+                  THIS.swGuest:[THIS.swGuest,]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+
+      [AFTER]RS:0
+                  THIS.swGuest:[THIS.swGuest,]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+
+  UNIT:1 $r1 = staticinvoke <android.preference.PreferenceManager: android.content.SharedPreferences getDefaultSharedPreferences(android.content.Context)>($r0)
+      [BEFOR]RS:1
+                  THIS.swGuest:[THIS.swGuest,]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+
+      [AFTER]RS:1
+                  THIS.swGuest:[THIS.swGuest,]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+
+  UNIT:2 $r2 = interfaceinvoke $r1.<android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()>()
+      [BEFOR]RS:2
+                  THIS.swGuest:[THIS.swGuest,]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+
+      [AFTER]RS:2
+                  THIS.swGuest:[THIS.swGuest,]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+                           $r2:[edit([THIS:THIS]),]
+
+  UNIT:3 $r3 = $r0.<com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity: android.widget.CompoundButton swGuest>
+      [BEFOR]RS:3
+                  THIS.swGuest:[THIS.swGuest,]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+                           $r2:[edit([THIS:THIS]),]
+
+      [AFTER]RS:3
+                  THIS.swGuest:[THIS.swGuest,]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+                           $r2:[edit([THIS:THIS]),]
+
+  UNIT:4 $z0 = virtualinvoke $r3.<android.widget.CompoundButton: boolean isChecked()>()
+      [BEFOR]RS:4
+                  THIS.swGuest:[THIS.swGuest,]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+                           $r2:[edit([THIS:THIS]),]
+
+      [AFTER]RS:4
+                  THIS.swGuest:[THIS.swGuest,]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+                           $r2:[edit([THIS:THIS]),]
+
+  UNIT:5 if $z0 == 0 goto $r3 = $r0.<com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity: android.widget.CompoundButton swGuest>
+      [BEFOR]RS:5
+                  THIS.swGuest:[THIS.swGuest,]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+                           $r2:[edit([THIS:THIS]),]
+
+      [AFTER]RS:5
+                  THIS.swGuest:[THIS.swGuest,]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+                           $r2:[edit([THIS:THIS]),]
+
+  UNIT:6 interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 1)
+      [BEFOR]RS:6
+                  THIS.swGuest:[THIS.swGuest,]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+                           $r2:[edit([THIS:THIS]),]
+
+      [AFTER]RS:6
+                  THIS.swGuest:[THIS.swGuest,]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 1):[putBoolean([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+                           $r2:[edit([THIS:THIS]),]
+
+  UNIT:7 interfaceinvoke $r2.<android.content.SharedPreferences$Editor: boolean commit()>()
+      [BEFOR]RS:7
+                  THIS.swGuest:[THIS.swGuest,]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 1):[putBoolean([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+                           $r2:[edit([THIS:THIS]),]
+
+      [AFTER]RS:7
+                  THIS.swGuest:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: boolean commit()>():[commit([THIS:THIS]),]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 1):[putBoolean([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+                           $r2:[edit([THIS:THIS]),]
+
+  UNIT:8 $r4 = $r0.<com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity: android.widget.Button btGuestSettings>
+      [BEFOR]RS:8
+                  THIS.swGuest:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: boolean commit()>():[commit([THIS:THIS]),]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 1):[putBoolean([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+                           $r2:[edit([THIS:THIS]),]
+
+      [AFTER]RS:8
+                  THIS.swGuest:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: boolean commit()>():[commit([THIS:THIS]),]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 1):[putBoolean([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+                           $r4:[THIS.btGuestSettings,]
+                           $r2:[edit([THIS:THIS]),]
+
+  UNIT:9 virtualinvoke $r4.<android.widget.Button: void setEnabled(boolean)>(1)
+      [BEFOR]RS:9
+                  THIS.swGuest:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: boolean commit()>():[commit([THIS:THIS]),]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 1):[putBoolean([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+                           $r4:[THIS.btGuestSettings,]
+                           $r2:[edit([THIS:THIS]),]
+
+      [AFTER]RS:9
+                  THIS.swGuest:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: boolean commit()>():[commit([THIS:THIS]),]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 1):[putBoolean([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+virtualinvoke $r4.<android.widget.Button: void setEnabled(boolean)>(1):[setEnabled([THIS:THIS.btGuestSettings][@0:CONST]),]
+                           $r4:[THIS.btGuestSettings,]
+                           $r2:[edit([THIS:THIS]),]
+
+  UNIT:10 $r4 = $r0.<com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity: android.widget.Button btChangeGuestPassword>
+      [BEFOR]RS:10
+                  THIS.swGuest:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: boolean commit()>():[commit([THIS:THIS]),]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 1):[putBoolean([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+virtualinvoke $r4.<android.widget.Button: void setEnabled(boolean)>(1):[setEnabled([THIS:THIS.btGuestSettings][@0:CONST]),]
+                           $r4:[THIS.btGuestSettings,]
+                           $r2:[edit([THIS:THIS]),]
+
+      [AFTER]RS:10
+                  THIS.swGuest:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: boolean commit()>():[commit([THIS:THIS]),]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 1):[putBoolean([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+virtualinvoke $r4.<android.widget.Button: void setEnabled(boolean)>(1):[setEnabled([THIS:THIS.btGuestSettings][@0:CONST]),]
+                           $r4:[THIS.btChangeGuestPassword,]
+                           $r2:[edit([THIS:THIS]),]
+
+  UNIT:11 virtualinvoke $r4.<android.widget.Button: void setEnabled(boolean)>(1)
+      [BEFOR]RS:11
+                  THIS.swGuest:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: boolean commit()>():[commit([THIS:THIS]),]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 1):[putBoolean([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+virtualinvoke $r4.<android.widget.Button: void setEnabled(boolean)>(1):[setEnabled([THIS:THIS.btGuestSettings][@0:CONST]),]
+                           $r4:[THIS.btChangeGuestPassword,]
+                           $r2:[edit([THIS:THIS]),]
+
+      [AFTER]RS:11
+                  THIS.swGuest:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: boolean commit()>():[commit([THIS:THIS]),]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 1):[putBoolean([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+virtualinvoke $r4.<android.widget.Button: void setEnabled(boolean)>(1):[setEnabled([THIS:THIS.btChangeGuestPassword][@0:CONST]),]
+                           $r4:[THIS.btChangeGuestPassword,]
+                           $r2:[edit([THIS:THIS]),]
+
+  UNIT:12 return
+      [BEFOR]RS:12
+                  THIS.swGuest:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: boolean commit()>():[commit([THIS:THIS]),]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 1):[putBoolean([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+virtualinvoke $r4.<android.widget.Button: void setEnabled(boolean)>(1):[setEnabled([THIS:THIS.btChangeGuestPassword][@0:CONST]),]
+                           $r4:[THIS.btChangeGuestPassword,]
+                           $r2:[edit([THIS:THIS]),]
+
+      [AFTER]RS:12
+                  THIS.swGuest:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: boolean commit()>():[commit([THIS:THIS]),]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 1):[putBoolean([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+virtualinvoke $r4.<android.widget.Button: void setEnabled(boolean)>(1):[setEnabled([THIS:THIS.btChangeGuestPassword][@0:CONST]),]
+                           $r4:[THIS.btChangeGuestPassword,]
+                           $r2:[edit([THIS:THIS]),]
+
+  UNIT:13 $r3 = $r0.<com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity: android.widget.CompoundButton swGuest>
+      [BEFOR]RS:13
+                  THIS.swGuest:[THIS.swGuest,]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+                           $r2:[edit([THIS:THIS]),]
+
+      [AFTER]RS:13
+                  THIS.swGuest:[THIS.swGuest,]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+                           $r2:[edit([THIS:THIS]),]
+
+  UNIT:14 $z0 = virtualinvoke $r3.<android.widget.CompoundButton: boolean isChecked()>()
+      [BEFOR]RS:14
+                  THIS.swGuest:[THIS.swGuest,]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+                           $r2:[edit([THIS:THIS]),]
+
+      [AFTER]RS:14
+                  THIS.swGuest:[THIS.swGuest,]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+                           $r2:[edit([THIS:THIS]),]
+
+  UNIT:15 if $z0 != 0 goto return
+      [BEFOR]RS:15
+                  THIS.swGuest:[THIS.swGuest,]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+                           $r2:[edit([THIS:THIS]),]
+
+      [AFTER]RS:15
+                  THIS.swGuest:[THIS.swGuest,]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+                           $r2:[edit([THIS:THIS]),]
+
+  UNIT:16 interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 0)
+      [BEFOR]RS:16
+                  THIS.swGuest:[THIS.swGuest,]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+                           $r2:[edit([THIS:THIS]),]
+
+      [AFTER]RS:16
+                  THIS.swGuest:[THIS.swGuest,]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 0):[putBoolean([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+                           $r2:[edit([THIS:THIS]),]
+
+  UNIT:17 interfaceinvoke $r2.<android.content.SharedPreferences$Editor: boolean commit()>()
+      [BEFOR]RS:17
+                  THIS.swGuest:[THIS.swGuest,]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 0):[putBoolean([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+                           $r2:[edit([THIS:THIS]),]
+
+      [AFTER]RS:17
+                  THIS.swGuest:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: boolean commit()>():[commit([THIS:THIS]),]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 0):[putBoolean([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+                           $r2:[edit([THIS:THIS]),]
+
+  UNIT:18 $r4 = $r0.<com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity: android.widget.Button btGuestSettings>
+      [BEFOR]RS:18
+                  THIS.swGuest:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: boolean commit()>():[commit([THIS:THIS]),]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 0):[putBoolean([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+                           $r2:[edit([THIS:THIS]),]
+
+      [AFTER]RS:18
+                  THIS.swGuest:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: boolean commit()>():[commit([THIS:THIS]),]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 0):[putBoolean([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+                           $r4:[THIS.btGuestSettings,]
+                           $r2:[edit([THIS:THIS]),]
+
+  UNIT:19 virtualinvoke $r4.<android.widget.Button: void setEnabled(boolean)>(0)
+      [BEFOR]RS:19
+                  THIS.swGuest:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: boolean commit()>():[commit([THIS:THIS]),]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 0):[putBoolean([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+                           $r4:[THIS.btGuestSettings,]
+                           $r2:[edit([THIS:THIS]),]
+
+      [AFTER]RS:19
+                  THIS.swGuest:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: boolean commit()>():[commit([THIS:THIS]),]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 0):[putBoolean([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+virtualinvoke $r4.<android.widget.Button: void setEnabled(boolean)>(0):[setEnabled([THIS:THIS.btGuestSettings][@0:CONST]),]
+                           $r4:[THIS.btGuestSettings,]
+                           $r2:[edit([THIS:THIS]),]
+
+  UNIT:20 $r4 = $r0.<com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity: android.widget.Button btChangeGuestPassword>
+      [BEFOR]RS:20
+                  THIS.swGuest:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: boolean commit()>():[commit([THIS:THIS]),]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 0):[putBoolean([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+virtualinvoke $r4.<android.widget.Button: void setEnabled(boolean)>(0):[setEnabled([THIS:THIS.btGuestSettings][@0:CONST]),]
+                           $r4:[THIS.btGuestSettings,]
+                           $r2:[edit([THIS:THIS]),]
+
+      [AFTER]RS:20
+                  THIS.swGuest:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: boolean commit()>():[commit([THIS:THIS]),]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 0):[putBoolean([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+virtualinvoke $r4.<android.widget.Button: void setEnabled(boolean)>(0):[setEnabled([THIS:THIS.btGuestSettings][@0:CONST]),]
+                           $r4:[THIS.btChangeGuestPassword,]
+                           $r2:[edit([THIS:THIS]),]
+
+  UNIT:21 virtualinvoke $r4.<android.widget.Button: void setEnabled(boolean)>(0)
+      [BEFOR]RS:21
+                  THIS.swGuest:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: boolean commit()>():[commit([THIS:THIS]),]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 0):[putBoolean([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+virtualinvoke $r4.<android.widget.Button: void setEnabled(boolean)>(0):[setEnabled([THIS:THIS.btGuestSettings][@0:CONST]),]
+                           $r4:[THIS.btChangeGuestPassword,]
+                           $r2:[edit([THIS:THIS]),]
+
+      [AFTER]RS:21
+                  THIS.swGuest:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: boolean commit()>():[commit([THIS:THIS]),]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 0):[putBoolean([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+virtualinvoke $r4.<android.widget.Button: void setEnabled(boolean)>(0):[setEnabled([THIS:THIS.btChangeGuestPassword][@0:CONST]),]
+                           $r4:[THIS.btChangeGuestPassword,]
+                           $r2:[edit([THIS:THIS]),]
+
+  UNIT:22 return
+      [BEFOR]RS:22
+                  THIS.swGuest:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: boolean commit()>():[commit([THIS:THIS]),]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 0):[putBoolean([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+virtualinvoke $r4.<android.widget.Button: void setEnabled(boolean)>(0):[setEnabled([THIS:THIS.btChangeGuestPassword][@0:CONST]),]
+                           $r4:[THIS.btChangeGuestPassword,]
+                           $r2:[edit([THIS:THIS]),]
+
+      [AFTER]RS:22
+                  THIS.swGuest:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: boolean commit()>():[commit([THIS:THIS]),]
+                           $r1:[getDefaultSharedPreferences([THIS:null][@0:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+                           $r3:[THIS.swGuest,]
+interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>("GUEST_ACCESS", 0):[putBoolean([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $z0:[isChecked([THIS:THIS.swGuest]),]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+virtualinvoke $r4.<android.widget.Button: void setEnabled(boolean)>(0):[setEnabled([THIS:THIS.btChangeGuestPassword][@0:CONST]),]
+                           $r4:[THIS.btChangeGuestPassword,]
+                           $r2:[edit([THIS:THIS]),]
+
+@@End changeGuestPreference======================

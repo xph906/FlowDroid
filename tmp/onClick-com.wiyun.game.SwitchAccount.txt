@@ -1,0 +1,1216 @@
+@@Start analyzing:onClick
+READ: Param@0
+READ: THIS.l
+READ: THIS
+READ: THIS.m
+  --Done analyzing:onClick     public void onClick(android.view.View)
+    {
+        com.wiyun.game.SwitchAccount $r0;
+        android.view.View $r1;
+        int $i0, $i1;
+        android.content.Intent $r2;
+        boolean $z0;
+
+        $r0 := @this: com.wiyun.game.SwitchAccount;
+
+        $r1 := @parameter0: android.view.View;
+
+        $i0 = virtualinvoke $r1.<android.view.View: int getId()>();
+
+        $i1 = staticinvoke <com.wiyun.game.eh: int d(java.lang.String)>("wy_b_use_bound_account");
+
+        if $i0 != $i1 goto label1;
+
+        $r2 = new android.content.Intent;
+
+        specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/UseAnotherAccount");
+
+        virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("from_login", 0);
+
+        $z0 = $r0.<com.wiyun.game.SwitchAccount: boolean m>;
+
+        virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("prompt_binding", $z0);
+
+        virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void startActivity(android.content.Intent)>($r2);
+
+        virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void finish()>();
+
+        return;
+
+     label1:
+        $i1 = staticinvoke <com.wiyun.game.eh: int d(java.lang.String)>("wy_b_cancel");
+
+        if $i0 != $i1 goto label2;
+
+        staticinvoke <com.wiyun.game.dh: void A()>();
+
+        virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void finish()>();
+
+        return;
+
+     label2:
+        $i1 = staticinvoke <com.wiyun.game.eh: int d(java.lang.String)>("wy_b_new_account");
+
+        if $i0 != $i1 goto label3;
+
+        $r2 = new android.content.Intent;
+
+        specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/Login");
+
+        $z0 = $r0.<com.wiyun.game.SwitchAccount: boolean m>;
+
+        virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("prompt_binding", $z0);
+
+        $z0 = $r0.<com.wiyun.game.SwitchAccount: boolean l>;
+
+        virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("no_guest", $z0);
+
+        virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void startActivity(android.content.Intent)>($r2);
+
+        virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void finish()>();
+
+     label3:
+        return;
+    }
+
+  --Method Body:    public void onClick(android.view.View)
+    {
+        com.wiyun.game.SwitchAccount $r0;
+        android.view.View $r1;
+        int $i0, $i1;
+        android.content.Intent $r2;
+        boolean $z0;
+
+        $r0 := @this: com.wiyun.game.SwitchAccount;
+
+        $r1 := @parameter0: android.view.View;
+
+        $i0 = virtualinvoke $r1.<android.view.View: int getId()>();
+
+        $i1 = staticinvoke <com.wiyun.game.eh: int d(java.lang.String)>("wy_b_use_bound_account");
+
+        if $i0 != $i1 goto label1;
+
+        $r2 = new android.content.Intent;
+
+        specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/UseAnotherAccount");
+
+        virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("from_login", 0);
+
+        $z0 = $r0.<com.wiyun.game.SwitchAccount: boolean m>;
+
+        virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("prompt_binding", $z0);
+
+        virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void startActivity(android.content.Intent)>($r2);
+
+        virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void finish()>();
+
+        return;
+
+     label1:
+        $i1 = staticinvoke <com.wiyun.game.eh: int d(java.lang.String)>("wy_b_cancel");
+
+        if $i0 != $i1 goto label2;
+
+        staticinvoke <com.wiyun.game.dh: void A()>();
+
+        virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void finish()>();
+
+        return;
+
+     label2:
+        $i1 = staticinvoke <com.wiyun.game.eh: int d(java.lang.String)>("wy_b_new_account");
+
+        if $i0 != $i1 goto label3;
+
+        $r2 = new android.content.Intent;
+
+        specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/Login");
+
+        $z0 = $r0.<com.wiyun.game.SwitchAccount: boolean m>;
+
+        virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("prompt_binding", $z0);
+
+        $z0 = $r0.<com.wiyun.game.SwitchAccount: boolean l>;
+
+        virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("no_guest", $z0);
+
+        virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void startActivity(android.content.Intent)>($r2);
+
+        virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void finish()>();
+
+     label3:
+        return;
+    }
+
+  --Start displaying:onClick 
+  UNIT:0 $r0 := @this: com.wiyun.game.SwitchAccount
+      [BEFOR]RS:0
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+
+      [AFTER]RS:0
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+
+  UNIT:1 $r1 := @parameter0: android.view.View
+      [BEFOR]RS:1
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:1
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:2 $i0 = virtualinvoke $r1.<android.view.View: int getId()>()
+      [BEFOR]RS:2
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:2
+                           $i0:[getId([THIS:Param@0]),]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:3 $i1 = staticinvoke <com.wiyun.game.eh: int d(java.lang.String)>("wy_b_use_bound_account")
+      [BEFOR]RS:3
+                           $i0:[getId([THIS:Param@0]),]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:3
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:4 if $i0 != $i1 goto $i1 = staticinvoke <com.wiyun.game.eh: int d(java.lang.String)>("wy_b_cancel")
+      [BEFOR]RS:4
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:4
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:5 $r2 = new android.content.Intent
+      [BEFOR]RS:5
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:5
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue984930389,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:6 specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/UseAnotherAccount")
+      [BEFOR]RS:6
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue984930389,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:6
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue984930389,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/UseAnotherAccount"):[<init>([THIS:NewValue984930389][@0:THIS][@1:CONST]),]
+
+  UNIT:7 virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("from_login", 0)
+      [BEFOR]RS:7
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue984930389,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/UseAnotherAccount"):[<init>([THIS:NewValue984930389][@0:THIS][@1:CONST]),]
+
+      [AFTER]RS:7
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue984930389,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("from_login", 0):[putExtra([THIS:NewValue984930389][@0:CONST][@1:CONST]),]
+                           $r1:[Param@0,]
+specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/UseAnotherAccount"):[<init>([THIS:NewValue984930389][@0:THIS][@1:CONST]),]
+
+  UNIT:8 $z0 = $r0.<com.wiyun.game.SwitchAccount: boolean m>
+      [BEFOR]RS:8
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue984930389,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("from_login", 0):[putExtra([THIS:NewValue984930389][@0:CONST][@1:CONST]),]
+                           $r1:[Param@0,]
+specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/UseAnotherAccount"):[<init>([THIS:NewValue984930389][@0:THIS][@1:CONST]),]
+
+      [AFTER]RS:8
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue984930389,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("from_login", 0):[putExtra([THIS:NewValue984930389][@0:CONST][@1:CONST]),]
+                           $z0:[THIS.m,]
+                           $r1:[Param@0,]
+specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/UseAnotherAccount"):[<init>([THIS:NewValue984930389][@0:THIS][@1:CONST]),]
+
+  UNIT:9 virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("prompt_binding", $z0)
+      [BEFOR]RS:9
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue984930389,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("from_login", 0):[putExtra([THIS:NewValue984930389][@0:CONST][@1:CONST]),]
+                           $z0:[THIS.m,]
+                           $r1:[Param@0,]
+specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/UseAnotherAccount"):[<init>([THIS:NewValue984930389][@0:THIS][@1:CONST]),]
+
+      [AFTER]RS:9
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue984930389,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("prompt_binding", $z0):[putExtra([THIS:NewValue984930389][@0:CONST][@1:THIS.m]),]
+                           $z0:[THIS.m,]
+                           $r1:[Param@0,]
+specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/UseAnotherAccount"):[<init>([THIS:NewValue984930389][@0:THIS][@1:CONST]),]
+
+  UNIT:10 virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void startActivity(android.content.Intent)>($r2)
+      [BEFOR]RS:10
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue984930389,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("prompt_binding", $z0):[putExtra([THIS:NewValue984930389][@0:CONST][@1:THIS.m]),]
+                           $z0:[THIS.m,]
+                           $r1:[Param@0,]
+specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/UseAnotherAccount"):[<init>([THIS:NewValue984930389][@0:THIS][@1:CONST]),]
+
+      [AFTER]RS:10
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue984930389,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void startActivity(android.content.Intent)>($r2):[startActivity([THIS:THIS][@0:NewValue984930389]),]
+virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("prompt_binding", $z0):[putExtra([THIS:NewValue984930389][@0:CONST][@1:THIS.m]),]
+                           $z0:[THIS.m,]
+                           $r1:[Param@0,]
+specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/UseAnotherAccount"):[<init>([THIS:NewValue984930389][@0:THIS][@1:CONST]),]
+
+  UNIT:11 virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void finish()>()
+      [BEFOR]RS:11
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue984930389,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void startActivity(android.content.Intent)>($r2):[startActivity([THIS:THIS][@0:NewValue984930389]),]
+virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("prompt_binding", $z0):[putExtra([THIS:NewValue984930389][@0:CONST][@1:THIS.m]),]
+                           $z0:[THIS.m,]
+                           $r1:[Param@0,]
+specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/UseAnotherAccount"):[<init>([THIS:NewValue984930389][@0:THIS][@1:CONST]),]
+
+      [AFTER]RS:11
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue984930389,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void startActivity(android.content.Intent)>($r2):[startActivity([THIS:THIS][@0:NewValue984930389]),]
+virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void finish()>():[finish([THIS:THIS]),]
+virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("prompt_binding", $z0):[putExtra([THIS:NewValue984930389][@0:CONST][@1:THIS.m]),]
+                           $z0:[THIS.m,]
+                           $r1:[Param@0,]
+specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/UseAnotherAccount"):[<init>([THIS:NewValue984930389][@0:THIS][@1:CONST]),]
+
+  UNIT:12 return
+      [BEFOR]RS:12
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue984930389,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void startActivity(android.content.Intent)>($r2):[startActivity([THIS:THIS][@0:NewValue984930389]),]
+virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void finish()>():[finish([THIS:THIS]),]
+virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("prompt_binding", $z0):[putExtra([THIS:NewValue984930389][@0:CONST][@1:THIS.m]),]
+                           $z0:[THIS.m,]
+                           $r1:[Param@0,]
+specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/UseAnotherAccount"):[<init>([THIS:NewValue984930389][@0:THIS][@1:CONST]),]
+
+      [AFTER]RS:12
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue984930389,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void startActivity(android.content.Intent)>($r2):[startActivity([THIS:THIS][@0:NewValue984930389]),]
+virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void finish()>():[finish([THIS:THIS]),]
+virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("prompt_binding", $z0):[putExtra([THIS:NewValue984930389][@0:CONST][@1:THIS.m]),]
+                           $z0:[THIS.m,]
+                           $r1:[Param@0,]
+specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/UseAnotherAccount"):[<init>([THIS:NewValue984930389][@0:THIS][@1:CONST]),]
+
+  UNIT:13 $i1 = staticinvoke <com.wiyun.game.eh: int d(java.lang.String)>("wy_b_cancel")
+      [BEFOR]RS:13
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:13
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:14 if $i0 != $i1 goto $i1 = staticinvoke <com.wiyun.game.eh: int d(java.lang.String)>("wy_b_new_account")
+      [BEFOR]RS:14
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:14
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:15 staticinvoke <com.wiyun.game.dh: void A()>()
+      [BEFOR]RS:15
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:15
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+staticinvoke <com.wiyun.game.dh: void A()>():[A(),]
+                           $r1:[Param@0,]
+
+  UNIT:16 virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void finish()>()
+      [BEFOR]RS:16
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+staticinvoke <com.wiyun.game.dh: void A()>():[A(),]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:16
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void finish()>():[finish([THIS:THIS]),]
+staticinvoke <com.wiyun.game.dh: void A()>():[A(),]
+                           $r1:[Param@0,]
+
+  UNIT:17 return
+      [BEFOR]RS:17
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void finish()>():[finish([THIS:THIS]),]
+staticinvoke <com.wiyun.game.dh: void A()>():[A(),]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:17
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void finish()>():[finish([THIS:THIS]),]
+staticinvoke <com.wiyun.game.dh: void A()>():[A(),]
+                           $r1:[Param@0,]
+
+  UNIT:18 $i1 = staticinvoke <com.wiyun.game.eh: int d(java.lang.String)>("wy_b_new_account")
+      [BEFOR]RS:18
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:18
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:19 if $i0 != $i1 goto return
+      [BEFOR]RS:19
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:19
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:20 $r2 = new android.content.Intent
+      [BEFOR]RS:20
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:20
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue1332224434,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:21 specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/Login")
+      [BEFOR]RS:21
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue1332224434,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:21
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue1332224434,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/Login"):[<init>([THIS:NewValue1332224434][@0:THIS][@1:CONST]),]
+
+  UNIT:22 $z0 = $r0.<com.wiyun.game.SwitchAccount: boolean m>
+      [BEFOR]RS:22
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue1332224434,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/Login"):[<init>([THIS:NewValue1332224434][@0:THIS][@1:CONST]),]
+
+      [AFTER]RS:22
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue1332224434,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+                           $z0:[THIS.m,]
+                           $r1:[Param@0,]
+specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/Login"):[<init>([THIS:NewValue1332224434][@0:THIS][@1:CONST]),]
+
+  UNIT:23 virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("prompt_binding", $z0)
+      [BEFOR]RS:23
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue1332224434,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+                           $z0:[THIS.m,]
+                           $r1:[Param@0,]
+specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/Login"):[<init>([THIS:NewValue1332224434][@0:THIS][@1:CONST]),]
+
+      [AFTER]RS:23
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue1332224434,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("prompt_binding", $z0):[putExtra([THIS:NewValue1332224434][@0:CONST][@1:THIS.m]),]
+                           $z0:[THIS.m,]
+                           $r1:[Param@0,]
+specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/Login"):[<init>([THIS:NewValue1332224434][@0:THIS][@1:CONST]),]
+
+  UNIT:24 $z0 = $r0.<com.wiyun.game.SwitchAccount: boolean l>
+      [BEFOR]RS:24
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue1332224434,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("prompt_binding", $z0):[putExtra([THIS:NewValue1332224434][@0:CONST][@1:THIS.m]),]
+                           $z0:[THIS.m,]
+                           $r1:[Param@0,]
+specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/Login"):[<init>([THIS:NewValue1332224434][@0:THIS][@1:CONST]),]
+
+      [AFTER]RS:24
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue1332224434,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("prompt_binding", $z0):[putExtra([THIS:NewValue1332224434][@0:CONST][@1:THIS.m]),]
+                           $z0:[THIS.l,]
+                           $r1:[Param@0,]
+specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/Login"):[<init>([THIS:NewValue1332224434][@0:THIS][@1:CONST]),]
+
+  UNIT:25 virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("no_guest", $z0)
+      [BEFOR]RS:25
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue1332224434,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("prompt_binding", $z0):[putExtra([THIS:NewValue1332224434][@0:CONST][@1:THIS.m]),]
+                           $z0:[THIS.l,]
+                           $r1:[Param@0,]
+specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/Login"):[<init>([THIS:NewValue1332224434][@0:THIS][@1:CONST]),]
+
+      [AFTER]RS:25
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue1332224434,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("no_guest", $z0):[putExtra([THIS:NewValue1332224434][@0:CONST][@1:THIS.l]),]
+                           $z0:[THIS.l,]
+                           $r1:[Param@0,]
+specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/Login"):[<init>([THIS:NewValue1332224434][@0:THIS][@1:CONST]),]
+
+  UNIT:26 virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void startActivity(android.content.Intent)>($r2)
+      [BEFOR]RS:26
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue1332224434,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("no_guest", $z0):[putExtra([THIS:NewValue1332224434][@0:CONST][@1:THIS.l]),]
+                           $z0:[THIS.l,]
+                           $r1:[Param@0,]
+specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/Login"):[<init>([THIS:NewValue1332224434][@0:THIS][@1:CONST]),]
+
+      [AFTER]RS:26
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue1332224434,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void startActivity(android.content.Intent)>($r2):[startActivity([THIS:THIS][@0:NewValue1332224434]),]
+virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("no_guest", $z0):[putExtra([THIS:NewValue1332224434][@0:CONST][@1:THIS.l]),]
+                           $z0:[THIS.l,]
+                           $r1:[Param@0,]
+specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/Login"):[<init>([THIS:NewValue1332224434][@0:THIS][@1:CONST]),]
+
+  UNIT:27 virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void finish()>()
+      [BEFOR]RS:27
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue1332224434,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void startActivity(android.content.Intent)>($r2):[startActivity([THIS:THIS][@0:NewValue1332224434]),]
+virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("no_guest", $z0):[putExtra([THIS:NewValue1332224434][@0:CONST][@1:THIS.l]),]
+                           $z0:[THIS.l,]
+                           $r1:[Param@0,]
+specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/Login"):[<init>([THIS:NewValue1332224434][@0:THIS][@1:CONST]),]
+
+      [AFTER]RS:27
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue1332224434,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void startActivity(android.content.Intent)>($r2):[startActivity([THIS:THIS][@0:NewValue1332224434]),]
+virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void finish()>():[finish([THIS:THIS]),]
+virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("no_guest", $z0):[putExtra([THIS:NewValue1332224434][@0:CONST][@1:THIS.l]),]
+                           $z0:[THIS.l,]
+                           $r1:[Param@0,]
+specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/Login"):[<init>([THIS:NewValue1332224434][@0:THIS][@1:CONST]),]
+
+  UNIT:28 return
+      [BEFOR]RS:28
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue1332224434,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void startActivity(android.content.Intent)>($r2):[startActivity([THIS:THIS][@0:NewValue1332224434]),]
+virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void finish()>():[finish([THIS:THIS]),]
+virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("no_guest", $z0):[putExtra([THIS:NewValue1332224434][@0:CONST][@1:THIS.l]),]
+                           $z0:[THIS.l,]
+                           $r1:[Param@0,]
+specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/Login"):[<init>([THIS:NewValue1332224434][@0:THIS][@1:CONST]),]
+
+      [AFTER]RS:28
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r2:[NewValue1332224434,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void startActivity(android.content.Intent)>($r2):[startActivity([THIS:THIS][@0:NewValue1332224434]),]
+virtualinvoke $r0.<com.wiyun.game.SwitchAccount: void finish()>():[finish([THIS:THIS]),]
+virtualinvoke $r2.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("no_guest", $z0):[putExtra([THIS:NewValue1332224434][@0:CONST][@1:THIS.l]),]
+                           $z0:[THIS.l,]
+                           $r1:[Param@0,]
+specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/wiyun/game/Login"):[<init>([THIS:NewValue1332224434][@0:THIS][@1:CONST]),]
+
+@@End onClick======================

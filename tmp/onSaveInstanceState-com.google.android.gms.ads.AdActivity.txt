@@ -1,0 +1,307 @@
+@@Start analyzing:onSaveInstanceState
+READ: THIS.zznG
+READ: Param@0
+READ: THIS
+  --Done analyzing:onSaveInstanceState     protected void onSaveInstanceState(android.os.Bundle)
+    {
+        com.google.android.gms.ads.AdActivity $r0;
+        android.os.Bundle $r1;
+        com.google.android.gms.internal.zzex $r2;
+        android.os.RemoteException $r3;
+
+        $r0 := @this: com.google.android.gms.ads.AdActivity;
+
+        $r1 := @parameter0: android.os.Bundle;
+
+        $r2 = $r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>;
+
+        if $r2 == null goto label2;
+
+        $r2 = $r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>;
+
+     label1:
+        interfaceinvoke $r2.<com.google.android.gms.internal.zzex: void onSaveInstanceState(android.os.Bundle)>($r1);
+
+     label2:
+        specialinvoke $r0.<android.app.Activity: void onSaveInstanceState(android.os.Bundle)>($r1);
+
+        return;
+
+     label3:
+        $r3 := @caughtexception;
+
+        staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onSaveInstanceState to ad overlay:", $r3);
+
+        virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>();
+
+        goto label2;
+
+        catch android.os.RemoteException from label1 to label2 with label3;
+    }
+
+  --Method Body:    protected void onSaveInstanceState(android.os.Bundle)
+    {
+        com.google.android.gms.ads.AdActivity $r0;
+        android.os.Bundle $r1;
+        com.google.android.gms.internal.zzex $r2;
+        android.os.RemoteException $r3;
+
+        $r0 := @this: com.google.android.gms.ads.AdActivity;
+
+        $r1 := @parameter0: android.os.Bundle;
+
+        $r2 = $r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>;
+
+        if $r2 == null goto label2;
+
+        $r2 = $r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>;
+
+     label1:
+        interfaceinvoke $r2.<com.google.android.gms.internal.zzex: void onSaveInstanceState(android.os.Bundle)>($r1);
+
+     label2:
+        specialinvoke $r0.<android.app.Activity: void onSaveInstanceState(android.os.Bundle)>($r1);
+
+        return;
+
+     label3:
+        $r3 := @caughtexception;
+
+        staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onSaveInstanceState to ad overlay:", $r3);
+
+        virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>();
+
+        goto label2;
+
+        catch android.os.RemoteException from label1 to label2 with label3;
+    }
+
+  --Start displaying:onSaveInstanceState 
+  UNIT:0 $r0 := @this: com.google.android.gms.ads.AdActivity
+      [BEFOR]RS:0
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                     THIS.zznG:[THIS.zznG,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+      [AFTER]RS:0
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+  UNIT:1 $r1 := @parameter0: android.os.Bundle
+      [BEFOR]RS:1
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+      [AFTER]RS:1
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+  UNIT:2 $r2 = $r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>
+      [BEFOR]RS:2
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+      [AFTER]RS:2
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+  UNIT:3 if $r2 == null goto specialinvoke $r0.<android.app.Activity: void onSaveInstanceState(android.os.Bundle)>($r1)
+      [BEFOR]RS:3
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+      [AFTER]RS:3
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+  UNIT:4 $r2 = $r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>
+      [BEFOR]RS:4
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+      [AFTER]RS:4
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+  UNIT:5 interfaceinvoke $r2.<com.google.android.gms.internal.zzex: void onSaveInstanceState(android.os.Bundle)>($r1)
+      [BEFOR]RS:5
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+      [AFTER]RS:5
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzex: void onSaveInstanceState(android.os.Bundle)>($r1):[onSaveInstanceState([THIS:THIS.zznG][@0:Param@0]),]
+
+  UNIT:6 specialinvoke $r0.<android.app.Activity: void onSaveInstanceState(android.os.Bundle)>($r1)
+      [BEFOR]RS:6
+virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>():[finish([THIS:THIS]),]
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onSaveInstanceState to ad overlay:", $r3):[zzd([THIS:null][@0:CONST][@1:]),]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzex: void onSaveInstanceState(android.os.Bundle)>($r1):[onSaveInstanceState([THIS:THIS.zznG][@0:Param@0]),]
+
+      [AFTER]RS:6
+virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>():[finish([THIS:THIS]),]
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[THIS.zznG,]
+specialinvoke $r0.<android.app.Activity: void onSaveInstanceState(android.os.Bundle)>($r1):[onSaveInstanceState([THIS:THIS][@0:Param@0]),]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onSaveInstanceState to ad overlay:", $r3):[zzd([THIS:null][@0:CONST][@1:]),]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzex: void onSaveInstanceState(android.os.Bundle)>($r1):[onSaveInstanceState([THIS:THIS.zznG][@0:Param@0]),]
+
+  UNIT:7 return
+      [BEFOR]RS:7
+virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>():[finish([THIS:THIS]),]
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[THIS.zznG,]
+specialinvoke $r0.<android.app.Activity: void onSaveInstanceState(android.os.Bundle)>($r1):[onSaveInstanceState([THIS:THIS][@0:Param@0]),]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onSaveInstanceState to ad overlay:", $r3):[zzd([THIS:null][@0:CONST][@1:]),]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzex: void onSaveInstanceState(android.os.Bundle)>($r1):[onSaveInstanceState([THIS:THIS.zznG][@0:Param@0]),]
+
+      [AFTER]RS:7
+virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>():[finish([THIS:THIS]),]
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[THIS.zznG,]
+specialinvoke $r0.<android.app.Activity: void onSaveInstanceState(android.os.Bundle)>($r1):[onSaveInstanceState([THIS:THIS][@0:Param@0]),]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onSaveInstanceState to ad overlay:", $r3):[zzd([THIS:null][@0:CONST][@1:]),]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzex: void onSaveInstanceState(android.os.Bundle)>($r1):[onSaveInstanceState([THIS:THIS.zznG][@0:Param@0]),]
+
+  UNIT:8 $r3 := @caughtexception
+      [BEFOR]RS:8
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzex: void onSaveInstanceState(android.os.Bundle)>($r1):[onSaveInstanceState([THIS:THIS.zznG][@0:Param@0]),]
+
+      [AFTER]RS:8
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzex: void onSaveInstanceState(android.os.Bundle)>($r1):[onSaveInstanceState([THIS:THIS.zznG][@0:Param@0]),]
+
+  UNIT:9 staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onSaveInstanceState to ad overlay:", $r3)
+      [BEFOR]RS:9
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzex: void onSaveInstanceState(android.os.Bundle)>($r1):[onSaveInstanceState([THIS:THIS.zznG][@0:Param@0]),]
+
+      [AFTER]RS:9
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onSaveInstanceState to ad overlay:", $r3):[zzd([THIS:null][@0:CONST][@1:]),]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzex: void onSaveInstanceState(android.os.Bundle)>($r1):[onSaveInstanceState([THIS:THIS.zznG][@0:Param@0]),]
+
+  UNIT:10 virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>()
+      [BEFOR]RS:10
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onSaveInstanceState to ad overlay:", $r3):[zzd([THIS:null][@0:CONST][@1:]),]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzex: void onSaveInstanceState(android.os.Bundle)>($r1):[onSaveInstanceState([THIS:THIS.zznG][@0:Param@0]),]
+
+      [AFTER]RS:10
+virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>():[finish([THIS:THIS]),]
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onSaveInstanceState to ad overlay:", $r3):[zzd([THIS:null][@0:CONST][@1:]),]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzex: void onSaveInstanceState(android.os.Bundle)>($r1):[onSaveInstanceState([THIS:THIS.zznG][@0:Param@0]),]
+
+  UNIT:11 goto [?= specialinvoke $r0.<android.app.Activity: void onSaveInstanceState(android.os.Bundle)>($r1)]
+      [BEFOR]RS:11
+virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>():[finish([THIS:THIS]),]
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onSaveInstanceState to ad overlay:", $r3):[zzd([THIS:null][@0:CONST][@1:]),]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzex: void onSaveInstanceState(android.os.Bundle)>($r1):[onSaveInstanceState([THIS:THIS.zznG][@0:Param@0]),]
+
+      [AFTER]RS:11
+virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>():[finish([THIS:THIS]),]
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onSaveInstanceState to ad overlay:", $r3):[zzd([THIS:null][@0:CONST][@1:]),]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzex: void onSaveInstanceState(android.os.Bundle)>($r1):[onSaveInstanceState([THIS:THIS.zznG][@0:Param@0]),]
+
+@@End onSaveInstanceState======================

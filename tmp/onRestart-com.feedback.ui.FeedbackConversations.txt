@@ -1,0 +1,89 @@
+@@Start analyzing:onRestart
+READ: THIS
+  --Done analyzing:onRestart     protected void onRestart()
+    {
+        com.feedback.ui.FeedbackConversations $r0;
+
+        $r0 := @this: com.feedback.ui.FeedbackConversations;
+
+        specialinvoke $r0.<android.app.ListActivity: void onRestart()>();
+
+        specialinvoke $r0.<com.feedback.ui.FeedbackConversations: void a()>();
+
+        return;
+    }
+
+  --Method Body:    protected void onRestart()
+    {
+        com.feedback.ui.FeedbackConversations $r0;
+
+        $r0 := @this: com.feedback.ui.FeedbackConversations;
+
+        specialinvoke $r0.<android.app.ListActivity: void onRestart()>();
+
+        specialinvoke $r0.<com.feedback.ui.FeedbackConversations: void a()>();
+
+        return;
+    }
+
+  --Start displaying:onRestart 
+  UNIT:0 $r0 := @this: com.feedback.ui.FeedbackConversations
+      [BEFOR]RS:0
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+
+      [AFTER]RS:0
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r0:[THIS,]
+
+  UNIT:1 specialinvoke $r0.<android.app.ListActivity: void onRestart()>()
+      [BEFOR]RS:1
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:1
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+specialinvoke $r0.<android.app.ListActivity: void onRestart()>():[onRestart([THIS:THIS]),]
+                           $r0:[THIS,]
+
+  UNIT:2 specialinvoke $r0.<com.feedback.ui.FeedbackConversations: void a()>()
+      [BEFOR]RS:2
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+specialinvoke $r0.<android.app.ListActivity: void onRestart()>():[onRestart([THIS:THIS]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:2
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+specialinvoke $r0.<android.app.ListActivity: void onRestart()>():[onRestart([THIS:THIS]),]
+specialinvoke $r0.<com.feedback.ui.FeedbackConversations: void a()>():[a([THIS:THIS]),]
+                           $r0:[THIS,]
+
+  UNIT:3 return
+      [BEFOR]RS:3
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+specialinvoke $r0.<android.app.ListActivity: void onRestart()>():[onRestart([THIS:THIS]),]
+specialinvoke $r0.<com.feedback.ui.FeedbackConversations: void a()>():[a([THIS:THIS]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:3
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+specialinvoke $r0.<android.app.ListActivity: void onRestart()>():[onRestart([THIS:THIS]),]
+specialinvoke $r0.<com.feedback.ui.FeedbackConversations: void a()>():[a([THIS:THIS]),]
+                           $r0:[THIS,]
+
+@@End onRestart======================

@@ -1,0 +1,87 @@
+@@Start analyzing:a
+READ: Param@0.o
+  --Done analyzing:a     static org.anddev.andengine.c.a a(com.andfly.jewelsmagic.JewelsMagic)
+    {
+        com.andfly.jewelsmagic.JewelsMagic $r0;
+        org.anddev.andengine.c.a r1;
+
+        $r0 := @parameter0: com.andfly.jewelsmagic.JewelsMagic;
+
+        r1 = $r0.<com.andfly.jewelsmagic.JewelsMagic: org.anddev.andengine.c.a o>;
+
+        return r1;
+    }
+
+  --Method Body:    static org.anddev.andengine.c.a a(com.andfly.jewelsmagic.JewelsMagic)
+    {
+        com.andfly.jewelsmagic.JewelsMagic $r0;
+        org.anddev.andengine.c.a r1;
+
+        $r0 := @parameter0: com.andfly.jewelsmagic.JewelsMagic;
+
+        r1 = $r0.<com.andfly.jewelsmagic.JewelsMagic: org.anddev.andengine.c.a o>;
+
+        return r1;
+    }
+
+  --Start displaying:a 
+  UNIT:0 $r0 := @parameter0: com.andfly.jewelsmagic.JewelsMagic
+      [BEFOR]RS:0
+                        THIS.n:[THIS.n,]
+                        THIS.r:[THIS.r,]
+com.andfly.jewelsmagic.JewelsMagic.j:[com.andfly.jewelsmagic.JewelsMagic.j,]
+com.andfly.jewelsmagic.JewelsMagic.k:[com.andfly.jewelsmagic.JewelsMagic.k,]
+com.andfly.jewelsmagic.JewelsMagic.l:[com.andfly.jewelsmagic.JewelsMagic.l,]
+com.andfly.jewelsmagic.JewelsMagic.m:[com.andfly.jewelsmagic.JewelsMagic.m,]
+
+      [AFTER]RS:0
+                        THIS.n:[THIS.n,]
+                        THIS.r:[THIS.r,]
+com.andfly.jewelsmagic.JewelsMagic.j:[com.andfly.jewelsmagic.JewelsMagic.j,]
+com.andfly.jewelsmagic.JewelsMagic.k:[com.andfly.jewelsmagic.JewelsMagic.k,]
+com.andfly.jewelsmagic.JewelsMagic.l:[com.andfly.jewelsmagic.JewelsMagic.l,]
+com.andfly.jewelsmagic.JewelsMagic.m:[com.andfly.jewelsmagic.JewelsMagic.m,]
+                           $r0:[Param@0,]
+
+  UNIT:1 r1 = $r0.<com.andfly.jewelsmagic.JewelsMagic: org.anddev.andengine.c.a o>
+      [BEFOR]RS:1
+                        THIS.n:[THIS.n,]
+                        THIS.r:[THIS.r,]
+com.andfly.jewelsmagic.JewelsMagic.j:[com.andfly.jewelsmagic.JewelsMagic.j,]
+com.andfly.jewelsmagic.JewelsMagic.k:[com.andfly.jewelsmagic.JewelsMagic.k,]
+com.andfly.jewelsmagic.JewelsMagic.l:[com.andfly.jewelsmagic.JewelsMagic.l,]
+com.andfly.jewelsmagic.JewelsMagic.m:[com.andfly.jewelsmagic.JewelsMagic.m,]
+                           $r0:[Param@0,]
+
+      [AFTER]RS:1
+                        THIS.n:[THIS.n,]
+                        THIS.r:[THIS.r,]
+com.andfly.jewelsmagic.JewelsMagic.j:[com.andfly.jewelsmagic.JewelsMagic.j,]
+com.andfly.jewelsmagic.JewelsMagic.k:[com.andfly.jewelsmagic.JewelsMagic.k,]
+com.andfly.jewelsmagic.JewelsMagic.l:[com.andfly.jewelsmagic.JewelsMagic.l,]
+com.andfly.jewelsmagic.JewelsMagic.m:[com.andfly.jewelsmagic.JewelsMagic.m,]
+                           $r0:[Param@0,]
+                            r1:[Param@0.o,]
+
+  UNIT:2 return r1
+      [BEFOR]RS:2
+                        THIS.n:[THIS.n,]
+                        THIS.r:[THIS.r,]
+com.andfly.jewelsmagic.JewelsMagic.j:[com.andfly.jewelsmagic.JewelsMagic.j,]
+com.andfly.jewelsmagic.JewelsMagic.k:[com.andfly.jewelsmagic.JewelsMagic.k,]
+com.andfly.jewelsmagic.JewelsMagic.l:[com.andfly.jewelsmagic.JewelsMagic.l,]
+com.andfly.jewelsmagic.JewelsMagic.m:[com.andfly.jewelsmagic.JewelsMagic.m,]
+                           $r0:[Param@0,]
+                            r1:[Param@0.o,]
+
+      [AFTER]RS:2
+                        THIS.n:[THIS.n,]
+                        THIS.r:[THIS.r,]
+com.andfly.jewelsmagic.JewelsMagic.j:[com.andfly.jewelsmagic.JewelsMagic.j,]
+com.andfly.jewelsmagic.JewelsMagic.k:[com.andfly.jewelsmagic.JewelsMagic.k,]
+com.andfly.jewelsmagic.JewelsMagic.l:[com.andfly.jewelsmagic.JewelsMagic.l,]
+com.andfly.jewelsmagic.JewelsMagic.m:[com.andfly.jewelsmagic.JewelsMagic.m,]
+                           $r0:[Param@0,]
+                            r1:[Param@0.o,]
+
+@@End a======================

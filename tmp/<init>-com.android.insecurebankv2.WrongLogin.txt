@@ -1,0 +1,49 @@
+@@Start analyzing:<init>
+READ: THIS
+  --Done analyzing:<init>     public void <init>()
+    {
+        com.android.insecurebankv2.WrongLogin $r0;
+
+        $r0 := @this: com.android.insecurebankv2.WrongLogin;
+
+        specialinvoke $r0.<android.app.Activity: void <init>()>();
+
+        return;
+    }
+
+  --Method Body:    public void <init>()
+    {
+        com.android.insecurebankv2.WrongLogin $r0;
+
+        $r0 := @this: com.android.insecurebankv2.WrongLogin;
+
+        specialinvoke $r0.<android.app.Activity: void <init>()>();
+
+        return;
+    }
+
+  --Start displaying:<init> 
+  UNIT:0 $r0 := @this: com.android.insecurebankv2.WrongLogin
+      [BEFOR]RS:0
+
+      [AFTER]RS:0
+                           $r0:[THIS,]
+
+  UNIT:1 specialinvoke $r0.<android.app.Activity: void <init>()>()
+      [BEFOR]RS:1
+                           $r0:[THIS,]
+
+      [AFTER]RS:1
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void <init>()>():[<init>([THIS:THIS]),]
+
+  UNIT:2 return
+      [BEFOR]RS:2
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void <init>()>():[<init>([THIS:THIS]),]
+
+      [AFTER]RS:2
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void <init>()>():[<init>([THIS:THIS]),]
+
+@@End <init>======================

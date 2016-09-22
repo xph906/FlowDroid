@@ -1,0 +1,115 @@
+@@Start analyzing:f
+READ: com.google.ads.AdActivity.c
+  --Done analyzing:f     static com.google.ads.AdActivity f()
+    {
+        com.google.ads.AdActivity r0;
+
+        r0 = <com.google.ads.AdActivity: com.google.ads.AdActivity c>;
+
+        return r0;
+    }
+
+  --Method Body:    static com.google.ads.AdActivity f()
+    {
+        com.google.ads.AdActivity r0;
+
+        r0 = <com.google.ads.AdActivity: com.google.ads.AdActivity c>;
+
+        return r0;
+    }
+
+  --Start displaying:f 
+  UNIT:0 r0 = <com.google.ads.AdActivity: com.google.ads.AdActivity c>
+      [BEFOR]RS:0
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                        THIS.q:[THIS.q,]
+                        THIS.r:[THIS.r,]
+                        THIS.s:[THIS.s,]
+                        THIS.t:[THIS.t,]
+   com.google.ads.AdActivity.a:[com.google.ads.AdActivity.a,]
+   com.google.ads.AdActivity.b:[com.google.ads.AdActivity.b,]
+   com.google.ads.AdActivity.c:[com.google.ads.AdActivity.c,]
+   com.google.ads.AdActivity.d:[com.google.ads.AdActivity.d,]
+   com.google.ads.AdActivity.e:[com.google.ads.AdActivity.e,]
+   com.google.ads.AdActivity.f:[com.google.ads.AdActivity.f,]
+   com.google.ads.AdActivity.g:[com.google.ads.AdActivity.g,]
+
+      [AFTER]RS:0
+                            r0:[com.google.ads.AdActivity.c,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                        THIS.q:[THIS.q,]
+                        THIS.r:[THIS.r,]
+                        THIS.s:[THIS.s,]
+                        THIS.t:[THIS.t,]
+   com.google.ads.AdActivity.a:[com.google.ads.AdActivity.a,]
+   com.google.ads.AdActivity.b:[com.google.ads.AdActivity.b,]
+   com.google.ads.AdActivity.c:[com.google.ads.AdActivity.c,]
+   com.google.ads.AdActivity.d:[com.google.ads.AdActivity.d,]
+   com.google.ads.AdActivity.e:[com.google.ads.AdActivity.e,]
+   com.google.ads.AdActivity.f:[com.google.ads.AdActivity.f,]
+   com.google.ads.AdActivity.g:[com.google.ads.AdActivity.g,]
+
+  UNIT:1 return r0
+      [BEFOR]RS:1
+                            r0:[com.google.ads.AdActivity.c,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                        THIS.q:[THIS.q,]
+                        THIS.r:[THIS.r,]
+                        THIS.s:[THIS.s,]
+                        THIS.t:[THIS.t,]
+   com.google.ads.AdActivity.a:[com.google.ads.AdActivity.a,]
+   com.google.ads.AdActivity.b:[com.google.ads.AdActivity.b,]
+   com.google.ads.AdActivity.c:[com.google.ads.AdActivity.c,]
+   com.google.ads.AdActivity.d:[com.google.ads.AdActivity.d,]
+   com.google.ads.AdActivity.e:[com.google.ads.AdActivity.e,]
+   com.google.ads.AdActivity.f:[com.google.ads.AdActivity.f,]
+   com.google.ads.AdActivity.g:[com.google.ads.AdActivity.g,]
+
+      [AFTER]RS:1
+                            r0:[com.google.ads.AdActivity.c,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                        THIS.q:[THIS.q,]
+                        THIS.r:[THIS.r,]
+                        THIS.s:[THIS.s,]
+                        THIS.t:[THIS.t,]
+   com.google.ads.AdActivity.a:[com.google.ads.AdActivity.a,]
+   com.google.ads.AdActivity.b:[com.google.ads.AdActivity.b,]
+   com.google.ads.AdActivity.c:[com.google.ads.AdActivity.c,]
+   com.google.ads.AdActivity.d:[com.google.ads.AdActivity.d,]
+   com.google.ads.AdActivity.e:[com.google.ads.AdActivity.e,]
+   com.google.ads.AdActivity.f:[com.google.ads.AdActivity.f,]
+   com.google.ads.AdActivity.g:[com.google.ads.AdActivity.g,]
+
+@@End f======================

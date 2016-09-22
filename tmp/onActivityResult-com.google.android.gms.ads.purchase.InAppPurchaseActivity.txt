@@ -1,0 +1,357 @@
+@@Start analyzing:onActivityResult
+READ: Param@2
+READ: Param@1
+READ: Param@0
+READ: THIS
+READ: THIS.zzHM
+  --Done analyzing:onActivityResult     protected void onActivityResult(int, int, android.content.Intent)
+    {
+        com.google.android.gms.ads.purchase.InAppPurchaseActivity $r0;
+        int $i0, $i1;
+        android.content.Intent $r1;
+        com.google.android.gms.internal.zzfg $r2;
+        android.os.RemoteException $r3;
+
+        $r0 := @this: com.google.android.gms.ads.purchase.InAppPurchaseActivity;
+
+        $i0 := @parameter0: int;
+
+        $i1 := @parameter1: int;
+
+        $r1 := @parameter2: android.content.Intent;
+
+        $r2 = $r0.<com.google.android.gms.ads.purchase.InAppPurchaseActivity: com.google.android.gms.internal.zzfg zzHM>;
+
+        if $r2 == null goto label2;
+
+        $r2 = $r0.<com.google.android.gms.ads.purchase.InAppPurchaseActivity: com.google.android.gms.internal.zzfg zzHM>;
+
+     label1:
+        interfaceinvoke $r2.<com.google.android.gms.internal.zzfg: void onActivityResult(int,int,android.content.Intent)>($i0, $i1, $r1);
+
+     label2:
+        specialinvoke $r0.<android.app.Activity: void onActivityResult(int,int,android.content.Intent)>($i0, $i1, $r1);
+
+        return;
+
+     label3:
+        $r3 := @caughtexception;
+
+        staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onActivityResult to in-app purchase manager:", $r3);
+
+        goto label2;
+
+        catch android.os.RemoteException from label1 to label2 with label3;
+    }
+
+  --Method Body:    protected void onActivityResult(int, int, android.content.Intent)
+    {
+        com.google.android.gms.ads.purchase.InAppPurchaseActivity $r0;
+        int $i0, $i1;
+        android.content.Intent $r1;
+        com.google.android.gms.internal.zzfg $r2;
+        android.os.RemoteException $r3;
+
+        $r0 := @this: com.google.android.gms.ads.purchase.InAppPurchaseActivity;
+
+        $i0 := @parameter0: int;
+
+        $i1 := @parameter1: int;
+
+        $r1 := @parameter2: android.content.Intent;
+
+        $r2 = $r0.<com.google.android.gms.ads.purchase.InAppPurchaseActivity: com.google.android.gms.internal.zzfg zzHM>;
+
+        if $r2 == null goto label2;
+
+        $r2 = $r0.<com.google.android.gms.ads.purchase.InAppPurchaseActivity: com.google.android.gms.internal.zzfg zzHM>;
+
+     label1:
+        interfaceinvoke $r2.<com.google.android.gms.internal.zzfg: void onActivityResult(int,int,android.content.Intent)>($i0, $i1, $r1);
+
+     label2:
+        specialinvoke $r0.<android.app.Activity: void onActivityResult(int,int,android.content.Intent)>($i0, $i1, $r1);
+
+        return;
+
+     label3:
+        $r3 := @caughtexception;
+
+        staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onActivityResult to in-app purchase manager:", $r3);
+
+        goto label2;
+
+        catch android.os.RemoteException from label1 to label2 with label3;
+    }
+
+  --Start displaying:onActivityResult 
+  UNIT:0 $r0 := @this: com.google.android.gms.ads.purchase.InAppPurchaseActivity
+      [BEFOR]RS:0
+                     THIS.zzHM:[THIS.zzHM,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME,]
+
+      [AFTER]RS:0
+                     THIS.zzHM:[THIS.zzHM,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME,]
+                           $r0:[THIS,]
+
+  UNIT:1 $i0 := @parameter0: int
+      [BEFOR]RS:1
+                     THIS.zzHM:[THIS.zzHM,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:1
+                           $i0:[Param@0,]
+                     THIS.zzHM:[THIS.zzHM,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME,]
+                           $r0:[THIS,]
+
+  UNIT:2 $i1 := @parameter1: int
+      [BEFOR]RS:2
+                           $i0:[Param@0,]
+                     THIS.zzHM:[THIS.zzHM,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:2
+                           $i0:[Param@0,]
+                           $i1:[Param@1,]
+                     THIS.zzHM:[THIS.zzHM,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME,]
+                           $r0:[THIS,]
+
+  UNIT:3 $r1 := @parameter2: android.content.Intent
+      [BEFOR]RS:3
+                           $i0:[Param@0,]
+                           $i1:[Param@1,]
+                     THIS.zzHM:[THIS.zzHM,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:3
+                           $i0:[Param@0,]
+                           $i1:[Param@1,]
+                           $r1:[Param@2,]
+                     THIS.zzHM:[THIS.zzHM,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME,]
+                           $r0:[THIS,]
+
+  UNIT:4 $r2 = $r0.<com.google.android.gms.ads.purchase.InAppPurchaseActivity: com.google.android.gms.internal.zzfg zzHM>
+      [BEFOR]RS:4
+                           $i0:[Param@0,]
+                           $i1:[Param@1,]
+                           $r1:[Param@2,]
+                     THIS.zzHM:[THIS.zzHM,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:4
+                           $i0:[Param@0,]
+                           $i1:[Param@1,]
+                           $r1:[Param@2,]
+                           $r2:[THIS.zzHM,]
+                     THIS.zzHM:[THIS.zzHM,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME,]
+                           $r0:[THIS,]
+
+  UNIT:5 if $r2 == null goto specialinvoke $r0.<android.app.Activity: void onActivityResult(int,int,android.content.Intent)>($i0, $i1, $r1)
+      [BEFOR]RS:5
+                           $i0:[Param@0,]
+                           $i1:[Param@1,]
+                           $r1:[Param@2,]
+                           $r2:[THIS.zzHM,]
+                     THIS.zzHM:[THIS.zzHM,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:5
+                           $i0:[Param@0,]
+                           $i1:[Param@1,]
+                           $r1:[Param@2,]
+                           $r2:[THIS.zzHM,]
+                     THIS.zzHM:[THIS.zzHM,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME,]
+                           $r0:[THIS,]
+
+  UNIT:6 $r2 = $r0.<com.google.android.gms.ads.purchase.InAppPurchaseActivity: com.google.android.gms.internal.zzfg zzHM>
+      [BEFOR]RS:6
+                           $i0:[Param@0,]
+                           $i1:[Param@1,]
+                           $r1:[Param@2,]
+                           $r2:[THIS.zzHM,]
+                     THIS.zzHM:[THIS.zzHM,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:6
+                           $i0:[Param@0,]
+                           $i1:[Param@1,]
+                           $r1:[Param@2,]
+                           $r2:[THIS.zzHM,]
+                     THIS.zzHM:[THIS.zzHM,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME,]
+                           $r0:[THIS,]
+
+  UNIT:7 interfaceinvoke $r2.<com.google.android.gms.internal.zzfg: void onActivityResult(int,int,android.content.Intent)>($i0, $i1, $r1)
+      [BEFOR]RS:7
+                           $i0:[Param@0,]
+                           $i1:[Param@1,]
+                           $r1:[Param@2,]
+                           $r2:[THIS.zzHM,]
+                     THIS.zzHM:[THIS.zzHM,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:7
+                           $i0:[Param@0,]
+                           $i1:[Param@1,]
+                           $r1:[Param@2,]
+                           $r2:[THIS.zzHM,]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzfg: void onActivityResult(int,int,android.content.Intent)>($i0, $i1, $r1):[onActivityResult([THIS:THIS.zzHM][@0:Param@0][@1:Param@1][@2:Param@2]),]
+                     THIS.zzHM:[THIS.zzHM,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME,]
+                           $r0:[THIS,]
+
+  UNIT:8 specialinvoke $r0.<android.app.Activity: void onActivityResult(int,int,android.content.Intent)>($i0, $i1, $r1)
+      [BEFOR]RS:8
+                           $i0:[Param@0,]
+                           $i1:[Param@1,]
+                           $r1:[Param@2,]
+                           $r2:[THIS.zzHM,]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzfg: void onActivityResult(int,int,android.content.Intent)>($i0, $i1, $r1):[onActivityResult([THIS:THIS.zzHM][@0:Param@0][@1:Param@1][@2:Param@2]),]
+                     THIS.zzHM:[THIS.zzHM,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onActivityResult to in-app purchase manager:", $r3):[zzd([THIS:null][@0:CONST][@1:]),]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:8
+specialinvoke $r0.<android.app.Activity: void onActivityResult(int,int,android.content.Intent)>($i0, $i1, $r1):[onActivityResult([THIS:THIS][@0:Param@0][@1:Param@1][@2:Param@2]),]
+                           $i0:[Param@0,]
+                           $i1:[Param@1,]
+                           $r1:[Param@2,]
+                           $r2:[THIS.zzHM,]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzfg: void onActivityResult(int,int,android.content.Intent)>($i0, $i1, $r1):[onActivityResult([THIS:THIS.zzHM][@0:Param@0][@1:Param@1][@2:Param@2]),]
+                     THIS.zzHM:[THIS.zzHM,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onActivityResult to in-app purchase manager:", $r3):[zzd([THIS:null][@0:CONST][@1:]),]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME,]
+                           $r0:[THIS,]
+
+  UNIT:9 return
+      [BEFOR]RS:9
+specialinvoke $r0.<android.app.Activity: void onActivityResult(int,int,android.content.Intent)>($i0, $i1, $r1):[onActivityResult([THIS:THIS][@0:Param@0][@1:Param@1][@2:Param@2]),]
+                           $i0:[Param@0,]
+                           $i1:[Param@1,]
+                           $r1:[Param@2,]
+                           $r2:[THIS.zzHM,]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzfg: void onActivityResult(int,int,android.content.Intent)>($i0, $i1, $r1):[onActivityResult([THIS:THIS.zzHM][@0:Param@0][@1:Param@1][@2:Param@2]),]
+                     THIS.zzHM:[THIS.zzHM,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onActivityResult to in-app purchase manager:", $r3):[zzd([THIS:null][@0:CONST][@1:]),]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:9
+specialinvoke $r0.<android.app.Activity: void onActivityResult(int,int,android.content.Intent)>($i0, $i1, $r1):[onActivityResult([THIS:THIS][@0:Param@0][@1:Param@1][@2:Param@2]),]
+                           $i0:[Param@0,]
+                           $i1:[Param@1,]
+                           $r1:[Param@2,]
+                           $r2:[THIS.zzHM,]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzfg: void onActivityResult(int,int,android.content.Intent)>($i0, $i1, $r1):[onActivityResult([THIS:THIS.zzHM][@0:Param@0][@1:Param@1][@2:Param@2]),]
+                     THIS.zzHM:[THIS.zzHM,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onActivityResult to in-app purchase manager:", $r3):[zzd([THIS:null][@0:CONST][@1:]),]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME,]
+                           $r0:[THIS,]
+
+  UNIT:10 $r3 := @caughtexception
+      [BEFOR]RS:10
+                           $i0:[Param@0,]
+                           $i1:[Param@1,]
+                           $r1:[Param@2,]
+                           $r2:[THIS.zzHM,]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzfg: void onActivityResult(int,int,android.content.Intent)>($i0, $i1, $r1):[onActivityResult([THIS:THIS.zzHM][@0:Param@0][@1:Param@1][@2:Param@2]),]
+                     THIS.zzHM:[THIS.zzHM,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:10
+                           $i0:[Param@0,]
+                           $i1:[Param@1,]
+                           $r1:[Param@2,]
+                           $r2:[THIS.zzHM,]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzfg: void onActivityResult(int,int,android.content.Intent)>($i0, $i1, $r1):[onActivityResult([THIS:THIS.zzHM][@0:Param@0][@1:Param@1][@2:Param@2]),]
+                     THIS.zzHM:[THIS.zzHM,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME,]
+                           $r0:[THIS,]
+
+  UNIT:11 staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onActivityResult to in-app purchase manager:", $r3)
+      [BEFOR]RS:11
+                           $i0:[Param@0,]
+                           $i1:[Param@1,]
+                           $r1:[Param@2,]
+                           $r2:[THIS.zzHM,]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzfg: void onActivityResult(int,int,android.content.Intent)>($i0, $i1, $r1):[onActivityResult([THIS:THIS.zzHM][@0:Param@0][@1:Param@1][@2:Param@2]),]
+                     THIS.zzHM:[THIS.zzHM,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:11
+                           $i0:[Param@0,]
+                           $i1:[Param@1,]
+                           $r1:[Param@2,]
+                           $r2:[THIS.zzHM,]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzfg: void onActivityResult(int,int,android.content.Intent)>($i0, $i1, $r1):[onActivityResult([THIS:THIS.zzHM][@0:Param@0][@1:Param@1][@2:Param@2]),]
+                     THIS.zzHM:[THIS.zzHM,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onActivityResult to in-app purchase manager:", $r3):[zzd([THIS:null][@0:CONST][@1:]),]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME,]
+                           $r0:[THIS,]
+
+  UNIT:12 goto [?= specialinvoke $r0.<android.app.Activity: void onActivityResult(int,int,android.content.Intent)>($i0, $i1, $r1)]
+      [BEFOR]RS:12
+                           $i0:[Param@0,]
+                           $i1:[Param@1,]
+                           $r1:[Param@2,]
+                           $r2:[THIS.zzHM,]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzfg: void onActivityResult(int,int,android.content.Intent)>($i0, $i1, $r1):[onActivityResult([THIS:THIS.zzHM][@0:Param@0][@1:Param@1][@2:Param@2]),]
+                     THIS.zzHM:[THIS.zzHM,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onActivityResult to in-app purchase manager:", $r3):[zzd([THIS:null][@0:CONST][@1:]),]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:12
+                           $i0:[Param@0,]
+                           $i1:[Param@1,]
+                           $r1:[Param@2,]
+                           $r2:[THIS.zzHM,]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzfg: void onActivityResult(int,int,android.content.Intent)>($i0, $i1, $r1):[onActivityResult([THIS:THIS.zzHM][@0:Param@0][@1:Param@1][@2:Param@2]),]
+                     THIS.zzHM:[THIS.zzHM,]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onActivityResult to in-app purchase manager:", $r3):[zzd([THIS:null][@0:CONST][@1:]),]
+com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.purchase.InAppPurchaseActivity.SIMPLE_CLASS_NAME,]
+                           $r0:[THIS,]
+
+@@End onActivityResult======================

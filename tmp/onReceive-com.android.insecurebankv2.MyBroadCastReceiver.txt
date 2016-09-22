@@ -1,0 +1,1593 @@
+@@Start analyzing:onReceive
+READ: java.lang.System.out
+READ: Param@1
+READ: Param@0
+READ: THIS.usernameBase64ByteString
+WRITE: THIS.usernameBase64ByteString
+  --Done analyzing:onReceive     public void onReceive(android.content.Context, android.content.Intent)
+    {
+        com.android.insecurebankv2.MyBroadCastReceiver $r0;
+        android.content.Context $r1;
+        android.content.Intent $r2;
+        com.android.insecurebankv2.CryptoClass $r3;
+        java.lang.Exception $r4;
+        java.lang.String $r5, $r6, $r8;
+        android.content.SharedPreferences $r7;
+        byte[] $r9;
+        java.lang.StringBuilder $r10;
+        android.telephony.SmsManager $r11;
+        java.io.PrintStream $r12;
+
+        $r0 := @this: com.android.insecurebankv2.MyBroadCastReceiver;
+
+        $r1 := @parameter0: android.content.Context;
+
+        $r2 := @parameter1: android.content.Intent;
+
+        $r5 = virtualinvoke $r2.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>("phonenumber");
+
+        $r6 = virtualinvoke $r2.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>("newpass");
+
+        if $r5 == null goto label14;
+
+     label01:
+        $r7 = virtualinvoke $r1.<android.content.Context: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)>("mySharedPreferences", 1);
+
+        $r8 = interfaceinvoke $r7.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>("EncryptedUsername", null);
+
+        $r9 = staticinvoke <android.util.Base64: byte[] decode(java.lang.String,int)>($r8, 0);
+
+     label02:
+        $r8 = new java.lang.String;
+
+     label03:
+        specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8");
+
+     label04:
+        $r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString> = $r8;
+
+     label05:
+        $r8 = interfaceinvoke $r7.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>("superSecurePassword", null);
+
+     label06:
+        $r3 = new com.android.insecurebankv2.CryptoClass;
+
+     label07:
+        specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>();
+
+        $r8 = virtualinvoke $r3.<com.android.insecurebankv2.CryptoClass: java.lang.String aesDeccryptedString(java.lang.String)>($r8);
+
+        $r5 = virtualinvoke $r5.<java.lang.String: java.lang.String toString()>();
+
+     label08:
+        $r10 = new java.lang.StringBuilder;
+
+     label09:
+        specialinvoke $r10.<java.lang.StringBuilder: void <init>()>();
+
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Updated Password from: ");
+
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8);
+
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" to: ");
+
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+
+        $r6 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        $r11 = staticinvoke <android.telephony.SmsManager: android.telephony.SmsManager getDefault()>();
+
+     label10:
+        $r12 = <java.lang.System: java.io.PrintStream out>;
+
+        $r10 = new java.lang.StringBuilder;
+
+     label11:
+        specialinvoke $r10.<java.lang.StringBuilder: void <init>()>();
+
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("For the changepassword - phonenumber: ");
+
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" password is: ");
+
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+
+        $r8 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        virtualinvoke $r12.<java.io.PrintStream: void println(java.lang.String)>($r8);
+
+        virtualinvoke $r11.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r5, null, $r6, null, null);
+
+     label12:
+        return;
+
+     label13:
+        $r4 := @caughtexception;
+
+        virtualinvoke $r4.<java.lang.Exception: void printStackTrace()>();
+
+        return;
+
+     label14:
+        $r12 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke $r12.<java.io.PrintStream: void println(java.lang.String)>("Phone number is null");
+
+        return;
+
+        catch java.lang.Exception from label01 to label02 with label13;
+        catch java.lang.Exception from label03 to label04 with label13;
+        catch java.lang.Exception from label05 to label06 with label13;
+        catch java.lang.Exception from label07 to label08 with label13;
+        catch java.lang.Exception from label09 to label10 with label13;
+        catch java.lang.Exception from label11 to label12 with label13;
+    }
+
+  --Method Body:    public void onReceive(android.content.Context, android.content.Intent)
+    {
+        com.android.insecurebankv2.MyBroadCastReceiver $r0;
+        android.content.Context $r1;
+        android.content.Intent $r2;
+        com.android.insecurebankv2.CryptoClass $r3;
+        java.lang.Exception $r4;
+        java.lang.String $r5, $r6, $r8;
+        android.content.SharedPreferences $r7;
+        byte[] $r9;
+        java.lang.StringBuilder $r10;
+        android.telephony.SmsManager $r11;
+        java.io.PrintStream $r12;
+
+        $r0 := @this: com.android.insecurebankv2.MyBroadCastReceiver;
+
+        $r1 := @parameter0: android.content.Context;
+
+        $r2 := @parameter1: android.content.Intent;
+
+        $r5 = virtualinvoke $r2.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>("phonenumber");
+
+        $r6 = virtualinvoke $r2.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>("newpass");
+
+        if $r5 == null goto label14;
+
+     label01:
+        $r7 = virtualinvoke $r1.<android.content.Context: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)>("mySharedPreferences", 1);
+
+        $r8 = interfaceinvoke $r7.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>("EncryptedUsername", null);
+
+        $r9 = staticinvoke <android.util.Base64: byte[] decode(java.lang.String,int)>($r8, 0);
+
+     label02:
+        $r8 = new java.lang.String;
+
+     label03:
+        specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8");
+
+     label04:
+        $r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString> = $r8;
+
+     label05:
+        $r8 = interfaceinvoke $r7.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>("superSecurePassword", null);
+
+     label06:
+        $r3 = new com.android.insecurebankv2.CryptoClass;
+
+     label07:
+        specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>();
+
+        $r8 = virtualinvoke $r3.<com.android.insecurebankv2.CryptoClass: java.lang.String aesDeccryptedString(java.lang.String)>($r8);
+
+        $r5 = virtualinvoke $r5.<java.lang.String: java.lang.String toString()>();
+
+     label08:
+        $r10 = new java.lang.StringBuilder;
+
+     label09:
+        specialinvoke $r10.<java.lang.StringBuilder: void <init>()>();
+
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Updated Password from: ");
+
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8);
+
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" to: ");
+
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+
+        $r6 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        $r11 = staticinvoke <android.telephony.SmsManager: android.telephony.SmsManager getDefault()>();
+
+     label10:
+        $r12 = <java.lang.System: java.io.PrintStream out>;
+
+        $r10 = new java.lang.StringBuilder;
+
+     label11:
+        specialinvoke $r10.<java.lang.StringBuilder: void <init>()>();
+
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("For the changepassword - phonenumber: ");
+
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" password is: ");
+
+        $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);
+
+        $r8 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        virtualinvoke $r12.<java.io.PrintStream: void println(java.lang.String)>($r8);
+
+        virtualinvoke $r11.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r5, null, $r6, null, null);
+
+     label12:
+        return;
+
+     label13:
+        $r4 := @caughtexception;
+
+        virtualinvoke $r4.<java.lang.Exception: void printStackTrace()>();
+
+        return;
+
+     label14:
+        $r12 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke $r12.<java.io.PrintStream: void println(java.lang.String)>("Phone number is null");
+
+        return;
+
+        catch java.lang.Exception from label01 to label02 with label13;
+        catch java.lang.Exception from label03 to label04 with label13;
+        catch java.lang.Exception from label05 to label06 with label13;
+        catch java.lang.Exception from label07 to label08 with label13;
+        catch java.lang.Exception from label09 to label10 with label13;
+        catch java.lang.Exception from label11 to label12 with label13;
+    }
+
+  --Start displaying:onReceive 
+  UNIT:0 $r0 := @this: com.android.insecurebankv2.MyBroadCastReceiver
+      [BEFOR]RS:0
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+
+      [AFTER]RS:0
+                           $r0:[THIS,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+
+  UNIT:1 $r1 := @parameter0: android.content.Context
+      [BEFOR]RS:1
+                           $r0:[THIS,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+
+      [AFTER]RS:1
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+
+  UNIT:2 $r2 := @parameter1: android.content.Intent
+      [BEFOR]RS:2
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+
+      [AFTER]RS:2
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+
+  UNIT:3 $r5 = virtualinvoke $r2.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>("phonenumber")
+      [BEFOR]RS:3
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+
+      [AFTER]RS:3
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+
+  UNIT:4 $r6 = virtualinvoke $r2.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>("newpass")
+      [BEFOR]RS:4
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+
+      [AFTER]RS:4
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+
+  UNIT:5 if $r5 == null goto $r12 = <java.lang.System: java.io.PrintStream out>
+      [BEFOR]RS:5
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+
+      [AFTER]RS:5
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+
+  UNIT:6 $r7 = virtualinvoke $r1.<android.content.Context: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)>("mySharedPreferences", 1)
+      [BEFOR]RS:6
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+
+      [AFTER]RS:6
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+
+  UNIT:7 $r8 = interfaceinvoke $r7.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>("EncryptedUsername", null)
+      [BEFOR]RS:7
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+
+      [AFTER]RS:7
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[getString([THIS:CONST,Param@0][@0:CONST][@1:CONST]),]
+
+  UNIT:8 $r9 = staticinvoke <android.util.Base64: byte[] decode(java.lang.String,int)>($r8, 0)
+      [BEFOR]RS:8
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[getString([THIS:CONST,Param@0][@0:CONST][@1:CONST]),]
+
+      [AFTER]RS:8
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[getString([THIS:CONST,Param@0][@0:CONST][@1:CONST]),]
+
+  UNIT:9 $r8 = new java.lang.String
+      [BEFOR]RS:9
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[getString([THIS:CONST,Param@0][@0:CONST][@1:CONST]),]
+
+      [AFTER]RS:9
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[NewValue71295120,]
+
+  UNIT:10 specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8")
+      [BEFOR]RS:10
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[NewValue71295120,]
+
+      [AFTER]RS:10
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[NewValue71295120,]
+
+  UNIT:11 $r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString> = $r8
+      [BEFOR]RS:11
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[NewValue71295120,]
+
+      [AFTER]RS:11
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[NewValue71295120,]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+  UNIT:12 $r8 = interfaceinvoke $r7.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>("superSecurePassword", null)
+      [BEFOR]RS:12
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[NewValue71295120,]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+      [AFTER]RS:12
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[getString([THIS:CONST,Param@0][@0:CONST][@1:CONST]),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+  UNIT:13 $r3 = new com.android.insecurebankv2.CryptoClass
+      [BEFOR]RS:13
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[getString([THIS:CONST,Param@0][@0:CONST][@1:CONST]),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+      [AFTER]RS:13
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[getString([THIS:CONST,Param@0][@0:CONST][@1:CONST]),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+  UNIT:14 specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>()
+      [BEFOR]RS:14
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[getString([THIS:CONST,Param@0][@0:CONST][@1:CONST]),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+      [AFTER]RS:14
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[getString([THIS:CONST,Param@0][@0:CONST][@1:CONST]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+  UNIT:15 $r8 = virtualinvoke $r3.<com.android.insecurebankv2.CryptoClass: java.lang.String aesDeccryptedString(java.lang.String)>($r8)
+      [BEFOR]RS:15
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[getString([THIS:CONST,Param@0][@0:CONST][@1:CONST]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+      [AFTER]RS:15
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+  UNIT:16 $r5 = virtualinvoke $r5.<java.lang.String: java.lang.String toString()>()
+      [BEFOR]RS:16
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+      [AFTER]RS:16
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+  UNIT:17 $r10 = new java.lang.StringBuilder
+      [BEFOR]RS:17
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+      [AFTER]RS:17
+                           $r0:[THIS,]
+                          $r10:[NewValue102782913,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+  UNIT:18 specialinvoke $r10.<java.lang.StringBuilder: void <init>()>()
+      [BEFOR]RS:18
+                           $r0:[THIS,]
+                          $r10:[NewValue102782913,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+      [AFTER]RS:18
+                           $r0:[THIS,]
+                          $r10:[NewValue102782913,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue102782913]),]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+  UNIT:19 $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Updated Password from: ")
+      [BEFOR]RS:19
+                           $r0:[THIS,]
+                          $r10:[NewValue102782913,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue102782913]),]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+      [AFTER]RS:19
+                           $r0:[THIS,]
+                          $r10:[append([THIS:NewValue102782913][@0:CONST]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue102782913]),]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+  UNIT:20 $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8)
+      [BEFOR]RS:20
+                           $r0:[THIS,]
+                          $r10:[append([THIS:NewValue102782913][@0:CONST]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue102782913]),]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+      [AFTER]RS:20
+                           $r0:[THIS,]
+                          $r10:[append([THIS:CONST,NewValue102782913][@0:CONST,NewValue1450893925,Param@0]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue102782913]),]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+  UNIT:21 $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" to: ")
+      [BEFOR]RS:21
+                           $r0:[THIS,]
+                          $r10:[append([THIS:CONST,NewValue102782913][@0:CONST,NewValue1450893925,Param@0]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue102782913]),]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+      [AFTER]RS:21
+                           $r0:[THIS,]
+                          $r10:[append([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0][@0:CONST]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue102782913]),]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+  UNIT:22 $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6)
+      [BEFOR]RS:22
+                           $r0:[THIS,]
+                          $r10:[append([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0][@0:CONST]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue102782913]),]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+      [AFTER]RS:22
+                           $r0:[THIS,]
+                          $r10:[append([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0][@0:CONST,Param@1]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue102782913]),]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+  UNIT:23 $r6 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.String toString()>()
+      [BEFOR]RS:23
+                           $r0:[THIS,]
+                          $r10:[append([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0][@0:CONST,Param@1]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue102782913]),]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+      [AFTER]RS:23
+                           $r0:[THIS,]
+                          $r10:[append([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0][@0:CONST,Param@1]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue102782913]),]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[toString([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+  UNIT:24 $r11 = staticinvoke <android.telephony.SmsManager: android.telephony.SmsManager getDefault()>()
+      [BEFOR]RS:24
+                           $r0:[THIS,]
+                          $r10:[append([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0][@0:CONST,Param@1]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue102782913]),]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[toString([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+      [AFTER]RS:24
+                           $r0:[THIS,]
+                          $r10:[append([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0][@0:CONST,Param@1]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue102782913]),]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[toString([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+                          $r11:[getDefault(),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+  UNIT:25 $r12 = <java.lang.System: java.io.PrintStream out>
+      [BEFOR]RS:25
+                           $r0:[THIS,]
+                          $r10:[append([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0][@0:CONST,Param@1]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue102782913]),]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[toString([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+                          $r11:[getDefault(),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+      [AFTER]RS:25
+                           $r0:[THIS,]
+                          $r10:[append([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0][@0:CONST,Param@1]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue102782913]),]
+                          $r12:[java.lang.System.out,]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[toString([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+                          $r11:[getDefault(),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+  UNIT:26 $r10 = new java.lang.StringBuilder
+      [BEFOR]RS:26
+                           $r0:[THIS,]
+                          $r10:[append([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0][@0:CONST,Param@1]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue102782913]),]
+                          $r12:[java.lang.System.out,]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[toString([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+                          $r11:[getDefault(),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+      [AFTER]RS:26
+                           $r0:[THIS,]
+                          $r10:[NewValue1208920120,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue102782913]),]
+                          $r12:[java.lang.System.out,]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[toString([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+                          $r11:[getDefault(),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+  UNIT:27 specialinvoke $r10.<java.lang.StringBuilder: void <init>()>()
+      [BEFOR]RS:27
+                           $r0:[THIS,]
+                          $r10:[NewValue1208920120,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue102782913]),]
+                          $r12:[java.lang.System.out,]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[toString([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+                          $r11:[getDefault(),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+      [AFTER]RS:27
+                           $r0:[THIS,]
+                          $r10:[NewValue1208920120,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue1208920120]),]
+                          $r12:[java.lang.System.out,]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[toString([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+                          $r11:[getDefault(),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+  UNIT:28 $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("For the changepassword - phonenumber: ")
+      [BEFOR]RS:28
+                           $r0:[THIS,]
+                          $r10:[NewValue1208920120,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue1208920120]),]
+                          $r12:[java.lang.System.out,]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[toString([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+                          $r11:[getDefault(),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+      [AFTER]RS:28
+                           $r0:[THIS,]
+                          $r10:[append([THIS:NewValue1208920120][@0:CONST]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue1208920120]),]
+                          $r12:[java.lang.System.out,]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[toString([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+                          $r11:[getDefault(),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+  UNIT:29 $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5)
+      [BEFOR]RS:29
+                           $r0:[THIS,]
+                          $r10:[append([THIS:NewValue1208920120][@0:CONST]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue1208920120]),]
+                          $r12:[java.lang.System.out,]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[toString([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+                          $r11:[getDefault(),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+      [AFTER]RS:29
+                           $r0:[THIS,]
+                          $r10:[append([THIS:CONST,NewValue1208920120][@0:CONST,Param@1]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue1208920120]),]
+                          $r12:[java.lang.System.out,]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[toString([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+                          $r11:[getDefault(),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+  UNIT:30 $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" password is: ")
+      [BEFOR]RS:30
+                           $r0:[THIS,]
+                          $r10:[append([THIS:CONST,NewValue1208920120][@0:CONST,Param@1]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue1208920120]),]
+                          $r12:[java.lang.System.out,]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[toString([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+                          $r11:[getDefault(),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+      [AFTER]RS:30
+                           $r0:[THIS,]
+                          $r10:[append([THIS:CONST,NewValue1208920120,Param@1][@0:CONST]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue1208920120]),]
+                          $r12:[java.lang.System.out,]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[toString([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+                          $r11:[getDefault(),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+  UNIT:31 $r10 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6)
+      [BEFOR]RS:31
+                           $r0:[THIS,]
+                          $r10:[append([THIS:CONST,NewValue1208920120,Param@1][@0:CONST]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue1208920120]),]
+                          $r12:[java.lang.System.out,]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[toString([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+                          $r11:[getDefault(),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+      [AFTER]RS:31
+                           $r0:[THIS,]
+                          $r10:[append([THIS:CONST,NewValue1208920120,Param@1][@0:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue1208920120]),]
+                          $r12:[java.lang.System.out,]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[toString([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+                          $r11:[getDefault(),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+  UNIT:32 $r8 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.String toString()>()
+      [BEFOR]RS:32
+                           $r0:[THIS,]
+                          $r10:[append([THIS:CONST,NewValue1208920120,Param@1][@0:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue1208920120]),]
+                          $r12:[java.lang.System.out,]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[toString([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r8:[aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+                          $r11:[getDefault(),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+      [AFTER]RS:32
+                           $r0:[THIS,]
+                          $r10:[append([THIS:CONST,NewValue1208920120,Param@1][@0:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue1208920120]),]
+                          $r12:[java.lang.System.out,]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[toString([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r8:[toString([THIS:CONST,NewValue102782913,NewValue1208920120,NewValue1450893925,Param@0,Param@1]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+                          $r11:[getDefault(),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+  UNIT:33 virtualinvoke $r12.<java.io.PrintStream: void println(java.lang.String)>($r8)
+      [BEFOR]RS:33
+                           $r0:[THIS,]
+                          $r10:[append([THIS:CONST,NewValue1208920120,Param@1][@0:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue1208920120]),]
+                          $r12:[java.lang.System.out,]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[toString([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r8:[toString([THIS:CONST,NewValue102782913,NewValue1208920120,NewValue1450893925,Param@0,Param@1]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+                          $r11:[getDefault(),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+      [AFTER]RS:33
+                           $r0:[THIS,]
+                          $r10:[append([THIS:CONST,NewValue1208920120,Param@1][@0:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue1208920120]),]
+                          $r12:[java.lang.System.out,]
+virtualinvoke $r12.<java.io.PrintStream: void println(java.lang.String)>($r8):[println([THIS:java.lang.System.out][@0:CONST,NewValue102782913,NewValue1208920120,NewValue1450893925,Param@0,Param@1]),]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[toString([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r8:[toString([THIS:CONST,NewValue102782913,NewValue1208920120,NewValue1450893925,Param@0,Param@1]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+                          $r11:[getDefault(),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+  UNIT:34 virtualinvoke $r11.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r5, null, $r6, null, null)
+      [BEFOR]RS:34
+                           $r0:[THIS,]
+                          $r10:[append([THIS:CONST,NewValue1208920120,Param@1][@0:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue1208920120]),]
+                          $r12:[java.lang.System.out,]
+virtualinvoke $r12.<java.io.PrintStream: void println(java.lang.String)>($r8):[println([THIS:java.lang.System.out][@0:CONST,NewValue102782913,NewValue1208920120,NewValue1450893925,Param@0,Param@1]),]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[toString([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r8:[toString([THIS:CONST,NewValue102782913,NewValue1208920120,NewValue1450893925,Param@0,Param@1]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+                          $r11:[getDefault(),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+      [AFTER]RS:34
+                           $r0:[THIS,]
+                          $r10:[append([THIS:CONST,NewValue1208920120,Param@1][@0:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+virtualinvoke $r11.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r5, null, $r6, null, null):[sendTextMessage([THIS][@0:CONST,Param@1][@1:CONST][@2:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1][@3:CONST][@4:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue1208920120]),]
+                          $r12:[java.lang.System.out,]
+virtualinvoke $r12.<java.io.PrintStream: void println(java.lang.String)>($r8):[println([THIS:java.lang.System.out][@0:CONST,NewValue102782913,NewValue1208920120,NewValue1450893925,Param@0,Param@1]),]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[toString([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r8:[toString([THIS:CONST,NewValue102782913,NewValue1208920120,NewValue1450893925,Param@0,Param@1]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+                          $r11:[getDefault(),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+  UNIT:35 return
+      [BEFOR]RS:35
+                           $r0:[THIS,]
+                          $r10:[append([THIS:CONST,NewValue1208920120,Param@1][@0:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+virtualinvoke $r11.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r5, null, $r6, null, null):[sendTextMessage([THIS][@0:CONST,Param@1][@1:CONST][@2:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1][@3:CONST][@4:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue1208920120]),]
+                          $r12:[java.lang.System.out,]
+virtualinvoke $r12.<java.io.PrintStream: void println(java.lang.String)>($r8):[println([THIS:java.lang.System.out][@0:CONST,NewValue102782913,NewValue1208920120,NewValue1450893925,Param@0,Param@1]),]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[toString([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r8:[toString([THIS:CONST,NewValue102782913,NewValue1208920120,NewValue1450893925,Param@0,Param@1]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+                          $r11:[getDefault(),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+      [AFTER]RS:35
+                           $r0:[THIS,]
+                          $r10:[append([THIS:CONST,NewValue1208920120,Param@1][@0:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+virtualinvoke $r11.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r5, null, $r6, null, null):[sendTextMessage([THIS][@0:CONST,Param@1][@1:CONST][@2:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1][@3:CONST][@4:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue1208920120]),]
+                          $r12:[java.lang.System.out,]
+virtualinvoke $r12.<java.io.PrintStream: void println(java.lang.String)>($r8):[println([THIS:java.lang.System.out][@0:CONST,NewValue102782913,NewValue1208920120,NewValue1450893925,Param@0,Param@1]),]
+                           $r5:[toString([THIS:CONST,Param@1]),]
+                           $r6:[toString([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r8:[toString([THIS:CONST,NewValue102782913,NewValue1208920120,NewValue1450893925,Param@0,Param@1]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+                          $r11:[getDefault(),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+  UNIT:36 $r4 := @caughtexception
+      [BEFOR]RS:36
+                           $r0:[THIS,]
+                          $r10:[NewValue102782913,NewValue1208920120,append([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0][@0:CONST,Param@1]),append([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0][@0:CONST]),append([THIS:CONST,NewValue102782913][@0:CONST,NewValue1450893925,Param@0]),append([THIS:CONST,NewValue1208920120,Param@1][@0:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),append([THIS:CONST,NewValue1208920120,Param@1][@0:CONST]),append([THIS:CONST,NewValue1208920120][@0:CONST,Param@1]),append([THIS:NewValue102782913][@0:CONST]),append([THIS:NewValue1208920120][@0:CONST]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,THIS.usernameBase64ByteString,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+virtualinvoke $r11.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r5, null, $r6, null, null):[sendTextMessage([THIS][@0:CONST,Param@1][@1:CONST][@2:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1][@3:CONST][@4:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue102782913]),<init>([THIS:NewValue1208920120]),]
+                          $r12:[java.lang.System.out,]
+virtualinvoke $r12.<java.io.PrintStream: void println(java.lang.String)>($r8):[println([THIS:java.lang.System.out][@0:CONST,NewValue102782913,NewValue1208920120,NewValue1450893925,Param@0,Param@1]),]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),toString([THIS:CONST,Param@1]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),toString([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r8:[NewValue71295120,aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),getString([THIS:CONST,Param@0][@0:CONST][@1:CONST]),toString([THIS:CONST,NewValue102782913,NewValue1208920120,NewValue1450893925,Param@0,Param@1]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+                          $r11:[getDefault(),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+      [AFTER]RS:36
+                           $r0:[THIS,]
+                          $r10:[NewValue102782913,NewValue1208920120,append([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0][@0:CONST,Param@1]),append([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0][@0:CONST]),append([THIS:CONST,NewValue102782913][@0:CONST,NewValue1450893925,Param@0]),append([THIS:CONST,NewValue1208920120,Param@1][@0:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),append([THIS:CONST,NewValue1208920120,Param@1][@0:CONST]),append([THIS:CONST,NewValue1208920120][@0:CONST,Param@1]),append([THIS:NewValue102782913][@0:CONST]),append([THIS:NewValue1208920120][@0:CONST]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,THIS.usernameBase64ByteString,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+virtualinvoke $r11.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r5, null, $r6, null, null):[sendTextMessage([THIS][@0:CONST,Param@1][@1:CONST][@2:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1][@3:CONST][@4:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue102782913]),<init>([THIS:NewValue1208920120]),]
+                          $r12:[java.lang.System.out,]
+virtualinvoke $r12.<java.io.PrintStream: void println(java.lang.String)>($r8):[println([THIS:java.lang.System.out][@0:CONST,NewValue102782913,NewValue1208920120,NewValue1450893925,Param@0,Param@1]),]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),toString([THIS:CONST,Param@1]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),toString([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r8:[NewValue71295120,aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),getString([THIS:CONST,Param@0][@0:CONST][@1:CONST]),toString([THIS:CONST,NewValue102782913,NewValue1208920120,NewValue1450893925,Param@0,Param@1]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+                          $r11:[getDefault(),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+  UNIT:37 virtualinvoke $r4.<java.lang.Exception: void printStackTrace()>()
+      [BEFOR]RS:37
+                           $r0:[THIS,]
+                          $r10:[NewValue102782913,NewValue1208920120,append([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0][@0:CONST,Param@1]),append([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0][@0:CONST]),append([THIS:CONST,NewValue102782913][@0:CONST,NewValue1450893925,Param@0]),append([THIS:CONST,NewValue1208920120,Param@1][@0:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),append([THIS:CONST,NewValue1208920120,Param@1][@0:CONST]),append([THIS:CONST,NewValue1208920120][@0:CONST,Param@1]),append([THIS:NewValue102782913][@0:CONST]),append([THIS:NewValue1208920120][@0:CONST]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,THIS.usernameBase64ByteString,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+virtualinvoke $r11.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r5, null, $r6, null, null):[sendTextMessage([THIS][@0:CONST,Param@1][@1:CONST][@2:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1][@3:CONST][@4:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue102782913]),<init>([THIS:NewValue1208920120]),]
+                          $r12:[java.lang.System.out,]
+virtualinvoke $r12.<java.io.PrintStream: void println(java.lang.String)>($r8):[println([THIS:java.lang.System.out][@0:CONST,NewValue102782913,NewValue1208920120,NewValue1450893925,Param@0,Param@1]),]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),toString([THIS:CONST,Param@1]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),toString([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r8:[NewValue71295120,aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),getString([THIS:CONST,Param@0][@0:CONST][@1:CONST]),toString([THIS:CONST,NewValue102782913,NewValue1208920120,NewValue1450893925,Param@0,Param@1]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+                          $r11:[getDefault(),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+      [AFTER]RS:37
+                           $r0:[THIS,]
+                          $r10:[NewValue102782913,NewValue1208920120,append([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0][@0:CONST,Param@1]),append([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0][@0:CONST]),append([THIS:CONST,NewValue102782913][@0:CONST,NewValue1450893925,Param@0]),append([THIS:CONST,NewValue1208920120,Param@1][@0:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),append([THIS:CONST,NewValue1208920120,Param@1][@0:CONST]),append([THIS:CONST,NewValue1208920120][@0:CONST,Param@1]),append([THIS:NewValue102782913][@0:CONST]),append([THIS:NewValue1208920120][@0:CONST]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,THIS.usernameBase64ByteString,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+virtualinvoke $r4.<java.lang.Exception: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+virtualinvoke $r11.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r5, null, $r6, null, null):[sendTextMessage([THIS][@0:CONST,Param@1][@1:CONST][@2:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1][@3:CONST][@4:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue102782913]),<init>([THIS:NewValue1208920120]),]
+                          $r12:[java.lang.System.out,]
+virtualinvoke $r12.<java.io.PrintStream: void println(java.lang.String)>($r8):[println([THIS:java.lang.System.out][@0:CONST,NewValue102782913,NewValue1208920120,NewValue1450893925,Param@0,Param@1]),]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),toString([THIS:CONST,Param@1]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),toString([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r8:[NewValue71295120,aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),getString([THIS:CONST,Param@0][@0:CONST][@1:CONST]),toString([THIS:CONST,NewValue102782913,NewValue1208920120,NewValue1450893925,Param@0,Param@1]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+                          $r11:[getDefault(),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+  UNIT:38 return
+      [BEFOR]RS:38
+                           $r0:[THIS,]
+                          $r10:[NewValue102782913,NewValue1208920120,append([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0][@0:CONST,Param@1]),append([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0][@0:CONST]),append([THIS:CONST,NewValue102782913][@0:CONST,NewValue1450893925,Param@0]),append([THIS:CONST,NewValue1208920120,Param@1][@0:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),append([THIS:CONST,NewValue1208920120,Param@1][@0:CONST]),append([THIS:CONST,NewValue1208920120][@0:CONST,Param@1]),append([THIS:NewValue102782913][@0:CONST]),append([THIS:NewValue1208920120][@0:CONST]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,THIS.usernameBase64ByteString,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+virtualinvoke $r4.<java.lang.Exception: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+virtualinvoke $r11.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r5, null, $r6, null, null):[sendTextMessage([THIS][@0:CONST,Param@1][@1:CONST][@2:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1][@3:CONST][@4:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue102782913]),<init>([THIS:NewValue1208920120]),]
+                          $r12:[java.lang.System.out,]
+virtualinvoke $r12.<java.io.PrintStream: void println(java.lang.String)>($r8):[println([THIS:java.lang.System.out][@0:CONST,NewValue102782913,NewValue1208920120,NewValue1450893925,Param@0,Param@1]),]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),toString([THIS:CONST,Param@1]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),toString([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r8:[NewValue71295120,aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),getString([THIS:CONST,Param@0][@0:CONST][@1:CONST]),toString([THIS:CONST,NewValue102782913,NewValue1208920120,NewValue1450893925,Param@0,Param@1]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+                          $r11:[getDefault(),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+      [AFTER]RS:38
+                           $r0:[THIS,]
+                          $r10:[NewValue102782913,NewValue1208920120,append([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0][@0:CONST,Param@1]),append([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0][@0:CONST]),append([THIS:CONST,NewValue102782913][@0:CONST,NewValue1450893925,Param@0]),append([THIS:CONST,NewValue1208920120,Param@1][@0:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),append([THIS:CONST,NewValue1208920120,Param@1][@0:CONST]),append([THIS:CONST,NewValue1208920120][@0:CONST,Param@1]),append([THIS:NewValue102782913][@0:CONST]),append([THIS:NewValue1208920120][@0:CONST]),]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[NewValue71295120,THIS.usernameBase64ByteString,]
+                           $r7:[getSharedPreferences([THIS:Param@0][@0:CONST][@1:CONST]),]
+virtualinvoke $r4.<java.lang.Exception: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r9:[decode([THIS:null][@0:CONST,Param@0][@1:CONST]),]
+                           $r3:[NewValue1450893925,]
+specialinvoke $r8.<java.lang.String: void <init>(byte[],java.lang.String)>($r9, "UTF-8"):[<init>([THIS:NewValue71295120][@0:CONST,Param@0][@1:CONST]),]
+virtualinvoke $r11.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r5, null, $r6, null, null):[sendTextMessage([THIS][@0:CONST,Param@1][@1:CONST][@2:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1][@3:CONST][@4:CONST]),]
+specialinvoke $r10.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue102782913]),<init>([THIS:NewValue1208920120]),]
+                          $r12:[java.lang.System.out,]
+virtualinvoke $r12.<java.io.PrintStream: void println(java.lang.String)>($r8):[println([THIS:java.lang.System.out][@0:CONST,NewValue102782913,NewValue1208920120,NewValue1450893925,Param@0,Param@1]),]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),toString([THIS:CONST,Param@1]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),toString([THIS:CONST,NewValue102782913,NewValue1450893925,Param@0,Param@1]),]
+                           $r8:[NewValue71295120,aesDeccryptedString([THIS:NewValue1450893925][@0:CONST,Param@0]),getString([THIS:CONST,Param@0][@0:CONST][@1:CONST]),toString([THIS:CONST,NewValue102782913,NewValue1208920120,NewValue1450893925,Param@0,Param@1]),]
+specialinvoke $r3.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue1450893925]),]
+                          $r11:[getDefault(),]
+$r0.<com.android.insecurebankv2.MyBroadCastReceiver: java.lang.String usernameBase64ByteString>:[NewValue71295120,]
+
+  UNIT:39 $r12 = <java.lang.System: java.io.PrintStream out>
+      [BEFOR]RS:39
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+
+      [AFTER]RS:39
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                          $r12:[java.lang.System.out,]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+
+  UNIT:40 virtualinvoke $r12.<java.io.PrintStream: void println(java.lang.String)>("Phone number is null")
+      [BEFOR]RS:40
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                          $r12:[java.lang.System.out,]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+
+      [AFTER]RS:40
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                          $r12:[java.lang.System.out,]
+virtualinvoke $r12.<java.io.PrintStream: void println(java.lang.String)>("Phone number is null"):[println([THIS:java.lang.System.out][@0:CONST]),]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+
+  UNIT:41 return
+      [BEFOR]RS:41
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                          $r12:[java.lang.System.out,]
+virtualinvoke $r12.<java.io.PrintStream: void println(java.lang.String)>("Phone number is null"):[println([THIS:java.lang.System.out][@0:CONST]),]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+
+      [AFTER]RS:41
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r2:[Param@1,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+                          $r12:[java.lang.System.out,]
+virtualinvoke $r12.<java.io.PrintStream: void println(java.lang.String)>("Phone number is null"):[println([THIS:java.lang.System.out][@0:CONST]),]
+                           $r5:[getStringExtra([THIS:Param@1][@0:CONST]),]
+                           $r6:[getStringExtra([THIS:Param@1][@0:CONST]),]
+
+@@End onReceive======================

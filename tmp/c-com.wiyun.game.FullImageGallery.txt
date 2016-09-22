@@ -1,0 +1,121 @@
+@@Start analyzing:c
+WRITE: Param@0.i
+  --Done analyzing:c     static void c(com.wiyun.game.FullImageGallery)
+    {
+        com.wiyun.game.FullImageGallery $r0;
+
+        $r0 := @parameter0: com.wiyun.game.FullImageGallery;
+
+        $r0.<com.wiyun.game.FullImageGallery: boolean i> = 0;
+
+        return;
+    }
+
+  --Method Body:    static void c(com.wiyun.game.FullImageGallery)
+    {
+        com.wiyun.game.FullImageGallery $r0;
+
+        $r0 := @parameter0: com.wiyun.game.FullImageGallery;
+
+        $r0.<com.wiyun.game.FullImageGallery: boolean i> = 0;
+
+        return;
+    }
+
+  --Start displaying:c 
+  UNIT:0 $r0 := @parameter0: com.wiyun.game.FullImageGallery
+      [BEFOR]RS:0
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                     Param@0.i:[Param@0.i,]
+
+      [AFTER]RS:0
+                           $r0:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                     Param@0.i:[Param@0.i,]
+
+  UNIT:1 $r0.<com.wiyun.game.FullImageGallery: boolean i> = 0
+      [BEFOR]RS:1
+                           $r0:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                     Param@0.i:[Param@0.i,]
+
+      [AFTER]RS:1
+                           $r0:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+$r0.<com.wiyun.game.FullImageGallery: boolean i>:[CONST,]
+                     Param@0.i:[CONST,]
+
+  UNIT:2 return
+      [BEFOR]RS:2
+                           $r0:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+$r0.<com.wiyun.game.FullImageGallery: boolean i>:[CONST,]
+                     Param@0.i:[CONST,]
+
+      [AFTER]RS:2
+                           $r0:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+$r0.<com.wiyun.game.FullImageGallery: boolean i>:[CONST,]
+                     Param@0.i:[CONST,]
+
+@@End c======================

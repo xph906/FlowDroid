@@ -1,0 +1,85 @@
+@@Start analyzing:access$0
+READ: Param@0
+  --Done analyzing:access$0     static void access$0(com.activedevelopers.android.androidcontrollerviasms.EmergencyActivity)
+    {
+        com.activedevelopers.android.androidcontrollerviasms.EmergencyActivity $r0;
+
+        $r0 := @parameter0: com.activedevelopers.android.androidcontrollerviasms.EmergencyActivity;
+
+        specialinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.EmergencyActivity: void releaseMethod()>();
+
+        return;
+    }
+
+  --Method Body:    static void access$0(com.activedevelopers.android.androidcontrollerviasms.EmergencyActivity)
+    {
+        com.activedevelopers.android.androidcontrollerviasms.EmergencyActivity $r0;
+
+        $r0 := @parameter0: com.activedevelopers.android.androidcontrollerviasms.EmergencyActivity;
+
+        specialinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.EmergencyActivity: void releaseMethod()>();
+
+        return;
+    }
+
+  --Start displaying:access$0 
+  UNIT:0 $r0 := @parameter0: com.activedevelopers.android.androidcontrollerviasms.EmergencyActivity
+      [BEFOR]RS:0
+                   THIS.camera:[THIS.camera,]
+                 THIS.tvNumber:[THIS.tvNumber,]
+                   THIS.tvName:[THIS.tvName,]
+                  THIS.btGetIt:[THIS.btGetIt,]
+               THIS.btCallBack:[THIS.btCallBack,]
+        THIS.flashLightCkecker:[THIS.flashLightCkecker,]
+
+      [AFTER]RS:0
+                           $r0:[Param@0,]
+                   THIS.camera:[THIS.camera,]
+                 THIS.tvNumber:[THIS.tvNumber,]
+                   THIS.tvName:[THIS.tvName,]
+                  THIS.btGetIt:[THIS.btGetIt,]
+               THIS.btCallBack:[THIS.btCallBack,]
+        THIS.flashLightCkecker:[THIS.flashLightCkecker,]
+
+  UNIT:1 specialinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.EmergencyActivity: void releaseMethod()>()
+      [BEFOR]RS:1
+                           $r0:[Param@0,]
+                   THIS.camera:[THIS.camera,]
+                 THIS.tvNumber:[THIS.tvNumber,]
+                   THIS.tvName:[THIS.tvName,]
+                  THIS.btGetIt:[THIS.btGetIt,]
+               THIS.btCallBack:[THIS.btCallBack,]
+        THIS.flashLightCkecker:[THIS.flashLightCkecker,]
+
+      [AFTER]RS:1
+                           $r0:[Param@0,]
+                   THIS.camera:[THIS.camera,]
+                 THIS.tvNumber:[THIS.tvNumber,]
+                   THIS.tvName:[THIS.tvName,]
+                  THIS.btGetIt:[THIS.btGetIt,]
+               THIS.btCallBack:[THIS.btCallBack,]
+        THIS.flashLightCkecker:[THIS.flashLightCkecker,]
+specialinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.EmergencyActivity: void releaseMethod()>():[releaseMethod([THIS:Param@0]),]
+
+  UNIT:2 return
+      [BEFOR]RS:2
+                           $r0:[Param@0,]
+                   THIS.camera:[THIS.camera,]
+                 THIS.tvNumber:[THIS.tvNumber,]
+                   THIS.tvName:[THIS.tvName,]
+                  THIS.btGetIt:[THIS.btGetIt,]
+               THIS.btCallBack:[THIS.btCallBack,]
+        THIS.flashLightCkecker:[THIS.flashLightCkecker,]
+specialinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.EmergencyActivity: void releaseMethod()>():[releaseMethod([THIS:Param@0]),]
+
+      [AFTER]RS:2
+                           $r0:[Param@0,]
+                   THIS.camera:[THIS.camera,]
+                 THIS.tvNumber:[THIS.tvNumber,]
+                   THIS.tvName:[THIS.tvName,]
+                  THIS.btGetIt:[THIS.btGetIt,]
+               THIS.btCallBack:[THIS.btCallBack,]
+        THIS.flashLightCkecker:[THIS.flashLightCkecker,]
+specialinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.EmergencyActivity: void releaseMethod()>():[releaseMethod([THIS:Param@0]),]
+
+@@End access$0======================

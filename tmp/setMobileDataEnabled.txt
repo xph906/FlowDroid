@@ -1,0 +1,2618 @@
+@@Start analyzing:setMobileDataEnabled
+READ: java.lang.Boolean.TYPE
+  --Done analyzing:setMobileDataEnabled     private void setMobileDataEnabled(boolean)
+    {
+        com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService $r0;
+        boolean $z0;
+        java.lang.Class $r1, $r4;
+        java.lang.Object $r2;
+        android.net.ConnectivityManager $r3;
+        java.lang.String $r5;
+        java.lang.reflect.Field $r6;
+        java.lang.reflect.Method $r7;
+        java.lang.Class[] $r8;
+        java.lang.Object[] $r9;
+        java.lang.Boolean $r10;
+        java.lang.ClassNotFoundException $r11, $r15;
+        java.lang.NoSuchFieldException $r12;
+        java.lang.IllegalAccessException $r13, $r17;
+        java.lang.IllegalArgumentException $r14, $r18;
+        java.lang.NoSuchMethodException $r16;
+        java.lang.reflect.InvocationTargetException $r19;
+
+        $r0 := @this: com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService;
+
+        $z0 := @parameter0: boolean;
+
+        $r2 = virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService: java.lang.Object getSystemService(java.lang.String)>("connectivity");
+
+        $r3 = (android.net.ConnectivityManager) $r2;
+
+        $r4 = null;
+
+     label01:
+        $r1 = virtualinvoke $r3.<java.lang.Object: java.lang.Class getClass()>();
+
+        $r5 = virtualinvoke $r1.<java.lang.Class: java.lang.String getName()>();
+
+        $r4 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>($r5);
+
+     label02:
+        $r6 = null;
+
+     label03:
+        $r6 = virtualinvoke $r4.<java.lang.Class: java.lang.reflect.Field getDeclaredField(java.lang.String)>("mService");
+
+     label04:
+        virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1);
+
+        $r2 = null;
+
+     label05:
+        $r2 = virtualinvoke $r6.<java.lang.reflect.Field: java.lang.Object get(java.lang.Object)>($r3);
+
+     label06:
+        $r4 = null;
+
+     label07:
+        $r1 = virtualinvoke $r2.<java.lang.Object: java.lang.Class getClass()>();
+
+        $r5 = virtualinvoke $r1.<java.lang.Class: java.lang.String getName()>();
+
+        $r4 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>($r5);
+
+     label08:
+        $r7 = null;
+
+        $r8 = newarray (java.lang.Class)[1];
+
+        $r1 = <java.lang.Boolean: java.lang.Class TYPE>;
+
+        $r8[0] = $r1;
+
+     label09:
+        $r7 = virtualinvoke $r4.<java.lang.Class: java.lang.reflect.Method getDeclaredMethod(java.lang.String,java.lang.Class[])>("setMobileDataEnabled", $r8);
+
+     label10:
+        virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1);
+
+        $r9 = newarray (java.lang.Object)[1];
+
+     label11:
+        $r10 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>($z0);
+
+     label12:
+        $r9[0] = $r10;
+
+     label13:
+        virtualinvoke $r7.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r2, $r9);
+
+     label14:
+        return;
+
+     label15:
+        $r11 := @caughtexception;
+
+        virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>();
+
+        goto label02;
+
+     label16:
+        $r12 := @caughtexception;
+
+        virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>();
+
+        goto label04;
+
+     label17:
+        $r13 := @caughtexception;
+
+        virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>();
+
+        goto label06;
+
+     label18:
+        $r14 := @caughtexception;
+
+        virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>();
+
+        goto label06;
+
+     label19:
+        $r15 := @caughtexception;
+
+        virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>();
+
+        goto label08;
+
+     label20:
+        $r16 := @caughtexception;
+
+        virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>();
+
+        goto label10;
+
+     label21:
+        $r17 := @caughtexception;
+
+        virtualinvoke $r17.<java.lang.IllegalAccessException: void printStackTrace()>();
+
+        return;
+
+     label22:
+        $r18 := @caughtexception;
+
+        virtualinvoke $r18.<java.lang.IllegalArgumentException: void printStackTrace()>();
+
+        return;
+
+     label23:
+        $r19 := @caughtexception;
+
+        virtualinvoke $r19.<java.lang.reflect.InvocationTargetException: void printStackTrace()>();
+
+        return;
+
+        catch java.lang.ClassNotFoundException from label01 to label02 with label15;
+        catch java.lang.NoSuchFieldException from label03 to label04 with label16;
+        catch java.lang.IllegalAccessException from label05 to label06 with label17;
+        catch java.lang.IllegalArgumentException from label05 to label06 with label18;
+        catch java.lang.ClassNotFoundException from label07 to label08 with label19;
+        catch java.lang.NoSuchMethodException from label09 to label10 with label20;
+        catch java.lang.IllegalAccessException from label11 to label12 with label21;
+        catch java.lang.IllegalAccessException from label13 to label14 with label21;
+        catch java.lang.IllegalArgumentException from label11 to label12 with label22;
+        catch java.lang.IllegalArgumentException from label13 to label14 with label22;
+        catch java.lang.reflect.InvocationTargetException from label11 to label12 with label23;
+        catch java.lang.reflect.InvocationTargetException from label13 to label14 with label23;
+    }
+
+  --Method Body:    private void setMobileDataEnabled(boolean)
+    {
+        com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService $r0;
+        boolean $z0;
+        java.lang.Class $r1, $r4;
+        java.lang.Object $r2;
+        android.net.ConnectivityManager $r3;
+        java.lang.String $r5;
+        java.lang.reflect.Field $r6;
+        java.lang.reflect.Method $r7;
+        java.lang.Class[] $r8;
+        java.lang.Object[] $r9;
+        java.lang.Boolean $r10;
+        java.lang.ClassNotFoundException $r11, $r15;
+        java.lang.NoSuchFieldException $r12;
+        java.lang.IllegalAccessException $r13, $r17;
+        java.lang.IllegalArgumentException $r14, $r18;
+        java.lang.NoSuchMethodException $r16;
+        java.lang.reflect.InvocationTargetException $r19;
+
+        $r0 := @this: com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService;
+
+        $z0 := @parameter0: boolean;
+
+        $r2 = virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService: java.lang.Object getSystemService(java.lang.String)>("connectivity");
+
+        $r3 = (android.net.ConnectivityManager) $r2;
+
+        $r4 = null;
+
+     label01:
+        $r1 = virtualinvoke $r3.<java.lang.Object: java.lang.Class getClass()>();
+
+        $r5 = virtualinvoke $r1.<java.lang.Class: java.lang.String getName()>();
+
+        $r4 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>($r5);
+
+     label02:
+        $r6 = null;
+
+     label03:
+        $r6 = virtualinvoke $r4.<java.lang.Class: java.lang.reflect.Field getDeclaredField(java.lang.String)>("mService");
+
+     label04:
+        virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1);
+
+        $r2 = null;
+
+     label05:
+        $r2 = virtualinvoke $r6.<java.lang.reflect.Field: java.lang.Object get(java.lang.Object)>($r3);
+
+     label06:
+        $r4 = null;
+
+     label07:
+        $r1 = virtualinvoke $r2.<java.lang.Object: java.lang.Class getClass()>();
+
+        $r5 = virtualinvoke $r1.<java.lang.Class: java.lang.String getName()>();
+
+        $r4 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>($r5);
+
+     label08:
+        $r7 = null;
+
+        $r8 = newarray (java.lang.Class)[1];
+
+        $r1 = <java.lang.Boolean: java.lang.Class TYPE>;
+
+        $r8[0] = $r1;
+
+     label09:
+        $r7 = virtualinvoke $r4.<java.lang.Class: java.lang.reflect.Method getDeclaredMethod(java.lang.String,java.lang.Class[])>("setMobileDataEnabled", $r8);
+
+     label10:
+        virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1);
+
+        $r9 = newarray (java.lang.Object)[1];
+
+     label11:
+        $r10 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>($z0);
+
+     label12:
+        $r9[0] = $r10;
+
+     label13:
+        virtualinvoke $r7.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r2, $r9);
+
+     label14:
+        return;
+
+     label15:
+        $r11 := @caughtexception;
+
+        virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>();
+
+        goto label02;
+
+     label16:
+        $r12 := @caughtexception;
+
+        virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>();
+
+        goto label04;
+
+     label17:
+        $r13 := @caughtexception;
+
+        virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>();
+
+        goto label06;
+
+     label18:
+        $r14 := @caughtexception;
+
+        virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>();
+
+        goto label06;
+
+     label19:
+        $r15 := @caughtexception;
+
+        virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>();
+
+        goto label08;
+
+     label20:
+        $r16 := @caughtexception;
+
+        virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>();
+
+        goto label10;
+
+     label21:
+        $r17 := @caughtexception;
+
+        virtualinvoke $r17.<java.lang.IllegalAccessException: void printStackTrace()>();
+
+        return;
+
+     label22:
+        $r18 := @caughtexception;
+
+        virtualinvoke $r18.<java.lang.IllegalArgumentException: void printStackTrace()>();
+
+        return;
+
+     label23:
+        $r19 := @caughtexception;
+
+        virtualinvoke $r19.<java.lang.reflect.InvocationTargetException: void printStackTrace()>();
+
+        return;
+
+        catch java.lang.ClassNotFoundException from label01 to label02 with label15;
+        catch java.lang.NoSuchFieldException from label03 to label04 with label16;
+        catch java.lang.IllegalAccessException from label05 to label06 with label17;
+        catch java.lang.IllegalArgumentException from label05 to label06 with label18;
+        catch java.lang.ClassNotFoundException from label07 to label08 with label19;
+        catch java.lang.NoSuchMethodException from label09 to label10 with label20;
+        catch java.lang.IllegalAccessException from label11 to label12 with label21;
+        catch java.lang.IllegalAccessException from label13 to label14 with label21;
+        catch java.lang.IllegalArgumentException from label11 to label12 with label22;
+        catch java.lang.IllegalArgumentException from label13 to label14 with label22;
+        catch java.lang.reflect.InvocationTargetException from label11 to label12 with label23;
+        catch java.lang.reflect.InvocationTargetException from label13 to label14 with label23;
+    }
+
+  --Start displaying:setMobileDataEnabled 
+  UNIT:0 $r0 := @this: com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService
+      [BEFOR]RS:0
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+              THIS.mlocManager:[THIS.mlocManager,]
+
+      [AFTER]RS:0
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r0:[THIS,]
+
+  UNIT:1 $z0 := @parameter0: boolean
+      [BEFOR]RS:1
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:1
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r0:[THIS,]
+
+  UNIT:2 $r2 = virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService: java.lang.Object getSystemService(java.lang.String)>("connectivity")
+      [BEFOR]RS:2
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:2
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r0:[THIS,]
+
+  UNIT:3 $r3 = (android.net.ConnectivityManager) $r2
+      [BEFOR]RS:3
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:3
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r0:[THIS,]
+
+  UNIT:4 $r4 = null
+      [BEFOR]RS:4
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:4
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r4:[CONST,]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r0:[THIS,]
+
+  UNIT:5 $r1 = virtualinvoke $r3.<java.lang.Object: java.lang.Class getClass()>()
+      [BEFOR]RS:5
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r4:[CONST,]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:5
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r0:[THIS,]
+
+  UNIT:6 $r5 = virtualinvoke $r1.<java.lang.Class: java.lang.String getName()>()
+      [BEFOR]RS:6
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:6
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+
+  UNIT:7 $r4 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>($r5)
+      [BEFOR]RS:7
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:7
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[forName([THIS:null][@0:CONST,THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+
+  UNIT:8 $r6 = null
+      [BEFOR]RS:8
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:8
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+
+  UNIT:9 $r6 = virtualinvoke $r4.<java.lang.Class: java.lang.reflect.Field getDeclaredField(java.lang.String)>("mService")
+      [BEFOR]RS:9
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:9
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+
+  UNIT:10 virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1)
+      [BEFOR]RS:10
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:10
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:11 $r2 = null
+      [BEFOR]RS:11
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:11
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:12 $r2 = virtualinvoke $r6.<java.lang.reflect.Field: java.lang.Object get(java.lang.Object)>($r3)
+      [BEFOR]RS:12
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:12
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:13 $r4 = null
+      [BEFOR]RS:13
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:13
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:14 $r1 = virtualinvoke $r2.<java.lang.Object: java.lang.Class getClass()>()
+      [BEFOR]RS:14
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:14
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:15 $r5 = virtualinvoke $r1.<java.lang.Class: java.lang.String getName()>()
+      [BEFOR]RS:15
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:15
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:16 $r4 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>($r5)
+      [BEFOR]RS:16
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:16
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:17 $r7 = null
+      [BEFOR]RS:17
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:17
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $r7:[CONST,]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:18 $r8 = newarray (java.lang.Class)[1]
+      [BEFOR]RS:18
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $r7:[CONST,]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:18
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $r7:[CONST,]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:19 $r1 = <java.lang.Boolean: java.lang.Class TYPE>
+      [BEFOR]RS:19
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $r7:[CONST,]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:19
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $r7:[CONST,]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:20 $r8[0] = $r1
+      [BEFOR]RS:20
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $r7:[CONST,]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:20
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:21 $r7 = virtualinvoke $r4.<java.lang.Class: java.lang.reflect.Method getDeclaredMethod(java.lang.String,java.lang.Class[])>("setMobileDataEnabled", $r8)
+      [BEFOR]RS:21
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:21
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:22 virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1)
+      [BEFOR]RS:22
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:22
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,NewValue1068265262,THIS][@0:CONST]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:23 $r9 = newarray (java.lang.Object)[1]
+      [BEFOR]RS:23
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,NewValue1068265262,THIS][@0:CONST]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:23
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r9:[NewValue1873346889,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,NewValue1068265262,THIS][@0:CONST]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:24 $r10 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>($z0)
+      [BEFOR]RS:24
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r9:[NewValue1873346889,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,NewValue1068265262,THIS][@0:CONST]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:24
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r9:[NewValue1873346889,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,NewValue1068265262,THIS][@0:CONST]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                          $r10:[valueOf([THIS:null][@0:Param@0]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:25 $r9[0] = $r10
+      [BEFOR]RS:25
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r9:[NewValue1873346889,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,NewValue1068265262,THIS][@0:CONST]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                          $r10:[valueOf([THIS:null][@0:Param@0]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:25
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r9:[NewValue1873346889,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r9[0]:[valueOf([THIS:null][@0:Param@0]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,NewValue1068265262,THIS][@0:CONST]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                          $r10:[valueOf([THIS:null][@0:Param@0]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],ARR:NewValue1873346889[NewValue1873346889,valueOf([THIS:null][@0:Param@0]),],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:26 virtualinvoke $r7.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r2, $r9)
+      [BEFOR]RS:26
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r9:[NewValue1873346889,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r9[0]:[valueOf([THIS:null][@0:Param@0]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,NewValue1068265262,THIS][@0:CONST]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                          $r10:[valueOf([THIS:null][@0:Param@0]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],ARR:NewValue1873346889[NewValue1873346889,valueOf([THIS:null][@0:Param@0]),],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:26
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r9:[NewValue1873346889,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r9[0]:[valueOf([THIS:null][@0:Param@0]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+virtualinvoke $r7.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r2, $r9):[invoke([THIS:CONST,NewValue1068265262,THIS][@0:CONST,THIS][@1:NewValue1873346889]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,NewValue1068265262,THIS][@0:CONST]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                          $r10:[valueOf([THIS:null][@0:Param@0]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],ARR:NewValue1873346889[NewValue1873346889,valueOf([THIS:null][@0:Param@0]),],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:27 return
+      [BEFOR]RS:27
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r9:[NewValue1873346889,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r9[0]:[valueOf([THIS:null][@0:Param@0]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+virtualinvoke $r7.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r2, $r9):[invoke([THIS:CONST,NewValue1068265262,THIS][@0:CONST,THIS][@1:NewValue1873346889]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,NewValue1068265262,THIS][@0:CONST]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                          $r10:[valueOf([THIS:null][@0:Param@0]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],ARR:NewValue1873346889[NewValue1873346889,valueOf([THIS:null][@0:Param@0]),],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:27
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r9:[NewValue1873346889,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r9[0]:[valueOf([THIS:null][@0:Param@0]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+virtualinvoke $r7.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r2, $r9):[invoke([THIS:CONST,NewValue1068265262,THIS][@0:CONST,THIS][@1:NewValue1873346889]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,NewValue1068265262,THIS][@0:CONST]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                          $r10:[valueOf([THIS:null][@0:Param@0]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],ARR:NewValue1873346889[NewValue1873346889,valueOf([THIS:null][@0:Param@0]),],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:28 $r11 := @caughtexception
+      [BEFOR]RS:28
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:28
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+
+  UNIT:29 virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>()
+      [BEFOR]RS:29
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:29
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+
+  UNIT:30 goto [?= $r6 = null]
+      [BEFOR]RS:30
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:30
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+
+  UNIT:31 $r12 := @caughtexception
+      [BEFOR]RS:31
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:31
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+
+  UNIT:32 virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>()
+      [BEFOR]RS:32
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:32
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:33 goto [?= virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1)]
+      [BEFOR]RS:33
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:33
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:34 $r13 := @caughtexception
+      [BEFOR]RS:34
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:34
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:35 virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>()
+      [BEFOR]RS:35
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:35
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:36 goto [?= $r4 = null]
+      [BEFOR]RS:36
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:36
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:37 $r14 := @caughtexception
+      [BEFOR]RS:37
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:37
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:38 virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>()
+      [BEFOR]RS:38
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:38
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:39 goto [?= $r4 = null]
+      [BEFOR]RS:39
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:39
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:40 $r15 := @caughtexception
+      [BEFOR]RS:40
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:40
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:41 virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>()
+      [BEFOR]RS:41
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:41
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:42 goto [?= $r7 = null]
+      [BEFOR]RS:42
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:42
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[getClass([THIS:CONST,THIS]),]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                           $z0:[Param@0,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:43 $r16 := @caughtexception
+      [BEFOR]RS:43
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:43
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:44 virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>()
+      [BEFOR]RS:44
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:44
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:45 goto [?= virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1)]
+      [BEFOR]RS:45
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:45
+              THIS.messageFrom:[THIS.messageFrom,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:46 $r17 := @caughtexception
+      [BEFOR]RS:46
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r9:[NewValue1873346889,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r9[0]:[valueOf([THIS:null][@0:Param@0]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+virtualinvoke $r7.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r2, $r9):[invoke([THIS:CONST,NewValue1068265262,THIS][@0:CONST,THIS][@1:NewValue1873346889]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,NewValue1068265262,THIS][@0:CONST]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                          $r10:[valueOf([THIS:null][@0:Param@0]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],ARR:NewValue1873346889[NewValue1873346889,valueOf([THIS:null][@0:Param@0]),],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:46
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r9:[NewValue1873346889,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r9[0]:[valueOf([THIS:null][@0:Param@0]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+virtualinvoke $r7.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r2, $r9):[invoke([THIS:CONST,NewValue1068265262,THIS][@0:CONST,THIS][@1:NewValue1873346889]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,NewValue1068265262,THIS][@0:CONST]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                          $r10:[valueOf([THIS:null][@0:Param@0]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],ARR:NewValue1873346889[NewValue1873346889,valueOf([THIS:null][@0:Param@0]),],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:47 virtualinvoke $r17.<java.lang.IllegalAccessException: void printStackTrace()>()
+      [BEFOR]RS:47
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r9:[NewValue1873346889,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r9[0]:[valueOf([THIS:null][@0:Param@0]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+virtualinvoke $r7.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r2, $r9):[invoke([THIS:CONST,NewValue1068265262,THIS][@0:CONST,THIS][@1:NewValue1873346889]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,NewValue1068265262,THIS][@0:CONST]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                          $r10:[valueOf([THIS:null][@0:Param@0]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],ARR:NewValue1873346889[NewValue1873346889,valueOf([THIS:null][@0:Param@0]),],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:47
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r9:[NewValue1873346889,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r9[0]:[valueOf([THIS:null][@0:Param@0]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r17.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+virtualinvoke $r7.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r2, $r9):[invoke([THIS:CONST,NewValue1068265262,THIS][@0:CONST,THIS][@1:NewValue1873346889]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,NewValue1068265262,THIS][@0:CONST]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                          $r10:[valueOf([THIS:null][@0:Param@0]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],ARR:NewValue1873346889[NewValue1873346889,valueOf([THIS:null][@0:Param@0]),],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:48 return
+      [BEFOR]RS:48
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r9:[NewValue1873346889,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r9[0]:[valueOf([THIS:null][@0:Param@0]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r17.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+virtualinvoke $r7.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r2, $r9):[invoke([THIS:CONST,NewValue1068265262,THIS][@0:CONST,THIS][@1:NewValue1873346889]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,NewValue1068265262,THIS][@0:CONST]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                          $r10:[valueOf([THIS:null][@0:Param@0]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],ARR:NewValue1873346889[NewValue1873346889,valueOf([THIS:null][@0:Param@0]),],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:48
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r9:[NewValue1873346889,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r9[0]:[valueOf([THIS:null][@0:Param@0]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r17.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+virtualinvoke $r7.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r2, $r9):[invoke([THIS:CONST,NewValue1068265262,THIS][@0:CONST,THIS][@1:NewValue1873346889]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,NewValue1068265262,THIS][@0:CONST]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                          $r10:[valueOf([THIS:null][@0:Param@0]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],ARR:NewValue1873346889[NewValue1873346889,valueOf([THIS:null][@0:Param@0]),],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:49 $r18 := @caughtexception
+      [BEFOR]RS:49
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r9:[NewValue1873346889,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r9[0]:[valueOf([THIS:null][@0:Param@0]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+virtualinvoke $r7.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r2, $r9):[invoke([THIS:CONST,NewValue1068265262,THIS][@0:CONST,THIS][@1:NewValue1873346889]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,NewValue1068265262,THIS][@0:CONST]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                          $r10:[valueOf([THIS:null][@0:Param@0]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],ARR:NewValue1873346889[NewValue1873346889,valueOf([THIS:null][@0:Param@0]),],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:49
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r9:[NewValue1873346889,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r9[0]:[valueOf([THIS:null][@0:Param@0]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+virtualinvoke $r7.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r2, $r9):[invoke([THIS:CONST,NewValue1068265262,THIS][@0:CONST,THIS][@1:NewValue1873346889]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,NewValue1068265262,THIS][@0:CONST]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                          $r10:[valueOf([THIS:null][@0:Param@0]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],ARR:NewValue1873346889[NewValue1873346889,valueOf([THIS:null][@0:Param@0]),],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:50 virtualinvoke $r18.<java.lang.IllegalArgumentException: void printStackTrace()>()
+      [BEFOR]RS:50
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r9:[NewValue1873346889,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r9[0]:[valueOf([THIS:null][@0:Param@0]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+virtualinvoke $r7.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r2, $r9):[invoke([THIS:CONST,NewValue1068265262,THIS][@0:CONST,THIS][@1:NewValue1873346889]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,NewValue1068265262,THIS][@0:CONST]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                          $r10:[valueOf([THIS:null][@0:Param@0]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],ARR:NewValue1873346889[NewValue1873346889,valueOf([THIS:null][@0:Param@0]),],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:50
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r9:[NewValue1873346889,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r18.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r9[0]:[valueOf([THIS:null][@0:Param@0]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+virtualinvoke $r7.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r2, $r9):[invoke([THIS:CONST,NewValue1068265262,THIS][@0:CONST,THIS][@1:NewValue1873346889]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,NewValue1068265262,THIS][@0:CONST]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                          $r10:[valueOf([THIS:null][@0:Param@0]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],ARR:NewValue1873346889[NewValue1873346889,valueOf([THIS:null][@0:Param@0]),],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:51 return
+      [BEFOR]RS:51
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r9:[NewValue1873346889,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r18.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r9[0]:[valueOf([THIS:null][@0:Param@0]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+virtualinvoke $r7.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r2, $r9):[invoke([THIS:CONST,NewValue1068265262,THIS][@0:CONST,THIS][@1:NewValue1873346889]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,NewValue1068265262,THIS][@0:CONST]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                          $r10:[valueOf([THIS:null][@0:Param@0]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],ARR:NewValue1873346889[NewValue1873346889,valueOf([THIS:null][@0:Param@0]),],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:51
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r9:[NewValue1873346889,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r18.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r9[0]:[valueOf([THIS:null][@0:Param@0]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+virtualinvoke $r7.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r2, $r9):[invoke([THIS:CONST,NewValue1068265262,THIS][@0:CONST,THIS][@1:NewValue1873346889]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,NewValue1068265262,THIS][@0:CONST]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                          $r10:[valueOf([THIS:null][@0:Param@0]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],ARR:NewValue1873346889[NewValue1873346889,valueOf([THIS:null][@0:Param@0]),],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:52 $r19 := @caughtexception
+      [BEFOR]RS:52
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r9:[NewValue1873346889,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r9[0]:[valueOf([THIS:null][@0:Param@0]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+virtualinvoke $r7.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r2, $r9):[invoke([THIS:CONST,NewValue1068265262,THIS][@0:CONST,THIS][@1:NewValue1873346889]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,NewValue1068265262,THIS][@0:CONST]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                          $r10:[valueOf([THIS:null][@0:Param@0]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],ARR:NewValue1873346889[NewValue1873346889,valueOf([THIS:null][@0:Param@0]),],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:52
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r9:[NewValue1873346889,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r9[0]:[valueOf([THIS:null][@0:Param@0]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+virtualinvoke $r7.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r2, $r9):[invoke([THIS:CONST,NewValue1068265262,THIS][@0:CONST,THIS][@1:NewValue1873346889]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,NewValue1068265262,THIS][@0:CONST]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                          $r10:[valueOf([THIS:null][@0:Param@0]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],ARR:NewValue1873346889[NewValue1873346889,valueOf([THIS:null][@0:Param@0]),],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:53 virtualinvoke $r19.<java.lang.reflect.InvocationTargetException: void printStackTrace()>()
+      [BEFOR]RS:53
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r9:[NewValue1873346889,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r9[0]:[valueOf([THIS:null][@0:Param@0]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+virtualinvoke $r7.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r2, $r9):[invoke([THIS:CONST,NewValue1068265262,THIS][@0:CONST,THIS][@1:NewValue1873346889]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,NewValue1068265262,THIS][@0:CONST]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+                          $r10:[valueOf([THIS:null][@0:Param@0]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],ARR:NewValue1873346889[NewValue1873346889,valueOf([THIS:null][@0:Param@0]),],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:53
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r9:[NewValue1873346889,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r9[0]:[valueOf([THIS:null][@0:Param@0]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+virtualinvoke $r7.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r2, $r9):[invoke([THIS:CONST,NewValue1068265262,THIS][@0:CONST,THIS][@1:NewValue1873346889]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,NewValue1068265262,THIS][@0:CONST]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+virtualinvoke $r19.<java.lang.reflect.InvocationTargetException: void printStackTrace()>():[printStackTrace([THIS]),]
+                          $r10:[valueOf([THIS:null][@0:Param@0]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],ARR:NewValue1873346889[NewValue1873346889,valueOf([THIS:null][@0:Param@0]),],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+  UNIT:54 return
+      [BEFOR]RS:54
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r9:[NewValue1873346889,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r9[0]:[valueOf([THIS:null][@0:Param@0]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+virtualinvoke $r7.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r2, $r9):[invoke([THIS:CONST,NewValue1068265262,THIS][@0:CONST,THIS][@1:NewValue1873346889]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,NewValue1068265262,THIS][@0:CONST]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+virtualinvoke $r19.<java.lang.reflect.InvocationTargetException: void printStackTrace()>():[printStackTrace([THIS]),]
+                          $r10:[valueOf([THIS:null][@0:Param@0]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],ARR:NewValue1873346889[NewValue1873346889,valueOf([THIS:null][@0:Param@0]),],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+      [AFTER]RS:54
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r9:[NewValue1873346889,]
+virtualinvoke $r14.<java.lang.IllegalArgumentException: void printStackTrace()>():[printStackTrace([THIS]),]
+                        $r9[0]:[valueOf([THIS:null][@0:Param@0]),]
+virtualinvoke $r13.<java.lang.IllegalAccessException: void printStackTrace()>():[printStackTrace([THIS]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+virtualinvoke $r7.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>($r2, $r9):[invoke([THIS:CONST,NewValue1068265262,THIS][@0:CONST,THIS][@1:NewValue1873346889]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+                           $r3:[getSystemService([THIS:THIS][@0:CONST]),]
+virtualinvoke $r16.<java.lang.NoSuchMethodException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r6.<java.lang.reflect.Field: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,THIS][@0:CONST]),]
+                           $r1:[java.lang.Boolean.TYPE,]
+                           $r4:[CONST,forName([THIS:null][@0:CONST,THIS]),]
+                           $r6:[CONST,getDeclaredField([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r15.<java.lang.ClassNotFoundException: void printStackTrace()>():[printStackTrace([THIS]),]
+virtualinvoke $r7.<java.lang.reflect.Method: void setAccessible(boolean)>(1):[setAccessible([THIS:CONST,NewValue1068265262,THIS][@0:CONST]),]
+                        $r8[0]:[java.lang.Boolean.TYPE,]
+                           $r7:[CONST,getDeclaredMethod([THIS:CONST,THIS][@0:CONST][@1:NewValue1068265262]),]
+virtualinvoke $r19.<java.lang.reflect.InvocationTargetException: void printStackTrace()>():[printStackTrace([THIS]),]
+                          $r10:[valueOf([THIS:null][@0:Param@0]),]
+                           $z0:[Param@0,]
+                           $r8:[NewValue1068265262,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                ARRAY-DATA-KEY:[ARR:NewValue1068265262[NewValue1068265262,java.lang.Boolean.TYPE,],ARR:NewValue1873346889[NewValue1873346889,valueOf([THIS:null][@0:Param@0]),],]
+                           $r2:[CONST,get([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r5:[getName([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r12.<java.lang.NoSuchFieldException: void printStackTrace()>():[printStackTrace([THIS]),]
+
+@@End setMobileDataEnabled======================

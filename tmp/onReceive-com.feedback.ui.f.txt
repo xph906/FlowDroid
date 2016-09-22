@@ -1,0 +1,249 @@
+@@Start analyzing:onReceive
+READ: THIS.b
+READ: THIS.a
+  --Done analyzing:onReceive     public final void onReceive(android.content.Context, android.content.Intent)
+    {
+        com.feedback.ui.f $r0;
+        android.content.Context $r1;
+        android.content.Intent $r2;
+        com.feedback.ui.g $r3;
+        java.util.List $r4;
+        com.feedback.ui.FeedbackConversations $r5;
+
+        $r0 := @this: com.feedback.ui.f;
+
+        $r1 := @parameter0: android.content.Context;
+
+        $r2 := @parameter1: android.content.Intent;
+
+        $r5 = $r0.<com.feedback.ui.f: com.feedback.ui.FeedbackConversations b>;
+
+        $r4 = staticinvoke <com.feedback.b.c: java.util.List a(android.content.Context)>($r5);
+
+        $r3 = $r0.<com.feedback.ui.f: com.feedback.ui.g a>;
+
+        virtualinvoke $r3.<com.feedback.ui.g: void a(java.util.List)>($r4);
+
+        $r3 = $r0.<com.feedback.ui.f: com.feedback.ui.g a>;
+
+        virtualinvoke $r3.<com.feedback.ui.g: void notifyDataSetChanged()>();
+
+        return;
+    }
+
+  --Method Body:    public final void onReceive(android.content.Context, android.content.Intent)
+    {
+        com.feedback.ui.f $r0;
+        android.content.Context $r1;
+        android.content.Intent $r2;
+        com.feedback.ui.g $r3;
+        java.util.List $r4;
+        com.feedback.ui.FeedbackConversations $r5;
+
+        $r0 := @this: com.feedback.ui.f;
+
+        $r1 := @parameter0: android.content.Context;
+
+        $r2 := @parameter1: android.content.Intent;
+
+        $r5 = $r0.<com.feedback.ui.f: com.feedback.ui.FeedbackConversations b>;
+
+        $r4 = staticinvoke <com.feedback.b.c: java.util.List a(android.content.Context)>($r5);
+
+        $r3 = $r0.<com.feedback.ui.f: com.feedback.ui.g a>;
+
+        virtualinvoke $r3.<com.feedback.ui.g: void a(java.util.List)>($r4);
+
+        $r3 = $r0.<com.feedback.ui.f: com.feedback.ui.g a>;
+
+        virtualinvoke $r3.<com.feedback.ui.g: void notifyDataSetChanged()>();
+
+        return;
+    }
+
+  --Start displaying:onReceive 
+  UNIT:0 $r0 := @this: com.feedback.ui.f
+      [BEFOR]RS:0
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+
+      [AFTER]RS:0
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                           $r0:[THIS,]
+
+  UNIT:1 $r1 := @parameter0: android.content.Context
+      [BEFOR]RS:1
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:1
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                           $r0:[THIS,]
+
+  UNIT:2 $r2 := @parameter1: android.content.Intent
+      [BEFOR]RS:2
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:2
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                           $r0:[THIS,]
+
+  UNIT:3 $r5 = $r0.<com.feedback.ui.f: com.feedback.ui.FeedbackConversations b>
+      [BEFOR]RS:3
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:3
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                           $r0:[THIS,]
+                           $r5:[THIS.b,]
+
+  UNIT:4 $r4 = staticinvoke <com.feedback.b.c: java.util.List a(android.content.Context)>($r5)
+      [BEFOR]RS:4
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                           $r0:[THIS,]
+                           $r5:[THIS.b,]
+
+      [AFTER]RS:4
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                           $r4:[a([THIS:null][@0:THIS.b]),]
+                           $r0:[THIS,]
+                           $r5:[THIS.b,]
+
+  UNIT:5 $r3 = $r0.<com.feedback.ui.f: com.feedback.ui.g a>
+      [BEFOR]RS:5
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                           $r4:[a([THIS:null][@0:THIS.b]),]
+                           $r0:[THIS,]
+                           $r5:[THIS.b,]
+
+      [AFTER]RS:5
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                           $r4:[a([THIS:null][@0:THIS.b]),]
+                           $r0:[THIS,]
+                           $r3:[THIS.a,]
+                           $r5:[THIS.b,]
+
+  UNIT:6 virtualinvoke $r3.<com.feedback.ui.g: void a(java.util.List)>($r4)
+      [BEFOR]RS:6
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                           $r4:[a([THIS:null][@0:THIS.b]),]
+                           $r0:[THIS,]
+                           $r3:[THIS.a,]
+                           $r5:[THIS.b,]
+
+      [AFTER]RS:6
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                           $r4:[a([THIS:null][@0:THIS.b]),]
+virtualinvoke $r3.<com.feedback.ui.g: void a(java.util.List)>($r4):[a([THIS:THIS.a][@0:THIS.b]),]
+                           $r0:[THIS,]
+                           $r3:[THIS.a,]
+                           $r5:[THIS.b,]
+
+  UNIT:7 $r3 = $r0.<com.feedback.ui.f: com.feedback.ui.g a>
+      [BEFOR]RS:7
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                           $r4:[a([THIS:null][@0:THIS.b]),]
+virtualinvoke $r3.<com.feedback.ui.g: void a(java.util.List)>($r4):[a([THIS:THIS.a][@0:THIS.b]),]
+                           $r0:[THIS,]
+                           $r3:[THIS.a,]
+                           $r5:[THIS.b,]
+
+      [AFTER]RS:7
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                           $r4:[a([THIS:null][@0:THIS.b]),]
+virtualinvoke $r3.<com.feedback.ui.g: void a(java.util.List)>($r4):[a([THIS:THIS.a][@0:THIS.b]),]
+                           $r0:[THIS,]
+                           $r3:[THIS.a,]
+                           $r5:[THIS.b,]
+
+  UNIT:8 virtualinvoke $r3.<com.feedback.ui.g: void notifyDataSetChanged()>()
+      [BEFOR]RS:8
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                           $r4:[a([THIS:null][@0:THIS.b]),]
+virtualinvoke $r3.<com.feedback.ui.g: void a(java.util.List)>($r4):[a([THIS:THIS.a][@0:THIS.b]),]
+                           $r0:[THIS,]
+                           $r3:[THIS.a,]
+                           $r5:[THIS.b,]
+
+      [AFTER]RS:8
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+virtualinvoke $r3.<com.feedback.ui.g: void notifyDataSetChanged()>():[notifyDataSetChanged([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                           $r4:[a([THIS:null][@0:THIS.b]),]
+virtualinvoke $r3.<com.feedback.ui.g: void a(java.util.List)>($r4):[a([THIS:THIS.a][@0:THIS.b]),]
+                           $r0:[THIS,]
+                           $r3:[THIS.a,]
+                           $r5:[THIS.b,]
+
+  UNIT:9 return
+      [BEFOR]RS:9
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+virtualinvoke $r3.<com.feedback.ui.g: void notifyDataSetChanged()>():[notifyDataSetChanged([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                           $r4:[a([THIS:null][@0:THIS.b]),]
+virtualinvoke $r3.<com.feedback.ui.g: void a(java.util.List)>($r4):[a([THIS:THIS.a][@0:THIS.b]),]
+                           $r0:[THIS,]
+                           $r3:[THIS.a,]
+                           $r5:[THIS.b,]
+
+      [AFTER]RS:9
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+virtualinvoke $r3.<com.feedback.ui.g: void notifyDataSetChanged()>():[notifyDataSetChanged([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                           $r4:[a([THIS:null][@0:THIS.b]),]
+virtualinvoke $r3.<com.feedback.ui.g: void a(java.util.List)>($r4):[a([THIS:THIS.a][@0:THIS.b]),]
+                           $r0:[THIS,]
+                           $r3:[THIS.a,]
+                           $r5:[THIS.b,]
+
+@@End onReceive======================

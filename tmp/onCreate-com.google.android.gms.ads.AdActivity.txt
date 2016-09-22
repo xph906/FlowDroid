@@ -1,0 +1,461 @@
+@@Start analyzing:onCreate
+READ: Param@0
+READ: THIS
+WRITE: THIS.zznG
+  --Done analyzing:onCreate     protected void onCreate(android.os.Bundle)
+    {
+        com.google.android.gms.ads.AdActivity $r0;
+        android.os.Bundle $r1;
+        com.google.android.gms.internal.zzex $r2;
+        android.os.RemoteException $r3;
+
+        $r0 := @this: com.google.android.gms.ads.AdActivity;
+
+        $r1 := @parameter0: android.os.Bundle;
+
+        specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1);
+
+        $r2 = staticinvoke <com.google.android.gms.internal.zzew: com.google.android.gms.internal.zzex zzb(android.app.Activity)>($r0);
+
+        $r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG> = $r2;
+
+        $r2 = $r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>;
+
+        if $r2 != null goto label1;
+
+        staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzaC(java.lang.String)>("Could not create ad overlay.");
+
+        virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>();
+
+        return;
+
+     label1:
+        $r2 = $r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>;
+
+     label2:
+        interfaceinvoke $r2.<com.google.android.gms.internal.zzex: void onCreate(android.os.Bundle)>($r1);
+
+     label3:
+        return;
+
+     label4:
+        $r3 := @caughtexception;
+
+        staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onCreate to ad overlay:", $r3);
+
+        virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>();
+
+        return;
+
+        catch android.os.RemoteException from label2 to label3 with label4;
+    }
+
+  --Method Body:    protected void onCreate(android.os.Bundle)
+    {
+        com.google.android.gms.ads.AdActivity $r0;
+        android.os.Bundle $r1;
+        com.google.android.gms.internal.zzex $r2;
+        android.os.RemoteException $r3;
+
+        $r0 := @this: com.google.android.gms.ads.AdActivity;
+
+        $r1 := @parameter0: android.os.Bundle;
+
+        specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1);
+
+        $r2 = staticinvoke <com.google.android.gms.internal.zzew: com.google.android.gms.internal.zzex zzb(android.app.Activity)>($r0);
+
+        $r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG> = $r2;
+
+        $r2 = $r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>;
+
+        if $r2 != null goto label1;
+
+        staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzaC(java.lang.String)>("Could not create ad overlay.");
+
+        virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>();
+
+        return;
+
+     label1:
+        $r2 = $r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>;
+
+     label2:
+        interfaceinvoke $r2.<com.google.android.gms.internal.zzex: void onCreate(android.os.Bundle)>($r1);
+
+     label3:
+        return;
+
+     label4:
+        $r3 := @caughtexception;
+
+        staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onCreate to ad overlay:", $r3);
+
+        virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>();
+
+        return;
+
+        catch android.os.RemoteException from label2 to label3 with label4;
+    }
+
+  --Start displaying:onCreate 
+  UNIT:0 $r0 := @this: com.google.android.gms.ads.AdActivity
+      [BEFOR]RS:0
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                     THIS.zznG:[THIS.zznG,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+      [AFTER]RS:0
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+  UNIT:1 $r1 := @parameter0: android.os.Bundle
+      [BEFOR]RS:1
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+      [AFTER]RS:1
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+  UNIT:2 specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1)
+      [BEFOR]RS:2
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+      [AFTER]RS:2
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                     THIS.zznG:[THIS.zznG,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+  UNIT:3 $r2 = staticinvoke <com.google.android.gms.internal.zzew: com.google.android.gms.internal.zzex zzb(android.app.Activity)>($r0)
+      [BEFOR]RS:3
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                     THIS.zznG:[THIS.zznG,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+      [AFTER]RS:3
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[zzb([THIS:null][@0:THIS]),]
+                     THIS.zznG:[THIS.zznG,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+  UNIT:4 $r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG> = $r2
+      [BEFOR]RS:4
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[zzb([THIS:null][@0:THIS]),]
+                     THIS.zznG:[THIS.zznG,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+      [AFTER]RS:4
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[zzb([THIS:null][@0:THIS]),]
+$r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>:[zzb([THIS:null][@0:THIS]),]
+                     THIS.zznG:[zzb([THIS:null][@0:THIS]),]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+  UNIT:5 $r2 = $r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>
+      [BEFOR]RS:5
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[zzb([THIS:null][@0:THIS]),]
+$r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>:[zzb([THIS:null][@0:THIS]),]
+                     THIS.zznG:[zzb([THIS:null][@0:THIS]),]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+      [AFTER]RS:5
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[zzb([THIS:null][@0:THIS]),]
+$r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>:[zzb([THIS:null][@0:THIS]),]
+                     THIS.zznG:[zzb([THIS:null][@0:THIS]),]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+  UNIT:6 if $r2 != null goto $r2 = $r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>
+      [BEFOR]RS:6
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[zzb([THIS:null][@0:THIS]),]
+$r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>:[zzb([THIS:null][@0:THIS]),]
+                     THIS.zznG:[zzb([THIS:null][@0:THIS]),]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+      [AFTER]RS:6
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[zzb([THIS:null][@0:THIS]),]
+$r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>:[zzb([THIS:null][@0:THIS]),]
+                     THIS.zznG:[zzb([THIS:null][@0:THIS]),]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+  UNIT:7 staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzaC(java.lang.String)>("Could not create ad overlay.")
+      [BEFOR]RS:7
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[zzb([THIS:null][@0:THIS]),]
+$r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>:[zzb([THIS:null][@0:THIS]),]
+                     THIS.zznG:[zzb([THIS:null][@0:THIS]),]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+      [AFTER]RS:7
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[zzb([THIS:null][@0:THIS]),]
+$r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>:[zzb([THIS:null][@0:THIS]),]
+                     THIS.zznG:[zzb([THIS:null][@0:THIS]),]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzaC(java.lang.String)>("Could not create ad overlay."):[zzaC([THIS:null][@0:CONST]),]
+
+  UNIT:8 virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>()
+      [BEFOR]RS:8
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[zzb([THIS:null][@0:THIS]),]
+$r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>:[zzb([THIS:null][@0:THIS]),]
+                     THIS.zznG:[zzb([THIS:null][@0:THIS]),]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzaC(java.lang.String)>("Could not create ad overlay."):[zzaC([THIS:null][@0:CONST]),]
+
+      [AFTER]RS:8
+virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>():[finish([THIS:THIS]),]
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[zzb([THIS:null][@0:THIS]),]
+$r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>:[zzb([THIS:null][@0:THIS]),]
+                     THIS.zznG:[zzb([THIS:null][@0:THIS]),]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzaC(java.lang.String)>("Could not create ad overlay."):[zzaC([THIS:null][@0:CONST]),]
+
+  UNIT:9 return
+      [BEFOR]RS:9
+virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>():[finish([THIS:THIS]),]
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[zzb([THIS:null][@0:THIS]),]
+$r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>:[zzb([THIS:null][@0:THIS]),]
+                     THIS.zznG:[zzb([THIS:null][@0:THIS]),]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzaC(java.lang.String)>("Could not create ad overlay."):[zzaC([THIS:null][@0:CONST]),]
+
+      [AFTER]RS:9
+virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>():[finish([THIS:THIS]),]
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[zzb([THIS:null][@0:THIS]),]
+$r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>:[zzb([THIS:null][@0:THIS]),]
+                     THIS.zznG:[zzb([THIS:null][@0:THIS]),]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzaC(java.lang.String)>("Could not create ad overlay."):[zzaC([THIS:null][@0:CONST]),]
+
+  UNIT:10 $r2 = $r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>
+      [BEFOR]RS:10
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[zzb([THIS:null][@0:THIS]),]
+$r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>:[zzb([THIS:null][@0:THIS]),]
+                     THIS.zznG:[zzb([THIS:null][@0:THIS]),]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+      [AFTER]RS:10
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[zzb([THIS:null][@0:THIS]),]
+$r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>:[zzb([THIS:null][@0:THIS]),]
+                     THIS.zznG:[zzb([THIS:null][@0:THIS]),]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+  UNIT:11 interfaceinvoke $r2.<com.google.android.gms.internal.zzex: void onCreate(android.os.Bundle)>($r1)
+      [BEFOR]RS:11
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[zzb([THIS:null][@0:THIS]),]
+$r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>:[zzb([THIS:null][@0:THIS]),]
+                     THIS.zznG:[zzb([THIS:null][@0:THIS]),]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+      [AFTER]RS:11
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[zzb([THIS:null][@0:THIS]),]
+$r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>:[zzb([THIS:null][@0:THIS]),]
+                     THIS.zznG:[zzb([THIS:null][@0:THIS]),]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzex: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:12 return
+      [BEFOR]RS:12
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[zzb([THIS:null][@0:THIS]),]
+$r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>:[zzb([THIS:null][@0:THIS]),]
+                     THIS.zznG:[zzb([THIS:null][@0:THIS]),]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzex: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:12
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[zzb([THIS:null][@0:THIS]),]
+$r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>:[zzb([THIS:null][@0:THIS]),]
+                     THIS.zznG:[zzb([THIS:null][@0:THIS]),]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzex: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:13 $r3 := @caughtexception
+      [BEFOR]RS:13
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[zzb([THIS:null][@0:THIS]),]
+$r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>:[zzb([THIS:null][@0:THIS]),]
+                     THIS.zznG:[zzb([THIS:null][@0:THIS]),]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzex: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:13
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[zzb([THIS:null][@0:THIS]),]
+$r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>:[zzb([THIS:null][@0:THIS]),]
+                     THIS.zznG:[zzb([THIS:null][@0:THIS]),]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzex: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:14 staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onCreate to ad overlay:", $r3)
+      [BEFOR]RS:14
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[zzb([THIS:null][@0:THIS]),]
+$r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>:[zzb([THIS:null][@0:THIS]),]
+                     THIS.zznG:[zzb([THIS:null][@0:THIS]),]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzex: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:14
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[zzb([THIS:null][@0:THIS]),]
+$r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>:[zzb([THIS:null][@0:THIS]),]
+                     THIS.zznG:[zzb([THIS:null][@0:THIS]),]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onCreate to ad overlay:", $r3):[zzd([THIS:null][@0:CONST][@1:]),]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzex: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:15 virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>()
+      [BEFOR]RS:15
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[zzb([THIS:null][@0:THIS]),]
+$r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>:[zzb([THIS:null][@0:THIS]),]
+                     THIS.zznG:[zzb([THIS:null][@0:THIS]),]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onCreate to ad overlay:", $r3):[zzd([THIS:null][@0:CONST][@1:]),]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzex: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:15
+virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>():[finish([THIS:THIS]),]
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[zzb([THIS:null][@0:THIS]),]
+$r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>:[zzb([THIS:null][@0:THIS]),]
+                     THIS.zznG:[zzb([THIS:null][@0:THIS]),]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onCreate to ad overlay:", $r3):[zzd([THIS:null][@0:CONST][@1:]),]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzex: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:16 return
+      [BEFOR]RS:16
+virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>():[finish([THIS:THIS]),]
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[zzb([THIS:null][@0:THIS]),]
+$r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>:[zzb([THIS:null][@0:THIS]),]
+                     THIS.zznG:[zzb([THIS:null][@0:THIS]),]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onCreate to ad overlay:", $r3):[zzd([THIS:null][@0:CONST][@1:]),]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzex: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:16
+virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>():[finish([THIS:THIS]),]
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[Param@0,]
+                           $r2:[zzb([THIS:null][@0:THIS]),]
+$r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>:[zzb([THIS:null][@0:THIS]),]
+                     THIS.zznG:[zzb([THIS:null][@0:THIS]),]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onCreate to ad overlay:", $r3):[zzd([THIS:null][@0:CONST][@1:]),]
+interfaceinvoke $r2.<com.google.android.gms.internal.zzex: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+@@End onCreate======================

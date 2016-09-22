@@ -1,0 +1,95 @@
+@@Start analyzing:callPreferences
+READ: THIS
+  --Done analyzing:callPreferences     public void callPreferences()
+    {
+        com.android.insecurebankv2.ViewStatement $r0;
+        android.content.Intent $r1;
+
+        $r0 := @this: com.android.insecurebankv2.ViewStatement;
+
+        $r1 = new android.content.Intent;
+
+        specialinvoke $r1.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/FilePrefActivity");
+
+        virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void startActivity(android.content.Intent)>($r1);
+
+        return;
+    }
+
+  --Method Body:    public void callPreferences()
+    {
+        com.android.insecurebankv2.ViewStatement $r0;
+        android.content.Intent $r1;
+
+        $r0 := @this: com.android.insecurebankv2.ViewStatement;
+
+        $r1 = new android.content.Intent;
+
+        specialinvoke $r1.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/FilePrefActivity");
+
+        virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void startActivity(android.content.Intent)>($r1);
+
+        return;
+    }
+
+  --Start displaying:callPreferences 
+  UNIT:0 $r0 := @this: com.android.insecurebankv2.ViewStatement
+      [BEFOR]RS:0
+                    THIS.uname:[THIS.uname,]
+
+      [AFTER]RS:0
+                    THIS.uname:[THIS.uname,]
+                           $r0:[THIS,]
+
+  UNIT:1 $r1 = new android.content.Intent
+      [BEFOR]RS:1
+                    THIS.uname:[THIS.uname,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:1
+                           $r1:[NewValue1593150952,]
+                    THIS.uname:[THIS.uname,]
+                           $r0:[THIS,]
+
+  UNIT:2 specialinvoke $r1.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/FilePrefActivity")
+      [BEFOR]RS:2
+                           $r1:[NewValue1593150952,]
+                    THIS.uname:[THIS.uname,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:2
+                           $r1:[NewValue1593150952,]
+                    THIS.uname:[THIS.uname,]
+                           $r0:[THIS,]
+specialinvoke $r1.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/FilePrefActivity"):[<init>([THIS:NewValue1593150952][@0:THIS][@1:CONST]),]
+
+  UNIT:3 virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void startActivity(android.content.Intent)>($r1)
+      [BEFOR]RS:3
+                           $r1:[NewValue1593150952,]
+                    THIS.uname:[THIS.uname,]
+                           $r0:[THIS,]
+specialinvoke $r1.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/FilePrefActivity"):[<init>([THIS:NewValue1593150952][@0:THIS][@1:CONST]),]
+
+      [AFTER]RS:3
+                           $r1:[NewValue1593150952,]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void startActivity(android.content.Intent)>($r1):[startActivity([THIS:THIS][@0:NewValue1593150952]),]
+                    THIS.uname:[THIS.uname,]
+                           $r0:[THIS,]
+specialinvoke $r1.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/FilePrefActivity"):[<init>([THIS:NewValue1593150952][@0:THIS][@1:CONST]),]
+
+  UNIT:4 return
+      [BEFOR]RS:4
+                           $r1:[NewValue1593150952,]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void startActivity(android.content.Intent)>($r1):[startActivity([THIS:THIS][@0:NewValue1593150952]),]
+                    THIS.uname:[THIS.uname,]
+                           $r0:[THIS,]
+specialinvoke $r1.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/FilePrefActivity"):[<init>([THIS:NewValue1593150952][@0:THIS][@1:CONST]),]
+
+      [AFTER]RS:4
+                           $r1:[NewValue1593150952,]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void startActivity(android.content.Intent)>($r1):[startActivity([THIS:THIS][@0:NewValue1593150952]),]
+                    THIS.uname:[THIS.uname,]
+                           $r0:[THIS,]
+specialinvoke $r1.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/FilePrefActivity"):[<init>([THIS:NewValue1593150952][@0:THIS][@1:CONST]),]
+
+@@End callPreferences======================

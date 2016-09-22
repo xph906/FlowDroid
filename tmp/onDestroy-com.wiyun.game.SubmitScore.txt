@@ -1,0 +1,1350 @@
+@@Start analyzing:onDestroy
+READ: THIS.d
+READ: THIS.a
+READ: THIS.j
+READ: THIS
+  --Done analyzing:onDestroy     protected void onDestroy()
+    {
+        com.wiyun.game.SubmitScore $r0;
+        com.wiyun.game.b.d $r1;
+        android.content.BroadcastReceiver $r2;
+        android.widget.ImageView $r3;
+        java.util.Map $r4;
+        java.util.Collection $r5;
+        java.util.Iterator $r6;
+        boolean $z0;
+        java.lang.Object $r7;
+        android.graphics.Bitmap $r8;
+
+        $r0 := @this: com.wiyun.game.SubmitScore;
+
+        $r1 = staticinvoke <com.wiyun.game.b.d: com.wiyun.game.b.d a()>();
+
+        virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0);
+
+        $r2 = $r0.<com.wiyun.game.SubmitScore: android.content.BroadcastReceiver j>;
+
+        virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2);
+
+        staticinvoke <com.wiyun.game.fq: void a()>();
+
+        $r3 = $r0.<com.wiyun.game.SubmitScore: android.widget.ImageView d>;
+
+        virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null);
+
+        $r4 = $r0.<com.wiyun.game.SubmitScore: java.util.Map a>;
+
+        if $r4 == null goto label2;
+
+        $r4 = $r0.<com.wiyun.game.SubmitScore: java.util.Map a>;
+
+        $r5 = interfaceinvoke $r4.<java.util.Map: java.util.Collection values()>();
+
+        $r6 = interfaceinvoke $r5.<java.util.Collection: java.util.Iterator iterator()>();
+
+     label1:
+        $z0 = interfaceinvoke $r6.<java.util.Iterator: boolean hasNext()>();
+
+        if $z0 != 0 goto label3;
+
+        $r4 = $r0.<com.wiyun.game.SubmitScore: java.util.Map a>;
+
+        interfaceinvoke $r4.<java.util.Map: void clear()>();
+
+     label2:
+        specialinvoke $r0.<android.app.Activity: void onDestroy()>();
+
+        return;
+
+     label3:
+        $r7 = interfaceinvoke $r6.<java.util.Iterator: java.lang.Object next()>();
+
+        $r8 = (android.graphics.Bitmap) $r7;
+
+        if $r8 == null goto label1;
+
+        $z0 = virtualinvoke $r8.<android.graphics.Bitmap: boolean isRecycled()>();
+
+        if $z0 != 0 goto label1;
+
+        virtualinvoke $r8.<android.graphics.Bitmap: void recycle()>();
+
+        goto label1;
+    }
+
+  --Method Body:    protected void onDestroy()
+    {
+        com.wiyun.game.SubmitScore $r0;
+        com.wiyun.game.b.d $r1;
+        android.content.BroadcastReceiver $r2;
+        android.widget.ImageView $r3;
+        java.util.Map $r4;
+        java.util.Collection $r5;
+        java.util.Iterator $r6;
+        boolean $z0;
+        java.lang.Object $r7;
+        android.graphics.Bitmap $r8;
+
+        $r0 := @this: com.wiyun.game.SubmitScore;
+
+        $r1 = staticinvoke <com.wiyun.game.b.d: com.wiyun.game.b.d a()>();
+
+        virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0);
+
+        $r2 = $r0.<com.wiyun.game.SubmitScore: android.content.BroadcastReceiver j>;
+
+        virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2);
+
+        staticinvoke <com.wiyun.game.fq: void a()>();
+
+        $r3 = $r0.<com.wiyun.game.SubmitScore: android.widget.ImageView d>;
+
+        virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null);
+
+        $r4 = $r0.<com.wiyun.game.SubmitScore: java.util.Map a>;
+
+        if $r4 == null goto label2;
+
+        $r4 = $r0.<com.wiyun.game.SubmitScore: java.util.Map a>;
+
+        $r5 = interfaceinvoke $r4.<java.util.Map: java.util.Collection values()>();
+
+        $r6 = interfaceinvoke $r5.<java.util.Collection: java.util.Iterator iterator()>();
+
+     label1:
+        $z0 = interfaceinvoke $r6.<java.util.Iterator: boolean hasNext()>();
+
+        if $z0 != 0 goto label3;
+
+        $r4 = $r0.<com.wiyun.game.SubmitScore: java.util.Map a>;
+
+        interfaceinvoke $r4.<java.util.Map: void clear()>();
+
+     label2:
+        specialinvoke $r0.<android.app.Activity: void onDestroy()>();
+
+        return;
+
+     label3:
+        $r7 = interfaceinvoke $r6.<java.util.Iterator: java.lang.Object next()>();
+
+        $r8 = (android.graphics.Bitmap) $r7;
+
+        if $r8 == null goto label1;
+
+        $z0 = virtualinvoke $r8.<android.graphics.Bitmap: boolean isRecycled()>();
+
+        if $z0 != 0 goto label1;
+
+        virtualinvoke $r8.<android.graphics.Bitmap: void recycle()>();
+
+        goto label1;
+    }
+
+  --Start displaying:onDestroy 
+  UNIT:0 $r0 := @this: com.wiyun.game.SubmitScore
+      [BEFOR]RS:0
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+
+      [AFTER]RS:0
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+
+  UNIT:1 $r1 = staticinvoke <com.wiyun.game.b.d: com.wiyun.game.b.d a()>()
+      [BEFOR]RS:1
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+
+      [AFTER]RS:1
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[a(),]
+
+  UNIT:2 virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0)
+      [BEFOR]RS:2
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[a(),]
+
+      [AFTER]RS:2
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[a(),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+
+  UNIT:3 $r2 = $r0.<com.wiyun.game.SubmitScore: android.content.BroadcastReceiver j>
+      [BEFOR]RS:3
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[a(),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+
+      [AFTER]RS:3
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[a(),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+                           $r2:[THIS.j,]
+
+  UNIT:4 virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2)
+      [BEFOR]RS:4
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[a(),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+                           $r2:[THIS.j,]
+
+      [AFTER]RS:4
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+                           $r2:[THIS.j,]
+
+  UNIT:5 staticinvoke <com.wiyun.game.fq: void a()>()
+      [BEFOR]RS:5
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+                           $r2:[THIS.j,]
+
+      [AFTER]RS:5
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $r2:[THIS.j,]
+
+  UNIT:6 $r3 = $r0.<com.wiyun.game.SubmitScore: android.widget.ImageView d>
+      [BEFOR]RS:6
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $r2:[THIS.j,]
+
+      [AFTER]RS:6
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $r3:[THIS.d,]
+                           $r2:[THIS.j,]
+
+  UNIT:7 virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null)
+      [BEFOR]RS:7
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $r3:[THIS.d,]
+                           $r2:[THIS.j,]
+
+      [AFTER]RS:7
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $r3:[THIS.d,]
+                           $r2:[THIS.j,]
+
+  UNIT:8 $r4 = $r0.<com.wiyun.game.SubmitScore: java.util.Map a>
+      [BEFOR]RS:8
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $r3:[THIS.d,]
+                           $r2:[THIS.j,]
+
+      [AFTER]RS:8
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $r3:[THIS.d,]
+                           $r2:[THIS.j,]
+
+  UNIT:9 if $r4 == null goto specialinvoke $r0.<android.app.Activity: void onDestroy()>()
+      [BEFOR]RS:9
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $r3:[THIS.d,]
+                           $r2:[THIS.j,]
+
+      [AFTER]RS:9
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $r3:[THIS.d,]
+                           $r2:[THIS.j,]
+
+  UNIT:10 $r4 = $r0.<com.wiyun.game.SubmitScore: java.util.Map a>
+      [BEFOR]RS:10
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $r3:[THIS.d,]
+                           $r2:[THIS.j,]
+
+      [AFTER]RS:10
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $r3:[THIS.d,]
+                           $r2:[THIS.j,]
+
+  UNIT:11 $r5 = interfaceinvoke $r4.<java.util.Map: java.util.Collection values()>()
+      [BEFOR]RS:11
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $r3:[THIS.d,]
+                           $r2:[THIS.j,]
+
+      [AFTER]RS:11
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                           $r5:[values([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $r3:[THIS.d,]
+                           $r2:[THIS.j,]
+
+  UNIT:12 $r6 = interfaceinvoke $r5.<java.util.Collection: java.util.Iterator iterator()>()
+      [BEFOR]RS:12
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                           $r5:[values([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $r3:[THIS.d,]
+                           $r2:[THIS.j,]
+
+      [AFTER]RS:12
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                           $r5:[values([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $r6:[iterator([THIS:THIS.a]),]
+                           $r3:[THIS.d,]
+                           $r2:[THIS.j,]
+
+  UNIT:13 $z0 = interfaceinvoke $r6.<java.util.Iterator: boolean hasNext()>()
+      [BEFOR]RS:13
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                           $r5:[values([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+                           $r8:[next([THIS:THIS.a]),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $z0:[hasNext([THIS:THIS.a]),isRecycled([THIS:THIS.a]),]
+                           $r6:[iterator([THIS:THIS.a]),]
+                           $r3:[THIS.d,]
+                           $r7:[next([THIS:THIS.a]),]
+                           $r2:[THIS.j,]
+virtualinvoke $r8.<android.graphics.Bitmap: void recycle()>():[recycle([THIS:THIS.a]),]
+
+      [AFTER]RS:13
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                           $r5:[values([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+                           $r8:[next([THIS:THIS.a]),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $z0:[hasNext([THIS:THIS.a]),]
+                           $r6:[iterator([THIS:THIS.a]),]
+                           $r3:[THIS.d,]
+                           $r7:[next([THIS:THIS.a]),]
+                           $r2:[THIS.j,]
+virtualinvoke $r8.<android.graphics.Bitmap: void recycle()>():[recycle([THIS:THIS.a]),]
+
+  UNIT:14 if $z0 != 0 goto $r7 = interfaceinvoke $r6.<java.util.Iterator: java.lang.Object next()>()
+      [BEFOR]RS:14
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                           $r5:[values([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+                           $r8:[next([THIS:THIS.a]),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $z0:[hasNext([THIS:THIS.a]),]
+                           $r6:[iterator([THIS:THIS.a]),]
+                           $r3:[THIS.d,]
+                           $r7:[next([THIS:THIS.a]),]
+                           $r2:[THIS.j,]
+virtualinvoke $r8.<android.graphics.Bitmap: void recycle()>():[recycle([THIS:THIS.a]),]
+
+      [AFTER]RS:14
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                           $r5:[values([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+                           $r8:[next([THIS:THIS.a]),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $z0:[hasNext([THIS:THIS.a]),]
+                           $r6:[iterator([THIS:THIS.a]),]
+                           $r3:[THIS.d,]
+                           $r7:[next([THIS:THIS.a]),]
+                           $r2:[THIS.j,]
+virtualinvoke $r8.<android.graphics.Bitmap: void recycle()>():[recycle([THIS:THIS.a]),]
+
+  UNIT:15 $r4 = $r0.<com.wiyun.game.SubmitScore: java.util.Map a>
+      [BEFOR]RS:15
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                           $r5:[values([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+                           $r8:[next([THIS:THIS.a]),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $z0:[hasNext([THIS:THIS.a]),]
+                           $r6:[iterator([THIS:THIS.a]),]
+                           $r3:[THIS.d,]
+                           $r7:[next([THIS:THIS.a]),]
+                           $r2:[THIS.j,]
+virtualinvoke $r8.<android.graphics.Bitmap: void recycle()>():[recycle([THIS:THIS.a]),]
+
+      [AFTER]RS:15
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                           $r5:[values([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+                           $r8:[next([THIS:THIS.a]),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $z0:[hasNext([THIS:THIS.a]),]
+                           $r6:[iterator([THIS:THIS.a]),]
+                           $r3:[THIS.d,]
+                           $r7:[next([THIS:THIS.a]),]
+                           $r2:[THIS.j,]
+virtualinvoke $r8.<android.graphics.Bitmap: void recycle()>():[recycle([THIS:THIS.a]),]
+
+  UNIT:16 interfaceinvoke $r4.<java.util.Map: void clear()>()
+      [BEFOR]RS:16
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                           $r5:[values([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+                           $r8:[next([THIS:THIS.a]),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $z0:[hasNext([THIS:THIS.a]),]
+                           $r6:[iterator([THIS:THIS.a]),]
+                           $r3:[THIS.d,]
+                           $r7:[next([THIS:THIS.a]),]
+                           $r2:[THIS.j,]
+virtualinvoke $r8.<android.graphics.Bitmap: void recycle()>():[recycle([THIS:THIS.a]),]
+
+      [AFTER]RS:16
+interfaceinvoke $r4.<java.util.Map: void clear()>():[clear([THIS:THIS.a]),]
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                           $r5:[values([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+                           $r8:[next([THIS:THIS.a]),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $z0:[hasNext([THIS:THIS.a]),]
+                           $r6:[iterator([THIS:THIS.a]),]
+                           $r3:[THIS.d,]
+                           $r7:[next([THIS:THIS.a]),]
+                           $r2:[THIS.j,]
+virtualinvoke $r8.<android.graphics.Bitmap: void recycle()>():[recycle([THIS:THIS.a]),]
+
+  UNIT:17 specialinvoke $r0.<android.app.Activity: void onDestroy()>()
+      [BEFOR]RS:17
+interfaceinvoke $r4.<java.util.Map: void clear()>():[clear([THIS:THIS.a]),]
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                           $r5:[values([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+                           $r8:[next([THIS:THIS.a]),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $z0:[hasNext([THIS:THIS.a]),]
+                           $r6:[iterator([THIS:THIS.a]),]
+                           $r3:[THIS.d,]
+                           $r7:[next([THIS:THIS.a]),]
+                           $r2:[THIS.j,]
+virtualinvoke $r8.<android.graphics.Bitmap: void recycle()>():[recycle([THIS:THIS.a]),]
+
+      [AFTER]RS:17
+interfaceinvoke $r4.<java.util.Map: void clear()>():[clear([THIS:THIS.a]),]
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                           $r5:[values([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+                           $r8:[next([THIS:THIS.a]),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+specialinvoke $r0.<android.app.Activity: void onDestroy()>():[onDestroy([THIS:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $z0:[hasNext([THIS:THIS.a]),]
+                           $r6:[iterator([THIS:THIS.a]),]
+                           $r3:[THIS.d,]
+                           $r7:[next([THIS:THIS.a]),]
+                           $r2:[THIS.j,]
+virtualinvoke $r8.<android.graphics.Bitmap: void recycle()>():[recycle([THIS:THIS.a]),]
+
+  UNIT:18 return
+      [BEFOR]RS:18
+interfaceinvoke $r4.<java.util.Map: void clear()>():[clear([THIS:THIS.a]),]
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                           $r5:[values([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+                           $r8:[next([THIS:THIS.a]),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+specialinvoke $r0.<android.app.Activity: void onDestroy()>():[onDestroy([THIS:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $z0:[hasNext([THIS:THIS.a]),]
+                           $r6:[iterator([THIS:THIS.a]),]
+                           $r3:[THIS.d,]
+                           $r7:[next([THIS:THIS.a]),]
+                           $r2:[THIS.j,]
+virtualinvoke $r8.<android.graphics.Bitmap: void recycle()>():[recycle([THIS:THIS.a]),]
+
+      [AFTER]RS:18
+interfaceinvoke $r4.<java.util.Map: void clear()>():[clear([THIS:THIS.a]),]
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                           $r5:[values([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+                           $r8:[next([THIS:THIS.a]),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+specialinvoke $r0.<android.app.Activity: void onDestroy()>():[onDestroy([THIS:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $z0:[hasNext([THIS:THIS.a]),]
+                           $r6:[iterator([THIS:THIS.a]),]
+                           $r3:[THIS.d,]
+                           $r7:[next([THIS:THIS.a]),]
+                           $r2:[THIS.j,]
+virtualinvoke $r8.<android.graphics.Bitmap: void recycle()>():[recycle([THIS:THIS.a]),]
+
+  UNIT:19 $r7 = interfaceinvoke $r6.<java.util.Iterator: java.lang.Object next()>()
+      [BEFOR]RS:19
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                           $r5:[values([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+                           $r8:[next([THIS:THIS.a]),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $z0:[hasNext([THIS:THIS.a]),]
+                           $r6:[iterator([THIS:THIS.a]),]
+                           $r3:[THIS.d,]
+                           $r7:[next([THIS:THIS.a]),]
+                           $r2:[THIS.j,]
+virtualinvoke $r8.<android.graphics.Bitmap: void recycle()>():[recycle([THIS:THIS.a]),]
+
+      [AFTER]RS:19
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                           $r5:[values([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+                           $r8:[next([THIS:THIS.a]),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $z0:[hasNext([THIS:THIS.a]),]
+                           $r6:[iterator([THIS:THIS.a]),]
+                           $r3:[THIS.d,]
+                           $r7:[next([THIS:THIS.a]),]
+                           $r2:[THIS.j,]
+virtualinvoke $r8.<android.graphics.Bitmap: void recycle()>():[recycle([THIS:THIS.a]),]
+
+  UNIT:20 $r8 = (android.graphics.Bitmap) $r7
+      [BEFOR]RS:20
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                           $r5:[values([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+                           $r8:[next([THIS:THIS.a]),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $z0:[hasNext([THIS:THIS.a]),]
+                           $r6:[iterator([THIS:THIS.a]),]
+                           $r3:[THIS.d,]
+                           $r7:[next([THIS:THIS.a]),]
+                           $r2:[THIS.j,]
+virtualinvoke $r8.<android.graphics.Bitmap: void recycle()>():[recycle([THIS:THIS.a]),]
+
+      [AFTER]RS:20
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                           $r5:[values([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+                           $r8:[next([THIS:THIS.a]),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $z0:[hasNext([THIS:THIS.a]),]
+                           $r6:[iterator([THIS:THIS.a]),]
+                           $r3:[THIS.d,]
+                           $r7:[next([THIS:THIS.a]),]
+                           $r2:[THIS.j,]
+virtualinvoke $r8.<android.graphics.Bitmap: void recycle()>():[recycle([THIS:THIS.a]),]
+
+  UNIT:21 if $r8 == null goto $z0 = interfaceinvoke $r6.<java.util.Iterator: boolean hasNext()>()
+      [BEFOR]RS:21
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                           $r5:[values([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+                           $r8:[next([THIS:THIS.a]),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $z0:[hasNext([THIS:THIS.a]),]
+                           $r6:[iterator([THIS:THIS.a]),]
+                           $r3:[THIS.d,]
+                           $r7:[next([THIS:THIS.a]),]
+                           $r2:[THIS.j,]
+virtualinvoke $r8.<android.graphics.Bitmap: void recycle()>():[recycle([THIS:THIS.a]),]
+
+      [AFTER]RS:21
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                           $r5:[values([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+                           $r8:[next([THIS:THIS.a]),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $z0:[hasNext([THIS:THIS.a]),]
+                           $r6:[iterator([THIS:THIS.a]),]
+                           $r3:[THIS.d,]
+                           $r7:[next([THIS:THIS.a]),]
+                           $r2:[THIS.j,]
+virtualinvoke $r8.<android.graphics.Bitmap: void recycle()>():[recycle([THIS:THIS.a]),]
+
+  UNIT:22 $z0 = virtualinvoke $r8.<android.graphics.Bitmap: boolean isRecycled()>()
+      [BEFOR]RS:22
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                           $r5:[values([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+                           $r8:[next([THIS:THIS.a]),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $z0:[hasNext([THIS:THIS.a]),]
+                           $r6:[iterator([THIS:THIS.a]),]
+                           $r3:[THIS.d,]
+                           $r7:[next([THIS:THIS.a]),]
+                           $r2:[THIS.j,]
+virtualinvoke $r8.<android.graphics.Bitmap: void recycle()>():[recycle([THIS:THIS.a]),]
+
+      [AFTER]RS:22
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                           $r5:[values([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+                           $r8:[next([THIS:THIS.a]),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $z0:[isRecycled([THIS:THIS.a]),]
+                           $r6:[iterator([THIS:THIS.a]),]
+                           $r3:[THIS.d,]
+                           $r7:[next([THIS:THIS.a]),]
+                           $r2:[THIS.j,]
+virtualinvoke $r8.<android.graphics.Bitmap: void recycle()>():[recycle([THIS:THIS.a]),]
+
+  UNIT:23 if $z0 != 0 goto $z0 = interfaceinvoke $r6.<java.util.Iterator: boolean hasNext()>()
+      [BEFOR]RS:23
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                           $r5:[values([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+                           $r8:[next([THIS:THIS.a]),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $z0:[isRecycled([THIS:THIS.a]),]
+                           $r6:[iterator([THIS:THIS.a]),]
+                           $r3:[THIS.d,]
+                           $r7:[next([THIS:THIS.a]),]
+                           $r2:[THIS.j,]
+virtualinvoke $r8.<android.graphics.Bitmap: void recycle()>():[recycle([THIS:THIS.a]),]
+
+      [AFTER]RS:23
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                           $r5:[values([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+                           $r8:[next([THIS:THIS.a]),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $z0:[isRecycled([THIS:THIS.a]),]
+                           $r6:[iterator([THIS:THIS.a]),]
+                           $r3:[THIS.d,]
+                           $r7:[next([THIS:THIS.a]),]
+                           $r2:[THIS.j,]
+virtualinvoke $r8.<android.graphics.Bitmap: void recycle()>():[recycle([THIS:THIS.a]),]
+
+  UNIT:24 virtualinvoke $r8.<android.graphics.Bitmap: void recycle()>()
+      [BEFOR]RS:24
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                           $r5:[values([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+                           $r8:[next([THIS:THIS.a]),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $z0:[isRecycled([THIS:THIS.a]),]
+                           $r6:[iterator([THIS:THIS.a]),]
+                           $r3:[THIS.d,]
+                           $r7:[next([THIS:THIS.a]),]
+                           $r2:[THIS.j,]
+virtualinvoke $r8.<android.graphics.Bitmap: void recycle()>():[recycle([THIS:THIS.a]),]
+
+      [AFTER]RS:24
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                           $r5:[values([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+                           $r8:[next([THIS:THIS.a]),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $z0:[isRecycled([THIS:THIS.a]),]
+                           $r6:[iterator([THIS:THIS.a]),]
+                           $r3:[THIS.d,]
+                           $r7:[next([THIS:THIS.a]),]
+                           $r2:[THIS.j,]
+virtualinvoke $r8.<android.graphics.Bitmap: void recycle()>():[recycle([THIS:THIS.a]),]
+
+  UNIT:25 goto [?= $z0 = interfaceinvoke $r6.<java.util.Iterator: boolean hasNext()>()]
+      [BEFOR]RS:25
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                           $r5:[values([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+                           $r8:[next([THIS:THIS.a]),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $z0:[isRecycled([THIS:THIS.a]),]
+                           $r6:[iterator([THIS:THIS.a]),]
+                           $r3:[THIS.d,]
+                           $r7:[next([THIS:THIS.a]),]
+                           $r2:[THIS.j,]
+virtualinvoke $r8.<android.graphics.Bitmap: void recycle()>():[recycle([THIS:THIS.a]),]
+
+      [AFTER]RS:25
+virtualinvoke $r3.<android.widget.ImageView: void setImageBitmap(android.graphics.Bitmap)>(null):[setImageBitmap([THIS:THIS.d][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r4:[THIS.a,]
+                           $r5:[values([THIS:THIS.a]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+virtualinvoke $r0.<com.wiyun.game.SubmitScore: void unregisterReceiver(android.content.BroadcastReceiver)>($r2):[unregisterReceiver([THIS:THIS][@0:THIS.j]),]
+                           $r1:[a(),]
+                           $r8:[next([THIS:THIS.a]),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+staticinvoke <com.wiyun.game.fq: void a()>():[a(),]
+                           $z0:[isRecycled([THIS:THIS.a]),]
+                           $r6:[iterator([THIS:THIS.a]),]
+                           $r3:[THIS.d,]
+                           $r7:[next([THIS:THIS.a]),]
+                           $r2:[THIS.j,]
+virtualinvoke $r8.<android.graphics.Bitmap: void recycle()>():[recycle([THIS:THIS.a]),]
+
+@@End onDestroy======================

@@ -1,0 +1,111 @@
+@@Start analyzing:j
+READ: Param@0.f
+  --Done analyzing:j     static int j(com.wiyun.game.DownloadBlob)
+    {
+        com.wiyun.game.DownloadBlob $r0;
+        int i0;
+
+        $r0 := @parameter0: com.wiyun.game.DownloadBlob;
+
+        i0 = $r0.<com.wiyun.game.DownloadBlob: int f>;
+
+        return i0;
+    }
+
+  --Method Body:    static int j(com.wiyun.game.DownloadBlob)
+    {
+        com.wiyun.game.DownloadBlob $r0;
+        int i0;
+
+        $r0 := @parameter0: com.wiyun.game.DownloadBlob;
+
+        i0 = $r0.<com.wiyun.game.DownloadBlob: int f>;
+
+        return i0;
+    }
+
+  --Start displaying:j 
+  UNIT:0 $r0 := @parameter0: com.wiyun.game.DownloadBlob
+      [BEFOR]RS:0
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+
+      [AFTER]RS:0
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r0:[Param@0,]
+
+  UNIT:1 i0 = $r0.<com.wiyun.game.DownloadBlob: int f>
+      [BEFOR]RS:1
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r0:[Param@0,]
+
+      [AFTER]RS:1
+                            i0:[Param@0.f,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r0:[Param@0,]
+
+  UNIT:2 return i0
+      [BEFOR]RS:2
+                            i0:[Param@0.f,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r0:[Param@0,]
+
+      [AFTER]RS:2
+                            i0:[Param@0.f,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r0:[Param@0,]
+
+@@End j======================

@@ -1,0 +1,1272 @@
+@@Start analyzing:fillData
+READ: THIS
+READ: THIS.usernameBase64ByteString
+WRITE: THIS.Username_Text
+WRITE: THIS.Password_Text
+WRITE: THIS.usernameBase64ByteString
+  --Done analyzing:fillData     protected void fillData() throws java.io.UnsupportedEncodingException, java.security.InvalidKeyException, java.security.NoSuchAlgorithmException, javax.crypto.NoSuchPaddingException, java.security.InvalidAlgorithmParameterException, javax.crypto.IllegalBlockSizeException, javax.crypto.BadPaddingException
+    {
+        com.android.insecurebankv2.LoginActivity $r0;
+        com.android.insecurebankv2.CryptoClass $r1;
+        java.io.UnsupportedEncodingException $r2;
+        android.content.SharedPreferences $r3;
+        java.lang.String $r4, $r5;
+        byte[] $r6;
+        android.view.View $r7;
+        android.widget.EditText $r8;
+
+        $r0 := @this: com.android.insecurebankv2.LoginActivity;
+
+        $r3 = virtualinvoke $r0.<com.android.insecurebankv2.LoginActivity: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)>("mySharedPreferences", 0);
+
+        $r4 = interfaceinvoke $r3.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>("EncryptedUsername", null);
+
+        $r5 = interfaceinvoke $r3.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>("superSecurePassword", null);
+
+        if $r4 == null goto label5;
+
+        if $r5 == null goto label5;
+
+        $r6 = staticinvoke <android.util.Base64: byte[] decode(java.lang.String,int)>($r4, 0);
+
+        $r4 = new java.lang.String;
+
+     label1:
+        specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8");
+
+     label2:
+        $r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString> = $r4;
+
+     label3:
+        $r7 = virtualinvoke $r0.<com.android.insecurebankv2.LoginActivity: android.view.View findViewById(int)>(2131558504);
+
+        $r8 = (android.widget.EditText) $r7;
+
+        $r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Username_Text> = $r8;
+
+        $r7 = virtualinvoke $r0.<com.android.insecurebankv2.LoginActivity: android.view.View findViewById(int)>(2131558505);
+
+        $r8 = (android.widget.EditText) $r7;
+
+        $r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Password_Text> = $r8;
+
+        $r8 = $r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Username_Text>;
+
+        $r4 = $r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>;
+
+        virtualinvoke $r8.<android.widget.EditText: void setText(java.lang.CharSequence)>($r4);
+
+        $r1 = new com.android.insecurebankv2.CryptoClass;
+
+        specialinvoke $r1.<com.android.insecurebankv2.CryptoClass: void <init>()>();
+
+        $r5 = virtualinvoke $r1.<com.android.insecurebankv2.CryptoClass: java.lang.String aesDeccryptedString(java.lang.String)>($r5);
+
+        $r8 = $r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Password_Text>;
+
+        virtualinvoke $r8.<android.widget.EditText: void setText(java.lang.CharSequence)>($r5);
+
+        return;
+
+     label4:
+        $r2 := @caughtexception;
+
+        virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>();
+
+        goto label3;
+
+     label5:
+        if $r4 == null goto label6;
+
+        if $r5 != null goto label6;
+
+     label6:
+        return;
+
+        catch java.io.UnsupportedEncodingException from label1 to label2 with label4;
+    }
+
+  --Method Body:    protected void fillData() throws java.io.UnsupportedEncodingException, java.security.InvalidKeyException, java.security.NoSuchAlgorithmException, javax.crypto.NoSuchPaddingException, java.security.InvalidAlgorithmParameterException, javax.crypto.IllegalBlockSizeException, javax.crypto.BadPaddingException
+    {
+        com.android.insecurebankv2.LoginActivity $r0;
+        com.android.insecurebankv2.CryptoClass $r1;
+        java.io.UnsupportedEncodingException $r2;
+        android.content.SharedPreferences $r3;
+        java.lang.String $r4, $r5;
+        byte[] $r6;
+        android.view.View $r7;
+        android.widget.EditText $r8;
+
+        $r0 := @this: com.android.insecurebankv2.LoginActivity;
+
+        $r3 = virtualinvoke $r0.<com.android.insecurebankv2.LoginActivity: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)>("mySharedPreferences", 0);
+
+        $r4 = interfaceinvoke $r3.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>("EncryptedUsername", null);
+
+        $r5 = interfaceinvoke $r3.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>("superSecurePassword", null);
+
+        if $r4 == null goto label5;
+
+        if $r5 == null goto label5;
+
+        $r6 = staticinvoke <android.util.Base64: byte[] decode(java.lang.String,int)>($r4, 0);
+
+        $r4 = new java.lang.String;
+
+     label1:
+        specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8");
+
+     label2:
+        $r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString> = $r4;
+
+     label3:
+        $r7 = virtualinvoke $r0.<com.android.insecurebankv2.LoginActivity: android.view.View findViewById(int)>(2131558504);
+
+        $r8 = (android.widget.EditText) $r7;
+
+        $r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Username_Text> = $r8;
+
+        $r7 = virtualinvoke $r0.<com.android.insecurebankv2.LoginActivity: android.view.View findViewById(int)>(2131558505);
+
+        $r8 = (android.widget.EditText) $r7;
+
+        $r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Password_Text> = $r8;
+
+        $r8 = $r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Username_Text>;
+
+        $r4 = $r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>;
+
+        virtualinvoke $r8.<android.widget.EditText: void setText(java.lang.CharSequence)>($r4);
+
+        $r1 = new com.android.insecurebankv2.CryptoClass;
+
+        specialinvoke $r1.<com.android.insecurebankv2.CryptoClass: void <init>()>();
+
+        $r5 = virtualinvoke $r1.<com.android.insecurebankv2.CryptoClass: java.lang.String aesDeccryptedString(java.lang.String)>($r5);
+
+        $r8 = $r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Password_Text>;
+
+        virtualinvoke $r8.<android.widget.EditText: void setText(java.lang.CharSequence)>($r5);
+
+        return;
+
+     label4:
+        $r2 := @caughtexception;
+
+        virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>();
+
+        goto label3;
+
+     label5:
+        if $r4 == null goto label6;
+
+        if $r5 != null goto label6;
+
+     label6:
+        return;
+
+        catch java.io.UnsupportedEncodingException from label1 to label2 with label4;
+    }
+
+  --Start displaying:fillData 
+  UNIT:0 $r0 := @this: com.android.insecurebankv2.LoginActivity
+      [BEFOR]RS:0
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+
+      [AFTER]RS:0
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r0:[THIS,]
+
+  UNIT:1 $r3 = virtualinvoke $r0.<com.android.insecurebankv2.LoginActivity: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)>("mySharedPreferences", 0)
+      [BEFOR]RS:1
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:1
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r0:[THIS,]
+
+  UNIT:2 $r4 = interfaceinvoke $r3.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>("EncryptedUsername", null)
+      [BEFOR]RS:2
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:2
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r0:[THIS,]
+
+  UNIT:3 $r5 = interfaceinvoke $r3.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>("superSecurePassword", null)
+      [BEFOR]RS:3
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:3
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r0:[THIS,]
+
+  UNIT:4 if $r4 == null goto (branch)
+      [BEFOR]RS:4
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:4
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r0:[THIS,]
+
+  UNIT:5 if $r5 == null goto (branch)
+      [BEFOR]RS:5
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:5
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r0:[THIS,]
+
+  UNIT:6 $r6 = staticinvoke <android.util.Base64: byte[] decode(java.lang.String,int)>($r4, 0)
+      [BEFOR]RS:6
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:6
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r0:[THIS,]
+
+  UNIT:7 $r4 = new java.lang.String
+      [BEFOR]RS:7
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:7
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r0:[THIS,]
+
+  UNIT:8 specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8")
+      [BEFOR]RS:8
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:8
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r0:[THIS,]
+
+  UNIT:9 $r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString> = $r4
+      [BEFOR]RS:9
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:9
+ THIS.usernameBase64ByteString:[NewValue1690836460,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>:[NewValue1690836460,]
+                           $r0:[THIS,]
+
+  UNIT:10 $r7 = virtualinvoke $r0.<com.android.insecurebankv2.LoginActivity: android.view.View findViewById(int)>(2131558504)
+      [BEFOR]RS:10
+ THIS.usernameBase64ByteString:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>:[NewValue1690836460,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:10
+ THIS.usernameBase64ByteString:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>:[NewValue1690836460,]
+                           $r0:[THIS,]
+                           $r7:[findViewById([THIS:THIS][@0:CONST]),]
+
+  UNIT:11 $r8 = (android.widget.EditText) $r7
+      [BEFOR]RS:11
+ THIS.usernameBase64ByteString:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>:[NewValue1690836460,]
+                           $r0:[THIS,]
+                           $r7:[findViewById([THIS:THIS][@0:CONST]),]
+
+      [AFTER]RS:11
+ THIS.usernameBase64ByteString:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+                           $r8:[findViewById([THIS:THIS][@0:CONST]),]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>:[NewValue1690836460,]
+                           $r0:[THIS,]
+                           $r7:[findViewById([THIS:THIS][@0:CONST]),]
+
+  UNIT:12 $r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Username_Text> = $r8
+      [BEFOR]RS:12
+ THIS.usernameBase64ByteString:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+                           $r8:[findViewById([THIS:THIS][@0:CONST]),]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>:[NewValue1690836460,]
+                           $r0:[THIS,]
+                           $r7:[findViewById([THIS:THIS][@0:CONST]),]
+
+      [AFTER]RS:12
+ THIS.usernameBase64ByteString:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+                           $r8:[findViewById([THIS:THIS][@0:CONST]),]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[findViewById([THIS:THIS][@0:CONST]),]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Username_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>:[NewValue1690836460,]
+                           $r0:[THIS,]
+                           $r7:[findViewById([THIS:THIS][@0:CONST]),]
+
+  UNIT:13 $r7 = virtualinvoke $r0.<com.android.insecurebankv2.LoginActivity: android.view.View findViewById(int)>(2131558505)
+      [BEFOR]RS:13
+ THIS.usernameBase64ByteString:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+                           $r8:[findViewById([THIS:THIS][@0:CONST]),]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[findViewById([THIS:THIS][@0:CONST]),]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Username_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>:[NewValue1690836460,]
+                           $r0:[THIS,]
+                           $r7:[findViewById([THIS:THIS][@0:CONST]),]
+
+      [AFTER]RS:13
+ THIS.usernameBase64ByteString:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+                           $r8:[findViewById([THIS:THIS][@0:CONST]),]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[findViewById([THIS:THIS][@0:CONST]),]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Username_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>:[NewValue1690836460,]
+                           $r0:[THIS,]
+                           $r7:[findViewById([THIS:THIS][@0:CONST]),]
+
+  UNIT:14 $r8 = (android.widget.EditText) $r7
+      [BEFOR]RS:14
+ THIS.usernameBase64ByteString:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+                           $r8:[findViewById([THIS:THIS][@0:CONST]),]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[findViewById([THIS:THIS][@0:CONST]),]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Username_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>:[NewValue1690836460,]
+                           $r0:[THIS,]
+                           $r7:[findViewById([THIS:THIS][@0:CONST]),]
+
+      [AFTER]RS:14
+ THIS.usernameBase64ByteString:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+                           $r8:[findViewById([THIS:THIS][@0:CONST]),]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[findViewById([THIS:THIS][@0:CONST]),]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Username_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>:[NewValue1690836460,]
+                           $r0:[THIS,]
+                           $r7:[findViewById([THIS:THIS][@0:CONST]),]
+
+  UNIT:15 $r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Password_Text> = $r8
+      [BEFOR]RS:15
+ THIS.usernameBase64ByteString:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+                           $r8:[findViewById([THIS:THIS][@0:CONST]),]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[findViewById([THIS:THIS][@0:CONST]),]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Username_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>:[NewValue1690836460,]
+                           $r0:[THIS,]
+                           $r7:[findViewById([THIS:THIS][@0:CONST]),]
+
+      [AFTER]RS:15
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Password_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+ THIS.usernameBase64ByteString:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+                           $r8:[findViewById([THIS:THIS][@0:CONST]),]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[findViewById([THIS:THIS][@0:CONST]),]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Username_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>:[NewValue1690836460,]
+                           $r0:[THIS,]
+                           $r7:[findViewById([THIS:THIS][@0:CONST]),]
+
+  UNIT:16 $r8 = $r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Username_Text>
+      [BEFOR]RS:16
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Password_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+ THIS.usernameBase64ByteString:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+                           $r8:[findViewById([THIS:THIS][@0:CONST]),]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[findViewById([THIS:THIS][@0:CONST]),]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Username_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>:[NewValue1690836460,]
+                           $r0:[THIS,]
+                           $r7:[findViewById([THIS:THIS][@0:CONST]),]
+
+      [AFTER]RS:16
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Password_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+ THIS.usernameBase64ByteString:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+                           $r8:[findViewById([THIS:THIS][@0:CONST]),]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[findViewById([THIS:THIS][@0:CONST]),]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Username_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>:[NewValue1690836460,]
+                           $r0:[THIS,]
+                           $r7:[findViewById([THIS:THIS][@0:CONST]),]
+
+  UNIT:17 $r4 = $r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>
+      [BEFOR]RS:17
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Password_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+ THIS.usernameBase64ByteString:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+                           $r8:[findViewById([THIS:THIS][@0:CONST]),]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[findViewById([THIS:THIS][@0:CONST]),]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Username_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>:[NewValue1690836460,]
+                           $r0:[THIS,]
+                           $r7:[findViewById([THIS:THIS][@0:CONST]),]
+
+      [AFTER]RS:17
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Password_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+ THIS.usernameBase64ByteString:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+                           $r8:[findViewById([THIS:THIS][@0:CONST]),]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[findViewById([THIS:THIS][@0:CONST]),]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Username_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>:[NewValue1690836460,]
+                           $r0:[THIS,]
+                           $r7:[findViewById([THIS:THIS][@0:CONST]),]
+
+  UNIT:18 virtualinvoke $r8.<android.widget.EditText: void setText(java.lang.CharSequence)>($r4)
+      [BEFOR]RS:18
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Password_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+ THIS.usernameBase64ByteString:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+                           $r8:[findViewById([THIS:THIS][@0:CONST]),]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[findViewById([THIS:THIS][@0:CONST]),]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Username_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>:[NewValue1690836460,]
+                           $r0:[THIS,]
+                           $r7:[findViewById([THIS:THIS][@0:CONST]),]
+
+      [AFTER]RS:18
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Password_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+ THIS.usernameBase64ByteString:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+                           $r8:[findViewById([THIS:THIS][@0:CONST]),]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[findViewById([THIS:THIS][@0:CONST]),]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Username_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<android.widget.EditText: void setText(java.lang.CharSequence)>($r4):[setText([THIS:CONST,THIS][@0:NewValue1690836460,THIS.usernameBase64ByteString]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>:[NewValue1690836460,]
+                           $r0:[THIS,]
+                           $r7:[findViewById([THIS:THIS][@0:CONST]),]
+
+  UNIT:19 $r1 = new com.android.insecurebankv2.CryptoClass
+      [BEFOR]RS:19
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Password_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+ THIS.usernameBase64ByteString:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+                           $r8:[findViewById([THIS:THIS][@0:CONST]),]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[findViewById([THIS:THIS][@0:CONST]),]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Username_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<android.widget.EditText: void setText(java.lang.CharSequence)>($r4):[setText([THIS:CONST,THIS][@0:NewValue1690836460,THIS.usernameBase64ByteString]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>:[NewValue1690836460,]
+                           $r0:[THIS,]
+                           $r7:[findViewById([THIS:THIS][@0:CONST]),]
+
+      [AFTER]RS:19
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Password_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+ THIS.usernameBase64ByteString:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+                           $r8:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r1:[NewValue73433020,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[findViewById([THIS:THIS][@0:CONST]),]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Username_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<android.widget.EditText: void setText(java.lang.CharSequence)>($r4):[setText([THIS:CONST,THIS][@0:NewValue1690836460,THIS.usernameBase64ByteString]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>:[NewValue1690836460,]
+                           $r0:[THIS,]
+                           $r7:[findViewById([THIS:THIS][@0:CONST]),]
+
+  UNIT:20 specialinvoke $r1.<com.android.insecurebankv2.CryptoClass: void <init>()>()
+      [BEFOR]RS:20
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Password_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+ THIS.usernameBase64ByteString:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+                           $r8:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r1:[NewValue73433020,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[findViewById([THIS:THIS][@0:CONST]),]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Username_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<android.widget.EditText: void setText(java.lang.CharSequence)>($r4):[setText([THIS:CONST,THIS][@0:NewValue1690836460,THIS.usernameBase64ByteString]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>:[NewValue1690836460,]
+                           $r0:[THIS,]
+                           $r7:[findViewById([THIS:THIS][@0:CONST]),]
+
+      [AFTER]RS:20
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Password_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+ THIS.usernameBase64ByteString:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+                           $r8:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r1:[NewValue73433020,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[findViewById([THIS:THIS][@0:CONST]),]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Username_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<android.widget.EditText: void setText(java.lang.CharSequence)>($r4):[setText([THIS:CONST,THIS][@0:NewValue1690836460,THIS.usernameBase64ByteString]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>:[NewValue1690836460,]
+                           $r0:[THIS,]
+specialinvoke $r1.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue73433020]),]
+                           $r7:[findViewById([THIS:THIS][@0:CONST]),]
+
+  UNIT:21 $r5 = virtualinvoke $r1.<com.android.insecurebankv2.CryptoClass: java.lang.String aesDeccryptedString(java.lang.String)>($r5)
+      [BEFOR]RS:21
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Password_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+ THIS.usernameBase64ByteString:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+                           $r8:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r1:[NewValue73433020,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[findViewById([THIS:THIS][@0:CONST]),]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Username_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<android.widget.EditText: void setText(java.lang.CharSequence)>($r4):[setText([THIS:CONST,THIS][@0:NewValue1690836460,THIS.usernameBase64ByteString]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>:[NewValue1690836460,]
+                           $r0:[THIS,]
+specialinvoke $r1.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue73433020]),]
+                           $r7:[findViewById([THIS:THIS][@0:CONST]),]
+
+      [AFTER]RS:21
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Password_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+ THIS.usernameBase64ByteString:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+                           $r8:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r1:[NewValue73433020,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[findViewById([THIS:THIS][@0:CONST]),]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Username_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<android.widget.EditText: void setText(java.lang.CharSequence)>($r4):[setText([THIS:CONST,THIS][@0:NewValue1690836460,THIS.usernameBase64ByteString]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r5:[aesDeccryptedString([THIS:NewValue73433020][@0:CONST,THIS]),]
+$r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>:[NewValue1690836460,]
+                           $r0:[THIS,]
+specialinvoke $r1.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue73433020]),]
+                           $r7:[findViewById([THIS:THIS][@0:CONST]),]
+
+  UNIT:22 $r8 = $r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Password_Text>
+      [BEFOR]RS:22
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Password_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+ THIS.usernameBase64ByteString:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+                           $r8:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r1:[NewValue73433020,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[findViewById([THIS:THIS][@0:CONST]),]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Username_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<android.widget.EditText: void setText(java.lang.CharSequence)>($r4):[setText([THIS:CONST,THIS][@0:NewValue1690836460,THIS.usernameBase64ByteString]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r5:[aesDeccryptedString([THIS:NewValue73433020][@0:CONST,THIS]),]
+$r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>:[NewValue1690836460,]
+                           $r0:[THIS,]
+specialinvoke $r1.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue73433020]),]
+                           $r7:[findViewById([THIS:THIS][@0:CONST]),]
+
+      [AFTER]RS:22
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Password_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+ THIS.usernameBase64ByteString:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+                           $r8:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r1:[NewValue73433020,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[findViewById([THIS:THIS][@0:CONST]),]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Username_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<android.widget.EditText: void setText(java.lang.CharSequence)>($r4):[setText([THIS:CONST,THIS][@0:NewValue1690836460,THIS.usernameBase64ByteString]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r5:[aesDeccryptedString([THIS:NewValue73433020][@0:CONST,THIS]),]
+$r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>:[NewValue1690836460,]
+                           $r0:[THIS,]
+specialinvoke $r1.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue73433020]),]
+                           $r7:[findViewById([THIS:THIS][@0:CONST]),]
+
+  UNIT:23 virtualinvoke $r8.<android.widget.EditText: void setText(java.lang.CharSequence)>($r5)
+      [BEFOR]RS:23
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Password_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+ THIS.usernameBase64ByteString:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+                           $r8:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r1:[NewValue73433020,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[findViewById([THIS:THIS][@0:CONST]),]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Username_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<android.widget.EditText: void setText(java.lang.CharSequence)>($r4):[setText([THIS:CONST,THIS][@0:NewValue1690836460,THIS.usernameBase64ByteString]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r5:[aesDeccryptedString([THIS:NewValue73433020][@0:CONST,THIS]),]
+$r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>:[NewValue1690836460,]
+                           $r0:[THIS,]
+specialinvoke $r1.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue73433020]),]
+                           $r7:[findViewById([THIS:THIS][@0:CONST]),]
+
+      [AFTER]RS:23
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Password_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+ THIS.usernameBase64ByteString:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+                           $r8:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r1:[NewValue73433020,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[findViewById([THIS:THIS][@0:CONST]),]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Username_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<android.widget.EditText: void setText(java.lang.CharSequence)>($r5):[setText([THIS:CONST,THIS][@0:CONST,NewValue73433020,THIS]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r5:[aesDeccryptedString([THIS:NewValue73433020][@0:CONST,THIS]),]
+$r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>:[NewValue1690836460,]
+                           $r0:[THIS,]
+specialinvoke $r1.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue73433020]),]
+                           $r7:[findViewById([THIS:THIS][@0:CONST]),]
+
+  UNIT:24 return
+      [BEFOR]RS:24
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Password_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+ THIS.usernameBase64ByteString:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+                           $r8:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r1:[NewValue73433020,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[findViewById([THIS:THIS][@0:CONST]),]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Username_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<android.widget.EditText: void setText(java.lang.CharSequence)>($r5):[setText([THIS:CONST,THIS][@0:CONST,NewValue73433020,THIS]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r5:[aesDeccryptedString([THIS:NewValue73433020][@0:CONST,THIS]),]
+$r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>:[NewValue1690836460,]
+                           $r0:[THIS,]
+specialinvoke $r1.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue73433020]),]
+                           $r7:[findViewById([THIS:THIS][@0:CONST]),]
+
+      [AFTER]RS:24
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Password_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+ THIS.usernameBase64ByteString:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+                           $r8:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r1:[NewValue73433020,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[findViewById([THIS:THIS][@0:CONST]),]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+$r0.<com.android.insecurebankv2.LoginActivity: android.widget.EditText Username_Text>:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<android.widget.EditText: void setText(java.lang.CharSequence)>($r5):[setText([THIS:CONST,THIS][@0:CONST,NewValue73433020,THIS]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,THIS.usernameBase64ByteString,]
+                           $r5:[aesDeccryptedString([THIS:NewValue73433020][@0:CONST,THIS]),]
+$r0.<com.android.insecurebankv2.LoginActivity: java.lang.String usernameBase64ByteString>:[NewValue1690836460,]
+                           $r0:[THIS,]
+specialinvoke $r1.<com.android.insecurebankv2.CryptoClass: void <init>()>():[<init>([THIS:NewValue73433020]),]
+                           $r7:[findViewById([THIS:THIS][@0:CONST]),]
+
+  UNIT:25 $r2 := @caughtexception
+      [BEFOR]RS:25
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:25
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r0:[THIS,]
+
+  UNIT:26 virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>()
+      [BEFOR]RS:26
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:26
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r0:[THIS,]
+
+  UNIT:27 goto [?= $r7 = virtualinvoke $r0.<com.android.insecurebankv2.LoginActivity: android.view.View findViewById(int)>(2131558504)]
+      [BEFOR]RS:27
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:27
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $r6:[decode([THIS:null][@0:CONST,THIS][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+virtualinvoke $r2.<java.io.UnsupportedEncodingException: void printStackTrace()>():[printStackTrace([THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+specialinvoke $r4.<java.lang.String: void <init>(byte[],java.lang.String)>($r6, "UTF-8"):[<init>([THIS:NewValue1690836460][@0:CONST,THIS][@1:CONST]),]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[NewValue1690836460,]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r0:[THIS,]
+
+  UNIT:28 if $r4 == null goto return
+      [BEFOR]RS:28
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:28
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r0:[THIS,]
+
+  UNIT:29 if $r5 != null goto return
+      [BEFOR]RS:29
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:29
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r0:[THIS,]
+
+  UNIT:30 return
+      [BEFOR]RS:30
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:30
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r3:[getSharedPreferences([THIS:THIS][@0:CONST][@1:CONST]),]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r4:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r5:[getString([THIS:CONST,THIS][@0:CONST][@1:CONST]),]
+                           $r0:[THIS,]
+
+@@End fillData======================

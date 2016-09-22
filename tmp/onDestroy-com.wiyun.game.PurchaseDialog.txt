@@ -1,0 +1,155 @@
+@@Start analyzing:onDestroy
+READ: THIS
+  --Done analyzing:onDestroy     protected void onDestroy()
+    {
+        com.wiyun.game.PurchaseDialog $r0;
+        com.wiyun.game.b.d $r1;
+
+        $r0 := @this: com.wiyun.game.PurchaseDialog;
+
+        $r1 = staticinvoke <com.wiyun.game.b.d: com.wiyun.game.b.d a()>();
+
+        virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0);
+
+        specialinvoke $r0.<android.app.Activity: void onDestroy()>();
+
+        return;
+    }
+
+  --Method Body:    protected void onDestroy()
+    {
+        com.wiyun.game.PurchaseDialog $r0;
+        com.wiyun.game.b.d $r1;
+
+        $r0 := @this: com.wiyun.game.PurchaseDialog;
+
+        $r1 = staticinvoke <com.wiyun.game.b.d: com.wiyun.game.b.d a()>();
+
+        virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0);
+
+        specialinvoke $r0.<android.app.Activity: void onDestroy()>();
+
+        return;
+    }
+
+  --Start displaying:onDestroy 
+  UNIT:0 $r0 := @this: com.wiyun.game.PurchaseDialog
+      [BEFOR]RS:0
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+
+      [AFTER]RS:0
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                           $r0:[THIS,]
+
+  UNIT:1 $r1 = staticinvoke <com.wiyun.game.b.d: com.wiyun.game.b.d a()>()
+      [BEFOR]RS:1
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:1
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                           $r1:[a(),]
+                           $r0:[THIS,]
+
+  UNIT:2 virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0)
+      [BEFOR]RS:2
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                           $r1:[a(),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:2
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                           $r1:[a(),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+                           $r0:[THIS,]
+
+  UNIT:3 specialinvoke $r0.<android.app.Activity: void onDestroy()>()
+      [BEFOR]RS:3
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                           $r1:[a(),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:3
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                           $r1:[a(),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+specialinvoke $r0.<android.app.Activity: void onDestroy()>():[onDestroy([THIS:THIS]),]
+                           $r0:[THIS,]
+
+  UNIT:4 return
+      [BEFOR]RS:4
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                           $r1:[a(),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+specialinvoke $r0.<android.app.Activity: void onDestroy()>():[onDestroy([THIS:THIS]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:4
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                           $r1:[a(),]
+virtualinvoke $r1.<com.wiyun.game.b.d: void b(com.wiyun.game.b.b)>($r0):[b([THIS][@0:THIS]),]
+specialinvoke $r0.<android.app.Activity: void onDestroy()>():[onDestroy([THIS:THIS]),]
+                           $r0:[THIS,]
+
+@@End onDestroy======================

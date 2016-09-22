@@ -232,7 +232,13 @@ public class FlowTriggerEventAnalyzer {
 							return Integer.valueOf(val);
 						}
 					}
+					else{
+						System.out.println("[NUTEXT] DEBUG  extractIDFromCallRetValue findViewById arg not contst: "+a);
+					}
 				}
+			}
+			else{
+				System.out.println("[NUTEXT] DEBUG  extractIDFromCallRetValue not findViewById: "+crv.getMethod().getName());
 			}
 		}
 		catch(Exception e){
@@ -277,6 +283,9 @@ public class FlowTriggerEventAnalyzer {
 									System.out.println("[NUTEXT] ALERT  cannot find texts for view "+id);
 								}
 							}
+							else{
+								System.out.println("[NUTEXT] ALERT  cannot find view ID for view ");
+							}
 							break;
 						}
 						else if(rv instanceof InstanceFieldValue){
@@ -308,6 +317,8 @@ public class FlowTriggerEventAnalyzer {
 														else{
 															System.out.println("[NUTEXT] ALERT  cannot find texts for view "+id);
 														}
+													}else{
+														System.out.println("[NUTEXT] ALERT  cannot find view ID for view ");
 													}
 													break;
 												}
@@ -351,7 +362,7 @@ public class FlowTriggerEventAnalyzer {
 				SootMethod precessor = edge.getSrc().method();
 				if(precessor == null)
 					continue;
-				//System.out.println("  CG:"+precessor+" => "+target);
+				System.out.println("  CG:"+precessor.getName()+" => "+target.getName());
 				if(!visited.contains(precessor.getSignature()))
 					queue.add(precessor);
 			}
@@ -370,8 +381,10 @@ public class FlowTriggerEventAnalyzer {
 					Iterator<Edge> edges = cg.edgesInto(ie.getMethod());				
 					if(edges.hasNext()){
 						SootMethod sm = findPrecessorTrigger(ie.getMethod());
-						if(sm != null)
+						if(sm != null){
 							triggers.put(source, sm);
+							System.out.println("[NUTEXT] Found source trigger: "+source+" tiggered by "+sm.getSignature());
+						}
 					}
 					else{
 						stmt2Source.put(source.getSource(), source);
@@ -402,9 +415,15 @@ public class FlowTriggerEventAnalyzer {
 		    		//note that for all the sources in sourceStmts,
 		    		//we cannot find its precessor trigger via its method.
 		    		//so we use its enclosing method.
-		    		System.out.println("Found one source: "+s+" "+m+" // "+cg.edgesInto(m).hasNext());
+		    		//System.out.println("Found one source: "+s+" "+m+" // "+cg.edgesInto(m).hasNext());
 		    		SootMethod sm = findPrecessorTrigger(m);
-		    		if(sm != null) triggers.put(stmt2Source.get(s), sm);
+		    		if(sm != null){
+		    			triggers.put(stmt2Source.get(s), sm);
+		    			System.out.println("[NUTEXT] Found source trigger: "+stmt2Source.get(s)+" tiggered by "+sm.getSignature());
+		    		}
+		    		else{
+		    			System.out.println("[NUTEXT] Cannot find source trigger: "+stmt2Source.get(s));
+		    		}
 		    	}
 		    }
 		}
@@ -438,6 +457,19 @@ public class FlowTriggerEventAnalyzer {
 		    				}
 		    			}
 		    		}
+		    		//DEBUG
+		    		if(invokedM.getName().equals("findViewById")){
+		    			Value v = expr.getArg(0);
+		    			if(v instanceof Local){
+		    				Local lv = (Local)v;
+		    				
+		    				
+		    			}
+		    			System.out.println("DEBUG EEE: "+s);
+		    			List<Unit> tmp = new ArrayList<Unit>();
+		    			tmp.add(s);
+		    			displayGraph(g, "DEBUG FINDVIEWBYID", tmp , true);
+		    		}
 		    	}
 		    	
 		    }
@@ -448,33 +480,39 @@ public class FlowTriggerEventAnalyzer {
 		lfp = new LayoutFileParserForTextExtraction(this.appPackageName, resParser);
 		lfp.parseLayoutFileForTextExtraction(apkFileLocation);	
 		id2Text = lfp.getId2Texts();
-		
-		//update flowTriggerEventObject's text attributes
-		for(String listenerClass : flowTriggerEventObjectMap.keySet()){
-			FlowTriggerEventObject obj = flowTriggerEventObjectMap.get(listenerClass);
-			System.out.println("DEBUG: EventListenerClass Name: "+listenerClass);
-			for(EventOriginObject oo : obj.getEventOriginObjects()){
-				//oo.setText(findResourceID());
-				if(id2Text.containsKey(oo.getId()) ){
-					List<String> tmp = id2Text.get(oo.getId());
-					String texts = "";
-					for(String s : tmp){
-						if (texts.length() > 0)
-							texts += "\n";
-						texts += s.trim();
-					}
-					oo.setText(texts);
-				}
-				if(view2Layout.containsKey(oo.getDeclaringClass())){
-					String layoutName = (String)view2Layout.get(oo.getDeclaringClass());
-					if(lfp.getTextTreeMap().containsKey(layoutName)){
-						oo.setDeclaringClsLayoutTextTree(lfp.getTextTreeMap().get(layoutName));
-					}
-				}
-				System.out.println("DEBUG:  RS:"+oo.toString());
-			}
-			System.out.println();
+		for(Integer id : id2Text.keySet()){
+			System.out.println("DEBUG ID2TEXT: "+id+" "+id2Text.get(id));
 		}
+		
+		for(String cls : view2Layout.keySet()){
+			System.out.println("DEBUG view2Layout: "+cls+" "+view2Layout.get(cls));
+		}
+		//update flowTriggerEventObject's text attributes
+//		for(String listenerClass : flowTriggerEventObjectMap.keySet()){
+//			FlowTriggerEventObject obj = flowTriggerEventObjectMap.get(listenerClass);
+//			System.out.println("DEBUG: EventListenerClass Name: "+listenerClass);
+//			for(EventOriginObject oo : obj.getEventOriginObjects()){
+//				
+//				if(id2Text.containsKey(oo.getId()) ){
+//					List<String> tmp = id2Text.get(oo.getId());
+//					String texts = "";
+//					for(String s : tmp){
+//						if (texts.length() > 0)
+//							texts += "\n";
+//						texts += s.trim();
+//					}
+//					oo.setText(texts);
+//				}
+//				if(view2Layout.containsKey(oo.getDeclaringClass())){
+//					String layoutName = (String)view2Layout.get(oo.getDeclaringClass());
+//					if(lfp.getTextTreeMap().containsKey(layoutName)){
+//						oo.setDeclaringClsLayoutTextTree(lfp.getTextTreeMap().get(layoutName));
+//					}
+//				}
+//				System.out.println("DEBUG:  RS:"+oo.toString());
+//			}
+//			System.out.println();
+//		}
 		
 		for(ResultSourceInfo source : triggers.keySet()){
 			System.out.println("TRIGGER: "+source+" => "+triggers.get(source));

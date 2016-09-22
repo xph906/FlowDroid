@@ -1,0 +1,351 @@
+@@Start analyzing:onClick
+READ: Param@0
+READ: THIS
+  --Done analyzing:onClick     public void onClick(android.view.View)
+    {
+        com.wiyun.game.OAuth $r0;
+        android.view.View $r1;
+        int $i0, $i1;
+
+        $r0 := @this: com.wiyun.game.OAuth;
+
+        $r1 := @parameter0: android.view.View;
+
+        $i0 = virtualinvoke $r1.<android.view.View: int getId()>();
+
+        $i1 = staticinvoke <com.wiyun.game.eh: int d(java.lang.String)>("wy_b_close");
+
+        if $i0 != $i1 goto label1;
+
+        specialinvoke $r0.<com.wiyun.game.OAuth: void a()>();
+
+     label1:
+        return;
+    }
+
+  --Method Body:    public void onClick(android.view.View)
+    {
+        com.wiyun.game.OAuth $r0;
+        android.view.View $r1;
+        int $i0, $i1;
+
+        $r0 := @this: com.wiyun.game.OAuth;
+
+        $r1 := @parameter0: android.view.View;
+
+        $i0 = virtualinvoke $r1.<android.view.View: int getId()>();
+
+        $i1 = staticinvoke <com.wiyun.game.eh: int d(java.lang.String)>("wy_b_close");
+
+        if $i0 != $i1 goto label1;
+
+        specialinvoke $r0.<com.wiyun.game.OAuth: void a()>();
+
+     label1:
+        return;
+    }
+
+  --Start displaying:onClick 
+  UNIT:0 $r0 := @this: com.wiyun.game.OAuth
+      [BEFOR]RS:0
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+
+      [AFTER]RS:0
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                           $r0:[THIS,]
+
+  UNIT:1 $r1 := @parameter0: android.view.View
+      [BEFOR]RS:1
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:1
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:2 $i0 = virtualinvoke $r1.<android.view.View: int getId()>()
+      [BEFOR]RS:2
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:2
+                           $i0:[getId([THIS:Param@0]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:3 $i1 = staticinvoke <com.wiyun.game.eh: int d(java.lang.String)>("wy_b_close")
+      [BEFOR]RS:3
+                           $i0:[getId([THIS:Param@0]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:3
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:4 if $i0 != $i1 goto return
+      [BEFOR]RS:4
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:4
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:5 specialinvoke $r0.<com.wiyun.game.OAuth: void a()>()
+      [BEFOR]RS:5
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:5
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+specialinvoke $r0.<com.wiyun.game.OAuth: void a()>():[a([THIS:THIS]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:6 return
+      [BEFOR]RS:6
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+specialinvoke $r0.<com.wiyun.game.OAuth: void a()>():[a([THIS:THIS]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:6
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+specialinvoke $r0.<com.wiyun.game.OAuth: void a()>():[a([THIS:THIS]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+@@End onClick======================

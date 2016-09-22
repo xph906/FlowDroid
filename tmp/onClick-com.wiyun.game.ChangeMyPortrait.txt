@@ -1,0 +1,2157 @@
+@@Start analyzing:onClick
+READ: THIS.b
+READ: THIS.e
+READ: Param@0
+READ: THIS.a
+READ: THIS.f
+READ: THIS
+WRITE: THIS.f
+  --Done analyzing:onClick     public void onClick(android.view.View)
+    {
+        com.wiyun.game.ChangeMyPortrait $r0;
+        android.view.View $r1;
+        int $i0, $i1;
+        android.graphics.Bitmap $r2;
+        android.widget.Toast $r3;
+        byte[] $r4;
+        android.view.ViewGroup $r5;
+        java.io.File $r6, $r7;
+        java.lang.StringBuilder $r8;
+        long $l2;
+        java.lang.String $r9;
+        android.net.Uri $r10;
+        android.content.Intent $r11;
+        android.content.ActivityNotFoundException $r12, $r13;
+
+        $r0 := @this: com.wiyun.game.ChangeMyPortrait;
+
+        $r1 := @parameter0: android.view.View;
+
+        $i0 = virtualinvoke $r1.<android.view.View: int getId()>();
+
+        $i1 = staticinvoke <com.wiyun.game.eh: int d(java.lang.String)>("wy_b_upload");
+
+        if $i0 != $i1 goto label02;
+
+        $r2 = $r0.<com.wiyun.game.ChangeMyPortrait: android.graphics.Bitmap e>;
+
+        if $r2 != null goto label01;
+
+        $i0 = staticinvoke <com.wiyun.game.eh: int f(java.lang.String)>("wy_toast_please_select_portrait");
+
+        $r3 = staticinvoke <android.widget.Toast: android.widget.Toast makeText(android.content.Context,int,int)>($r0, $i0, 0);
+
+        virtualinvoke $r3.<android.widget.Toast: void show()>();
+
+        return;
+
+     label01:
+        $r2 = $r0.<com.wiyun.game.ChangeMyPortrait: android.graphics.Bitmap e>;
+
+        $r4 = staticinvoke <com.wiyun.game.fo: byte[] a(android.graphics.Bitmap)>($r2);
+
+        if $r4 == null goto label15;
+
+        $r1 = $r0.<com.wiyun.game.ChangeMyPortrait: android.view.View a>;
+
+        virtualinvoke $r1.<android.view.View: void setVisibility(int)>(0);
+
+        $r5 = $r0.<com.wiyun.game.ChangeMyPortrait: android.view.ViewGroup b>;
+
+        staticinvoke <com.wiyun.game.fo: void a(android.view.ViewGroup)>($r5);
+
+        staticinvoke <com.wiyun.game.ex: void a(byte[])>($r4);
+
+        return;
+
+     label02:
+        $i1 = staticinvoke <com.wiyun.game.eh: int d(java.lang.String)>("wy_b_cancel");
+
+        if $i0 != $i1 goto label03;
+
+        virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void finish()>();
+
+        return;
+
+     label03:
+        $i1 = staticinvoke <com.wiyun.game.eh: int d(java.lang.String)>("wy_ib_camera");
+
+        if $i0 != $i1 goto label11;
+
+        $r6 = new java.io.File;
+
+     label04:
+        $r7 = staticinvoke <android.os.Environment: java.io.File getExternalStorageDirectory()>();
+
+     label05:
+        $r8 = new java.lang.StringBuilder;
+
+     label06:
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_");
+
+        $l2 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+
+        $r9 = staticinvoke <java.lang.String: java.lang.String valueOf(long)>($l2);
+
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9);
+
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".jpg");
+
+        $r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        specialinvoke $r6.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r9);
+
+        $r10 = staticinvoke <android.net.Uri: android.net.Uri fromFile(java.io.File)>($r6);
+
+     label07:
+        $r0.<com.wiyun.game.ChangeMyPortrait: android.net.Uri f> = $r10;
+
+        $r10 = $r0.<com.wiyun.game.ChangeMyPortrait: android.net.Uri f>;
+
+     label08:
+        $r11 = staticinvoke <com.wiyun.game.fo: android.content.Intent a(android.net.Uri)>($r10);
+
+        virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 2);
+
+     label09:
+        return;
+
+     label10:
+        $r12 := @caughtexception;
+
+        $i0 = staticinvoke <com.wiyun.game.eh: int f(java.lang.String)>("wy_toast_no_camera");
+
+        $r3 = staticinvoke <android.widget.Toast: android.widget.Toast makeText(android.content.Context,int,int)>($r0, $i0, 0);
+
+        virtualinvoke $r3.<android.widget.Toast: void show()>();
+
+        return;
+
+     label11:
+        $i1 = staticinvoke <com.wiyun.game.eh: int d(java.lang.String)>("wy_ib_images");
+
+        if $i0 != $i1 goto label15;
+
+     label12:
+        $r11 = staticinvoke <com.wiyun.game.fo: android.content.Intent a(int,int,int,int,android.net.Uri)>(256, 256, 1, 1, null);
+
+        virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 1);
+
+     label13:
+        return;
+
+     label14:
+        $r13 := @caughtexception;
+
+        $i0 = staticinvoke <com.wiyun.game.eh: int f(java.lang.String)>("wy_toast_no_image_gallery");
+
+        $r3 = staticinvoke <android.widget.Toast: android.widget.Toast makeText(android.content.Context,int,int)>($r0, $i0, 0);
+
+        virtualinvoke $r3.<android.widget.Toast: void show()>();
+
+     label15:
+        return;
+
+        catch android.content.ActivityNotFoundException from label04 to label05 with label10;
+        catch android.content.ActivityNotFoundException from label06 to label07 with label10;
+        catch android.content.ActivityNotFoundException from label08 to label09 with label10;
+        catch android.content.ActivityNotFoundException from label12 to label13 with label14;
+    }
+
+  --Method Body:    public void onClick(android.view.View)
+    {
+        com.wiyun.game.ChangeMyPortrait $r0;
+        android.view.View $r1;
+        int $i0, $i1;
+        android.graphics.Bitmap $r2;
+        android.widget.Toast $r3;
+        byte[] $r4;
+        android.view.ViewGroup $r5;
+        java.io.File $r6, $r7;
+        java.lang.StringBuilder $r8;
+        long $l2;
+        java.lang.String $r9;
+        android.net.Uri $r10;
+        android.content.Intent $r11;
+        android.content.ActivityNotFoundException $r12, $r13;
+
+        $r0 := @this: com.wiyun.game.ChangeMyPortrait;
+
+        $r1 := @parameter0: android.view.View;
+
+        $i0 = virtualinvoke $r1.<android.view.View: int getId()>();
+
+        $i1 = staticinvoke <com.wiyun.game.eh: int d(java.lang.String)>("wy_b_upload");
+
+        if $i0 != $i1 goto label02;
+
+        $r2 = $r0.<com.wiyun.game.ChangeMyPortrait: android.graphics.Bitmap e>;
+
+        if $r2 != null goto label01;
+
+        $i0 = staticinvoke <com.wiyun.game.eh: int f(java.lang.String)>("wy_toast_please_select_portrait");
+
+        $r3 = staticinvoke <android.widget.Toast: android.widget.Toast makeText(android.content.Context,int,int)>($r0, $i0, 0);
+
+        virtualinvoke $r3.<android.widget.Toast: void show()>();
+
+        return;
+
+     label01:
+        $r2 = $r0.<com.wiyun.game.ChangeMyPortrait: android.graphics.Bitmap e>;
+
+        $r4 = staticinvoke <com.wiyun.game.fo: byte[] a(android.graphics.Bitmap)>($r2);
+
+        if $r4 == null goto label15;
+
+        $r1 = $r0.<com.wiyun.game.ChangeMyPortrait: android.view.View a>;
+
+        virtualinvoke $r1.<android.view.View: void setVisibility(int)>(0);
+
+        $r5 = $r0.<com.wiyun.game.ChangeMyPortrait: android.view.ViewGroup b>;
+
+        staticinvoke <com.wiyun.game.fo: void a(android.view.ViewGroup)>($r5);
+
+        staticinvoke <com.wiyun.game.ex: void a(byte[])>($r4);
+
+        return;
+
+     label02:
+        $i1 = staticinvoke <com.wiyun.game.eh: int d(java.lang.String)>("wy_b_cancel");
+
+        if $i0 != $i1 goto label03;
+
+        virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void finish()>();
+
+        return;
+
+     label03:
+        $i1 = staticinvoke <com.wiyun.game.eh: int d(java.lang.String)>("wy_ib_camera");
+
+        if $i0 != $i1 goto label11;
+
+        $r6 = new java.io.File;
+
+     label04:
+        $r7 = staticinvoke <android.os.Environment: java.io.File getExternalStorageDirectory()>();
+
+     label05:
+        $r8 = new java.lang.StringBuilder;
+
+     label06:
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_");
+
+        $l2 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+
+        $r9 = staticinvoke <java.lang.String: java.lang.String valueOf(long)>($l2);
+
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9);
+
+        $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".jpg");
+
+        $r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        specialinvoke $r6.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r9);
+
+        $r10 = staticinvoke <android.net.Uri: android.net.Uri fromFile(java.io.File)>($r6);
+
+     label07:
+        $r0.<com.wiyun.game.ChangeMyPortrait: android.net.Uri f> = $r10;
+
+        $r10 = $r0.<com.wiyun.game.ChangeMyPortrait: android.net.Uri f>;
+
+     label08:
+        $r11 = staticinvoke <com.wiyun.game.fo: android.content.Intent a(android.net.Uri)>($r10);
+
+        virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 2);
+
+     label09:
+        return;
+
+     label10:
+        $r12 := @caughtexception;
+
+        $i0 = staticinvoke <com.wiyun.game.eh: int f(java.lang.String)>("wy_toast_no_camera");
+
+        $r3 = staticinvoke <android.widget.Toast: android.widget.Toast makeText(android.content.Context,int,int)>($r0, $i0, 0);
+
+        virtualinvoke $r3.<android.widget.Toast: void show()>();
+
+        return;
+
+     label11:
+        $i1 = staticinvoke <com.wiyun.game.eh: int d(java.lang.String)>("wy_ib_images");
+
+        if $i0 != $i1 goto label15;
+
+     label12:
+        $r11 = staticinvoke <com.wiyun.game.fo: android.content.Intent a(int,int,int,int,android.net.Uri)>(256, 256, 1, 1, null);
+
+        virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 1);
+
+     label13:
+        return;
+
+     label14:
+        $r13 := @caughtexception;
+
+        $i0 = staticinvoke <com.wiyun.game.eh: int f(java.lang.String)>("wy_toast_no_image_gallery");
+
+        $r3 = staticinvoke <android.widget.Toast: android.widget.Toast makeText(android.content.Context,int,int)>($r0, $i0, 0);
+
+        virtualinvoke $r3.<android.widget.Toast: void show()>();
+
+     label15:
+        return;
+
+        catch android.content.ActivityNotFoundException from label04 to label05 with label10;
+        catch android.content.ActivityNotFoundException from label06 to label07 with label10;
+        catch android.content.ActivityNotFoundException from label08 to label09 with label10;
+        catch android.content.ActivityNotFoundException from label12 to label13 with label14;
+    }
+
+  --Start displaying:onClick 
+  UNIT:0 $r0 := @this: com.wiyun.game.ChangeMyPortrait
+      [BEFOR]RS:0
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+
+      [AFTER]RS:0
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+
+  UNIT:1 $r1 := @parameter0: android.view.View
+      [BEFOR]RS:1
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:1
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:2 $i0 = virtualinvoke $r1.<android.view.View: int getId()>()
+      [BEFOR]RS:2
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:2
+                           $i0:[getId([THIS:Param@0]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:3 $i1 = staticinvoke <com.wiyun.game.eh: int d(java.lang.String)>("wy_b_upload")
+      [BEFOR]RS:3
+                           $i0:[getId([THIS:Param@0]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:3
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:4 if $i0 != $i1 goto $i1 = staticinvoke <com.wiyun.game.eh: int d(java.lang.String)>("wy_b_cancel")
+      [BEFOR]RS:4
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:4
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:5 $r2 = $r0.<com.wiyun.game.ChangeMyPortrait: android.graphics.Bitmap e>
+      [BEFOR]RS:5
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:5
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r2:[THIS.e,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:6 if $r2 != null goto $r2 = $r0.<com.wiyun.game.ChangeMyPortrait: android.graphics.Bitmap e>
+      [BEFOR]RS:6
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r2:[THIS.e,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:6
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r2:[THIS.e,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:7 $i0 = staticinvoke <com.wiyun.game.eh: int f(java.lang.String)>("wy_toast_please_select_portrait")
+      [BEFOR]RS:7
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r2:[THIS.e,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:7
+                           $i0:[f([THIS:null][@0:CONST]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r2:[THIS.e,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:8 $r3 = staticinvoke <android.widget.Toast: android.widget.Toast makeText(android.content.Context,int,int)>($r0, $i0, 0)
+      [BEFOR]RS:8
+                           $i0:[f([THIS:null][@0:CONST]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r2:[THIS.e,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:8
+                           $r3:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $i0:[f([THIS:null][@0:CONST]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r2:[THIS.e,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:9 virtualinvoke $r3.<android.widget.Toast: void show()>()
+      [BEFOR]RS:9
+                           $r3:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $i0:[f([THIS:null][@0:CONST]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r2:[THIS.e,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:9
+                           $r3:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $i0:[f([THIS:null][@0:CONST]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+virtualinvoke $r3.<android.widget.Toast: void show()>():[show([THIS:CONST,THIS]),]
+                           $r2:[THIS.e,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:10 return
+      [BEFOR]RS:10
+                           $r3:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $i0:[f([THIS:null][@0:CONST]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+virtualinvoke $r3.<android.widget.Toast: void show()>():[show([THIS:CONST,THIS]),]
+                           $r2:[THIS.e,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:10
+                           $r3:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $i0:[f([THIS:null][@0:CONST]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+virtualinvoke $r3.<android.widget.Toast: void show()>():[show([THIS:CONST,THIS]),]
+                           $r2:[THIS.e,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:11 $r2 = $r0.<com.wiyun.game.ChangeMyPortrait: android.graphics.Bitmap e>
+      [BEFOR]RS:11
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r2:[THIS.e,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:11
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r2:[THIS.e,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:12 $r4 = staticinvoke <com.wiyun.game.fo: byte[] a(android.graphics.Bitmap)>($r2)
+      [BEFOR]RS:12
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r2:[THIS.e,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:12
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r4:[a([THIS:null][@0:THIS.e]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r2:[THIS.e,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:13 if $r4 == null goto return
+      [BEFOR]RS:13
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r4:[a([THIS:null][@0:THIS.e]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r2:[THIS.e,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:13
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r4:[a([THIS:null][@0:THIS.e]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r2:[THIS.e,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:14 $r1 = $r0.<com.wiyun.game.ChangeMyPortrait: android.view.View a>
+      [BEFOR]RS:14
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r4:[a([THIS:null][@0:THIS.e]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r2:[THIS.e,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:14
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r4:[a([THIS:null][@0:THIS.e]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r2:[THIS.e,]
+                           $r0:[THIS,]
+                           $r1:[THIS.a,]
+
+  UNIT:15 virtualinvoke $r1.<android.view.View: void setVisibility(int)>(0)
+      [BEFOR]RS:15
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r4:[a([THIS:null][@0:THIS.e]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r2:[THIS.e,]
+                           $r0:[THIS,]
+                           $r1:[THIS.a,]
+
+      [AFTER]RS:15
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r4:[a([THIS:null][@0:THIS.e]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r2:[THIS.e,]
+virtualinvoke $r1.<android.view.View: void setVisibility(int)>(0):[setVisibility([THIS:THIS.a][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r1:[THIS.a,]
+
+  UNIT:16 $r5 = $r0.<com.wiyun.game.ChangeMyPortrait: android.view.ViewGroup b>
+      [BEFOR]RS:16
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r4:[a([THIS:null][@0:THIS.e]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r2:[THIS.e,]
+virtualinvoke $r1.<android.view.View: void setVisibility(int)>(0):[setVisibility([THIS:THIS.a][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r1:[THIS.a,]
+
+      [AFTER]RS:16
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r4:[a([THIS:null][@0:THIS.e]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r2:[THIS.e,]
+virtualinvoke $r1.<android.view.View: void setVisibility(int)>(0):[setVisibility([THIS:THIS.a][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r5:[THIS.b,]
+                           $r1:[THIS.a,]
+
+  UNIT:17 staticinvoke <com.wiyun.game.fo: void a(android.view.ViewGroup)>($r5)
+      [BEFOR]RS:17
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r4:[a([THIS:null][@0:THIS.e]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r2:[THIS.e,]
+virtualinvoke $r1.<android.view.View: void setVisibility(int)>(0):[setVisibility([THIS:THIS.a][@0:CONST]),]
+                           $r0:[THIS,]
+                           $r5:[THIS.b,]
+                           $r1:[THIS.a,]
+
+      [AFTER]RS:17
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r4:[a([THIS:null][@0:THIS.e]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r2:[THIS.e,]
+virtualinvoke $r1.<android.view.View: void setVisibility(int)>(0):[setVisibility([THIS:THIS.a][@0:CONST]),]
+                           $r0:[THIS,]
+staticinvoke <com.wiyun.game.fo: void a(android.view.ViewGroup)>($r5):[a([THIS:null][@0:THIS.b]),]
+                           $r5:[THIS.b,]
+                           $r1:[THIS.a,]
+
+  UNIT:18 staticinvoke <com.wiyun.game.ex: void a(byte[])>($r4)
+      [BEFOR]RS:18
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r4:[a([THIS:null][@0:THIS.e]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r2:[THIS.e,]
+virtualinvoke $r1.<android.view.View: void setVisibility(int)>(0):[setVisibility([THIS:THIS.a][@0:CONST]),]
+                           $r0:[THIS,]
+staticinvoke <com.wiyun.game.fo: void a(android.view.ViewGroup)>($r5):[a([THIS:null][@0:THIS.b]),]
+                           $r5:[THIS.b,]
+                           $r1:[THIS.a,]
+
+      [AFTER]RS:18
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r4:[a([THIS:null][@0:THIS.e]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r2:[THIS.e,]
+virtualinvoke $r1.<android.view.View: void setVisibility(int)>(0):[setVisibility([THIS:THIS.a][@0:CONST]),]
+                           $r0:[THIS,]
+staticinvoke <com.wiyun.game.ex: void a(byte[])>($r4):[a([THIS:null][@0:THIS.e]),]
+staticinvoke <com.wiyun.game.fo: void a(android.view.ViewGroup)>($r5):[a([THIS:null][@0:THIS.b]),]
+                           $r5:[THIS.b,]
+                           $r1:[THIS.a,]
+
+  UNIT:19 return
+      [BEFOR]RS:19
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r4:[a([THIS:null][@0:THIS.e]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r2:[THIS.e,]
+virtualinvoke $r1.<android.view.View: void setVisibility(int)>(0):[setVisibility([THIS:THIS.a][@0:CONST]),]
+                           $r0:[THIS,]
+staticinvoke <com.wiyun.game.ex: void a(byte[])>($r4):[a([THIS:null][@0:THIS.e]),]
+staticinvoke <com.wiyun.game.fo: void a(android.view.ViewGroup)>($r5):[a([THIS:null][@0:THIS.b]),]
+                           $r5:[THIS.b,]
+                           $r1:[THIS.a,]
+
+      [AFTER]RS:19
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                           $r4:[a([THIS:null][@0:THIS.e]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r2:[THIS.e,]
+virtualinvoke $r1.<android.view.View: void setVisibility(int)>(0):[setVisibility([THIS:THIS.a][@0:CONST]),]
+                           $r0:[THIS,]
+staticinvoke <com.wiyun.game.ex: void a(byte[])>($r4):[a([THIS:null][@0:THIS.e]),]
+staticinvoke <com.wiyun.game.fo: void a(android.view.ViewGroup)>($r5):[a([THIS:null][@0:THIS.b]),]
+                           $r5:[THIS.b,]
+                           $r1:[THIS.a,]
+
+  UNIT:20 $i1 = staticinvoke <com.wiyun.game.eh: int d(java.lang.String)>("wy_b_cancel")
+      [BEFOR]RS:20
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:20
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:21 if $i0 != $i1 goto $i1 = staticinvoke <com.wiyun.game.eh: int d(java.lang.String)>("wy_ib_camera")
+      [BEFOR]RS:21
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:21
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:22 virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void finish()>()
+      [BEFOR]RS:22
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:22
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void finish()>():[finish([THIS:THIS]),]
+                           $r1:[Param@0,]
+
+  UNIT:23 return
+      [BEFOR]RS:23
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void finish()>():[finish([THIS:THIS]),]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:23
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void finish()>():[finish([THIS:THIS]),]
+                           $r1:[Param@0,]
+
+  UNIT:24 $i1 = staticinvoke <com.wiyun.game.eh: int d(java.lang.String)>("wy_ib_camera")
+      [BEFOR]RS:24
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:24
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:25 if $i0 != $i1 goto $i1 = staticinvoke <com.wiyun.game.eh: int d(java.lang.String)>("wy_ib_images")
+      [BEFOR]RS:25
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:25
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:26 $r6 = new java.io.File
+      [BEFOR]RS:26
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:26
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+                           $r6:[NewValue18016208,]
+
+  UNIT:27 $r7 = staticinvoke <android.os.Environment: java.io.File getExternalStorageDirectory()>()
+      [BEFOR]RS:27
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+                           $r6:[NewValue18016208,]
+
+      [AFTER]RS:27
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:28 $r8 = new java.lang.StringBuilder
+      [BEFOR]RS:28
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:28
+                           $r8:[NewValue1939629796,]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:29 specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_")
+      [BEFOR]RS:29
+                           $r8:[NewValue1939629796,]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:29
+                           $r8:[NewValue1939629796,]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:30 $l2 = staticinvoke <java.lang.System: long currentTimeMillis()>()
+      [BEFOR]RS:30
+                           $r8:[NewValue1939629796,]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:30
+                           $r8:[NewValue1939629796,]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $l2:[currentTimeMillis(),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:31 $r9 = staticinvoke <java.lang.String: java.lang.String valueOf(long)>($l2)
+      [BEFOR]RS:31
+                           $r8:[NewValue1939629796,]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $l2:[currentTimeMillis(),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:31
+                           $r8:[NewValue1939629796,]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $l2:[currentTimeMillis(),]
+                           $r9:[valueOf([THIS:null][@0:]),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:32 $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9)
+      [BEFOR]RS:32
+                           $r8:[NewValue1939629796,]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $l2:[currentTimeMillis(),]
+                           $r9:[valueOf([THIS:null][@0:]),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:32
+                           $r8:[append([THIS:NewValue1939629796][@0:]),]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $l2:[currentTimeMillis(),]
+                           $r9:[valueOf([THIS:null][@0:]),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:33 $r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".jpg")
+      [BEFOR]RS:33
+                           $r8:[append([THIS:NewValue1939629796][@0:]),]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $l2:[currentTimeMillis(),]
+                           $r9:[valueOf([THIS:null][@0:]),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:33
+                           $r8:[append([THIS:NewValue1939629796][@0:CONST]),]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $l2:[currentTimeMillis(),]
+                           $r9:[valueOf([THIS:null][@0:]),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:34 $r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>()
+      [BEFOR]RS:34
+                           $r8:[append([THIS:NewValue1939629796][@0:CONST]),]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $l2:[currentTimeMillis(),]
+                           $r9:[valueOf([THIS:null][@0:]),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:34
+                           $r8:[append([THIS:NewValue1939629796][@0:CONST]),]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $l2:[currentTimeMillis(),]
+                           $r9:[toString([THIS:CONST,NewValue1939629796]),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:35 specialinvoke $r6.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r9)
+      [BEFOR]RS:35
+                           $r8:[append([THIS:NewValue1939629796][@0:CONST]),]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $l2:[currentTimeMillis(),]
+                           $r9:[toString([THIS:CONST,NewValue1939629796]),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:35
+                           $r8:[append([THIS:NewValue1939629796][@0:CONST]),]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+specialinvoke $r6.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r9):[<init>([THIS:NewValue18016208][@0:][@1:CONST,NewValue1939629796]),]
+                           $l2:[currentTimeMillis(),]
+                           $r9:[toString([THIS:CONST,NewValue1939629796]),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:36 $r10 = staticinvoke <android.net.Uri: android.net.Uri fromFile(java.io.File)>($r6)
+      [BEFOR]RS:36
+                           $r8:[append([THIS:NewValue1939629796][@0:CONST]),]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+specialinvoke $r6.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r9):[<init>([THIS:NewValue18016208][@0:][@1:CONST,NewValue1939629796]),]
+                           $l2:[currentTimeMillis(),]
+                           $r9:[toString([THIS:CONST,NewValue1939629796]),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:36
+                           $r8:[append([THIS:NewValue1939629796][@0:CONST]),]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+specialinvoke $r6.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r9):[<init>([THIS:NewValue18016208][@0:][@1:CONST,NewValue1939629796]),]
+                           $l2:[currentTimeMillis(),]
+                           $r9:[toString([THIS:CONST,NewValue1939629796]),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                          $r10:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:37 $r0.<com.wiyun.game.ChangeMyPortrait: android.net.Uri f> = $r10
+      [BEFOR]RS:37
+                           $r8:[append([THIS:NewValue1939629796][@0:CONST]),]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+specialinvoke $r6.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r9):[<init>([THIS:NewValue18016208][@0:][@1:CONST,NewValue1939629796]),]
+                           $l2:[currentTimeMillis(),]
+                           $r9:[toString([THIS:CONST,NewValue1939629796]),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                          $r10:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:37
+                           $r8:[append([THIS:NewValue1939629796][@0:CONST]),]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r0:[THIS,]
+specialinvoke $r6.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r9):[<init>([THIS:NewValue18016208][@0:][@1:CONST,NewValue1939629796]),]
+                           $l2:[currentTimeMillis(),]
+$r0.<com.wiyun.game.ChangeMyPortrait: android.net.Uri f>:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r9:[toString([THIS:CONST,NewValue1939629796]),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                          $r10:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:38 $r10 = $r0.<com.wiyun.game.ChangeMyPortrait: android.net.Uri f>
+      [BEFOR]RS:38
+                           $r8:[append([THIS:NewValue1939629796][@0:CONST]),]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r0:[THIS,]
+specialinvoke $r6.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r9):[<init>([THIS:NewValue18016208][@0:][@1:CONST,NewValue1939629796]),]
+                           $l2:[currentTimeMillis(),]
+$r0.<com.wiyun.game.ChangeMyPortrait: android.net.Uri f>:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r9:[toString([THIS:CONST,NewValue1939629796]),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                          $r10:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:38
+                           $r8:[append([THIS:NewValue1939629796][@0:CONST]),]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r0:[THIS,]
+specialinvoke $r6.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r9):[<init>([THIS:NewValue18016208][@0:][@1:CONST,NewValue1939629796]),]
+                           $l2:[currentTimeMillis(),]
+$r0.<com.wiyun.game.ChangeMyPortrait: android.net.Uri f>:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r9:[toString([THIS:CONST,NewValue1939629796]),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                          $r10:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:39 $r11 = staticinvoke <com.wiyun.game.fo: android.content.Intent a(android.net.Uri)>($r10)
+      [BEFOR]RS:39
+                           $r8:[append([THIS:NewValue1939629796][@0:CONST]),]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r0:[THIS,]
+specialinvoke $r6.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r9):[<init>([THIS:NewValue18016208][@0:][@1:CONST,NewValue1939629796]),]
+                           $l2:[currentTimeMillis(),]
+$r0.<com.wiyun.game.ChangeMyPortrait: android.net.Uri f>:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r9:[toString([THIS:CONST,NewValue1939629796]),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                          $r10:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:39
+                           $r8:[append([THIS:NewValue1939629796][@0:CONST]),]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                          $r11:[a([THIS:null][@0:NewValue18016208]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r0:[THIS,]
+specialinvoke $r6.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r9):[<init>([THIS:NewValue18016208][@0:][@1:CONST,NewValue1939629796]),]
+                           $l2:[currentTimeMillis(),]
+$r0.<com.wiyun.game.ChangeMyPortrait: android.net.Uri f>:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r9:[toString([THIS:CONST,NewValue1939629796]),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                          $r10:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:40 virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 2)
+      [BEFOR]RS:40
+                           $r8:[append([THIS:NewValue1939629796][@0:CONST]),]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                          $r11:[a([THIS:null][@0:NewValue18016208]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r0:[THIS,]
+specialinvoke $r6.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r9):[<init>([THIS:NewValue18016208][@0:][@1:CONST,NewValue1939629796]),]
+                           $l2:[currentTimeMillis(),]
+$r0.<com.wiyun.game.ChangeMyPortrait: android.net.Uri f>:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r9:[toString([THIS:CONST,NewValue1939629796]),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                          $r10:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:40
+                           $r8:[append([THIS:NewValue1939629796][@0:CONST]),]
+virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 2):[startActivityForResult([THIS:THIS][@0:NewValue18016208][@1:CONST]),]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                          $r11:[a([THIS:null][@0:NewValue18016208]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r0:[THIS,]
+specialinvoke $r6.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r9):[<init>([THIS:NewValue18016208][@0:][@1:CONST,NewValue1939629796]),]
+                           $l2:[currentTimeMillis(),]
+$r0.<com.wiyun.game.ChangeMyPortrait: android.net.Uri f>:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r9:[toString([THIS:CONST,NewValue1939629796]),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                          $r10:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:41 return
+      [BEFOR]RS:41
+                           $r8:[append([THIS:NewValue1939629796][@0:CONST]),]
+virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 2):[startActivityForResult([THIS:THIS][@0:NewValue18016208][@1:CONST]),]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                          $r11:[a([THIS:null][@0:NewValue18016208]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r0:[THIS,]
+specialinvoke $r6.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r9):[<init>([THIS:NewValue18016208][@0:][@1:CONST,NewValue1939629796]),]
+                           $l2:[currentTimeMillis(),]
+$r0.<com.wiyun.game.ChangeMyPortrait: android.net.Uri f>:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r9:[toString([THIS:CONST,NewValue1939629796]),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                          $r10:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:41
+                           $r8:[append([THIS:NewValue1939629796][@0:CONST]),]
+virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 2):[startActivityForResult([THIS:THIS][@0:NewValue18016208][@1:CONST]),]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                          $r11:[a([THIS:null][@0:NewValue18016208]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r0:[THIS,]
+specialinvoke $r6.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r9):[<init>([THIS:NewValue18016208][@0:][@1:CONST,NewValue1939629796]),]
+                           $l2:[currentTimeMillis(),]
+$r0.<com.wiyun.game.ChangeMyPortrait: android.net.Uri f>:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r9:[toString([THIS:CONST,NewValue1939629796]),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                          $r10:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:42 $r12 := @caughtexception
+      [BEFOR]RS:42
+                           $r8:[NewValue1939629796,append([THIS:NewValue1939629796][@0:CONST]),append([THIS:NewValue1939629796][@0:]),]
+virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 2):[startActivityForResult([THIS:THIS][@0:NewValue18016208][@1:CONST]),]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                          $r11:[a([THIS:null][@0:NewValue18016208]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r0:[THIS,]
+specialinvoke $r6.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r9):[<init>([THIS:NewValue18016208][@0:][@1:CONST,NewValue1939629796]),]
+                           $l2:[currentTimeMillis(),]
+$r0.<com.wiyun.game.ChangeMyPortrait: android.net.Uri f>:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r9:[toString([THIS:CONST,NewValue1939629796]),valueOf([THIS:null][@0:]),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                          $r10:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:42
+                           $r8:[NewValue1939629796,append([THIS:NewValue1939629796][@0:CONST]),append([THIS:NewValue1939629796][@0:]),]
+virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 2):[startActivityForResult([THIS:THIS][@0:NewValue18016208][@1:CONST]),]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                          $r11:[a([THIS:null][@0:NewValue18016208]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r0:[THIS,]
+specialinvoke $r6.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r9):[<init>([THIS:NewValue18016208][@0:][@1:CONST,NewValue1939629796]),]
+                           $l2:[currentTimeMillis(),]
+$r0.<com.wiyun.game.ChangeMyPortrait: android.net.Uri f>:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r9:[toString([THIS:CONST,NewValue1939629796]),valueOf([THIS:null][@0:]),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                          $r10:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:43 $i0 = staticinvoke <com.wiyun.game.eh: int f(java.lang.String)>("wy_toast_no_camera")
+      [BEFOR]RS:43
+                           $r8:[NewValue1939629796,append([THIS:NewValue1939629796][@0:CONST]),append([THIS:NewValue1939629796][@0:]),]
+virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 2):[startActivityForResult([THIS:THIS][@0:NewValue18016208][@1:CONST]),]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                          $r11:[a([THIS:null][@0:NewValue18016208]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r0:[THIS,]
+specialinvoke $r6.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r9):[<init>([THIS:NewValue18016208][@0:][@1:CONST,NewValue1939629796]),]
+                           $l2:[currentTimeMillis(),]
+$r0.<com.wiyun.game.ChangeMyPortrait: android.net.Uri f>:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r9:[toString([THIS:CONST,NewValue1939629796]),valueOf([THIS:null][@0:]),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                          $r10:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:43
+                           $r8:[NewValue1939629796,append([THIS:NewValue1939629796][@0:CONST]),append([THIS:NewValue1939629796][@0:]),]
+virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 2):[startActivityForResult([THIS:THIS][@0:NewValue18016208][@1:CONST]),]
+                           $i0:[f([THIS:null][@0:CONST]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                          $r11:[a([THIS:null][@0:NewValue18016208]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r0:[THIS,]
+specialinvoke $r6.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r9):[<init>([THIS:NewValue18016208][@0:][@1:CONST,NewValue1939629796]),]
+                           $l2:[currentTimeMillis(),]
+$r0.<com.wiyun.game.ChangeMyPortrait: android.net.Uri f>:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r9:[toString([THIS:CONST,NewValue1939629796]),valueOf([THIS:null][@0:]),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                          $r10:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:44 $r3 = staticinvoke <android.widget.Toast: android.widget.Toast makeText(android.content.Context,int,int)>($r0, $i0, 0)
+      [BEFOR]RS:44
+                           $r8:[NewValue1939629796,append([THIS:NewValue1939629796][@0:CONST]),append([THIS:NewValue1939629796][@0:]),]
+virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 2):[startActivityForResult([THIS:THIS][@0:NewValue18016208][@1:CONST]),]
+                           $i0:[f([THIS:null][@0:CONST]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                          $r11:[a([THIS:null][@0:NewValue18016208]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r0:[THIS,]
+specialinvoke $r6.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r9):[<init>([THIS:NewValue18016208][@0:][@1:CONST,NewValue1939629796]),]
+                           $l2:[currentTimeMillis(),]
+$r0.<com.wiyun.game.ChangeMyPortrait: android.net.Uri f>:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r9:[toString([THIS:CONST,NewValue1939629796]),valueOf([THIS:null][@0:]),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                          $r10:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:44
+                           $r3:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r8:[NewValue1939629796,append([THIS:NewValue1939629796][@0:CONST]),append([THIS:NewValue1939629796][@0:]),]
+virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 2):[startActivityForResult([THIS:THIS][@0:NewValue18016208][@1:CONST]),]
+                           $i0:[f([THIS:null][@0:CONST]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                          $r11:[a([THIS:null][@0:NewValue18016208]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r0:[THIS,]
+specialinvoke $r6.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r9):[<init>([THIS:NewValue18016208][@0:][@1:CONST,NewValue1939629796]),]
+                           $l2:[currentTimeMillis(),]
+$r0.<com.wiyun.game.ChangeMyPortrait: android.net.Uri f>:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r9:[toString([THIS:CONST,NewValue1939629796]),valueOf([THIS:null][@0:]),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                          $r10:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:45 virtualinvoke $r3.<android.widget.Toast: void show()>()
+      [BEFOR]RS:45
+                           $r3:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r8:[NewValue1939629796,append([THIS:NewValue1939629796][@0:CONST]),append([THIS:NewValue1939629796][@0:]),]
+virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 2):[startActivityForResult([THIS:THIS][@0:NewValue18016208][@1:CONST]),]
+                           $i0:[f([THIS:null][@0:CONST]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                          $r11:[a([THIS:null][@0:NewValue18016208]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r0:[THIS,]
+specialinvoke $r6.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r9):[<init>([THIS:NewValue18016208][@0:][@1:CONST,NewValue1939629796]),]
+                           $l2:[currentTimeMillis(),]
+$r0.<com.wiyun.game.ChangeMyPortrait: android.net.Uri f>:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r9:[toString([THIS:CONST,NewValue1939629796]),valueOf([THIS:null][@0:]),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                          $r10:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:45
+                           $r3:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r8:[NewValue1939629796,append([THIS:NewValue1939629796][@0:CONST]),append([THIS:NewValue1939629796][@0:]),]
+virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 2):[startActivityForResult([THIS:THIS][@0:NewValue18016208][@1:CONST]),]
+                           $i0:[f([THIS:null][@0:CONST]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                          $r11:[a([THIS:null][@0:NewValue18016208]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,fromFile([THIS:null][@0:NewValue18016208]),]
+virtualinvoke $r3.<android.widget.Toast: void show()>():[show([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r6.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r9):[<init>([THIS:NewValue18016208][@0:][@1:CONST,NewValue1939629796]),]
+                           $l2:[currentTimeMillis(),]
+$r0.<com.wiyun.game.ChangeMyPortrait: android.net.Uri f>:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r9:[toString([THIS:CONST,NewValue1939629796]),valueOf([THIS:null][@0:]),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                          $r10:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:46 return
+      [BEFOR]RS:46
+                           $r3:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r8:[NewValue1939629796,append([THIS:NewValue1939629796][@0:CONST]),append([THIS:NewValue1939629796][@0:]),]
+virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 2):[startActivityForResult([THIS:THIS][@0:NewValue18016208][@1:CONST]),]
+                           $i0:[f([THIS:null][@0:CONST]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                          $r11:[a([THIS:null][@0:NewValue18016208]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,fromFile([THIS:null][@0:NewValue18016208]),]
+virtualinvoke $r3.<android.widget.Toast: void show()>():[show([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r6.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r9):[<init>([THIS:NewValue18016208][@0:][@1:CONST,NewValue1939629796]),]
+                           $l2:[currentTimeMillis(),]
+$r0.<com.wiyun.game.ChangeMyPortrait: android.net.Uri f>:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r9:[toString([THIS:CONST,NewValue1939629796]),valueOf([THIS:null][@0:]),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                          $r10:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:46
+                           $r3:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r8:[NewValue1939629796,append([THIS:NewValue1939629796][@0:CONST]),append([THIS:NewValue1939629796][@0:]),]
+virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 2):[startActivityForResult([THIS:THIS][@0:NewValue18016208][@1:CONST]),]
+                           $i0:[f([THIS:null][@0:CONST]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                          $r11:[a([THIS:null][@0:NewValue18016208]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,fromFile([THIS:null][@0:NewValue18016208]),]
+virtualinvoke $r3.<android.widget.Toast: void show()>():[show([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r6.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r9):[<init>([THIS:NewValue18016208][@0:][@1:CONST,NewValue1939629796]),]
+                           $l2:[currentTimeMillis(),]
+$r0.<com.wiyun.game.ChangeMyPortrait: android.net.Uri f>:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r9:[toString([THIS:CONST,NewValue1939629796]),valueOf([THIS:null][@0:]),]
+specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("pic_"):[<init>([THIS:NewValue1939629796][@0:CONST]),]
+                           $r1:[Param@0,]
+                          $r10:[fromFile([THIS:null][@0:NewValue18016208]),]
+                           $r6:[NewValue18016208,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:47 $i1 = staticinvoke <com.wiyun.game.eh: int d(java.lang.String)>("wy_ib_images")
+      [BEFOR]RS:47
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:47
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:48 if $i0 != $i1 goto return
+      [BEFOR]RS:48
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:48
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:49 $r11 = staticinvoke <com.wiyun.game.fo: android.content.Intent a(int,int,int,int,android.net.Uri)>(256, 256, 1, 1, null)
+      [BEFOR]RS:49
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:49
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                          $r11:[a([THIS:null][@0:CONST][@1:CONST][@2:CONST][@3:CONST][@4:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:50 virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 1)
+      [BEFOR]RS:50
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                          $r11:[a([THIS:null][@0:CONST][@1:CONST][@2:CONST][@3:CONST][@4:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:50
+virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 1):[startActivityForResult([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                          $r11:[a([THIS:null][@0:CONST][@1:CONST][@2:CONST][@3:CONST][@4:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:51 return
+      [BEFOR]RS:51
+virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 1):[startActivityForResult([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                          $r11:[a([THIS:null][@0:CONST][@1:CONST][@2:CONST][@3:CONST][@4:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:51
+virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 1):[startActivityForResult([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                          $r11:[a([THIS:null][@0:CONST][@1:CONST][@2:CONST][@3:CONST][@4:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:52 $r13 := @caughtexception
+      [BEFOR]RS:52
+virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 1):[startActivityForResult([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                          $r11:[a([THIS:null][@0:CONST][@1:CONST][@2:CONST][@3:CONST][@4:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:52
+virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 1):[startActivityForResult([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                          $r11:[a([THIS:null][@0:CONST][@1:CONST][@2:CONST][@3:CONST][@4:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:53 $i0 = staticinvoke <com.wiyun.game.eh: int f(java.lang.String)>("wy_toast_no_image_gallery")
+      [BEFOR]RS:53
+virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 1):[startActivityForResult([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $i0:[getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                          $r11:[a([THIS:null][@0:CONST][@1:CONST][@2:CONST][@3:CONST][@4:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:53
+virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 1):[startActivityForResult([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $i0:[f([THIS:null][@0:CONST]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                          $r11:[a([THIS:null][@0:CONST][@1:CONST][@2:CONST][@3:CONST][@4:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:54 $r3 = staticinvoke <android.widget.Toast: android.widget.Toast makeText(android.content.Context,int,int)>($r0, $i0, 0)
+      [BEFOR]RS:54
+virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 1):[startActivityForResult([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $i0:[f([THIS:null][@0:CONST]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                          $r11:[a([THIS:null][@0:CONST][@1:CONST][@2:CONST][@3:CONST][@4:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:54
+                           $r3:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 1):[startActivityForResult([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $i0:[f([THIS:null][@0:CONST]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                          $r11:[a([THIS:null][@0:CONST][@1:CONST][@2:CONST][@3:CONST][@4:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:55 virtualinvoke $r3.<android.widget.Toast: void show()>()
+      [BEFOR]RS:55
+                           $r3:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 1):[startActivityForResult([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $i0:[f([THIS:null][@0:CONST]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                          $r11:[a([THIS:null][@0:CONST][@1:CONST][@2:CONST][@3:CONST][@4:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:55
+                           $r3:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 1):[startActivityForResult([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $i0:[f([THIS:null][@0:CONST]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                          $r11:[a([THIS:null][@0:CONST][@1:CONST][@2:CONST][@3:CONST][@4:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+virtualinvoke $r3.<android.widget.Toast: void show()>():[show([THIS:CONST,THIS]),]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:56 return
+      [BEFOR]RS:56
+                           $r3:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 1):[startActivityForResult([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $i0:[f([THIS:null][@0:CONST]),getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                          $r11:[a([THIS:null][@0:CONST][@1:CONST][@2:CONST][@3:CONST][@4:CONST]),]
+                           $r4:[a([THIS:null][@0:THIS.e]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+virtualinvoke $r3.<android.widget.Toast: void show()>():[show([THIS:CONST,THIS]),]
+                           $r2:[THIS.e,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:56
+                           $r3:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+virtualinvoke $r0.<com.wiyun.game.ChangeMyPortrait: void startActivityForResult(android.content.Intent,int)>($r11, 1):[startActivityForResult([THIS:THIS][@0:CONST][@1:CONST]),]
+                           $i0:[f([THIS:null][@0:CONST]),getId([THIS:Param@0]),]
+                           $i1:[d([THIS:null][@0:CONST]),]
+                          $r11:[a([THIS:null][@0:CONST][@1:CONST][@2:CONST][@3:CONST][@4:CONST]),]
+                           $r4:[a([THIS:null][@0:THIS.e]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+virtualinvoke $r3.<android.widget.Toast: void show()>():[show([THIS:CONST,THIS]),]
+                           $r2:[THIS.e,]
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+@@End onClick======================

@@ -1,0 +1,266 @@
+@@Start analyzing:onStop
+READ: THIS.zznG
+READ: THIS
+  --Done analyzing:onStop     protected void onStop()
+    {
+        com.google.android.gms.ads.AdActivity $r0;
+        com.google.android.gms.internal.zzex $r1;
+        android.os.RemoteException $r2;
+
+        $r0 := @this: com.google.android.gms.ads.AdActivity;
+
+        $r1 = $r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>;
+
+        if $r1 == null goto label2;
+
+        $r1 = $r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>;
+
+     label1:
+        interfaceinvoke $r1.<com.google.android.gms.internal.zzex: void onStop()>();
+
+     label2:
+        specialinvoke $r0.<android.app.Activity: void onStop()>();
+
+        return;
+
+     label3:
+        $r2 := @caughtexception;
+
+        staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onStop to ad overlay:", $r2);
+
+        virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>();
+
+        goto label2;
+
+        catch android.os.RemoteException from label1 to label2 with label3;
+    }
+
+  --Method Body:    protected void onStop()
+    {
+        com.google.android.gms.ads.AdActivity $r0;
+        com.google.android.gms.internal.zzex $r1;
+        android.os.RemoteException $r2;
+
+        $r0 := @this: com.google.android.gms.ads.AdActivity;
+
+        $r1 = $r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>;
+
+        if $r1 == null goto label2;
+
+        $r1 = $r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>;
+
+     label1:
+        interfaceinvoke $r1.<com.google.android.gms.internal.zzex: void onStop()>();
+
+     label2:
+        specialinvoke $r0.<android.app.Activity: void onStop()>();
+
+        return;
+
+     label3:
+        $r2 := @caughtexception;
+
+        staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onStop to ad overlay:", $r2);
+
+        virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>();
+
+        goto label2;
+
+        catch android.os.RemoteException from label1 to label2 with label3;
+    }
+
+  --Start displaying:onStop 
+  UNIT:0 $r0 := @this: com.google.android.gms.ads.AdActivity
+      [BEFOR]RS:0
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                     THIS.zznG:[THIS.zznG,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+      [AFTER]RS:0
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+  UNIT:1 $r1 = $r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>
+      [BEFOR]RS:1
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+      [AFTER]RS:1
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+  UNIT:2 if $r1 == null goto specialinvoke $r0.<android.app.Activity: void onStop()>()
+      [BEFOR]RS:2
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+      [AFTER]RS:2
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+  UNIT:3 $r1 = $r0.<com.google.android.gms.ads.AdActivity: com.google.android.gms.internal.zzex zznG>
+      [BEFOR]RS:3
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+      [AFTER]RS:3
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+  UNIT:4 interfaceinvoke $r1.<com.google.android.gms.internal.zzex: void onStop()>()
+      [BEFOR]RS:4
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+
+      [AFTER]RS:4
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+interfaceinvoke $r1.<com.google.android.gms.internal.zzex: void onStop()>():[onStop([THIS:THIS.zznG]),]
+
+  UNIT:5 specialinvoke $r0.<android.app.Activity: void onStop()>()
+      [BEFOR]RS:5
+virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>():[finish([THIS:THIS]),]
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onStop to ad overlay:", $r2):[zzd([THIS:null][@0:CONST][@1:]),]
+interfaceinvoke $r1.<com.google.android.gms.internal.zzex: void onStop()>():[onStop([THIS:THIS.zznG]),]
+
+      [AFTER]RS:5
+virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>():[finish([THIS:THIS]),]
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+specialinvoke $r0.<android.app.Activity: void onStop()>():[onStop([THIS:THIS]),]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onStop to ad overlay:", $r2):[zzd([THIS:null][@0:CONST][@1:]),]
+interfaceinvoke $r1.<com.google.android.gms.internal.zzex: void onStop()>():[onStop([THIS:THIS.zznG]),]
+
+  UNIT:6 return
+      [BEFOR]RS:6
+virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>():[finish([THIS:THIS]),]
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+specialinvoke $r0.<android.app.Activity: void onStop()>():[onStop([THIS:THIS]),]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onStop to ad overlay:", $r2):[zzd([THIS:null][@0:CONST][@1:]),]
+interfaceinvoke $r1.<com.google.android.gms.internal.zzex: void onStop()>():[onStop([THIS:THIS.zznG]),]
+
+      [AFTER]RS:6
+virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>():[finish([THIS:THIS]),]
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+specialinvoke $r0.<android.app.Activity: void onStop()>():[onStop([THIS:THIS]),]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onStop to ad overlay:", $r2):[zzd([THIS:null][@0:CONST][@1:]),]
+interfaceinvoke $r1.<com.google.android.gms.internal.zzex: void onStop()>():[onStop([THIS:THIS.zznG]),]
+
+  UNIT:7 $r2 := @caughtexception
+      [BEFOR]RS:7
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+interfaceinvoke $r1.<com.google.android.gms.internal.zzex: void onStop()>():[onStop([THIS:THIS.zznG]),]
+
+      [AFTER]RS:7
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+interfaceinvoke $r1.<com.google.android.gms.internal.zzex: void onStop()>():[onStop([THIS:THIS.zznG]),]
+
+  UNIT:8 staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onStop to ad overlay:", $r2)
+      [BEFOR]RS:8
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+interfaceinvoke $r1.<com.google.android.gms.internal.zzex: void onStop()>():[onStop([THIS:THIS.zznG]),]
+
+      [AFTER]RS:8
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onStop to ad overlay:", $r2):[zzd([THIS:null][@0:CONST][@1:]),]
+interfaceinvoke $r1.<com.google.android.gms.internal.zzex: void onStop()>():[onStop([THIS:THIS.zznG]),]
+
+  UNIT:9 virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>()
+      [BEFOR]RS:9
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onStop to ad overlay:", $r2):[zzd([THIS:null][@0:CONST][@1:]),]
+interfaceinvoke $r1.<com.google.android.gms.internal.zzex: void onStop()>():[onStop([THIS:THIS.zznG]),]
+
+      [AFTER]RS:9
+virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>():[finish([THIS:THIS]),]
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onStop to ad overlay:", $r2):[zzd([THIS:null][@0:CONST][@1:]),]
+interfaceinvoke $r1.<com.google.android.gms.internal.zzex: void onStop()>():[onStop([THIS:THIS.zznG]),]
+
+  UNIT:10 goto [?= specialinvoke $r0.<android.app.Activity: void onStop()>()]
+      [BEFOR]RS:10
+virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>():[finish([THIS:THIS]),]
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onStop to ad overlay:", $r2):[zzd([THIS:null][@0:CONST][@1:]),]
+interfaceinvoke $r1.<com.google.android.gms.internal.zzex: void onStop()>():[onStop([THIS:THIS.zznG]),]
+
+      [AFTER]RS:10
+virtualinvoke $r0.<com.google.android.gms.ads.AdActivity: void finish()>():[finish([THIS:THIS]),]
+com.google.android.gms.ads.AdActivity.CLASS_NAME:[com.google.android.gms.ads.AdActivity.CLASS_NAME,]
+                           $r1:[THIS.zznG,]
+                     THIS.zznG:[THIS.zznG,]
+                           $r0:[THIS,]
+com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME:[com.google.android.gms.ads.AdActivity.SIMPLE_CLASS_NAME,]
+staticinvoke <com.google.android.gms.ads.internal.util.client.zzb: void zzd(java.lang.String,java.lang.Throwable)>("Could not forward onStop to ad overlay:", $r2):[zzd([THIS:null][@0:CONST][@1:]),]
+interfaceinvoke $r1.<com.google.android.gms.internal.zzex: void onStop()>():[onStop([THIS:THIS.zznG]),]
+
+@@End onStop======================

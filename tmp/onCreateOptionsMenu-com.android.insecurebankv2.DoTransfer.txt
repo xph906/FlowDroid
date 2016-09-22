@@ -1,0 +1,328 @@
+@@Start analyzing:onCreateOptionsMenu
+READ: Param@0
+READ: THIS
+  --Done analyzing:onCreateOptionsMenu     public boolean onCreateOptionsMenu(android.view.Menu)
+    {
+        com.android.insecurebankv2.DoTransfer $r0;
+        android.view.Menu $r1;
+        android.view.MenuInflater $r2;
+
+        $r0 := @this: com.android.insecurebankv2.DoTransfer;
+
+        $r1 := @parameter0: android.view.Menu;
+
+        $r2 = virtualinvoke $r0.<com.android.insecurebankv2.DoTransfer: android.view.MenuInflater getMenuInflater()>();
+
+        virtualinvoke $r2.<android.view.MenuInflater: void inflate(int,android.view.Menu)>(2131623938, $r1);
+
+        return 1;
+    }
+
+  --Method Body:    public boolean onCreateOptionsMenu(android.view.Menu)
+    {
+        com.android.insecurebankv2.DoTransfer $r0;
+        android.view.Menu $r1;
+        android.view.MenuInflater $r2;
+
+        $r0 := @this: com.android.insecurebankv2.DoTransfer;
+
+        $r1 := @parameter0: android.view.Menu;
+
+        $r2 = virtualinvoke $r0.<com.android.insecurebankv2.DoTransfer: android.view.MenuInflater getMenuInflater()>();
+
+        virtualinvoke $r2.<android.view.MenuInflater: void inflate(int,android.view.Menu)>(2131623938, $r1);
+
+        return 1;
+    }
+
+  --Start displaying:onCreateOptionsMenu 
+  UNIT:0 $r0 := @this: com.android.insecurebankv2.DoTransfer
+      [BEFOR]RS:0
+               THIS.jsonObject:[THIS.jsonObject,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+              THIS.getAccounts:[THIS.getAccounts,]
+                 THIS.protocol:[THIS.protocol,]
+                     THIS.acc1:[THIS.acc1,]
+                     THIS.acc2:[THIS.acc2,]
+                     THIS.from:[THIS.from,]
+                     THIS.outX:[THIS.outX,]
+                   THIS.amount:[THIS.amount,]
+           THIS.passNormalized:[THIS.passNormalized,]
+                   THIS.number:[THIS.number,]
+                   THIS.reader:[THIS.reader,]
+                   THIS.result:[THIS.result,]
+            THIS.serverDetails:[THIS.serverDetails,]
+               THIS.serverport:[THIS.serverport,]
+                       THIS.in:[THIS.in,]
+                       THIS.to:[THIS.to,]
+                  THIS.button1:[THIS.button1,]
+                  THIS.buttonX:[THIS.buttonX,]
+             THIS.responseBody:[THIS.responseBody,]
+                 THIS.transfer:[THIS.transfer,]
+com.android.insecurebankv2.DoTransfer.MYPREFS2:[com.android.insecurebankv2.DoTransfer.MYPREFS2,]
+                 THIS.serverip:[THIS.serverip,]
+              THIS.phoneNumber:[THIS.phoneNumber,]
+
+      [AFTER]RS:0
+               THIS.jsonObject:[THIS.jsonObject,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r0:[THIS,]
+              THIS.getAccounts:[THIS.getAccounts,]
+                 THIS.protocol:[THIS.protocol,]
+                     THIS.acc1:[THIS.acc1,]
+                     THIS.acc2:[THIS.acc2,]
+                     THIS.from:[THIS.from,]
+                     THIS.outX:[THIS.outX,]
+                   THIS.amount:[THIS.amount,]
+           THIS.passNormalized:[THIS.passNormalized,]
+                   THIS.number:[THIS.number,]
+                   THIS.reader:[THIS.reader,]
+                   THIS.result:[THIS.result,]
+            THIS.serverDetails:[THIS.serverDetails,]
+               THIS.serverport:[THIS.serverport,]
+                       THIS.in:[THIS.in,]
+                       THIS.to:[THIS.to,]
+                  THIS.button1:[THIS.button1,]
+                  THIS.buttonX:[THIS.buttonX,]
+             THIS.responseBody:[THIS.responseBody,]
+                 THIS.transfer:[THIS.transfer,]
+com.android.insecurebankv2.DoTransfer.MYPREFS2:[com.android.insecurebankv2.DoTransfer.MYPREFS2,]
+                 THIS.serverip:[THIS.serverip,]
+              THIS.phoneNumber:[THIS.phoneNumber,]
+
+  UNIT:1 $r1 := @parameter0: android.view.Menu
+      [BEFOR]RS:1
+               THIS.jsonObject:[THIS.jsonObject,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r0:[THIS,]
+              THIS.getAccounts:[THIS.getAccounts,]
+                 THIS.protocol:[THIS.protocol,]
+                     THIS.acc1:[THIS.acc1,]
+                     THIS.acc2:[THIS.acc2,]
+                     THIS.from:[THIS.from,]
+                     THIS.outX:[THIS.outX,]
+                   THIS.amount:[THIS.amount,]
+           THIS.passNormalized:[THIS.passNormalized,]
+                   THIS.number:[THIS.number,]
+                   THIS.reader:[THIS.reader,]
+                   THIS.result:[THIS.result,]
+            THIS.serverDetails:[THIS.serverDetails,]
+               THIS.serverport:[THIS.serverport,]
+                       THIS.in:[THIS.in,]
+                       THIS.to:[THIS.to,]
+                  THIS.button1:[THIS.button1,]
+                  THIS.buttonX:[THIS.buttonX,]
+             THIS.responseBody:[THIS.responseBody,]
+                 THIS.transfer:[THIS.transfer,]
+com.android.insecurebankv2.DoTransfer.MYPREFS2:[com.android.insecurebankv2.DoTransfer.MYPREFS2,]
+                 THIS.serverip:[THIS.serverip,]
+              THIS.phoneNumber:[THIS.phoneNumber,]
+
+      [AFTER]RS:1
+               THIS.jsonObject:[THIS.jsonObject,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r0:[THIS,]
+              THIS.getAccounts:[THIS.getAccounts,]
+                 THIS.protocol:[THIS.protocol,]
+                     THIS.acc1:[THIS.acc1,]
+                     THIS.acc2:[THIS.acc2,]
+                     THIS.from:[THIS.from,]
+                     THIS.outX:[THIS.outX,]
+                   THIS.amount:[THIS.amount,]
+           THIS.passNormalized:[THIS.passNormalized,]
+                   THIS.number:[THIS.number,]
+                   THIS.reader:[THIS.reader,]
+                   THIS.result:[THIS.result,]
+            THIS.serverDetails:[THIS.serverDetails,]
+               THIS.serverport:[THIS.serverport,]
+                       THIS.in:[THIS.in,]
+                       THIS.to:[THIS.to,]
+                  THIS.button1:[THIS.button1,]
+                  THIS.buttonX:[THIS.buttonX,]
+             THIS.responseBody:[THIS.responseBody,]
+                 THIS.transfer:[THIS.transfer,]
+com.android.insecurebankv2.DoTransfer.MYPREFS2:[com.android.insecurebankv2.DoTransfer.MYPREFS2,]
+                 THIS.serverip:[THIS.serverip,]
+                           $r1:[Param@0,]
+              THIS.phoneNumber:[THIS.phoneNumber,]
+
+  UNIT:2 $r2 = virtualinvoke $r0.<com.android.insecurebankv2.DoTransfer: android.view.MenuInflater getMenuInflater()>()
+      [BEFOR]RS:2
+               THIS.jsonObject:[THIS.jsonObject,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r0:[THIS,]
+              THIS.getAccounts:[THIS.getAccounts,]
+                 THIS.protocol:[THIS.protocol,]
+                     THIS.acc1:[THIS.acc1,]
+                     THIS.acc2:[THIS.acc2,]
+                     THIS.from:[THIS.from,]
+                     THIS.outX:[THIS.outX,]
+                   THIS.amount:[THIS.amount,]
+           THIS.passNormalized:[THIS.passNormalized,]
+                   THIS.number:[THIS.number,]
+                   THIS.reader:[THIS.reader,]
+                   THIS.result:[THIS.result,]
+            THIS.serverDetails:[THIS.serverDetails,]
+               THIS.serverport:[THIS.serverport,]
+                       THIS.in:[THIS.in,]
+                       THIS.to:[THIS.to,]
+                  THIS.button1:[THIS.button1,]
+                  THIS.buttonX:[THIS.buttonX,]
+             THIS.responseBody:[THIS.responseBody,]
+                 THIS.transfer:[THIS.transfer,]
+com.android.insecurebankv2.DoTransfer.MYPREFS2:[com.android.insecurebankv2.DoTransfer.MYPREFS2,]
+                 THIS.serverip:[THIS.serverip,]
+                           $r1:[Param@0,]
+              THIS.phoneNumber:[THIS.phoneNumber,]
+
+      [AFTER]RS:2
+               THIS.jsonObject:[THIS.jsonObject,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r0:[THIS,]
+              THIS.getAccounts:[THIS.getAccounts,]
+                 THIS.protocol:[THIS.protocol,]
+                     THIS.acc1:[THIS.acc1,]
+                     THIS.acc2:[THIS.acc2,]
+                     THIS.from:[THIS.from,]
+                     THIS.outX:[THIS.outX,]
+                   THIS.amount:[THIS.amount,]
+           THIS.passNormalized:[THIS.passNormalized,]
+                   THIS.number:[THIS.number,]
+                   THIS.reader:[THIS.reader,]
+                   THIS.result:[THIS.result,]
+            THIS.serverDetails:[THIS.serverDetails,]
+               THIS.serverport:[THIS.serverport,]
+                       THIS.in:[THIS.in,]
+                       THIS.to:[THIS.to,]
+                  THIS.button1:[THIS.button1,]
+                  THIS.buttonX:[THIS.buttonX,]
+                           $r2:[getMenuInflater([THIS:THIS]),]
+             THIS.responseBody:[THIS.responseBody,]
+                 THIS.transfer:[THIS.transfer,]
+com.android.insecurebankv2.DoTransfer.MYPREFS2:[com.android.insecurebankv2.DoTransfer.MYPREFS2,]
+                 THIS.serverip:[THIS.serverip,]
+                           $r1:[Param@0,]
+              THIS.phoneNumber:[THIS.phoneNumber,]
+
+  UNIT:3 virtualinvoke $r2.<android.view.MenuInflater: void inflate(int,android.view.Menu)>(2131623938, $r1)
+      [BEFOR]RS:3
+               THIS.jsonObject:[THIS.jsonObject,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r0:[THIS,]
+              THIS.getAccounts:[THIS.getAccounts,]
+                 THIS.protocol:[THIS.protocol,]
+                     THIS.acc1:[THIS.acc1,]
+                     THIS.acc2:[THIS.acc2,]
+                     THIS.from:[THIS.from,]
+                     THIS.outX:[THIS.outX,]
+                   THIS.amount:[THIS.amount,]
+           THIS.passNormalized:[THIS.passNormalized,]
+                   THIS.number:[THIS.number,]
+                   THIS.reader:[THIS.reader,]
+                   THIS.result:[THIS.result,]
+            THIS.serverDetails:[THIS.serverDetails,]
+               THIS.serverport:[THIS.serverport,]
+                       THIS.in:[THIS.in,]
+                       THIS.to:[THIS.to,]
+                  THIS.button1:[THIS.button1,]
+                  THIS.buttonX:[THIS.buttonX,]
+                           $r2:[getMenuInflater([THIS:THIS]),]
+             THIS.responseBody:[THIS.responseBody,]
+                 THIS.transfer:[THIS.transfer,]
+com.android.insecurebankv2.DoTransfer.MYPREFS2:[com.android.insecurebankv2.DoTransfer.MYPREFS2,]
+                 THIS.serverip:[THIS.serverip,]
+                           $r1:[Param@0,]
+              THIS.phoneNumber:[THIS.phoneNumber,]
+
+      [AFTER]RS:3
+               THIS.jsonObject:[THIS.jsonObject,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r0:[THIS,]
+              THIS.getAccounts:[THIS.getAccounts,]
+                 THIS.protocol:[THIS.protocol,]
+                     THIS.acc1:[THIS.acc1,]
+                     THIS.acc2:[THIS.acc2,]
+                     THIS.from:[THIS.from,]
+                     THIS.outX:[THIS.outX,]
+                   THIS.amount:[THIS.amount,]
+           THIS.passNormalized:[THIS.passNormalized,]
+                   THIS.number:[THIS.number,]
+                   THIS.reader:[THIS.reader,]
+                   THIS.result:[THIS.result,]
+            THIS.serverDetails:[THIS.serverDetails,]
+               THIS.serverport:[THIS.serverport,]
+                       THIS.in:[THIS.in,]
+                       THIS.to:[THIS.to,]
+                  THIS.button1:[THIS.button1,]
+                  THIS.buttonX:[THIS.buttonX,]
+                           $r2:[getMenuInflater([THIS:THIS]),]
+             THIS.responseBody:[THIS.responseBody,]
+                 THIS.transfer:[THIS.transfer,]
+com.android.insecurebankv2.DoTransfer.MYPREFS2:[com.android.insecurebankv2.DoTransfer.MYPREFS2,]
+                 THIS.serverip:[THIS.serverip,]
+                           $r1:[Param@0,]
+              THIS.phoneNumber:[THIS.phoneNumber,]
+virtualinvoke $r2.<android.view.MenuInflater: void inflate(int,android.view.Menu)>(2131623938, $r1):[inflate([THIS:THIS][@0:CONST][@1:Param@0]),]
+
+  UNIT:4 return 1
+      [BEFOR]RS:4
+               THIS.jsonObject:[THIS.jsonObject,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r0:[THIS,]
+              THIS.getAccounts:[THIS.getAccounts,]
+                 THIS.protocol:[THIS.protocol,]
+                     THIS.acc1:[THIS.acc1,]
+                     THIS.acc2:[THIS.acc2,]
+                     THIS.from:[THIS.from,]
+                     THIS.outX:[THIS.outX,]
+                   THIS.amount:[THIS.amount,]
+           THIS.passNormalized:[THIS.passNormalized,]
+                   THIS.number:[THIS.number,]
+                   THIS.reader:[THIS.reader,]
+                   THIS.result:[THIS.result,]
+            THIS.serverDetails:[THIS.serverDetails,]
+               THIS.serverport:[THIS.serverport,]
+                       THIS.in:[THIS.in,]
+                       THIS.to:[THIS.to,]
+                  THIS.button1:[THIS.button1,]
+                  THIS.buttonX:[THIS.buttonX,]
+                           $r2:[getMenuInflater([THIS:THIS]),]
+             THIS.responseBody:[THIS.responseBody,]
+                 THIS.transfer:[THIS.transfer,]
+com.android.insecurebankv2.DoTransfer.MYPREFS2:[com.android.insecurebankv2.DoTransfer.MYPREFS2,]
+                 THIS.serverip:[THIS.serverip,]
+                           $r1:[Param@0,]
+              THIS.phoneNumber:[THIS.phoneNumber,]
+virtualinvoke $r2.<android.view.MenuInflater: void inflate(int,android.view.Menu)>(2131623938, $r1):[inflate([THIS:THIS][@0:CONST][@1:Param@0]),]
+
+      [AFTER]RS:4
+               THIS.jsonObject:[THIS.jsonObject,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+                           $r0:[THIS,]
+              THIS.getAccounts:[THIS.getAccounts,]
+                 THIS.protocol:[THIS.protocol,]
+                     THIS.acc1:[THIS.acc1,]
+                     THIS.acc2:[THIS.acc2,]
+                     THIS.from:[THIS.from,]
+                     THIS.outX:[THIS.outX,]
+                   THIS.amount:[THIS.amount,]
+           THIS.passNormalized:[THIS.passNormalized,]
+                   THIS.number:[THIS.number,]
+                   THIS.reader:[THIS.reader,]
+                   THIS.result:[THIS.result,]
+            THIS.serverDetails:[THIS.serverDetails,]
+               THIS.serverport:[THIS.serverport,]
+                       THIS.in:[THIS.in,]
+                       THIS.to:[THIS.to,]
+                  THIS.button1:[THIS.button1,]
+                  THIS.buttonX:[THIS.buttonX,]
+                           $r2:[getMenuInflater([THIS:THIS]),]
+             THIS.responseBody:[THIS.responseBody,]
+                 THIS.transfer:[THIS.transfer,]
+com.android.insecurebankv2.DoTransfer.MYPREFS2:[com.android.insecurebankv2.DoTransfer.MYPREFS2,]
+                 THIS.serverip:[THIS.serverip,]
+                           $r1:[Param@0,]
+              THIS.phoneNumber:[THIS.phoneNumber,]
+virtualinvoke $r2.<android.view.MenuInflater: void inflate(int,android.view.Menu)>(2131623938, $r1):[inflate([THIS:THIS][@0:CONST][@1:Param@0]),]
+
+@@End onCreateOptionsMenu======================

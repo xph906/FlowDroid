@@ -1,0 +1,135 @@
+@@Start analyzing:callPreferences
+READ: THIS
+  --Done analyzing:callPreferences     public void callPreferences()
+    {
+        com.android.insecurebankv2.FilePrefActivity $r0;
+        android.content.Intent $r1;
+
+        $r0 := @this: com.android.insecurebankv2.FilePrefActivity;
+
+        $r1 = new android.content.Intent;
+
+        specialinvoke $r1.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/FilePrefActivity");
+
+        virtualinvoke $r0.<com.android.insecurebankv2.FilePrefActivity: void startActivity(android.content.Intent)>($r1);
+
+        return;
+    }
+
+  --Method Body:    public void callPreferences()
+    {
+        com.android.insecurebankv2.FilePrefActivity $r0;
+        android.content.Intent $r1;
+
+        $r0 := @this: com.android.insecurebankv2.FilePrefActivity;
+
+        $r1 = new android.content.Intent;
+
+        specialinvoke $r1.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/FilePrefActivity");
+
+        virtualinvoke $r0.<com.android.insecurebankv2.FilePrefActivity: void startActivity(android.content.Intent)>($r1);
+
+        return;
+    }
+
+  --Start displaying:callPreferences 
+  UNIT:0 $r0 := @this: com.android.insecurebankv2.FilePrefActivity
+      [BEFOR]RS:0
+                   THIS.editor:[THIS.editor,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverport:[com.android.insecurebankv2.FilePrefActivity.edit_serverport,]
+              THIS.preferences:[THIS.preferences,]
+       THIS.submitPref_buttonz:[THIS.submitPref_buttonz,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverip:[com.android.insecurebankv2.FilePrefActivity.edit_serverip,]
+
+      [AFTER]RS:0
+                           $r0:[THIS,]
+                   THIS.editor:[THIS.editor,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverport:[com.android.insecurebankv2.FilePrefActivity.edit_serverport,]
+              THIS.preferences:[THIS.preferences,]
+       THIS.submitPref_buttonz:[THIS.submitPref_buttonz,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverip:[com.android.insecurebankv2.FilePrefActivity.edit_serverip,]
+
+  UNIT:1 $r1 = new android.content.Intent
+      [BEFOR]RS:1
+                           $r0:[THIS,]
+                   THIS.editor:[THIS.editor,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverport:[com.android.insecurebankv2.FilePrefActivity.edit_serverport,]
+              THIS.preferences:[THIS.preferences,]
+       THIS.submitPref_buttonz:[THIS.submitPref_buttonz,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverip:[com.android.insecurebankv2.FilePrefActivity.edit_serverip,]
+
+      [AFTER]RS:1
+                           $r1:[NewValue1497141904,]
+                           $r0:[THIS,]
+                   THIS.editor:[THIS.editor,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverport:[com.android.insecurebankv2.FilePrefActivity.edit_serverport,]
+              THIS.preferences:[THIS.preferences,]
+       THIS.submitPref_buttonz:[THIS.submitPref_buttonz,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverip:[com.android.insecurebankv2.FilePrefActivity.edit_serverip,]
+
+  UNIT:2 specialinvoke $r1.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/FilePrefActivity")
+      [BEFOR]RS:2
+                           $r1:[NewValue1497141904,]
+                           $r0:[THIS,]
+                   THIS.editor:[THIS.editor,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverport:[com.android.insecurebankv2.FilePrefActivity.edit_serverport,]
+              THIS.preferences:[THIS.preferences,]
+       THIS.submitPref_buttonz:[THIS.submitPref_buttonz,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverip:[com.android.insecurebankv2.FilePrefActivity.edit_serverip,]
+
+      [AFTER]RS:2
+                           $r1:[NewValue1497141904,]
+                           $r0:[THIS,]
+                   THIS.editor:[THIS.editor,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverport:[com.android.insecurebankv2.FilePrefActivity.edit_serverport,]
+              THIS.preferences:[THIS.preferences,]
+       THIS.submitPref_buttonz:[THIS.submitPref_buttonz,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverip:[com.android.insecurebankv2.FilePrefActivity.edit_serverip,]
+specialinvoke $r1.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/FilePrefActivity"):[<init>([THIS:NewValue1497141904][@0:THIS][@1:CONST]),]
+
+  UNIT:3 virtualinvoke $r0.<com.android.insecurebankv2.FilePrefActivity: void startActivity(android.content.Intent)>($r1)
+      [BEFOR]RS:3
+                           $r1:[NewValue1497141904,]
+                           $r0:[THIS,]
+                   THIS.editor:[THIS.editor,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverport:[com.android.insecurebankv2.FilePrefActivity.edit_serverport,]
+              THIS.preferences:[THIS.preferences,]
+       THIS.submitPref_buttonz:[THIS.submitPref_buttonz,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverip:[com.android.insecurebankv2.FilePrefActivity.edit_serverip,]
+specialinvoke $r1.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/FilePrefActivity"):[<init>([THIS:NewValue1497141904][@0:THIS][@1:CONST]),]
+
+      [AFTER]RS:3
+                           $r1:[NewValue1497141904,]
+                           $r0:[THIS,]
+                   THIS.editor:[THIS.editor,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverport:[com.android.insecurebankv2.FilePrefActivity.edit_serverport,]
+virtualinvoke $r0.<com.android.insecurebankv2.FilePrefActivity: void startActivity(android.content.Intent)>($r1):[startActivity([THIS:THIS][@0:NewValue1497141904]),]
+              THIS.preferences:[THIS.preferences,]
+       THIS.submitPref_buttonz:[THIS.submitPref_buttonz,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverip:[com.android.insecurebankv2.FilePrefActivity.edit_serverip,]
+specialinvoke $r1.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/FilePrefActivity"):[<init>([THIS:NewValue1497141904][@0:THIS][@1:CONST]),]
+
+  UNIT:4 return
+      [BEFOR]RS:4
+                           $r1:[NewValue1497141904,]
+                           $r0:[THIS,]
+                   THIS.editor:[THIS.editor,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverport:[com.android.insecurebankv2.FilePrefActivity.edit_serverport,]
+virtualinvoke $r0.<com.android.insecurebankv2.FilePrefActivity: void startActivity(android.content.Intent)>($r1):[startActivity([THIS:THIS][@0:NewValue1497141904]),]
+              THIS.preferences:[THIS.preferences,]
+       THIS.submitPref_buttonz:[THIS.submitPref_buttonz,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverip:[com.android.insecurebankv2.FilePrefActivity.edit_serverip,]
+specialinvoke $r1.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/FilePrefActivity"):[<init>([THIS:NewValue1497141904][@0:THIS][@1:CONST]),]
+
+      [AFTER]RS:4
+                           $r1:[NewValue1497141904,]
+                           $r0:[THIS,]
+                   THIS.editor:[THIS.editor,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverport:[com.android.insecurebankv2.FilePrefActivity.edit_serverport,]
+virtualinvoke $r0.<com.android.insecurebankv2.FilePrefActivity: void startActivity(android.content.Intent)>($r1):[startActivity([THIS:THIS][@0:NewValue1497141904]),]
+              THIS.preferences:[THIS.preferences,]
+       THIS.submitPref_buttonz:[THIS.submitPref_buttonz,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverip:[com.android.insecurebankv2.FilePrefActivity.edit_serverip,]
+specialinvoke $r1.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/FilePrefActivity"):[<init>([THIS:NewValue1497141904][@0:THIS][@1:CONST]),]
+
+@@End callPreferences======================

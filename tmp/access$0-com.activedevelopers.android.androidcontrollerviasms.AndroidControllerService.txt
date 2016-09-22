@@ -1,0 +1,75 @@
+@@Start analyzing:access$0
+READ: Param@0.toastHandler
+  --Done analyzing:access$0     static android.os.Handler access$0(com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService)
+    {
+        com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService $r0;
+        android.os.Handler r1;
+
+        $r0 := @parameter0: com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService;
+
+        r1 = $r0.<com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService: android.os.Handler toastHandler>;
+
+        return r1;
+    }
+
+  --Method Body:    static android.os.Handler access$0(com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService)
+    {
+        com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService $r0;
+        android.os.Handler r1;
+
+        $r0 := @parameter0: com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService;
+
+        r1 = $r0.<com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService: android.os.Handler toastHandler>;
+
+        return r1;
+    }
+
+  --Start displaying:access$0 
+  UNIT:0 $r0 := @parameter0: com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService
+      [BEFOR]RS:0
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+              THIS.mlocManager:[THIS.mlocManager,]
+
+      [AFTER]RS:0
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r0:[Param@0,]
+
+  UNIT:1 r1 = $r0.<com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService: android.os.Handler toastHandler>
+      [BEFOR]RS:1
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r0:[Param@0,]
+
+      [AFTER]RS:1
+              THIS.messageFrom:[THIS.messageFrom,]
+                            r1:[Param@0.toastHandler,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r0:[Param@0,]
+
+  UNIT:2 return r1
+      [BEFOR]RS:2
+              THIS.messageFrom:[THIS.messageFrom,]
+                            r1:[Param@0.toastHandler,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r0:[Param@0,]
+
+      [AFTER]RS:2
+              THIS.messageFrom:[THIS.messageFrom,]
+                            r1:[Param@0.toastHandler,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r0:[Param@0,]
+
+@@End access$0======================

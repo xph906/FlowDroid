@@ -1,0 +1,109 @@
+@@Start analyzing:<init>
+READ: THIS
+  --Done analyzing:<init>     public void <init>()
+    {
+        com.wiyun.game.SwitchAccount $r0;
+
+        $r0 := @this: com.wiyun.game.SwitchAccount;
+
+        specialinvoke $r0.<com.wiyun.game.cg: void <init>()>();
+
+        return;
+    }
+
+  --Method Body:    public void <init>()
+    {
+        com.wiyun.game.SwitchAccount $r0;
+
+        $r0 := @this: com.wiyun.game.SwitchAccount;
+
+        specialinvoke $r0.<com.wiyun.game.cg: void <init>()>();
+
+        return;
+    }
+
+  --Start displaying:<init> 
+  UNIT:0 $r0 := @this: com.wiyun.game.SwitchAccount
+      [BEFOR]RS:0
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+
+      [AFTER]RS:0
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+
+  UNIT:1 specialinvoke $r0.<com.wiyun.game.cg: void <init>()>()
+      [BEFOR]RS:1
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:1
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+specialinvoke $r0.<com.wiyun.game.cg: void <init>()>():[<init>([THIS:THIS]),]
+
+  UNIT:2 return
+      [BEFOR]RS:2
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+specialinvoke $r0.<com.wiyun.game.cg: void <init>()>():[<init>([THIS:THIS]),]
+
+      [AFTER]RS:2
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                           $r0:[THIS,]
+specialinvoke $r0.<com.wiyun.game.cg: void <init>()>():[<init>([THIS:THIS]),]
+
+@@End <init>======================

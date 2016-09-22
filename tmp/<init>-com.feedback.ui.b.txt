@@ -1,0 +1,98 @@
+@@Start analyzing:<init>
+READ: Param@0
+READ: THIS
+  --Done analyzing:<init>     void <init>(com.feedback.ui.FeedbackConversation, byte)
+    {
+        com.feedback.ui.b $r0;
+        com.feedback.ui.FeedbackConversation $r1;
+        byte $b0;
+
+        $r0 := @this: com.feedback.ui.b;
+
+        $r1 := @parameter0: com.feedback.ui.FeedbackConversation;
+
+        $b0 := @parameter1: byte;
+
+        specialinvoke $r0.<com.feedback.ui.b: void <init>(com.feedback.ui.FeedbackConversation)>($r1);
+
+        return;
+    }
+
+  --Method Body:    void <init>(com.feedback.ui.FeedbackConversation, byte)
+    {
+        com.feedback.ui.b $r0;
+        com.feedback.ui.FeedbackConversation $r1;
+        byte $b0;
+
+        $r0 := @this: com.feedback.ui.b;
+
+        $r1 := @parameter0: com.feedback.ui.FeedbackConversation;
+
+        $b0 := @parameter1: byte;
+
+        specialinvoke $r0.<com.feedback.ui.b: void <init>(com.feedback.ui.FeedbackConversation)>($r1);
+
+        return;
+    }
+
+  --Start displaying:<init> 
+  UNIT:0 $r0 := @this: com.feedback.ui.b
+      [BEFOR]RS:0
+                        THIS.a:[THIS.a,]
+
+      [AFTER]RS:0
+                        THIS.a:[THIS.a,]
+                           $r0:[THIS,]
+
+  UNIT:1 $r1 := @parameter0: com.feedback.ui.FeedbackConversation
+      [BEFOR]RS:1
+                        THIS.a:[THIS.a,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:1
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                           $r0:[THIS,]
+
+  UNIT:2 $b0 := @parameter1: byte
+      [BEFOR]RS:2
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:2
+                           $b0:[Param@1,]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                           $r0:[THIS,]
+
+  UNIT:3 specialinvoke $r0.<com.feedback.ui.b: void <init>(com.feedback.ui.FeedbackConversation)>($r1)
+      [BEFOR]RS:3
+                           $b0:[Param@1,]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:3
+                           $b0:[Param@1,]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+specialinvoke $r0.<com.feedback.ui.b: void <init>(com.feedback.ui.FeedbackConversation)>($r1):[<init>([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+
+  UNIT:4 return
+      [BEFOR]RS:4
+                           $b0:[Param@1,]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+specialinvoke $r0.<com.feedback.ui.b: void <init>(com.feedback.ui.FeedbackConversation)>($r1):[<init>([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:4
+                           $b0:[Param@1,]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+specialinvoke $r0.<com.feedback.ui.b: void <init>(com.feedback.ui.FeedbackConversation)>($r1):[<init>([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+
+@@End <init>======================

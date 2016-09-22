@@ -1,0 +1,2252 @@
+@@Start analyzing:onCreate
+READ: java.lang.System.out
+READ: com.marcohc.toasteroid.Toasteroid$STYLES.WARNING
+READ: Param@0
+READ: THIS
+WRITE: THIS.uname
+  --Done analyzing:onCreate     protected void onCreate(android.os.Bundle)
+    {
+        com.android.insecurebankv2.ViewStatement $r0;
+        android.os.Bundle $r1;
+        android.webkit.WebChromeClient $r2;
+        java.io.File $r3, $r7;
+        android.content.Intent $r4;
+        java.lang.String $r5;
+        java.lang.StringBuilder $r6;
+        java.io.PrintStream $r8;
+        boolean $z0;
+        android.view.View $r9;
+        android.webkit.WebView $r10;
+        android.webkit.WebSettings $r11;
+        com.android.insecurebankv2.MyWebViewClient $r12;
+        com.marcohc.toasteroid.Toasteroid$STYLES $r13;
+
+        $r0 := @this: com.android.insecurebankv2.ViewStatement;
+
+        $r1 := @parameter0: android.os.Bundle;
+
+        specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1);
+
+        virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604);
+
+        $r4 = virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: android.content.Intent getIntent()>();
+
+        $r5 = virtualinvoke $r4.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>("uname");
+
+        $r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname> = $r5;
+
+        $r6 = new java.lang.StringBuilder;
+
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>()>();
+
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Statements_");
+
+        $r5 = $r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>;
+
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".html");
+
+        $r5 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        $r3 = new java.io.File;
+
+        $r7 = staticinvoke <android.os.Environment: java.io.File getExternalStorageDirectory()>();
+
+        specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5);
+
+        $r8 = <java.lang.System: java.io.PrintStream out>;
+
+        $r5 = virtualinvoke $r3.<java.io.File: java.lang.String toString()>();
+
+        virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5);
+
+        $z0 = virtualinvoke $r3.<java.io.File: boolean exists()>();
+
+        if $z0 == 0 goto label1;
+
+        $r9 = virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: android.view.View findViewById(int)>(2131558513);
+
+        $r10 = (android.webkit.WebView) $r9;
+
+        $r6 = new java.lang.StringBuilder;
+
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>()>();
+
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("file://");
+
+        $r3 = staticinvoke <android.os.Environment: java.io.File getExternalStorageDirectory()>();
+
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r3);
+
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/Statements_");
+
+        $r5 = $r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>;
+
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".html");
+
+        $r5 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        virtualinvoke $r10.<android.webkit.WebView: void loadUrl(java.lang.String)>($r5);
+
+        $r11 = virtualinvoke $r10.<android.webkit.WebView: android.webkit.WebSettings getSettings()>();
+
+        virtualinvoke $r11.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(1);
+
+        $r11 = virtualinvoke $r10.<android.webkit.WebView: android.webkit.WebSettings getSettings()>();
+
+        virtualinvoke $r11.<android.webkit.WebSettings: void setSaveFormData(boolean)>(1);
+
+        $r11 = virtualinvoke $r10.<android.webkit.WebView: android.webkit.WebSettings getSettings()>();
+
+        virtualinvoke $r11.<android.webkit.WebSettings: void setBuiltInZoomControls(boolean)>(1);
+
+        $r12 = new com.android.insecurebankv2.MyWebViewClient;
+
+        specialinvoke $r12.<com.android.insecurebankv2.MyWebViewClient: void <init>()>();
+
+        virtualinvoke $r10.<android.webkit.WebView: void setWebViewClient(android.webkit.WebViewClient)>($r12);
+
+        $r2 = new android.webkit.WebChromeClient;
+
+        specialinvoke $r2.<android.webkit.WebChromeClient: void <init>()>();
+
+        virtualinvoke $r10.<android.webkit.WebView: void setWebChromeClient(android.webkit.WebChromeClient)>($r2);
+
+        return;
+
+     label1:
+        $r4 = new android.content.Intent;
+
+        specialinvoke $r4.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/PostLogin");
+
+        virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void startActivity(android.content.Intent)>($r4);
+
+        $r13 = <com.marcohc.toasteroid.Toasteroid$STYLES: com.marcohc.toasteroid.Toasteroid$STYLES WARNING>;
+
+        staticinvoke <com.marcohc.toasteroid.Toasteroid: void show(android.app.Activity,java.lang.String,com.marcohc.toasteroid.Toasteroid$STYLES,int)>($r0, "Statement does not Exist!!", $r13, 0);
+
+        return;
+    }
+
+  --Method Body:    protected void onCreate(android.os.Bundle)
+    {
+        com.android.insecurebankv2.ViewStatement $r0;
+        android.os.Bundle $r1;
+        android.webkit.WebChromeClient $r2;
+        java.io.File $r3, $r7;
+        android.content.Intent $r4;
+        java.lang.String $r5;
+        java.lang.StringBuilder $r6;
+        java.io.PrintStream $r8;
+        boolean $z0;
+        android.view.View $r9;
+        android.webkit.WebView $r10;
+        android.webkit.WebSettings $r11;
+        com.android.insecurebankv2.MyWebViewClient $r12;
+        com.marcohc.toasteroid.Toasteroid$STYLES $r13;
+
+        $r0 := @this: com.android.insecurebankv2.ViewStatement;
+
+        $r1 := @parameter0: android.os.Bundle;
+
+        specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1);
+
+        virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604);
+
+        $r4 = virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: android.content.Intent getIntent()>();
+
+        $r5 = virtualinvoke $r4.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>("uname");
+
+        $r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname> = $r5;
+
+        $r6 = new java.lang.StringBuilder;
+
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>()>();
+
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Statements_");
+
+        $r5 = $r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>;
+
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".html");
+
+        $r5 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        $r3 = new java.io.File;
+
+        $r7 = staticinvoke <android.os.Environment: java.io.File getExternalStorageDirectory()>();
+
+        specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5);
+
+        $r8 = <java.lang.System: java.io.PrintStream out>;
+
+        $r5 = virtualinvoke $r3.<java.io.File: java.lang.String toString()>();
+
+        virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5);
+
+        $z0 = virtualinvoke $r3.<java.io.File: boolean exists()>();
+
+        if $z0 == 0 goto label1;
+
+        $r9 = virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: android.view.View findViewById(int)>(2131558513);
+
+        $r10 = (android.webkit.WebView) $r9;
+
+        $r6 = new java.lang.StringBuilder;
+
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>()>();
+
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("file://");
+
+        $r3 = staticinvoke <android.os.Environment: java.io.File getExternalStorageDirectory()>();
+
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r3);
+
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/Statements_");
+
+        $r5 = $r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>;
+
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".html");
+
+        $r5 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        virtualinvoke $r10.<android.webkit.WebView: void loadUrl(java.lang.String)>($r5);
+
+        $r11 = virtualinvoke $r10.<android.webkit.WebView: android.webkit.WebSettings getSettings()>();
+
+        virtualinvoke $r11.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(1);
+
+        $r11 = virtualinvoke $r10.<android.webkit.WebView: android.webkit.WebSettings getSettings()>();
+
+        virtualinvoke $r11.<android.webkit.WebSettings: void setSaveFormData(boolean)>(1);
+
+        $r11 = virtualinvoke $r10.<android.webkit.WebView: android.webkit.WebSettings getSettings()>();
+
+        virtualinvoke $r11.<android.webkit.WebSettings: void setBuiltInZoomControls(boolean)>(1);
+
+        $r12 = new com.android.insecurebankv2.MyWebViewClient;
+
+        specialinvoke $r12.<com.android.insecurebankv2.MyWebViewClient: void <init>()>();
+
+        virtualinvoke $r10.<android.webkit.WebView: void setWebViewClient(android.webkit.WebViewClient)>($r12);
+
+        $r2 = new android.webkit.WebChromeClient;
+
+        specialinvoke $r2.<android.webkit.WebChromeClient: void <init>()>();
+
+        virtualinvoke $r10.<android.webkit.WebView: void setWebChromeClient(android.webkit.WebChromeClient)>($r2);
+
+        return;
+
+     label1:
+        $r4 = new android.content.Intent;
+
+        specialinvoke $r4.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/PostLogin");
+
+        virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void startActivity(android.content.Intent)>($r4);
+
+        $r13 = <com.marcohc.toasteroid.Toasteroid$STYLES: com.marcohc.toasteroid.Toasteroid$STYLES WARNING>;
+
+        staticinvoke <com.marcohc.toasteroid.Toasteroid: void show(android.app.Activity,java.lang.String,com.marcohc.toasteroid.Toasteroid$STYLES,int)>($r0, "Statement does not Exist!!", $r13, 0);
+
+        return;
+    }
+
+  --Start displaying:onCreate 
+  UNIT:0 $r0 := @this: com.android.insecurebankv2.ViewStatement
+      [BEFOR]RS:0
+                    THIS.uname:[THIS.uname,]
+
+      [AFTER]RS:0
+                    THIS.uname:[THIS.uname,]
+                           $r0:[THIS,]
+
+  UNIT:1 $r1 := @parameter0: android.os.Bundle
+      [BEFOR]RS:1
+                    THIS.uname:[THIS.uname,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:1
+                           $r1:[Param@0,]
+                    THIS.uname:[THIS.uname,]
+                           $r0:[THIS,]
+
+  UNIT:2 specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1)
+      [BEFOR]RS:2
+                           $r1:[Param@0,]
+                    THIS.uname:[THIS.uname,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:2
+                           $r1:[Param@0,]
+                    THIS.uname:[THIS.uname,]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:3 virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604)
+      [BEFOR]RS:3
+                           $r1:[Param@0,]
+                    THIS.uname:[THIS.uname,]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:3
+                           $r1:[Param@0,]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                    THIS.uname:[THIS.uname,]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:4 $r4 = virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: android.content.Intent getIntent()>()
+      [BEFOR]RS:4
+                           $r1:[Param@0,]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                    THIS.uname:[THIS.uname,]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:4
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                    THIS.uname:[THIS.uname,]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:5 $r5 = virtualinvoke $r4.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>("uname")
+      [BEFOR]RS:5
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                    THIS.uname:[THIS.uname,]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:5
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                    THIS.uname:[THIS.uname,]
+                           $r5:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:6 $r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname> = $r5
+      [BEFOR]RS:6
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                    THIS.uname:[THIS.uname,]
+                           $r5:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:6
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:7 $r6 = new java.lang.StringBuilder
+      [BEFOR]RS:7
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:7
+                           $r6:[NewValue786807200,]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:8 specialinvoke $r6.<java.lang.StringBuilder: void <init>()>()
+      [BEFOR]RS:8
+                           $r6:[NewValue786807200,]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:8
+                           $r6:[NewValue786807200,]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:9 $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Statements_")
+      [BEFOR]RS:9
+                           $r6:[NewValue786807200,]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:9
+                           $r6:[append([THIS:NewValue786807200][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:10 $r5 = $r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>
+      [BEFOR]RS:10
+                           $r6:[append([THIS:NewValue786807200][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:10
+                           $r6:[append([THIS:NewValue786807200][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:11 $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5)
+      [BEFOR]RS:11
+                           $r6:[append([THIS:NewValue786807200][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:11
+                           $r6:[append([THIS:CONST,NewValue786807200][@0:CONST,THIS]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:12 $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".html")
+      [BEFOR]RS:12
+                           $r6:[append([THIS:CONST,NewValue786807200][@0:CONST,THIS]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:12
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:13 $r5 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>()
+      [BEFOR]RS:13
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:13
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue786807200,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:14 $r3 = new java.io.File
+      [BEFOR]RS:14
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue786807200,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:14
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue786807200,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r3:[NewValue1629801302,]
+
+  UNIT:15 $r7 = staticinvoke <android.os.Environment: java.io.File getExternalStorageDirectory()>()
+      [BEFOR]RS:15
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue786807200,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r3:[NewValue1629801302,]
+
+      [AFTER]RS:15
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue786807200,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:16 specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5)
+      [BEFOR]RS:16
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue786807200,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:16
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue786807200,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:17 $r8 = <java.lang.System: java.io.PrintStream out>
+      [BEFOR]RS:17
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue786807200,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:17
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue786807200,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:18 $r5 = virtualinvoke $r3.<java.io.File: java.lang.String toString()>()
+      [BEFOR]RS:18
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue786807200,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:18
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:19 virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5)
+      [BEFOR]RS:19
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:19
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:20 $z0 = virtualinvoke $r3.<java.io.File: boolean exists()>()
+      [BEFOR]RS:20
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:20
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:21 if $z0 == 0 goto $r4 = new android.content.Intent
+      [BEFOR]RS:21
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:21
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:22 $r9 = virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: android.view.View findViewById(int)>(2131558513)
+      [BEFOR]RS:22
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:22
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:23 $r10 = (android.webkit.WebView) $r9
+      [BEFOR]RS:23
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:23
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:24 $r6 = new java.lang.StringBuilder
+      [BEFOR]RS:24
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:24
+                           $r6:[NewValue177706071,]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:25 specialinvoke $r6.<java.lang.StringBuilder: void <init>()>()
+      [BEFOR]RS:25
+                           $r6:[NewValue177706071,]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:25
+                           $r6:[NewValue177706071,]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:26 $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("file://")
+      [BEFOR]RS:26
+                           $r6:[NewValue177706071,]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:26
+                           $r6:[append([THIS:NewValue177706071][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:27 $r3 = staticinvoke <android.os.Environment: java.io.File getExternalStorageDirectory()>()
+      [BEFOR]RS:27
+                           $r6:[append([THIS:NewValue177706071][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:27
+                           $r6:[append([THIS:NewValue177706071][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:28 $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r3)
+      [BEFOR]RS:28
+                           $r6:[append([THIS:NewValue177706071][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:28
+                           $r6:[append([THIS:CONST,NewValue177706071][@0:]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:29 $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/Statements_")
+      [BEFOR]RS:29
+                           $r6:[append([THIS:CONST,NewValue177706071][@0:]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:29
+                           $r6:[append([THIS:CONST,NewValue177706071][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:30 $r5 = $r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>
+      [BEFOR]RS:30
+                           $r6:[append([THIS:CONST,NewValue177706071][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:30
+                           $r6:[append([THIS:CONST,NewValue177706071][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:31 $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5)
+      [BEFOR]RS:31
+                           $r6:[append([THIS:CONST,NewValue177706071][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:31
+                           $r6:[append([THIS:CONST,NewValue177706071][@0:CONST,THIS]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:32 $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".html")
+      [BEFOR]RS:32
+                           $r6:[append([THIS:CONST,NewValue177706071][@0:CONST,THIS]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:32
+                           $r6:[append([THIS:CONST,NewValue177706071,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:33 $r5 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>()
+      [BEFOR]RS:33
+                           $r6:[append([THIS:CONST,NewValue177706071,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:33
+                           $r6:[append([THIS:CONST,NewValue177706071,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue177706071,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:34 virtualinvoke $r10.<android.webkit.WebView: void loadUrl(java.lang.String)>($r5)
+      [BEFOR]RS:34
+                           $r6:[append([THIS:CONST,NewValue177706071,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue177706071,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:34
+                           $r6:[append([THIS:CONST,NewValue177706071,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue177706071,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+virtualinvoke $r10.<android.webkit.WebView: void loadUrl(java.lang.String)>($r5):[loadUrl([THIS:CONST,THIS][@0:CONST,NewValue177706071,THIS]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:35 $r11 = virtualinvoke $r10.<android.webkit.WebView: android.webkit.WebSettings getSettings()>()
+      [BEFOR]RS:35
+                           $r6:[append([THIS:CONST,NewValue177706071,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue177706071,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+virtualinvoke $r10.<android.webkit.WebView: void loadUrl(java.lang.String)>($r5):[loadUrl([THIS:CONST,THIS][@0:CONST,NewValue177706071,THIS]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:35
+                           $r6:[append([THIS:CONST,NewValue177706071,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                          $r11:[getSettings([THIS:CONST,THIS]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue177706071,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+virtualinvoke $r10.<android.webkit.WebView: void loadUrl(java.lang.String)>($r5):[loadUrl([THIS:CONST,THIS][@0:CONST,NewValue177706071,THIS]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:36 virtualinvoke $r11.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(1)
+      [BEFOR]RS:36
+                           $r6:[append([THIS:CONST,NewValue177706071,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                          $r11:[getSettings([THIS:CONST,THIS]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue177706071,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+virtualinvoke $r10.<android.webkit.WebView: void loadUrl(java.lang.String)>($r5):[loadUrl([THIS:CONST,THIS][@0:CONST,NewValue177706071,THIS]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:36
+                           $r6:[append([THIS:CONST,NewValue177706071,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(1):[setJavaScriptEnabled([THIS:CONST,THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                          $r11:[getSettings([THIS:CONST,THIS]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue177706071,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+virtualinvoke $r10.<android.webkit.WebView: void loadUrl(java.lang.String)>($r5):[loadUrl([THIS:CONST,THIS][@0:CONST,NewValue177706071,THIS]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:37 $r11 = virtualinvoke $r10.<android.webkit.WebView: android.webkit.WebSettings getSettings()>()
+      [BEFOR]RS:37
+                           $r6:[append([THIS:CONST,NewValue177706071,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(1):[setJavaScriptEnabled([THIS:CONST,THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                          $r11:[getSettings([THIS:CONST,THIS]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue177706071,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+virtualinvoke $r10.<android.webkit.WebView: void loadUrl(java.lang.String)>($r5):[loadUrl([THIS:CONST,THIS][@0:CONST,NewValue177706071,THIS]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:37
+                           $r6:[append([THIS:CONST,NewValue177706071,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(1):[setJavaScriptEnabled([THIS:CONST,THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                          $r11:[getSettings([THIS:CONST,THIS]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue177706071,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+virtualinvoke $r10.<android.webkit.WebView: void loadUrl(java.lang.String)>($r5):[loadUrl([THIS:CONST,THIS][@0:CONST,NewValue177706071,THIS]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:38 virtualinvoke $r11.<android.webkit.WebSettings: void setSaveFormData(boolean)>(1)
+      [BEFOR]RS:38
+                           $r6:[append([THIS:CONST,NewValue177706071,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(1):[setJavaScriptEnabled([THIS:CONST,THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                          $r11:[getSettings([THIS:CONST,THIS]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue177706071,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+virtualinvoke $r10.<android.webkit.WebView: void loadUrl(java.lang.String)>($r5):[loadUrl([THIS:CONST,THIS][@0:CONST,NewValue177706071,THIS]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:38
+                           $r6:[append([THIS:CONST,NewValue177706071,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setSaveFormData(boolean)>(1):[setSaveFormData([THIS:CONST,THIS][@0:CONST]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(1):[setJavaScriptEnabled([THIS:CONST,THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                          $r11:[getSettings([THIS:CONST,THIS]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue177706071,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+virtualinvoke $r10.<android.webkit.WebView: void loadUrl(java.lang.String)>($r5):[loadUrl([THIS:CONST,THIS][@0:CONST,NewValue177706071,THIS]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:39 $r11 = virtualinvoke $r10.<android.webkit.WebView: android.webkit.WebSettings getSettings()>()
+      [BEFOR]RS:39
+                           $r6:[append([THIS:CONST,NewValue177706071,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setSaveFormData(boolean)>(1):[setSaveFormData([THIS:CONST,THIS][@0:CONST]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(1):[setJavaScriptEnabled([THIS:CONST,THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                          $r11:[getSettings([THIS:CONST,THIS]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue177706071,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+virtualinvoke $r10.<android.webkit.WebView: void loadUrl(java.lang.String)>($r5):[loadUrl([THIS:CONST,THIS][@0:CONST,NewValue177706071,THIS]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:39
+                           $r6:[append([THIS:CONST,NewValue177706071,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setSaveFormData(boolean)>(1):[setSaveFormData([THIS:CONST,THIS][@0:CONST]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(1):[setJavaScriptEnabled([THIS:CONST,THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                          $r11:[getSettings([THIS:CONST,THIS]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue177706071,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+virtualinvoke $r10.<android.webkit.WebView: void loadUrl(java.lang.String)>($r5):[loadUrl([THIS:CONST,THIS][@0:CONST,NewValue177706071,THIS]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:40 virtualinvoke $r11.<android.webkit.WebSettings: void setBuiltInZoomControls(boolean)>(1)
+      [BEFOR]RS:40
+                           $r6:[append([THIS:CONST,NewValue177706071,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setSaveFormData(boolean)>(1):[setSaveFormData([THIS:CONST,THIS][@0:CONST]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(1):[setJavaScriptEnabled([THIS:CONST,THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                          $r11:[getSettings([THIS:CONST,THIS]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue177706071,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+virtualinvoke $r10.<android.webkit.WebView: void loadUrl(java.lang.String)>($r5):[loadUrl([THIS:CONST,THIS][@0:CONST,NewValue177706071,THIS]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:40
+                           $r6:[append([THIS:CONST,NewValue177706071,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setSaveFormData(boolean)>(1):[setSaveFormData([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setBuiltInZoomControls(boolean)>(1):[setBuiltInZoomControls([THIS:CONST,THIS][@0:CONST]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(1):[setJavaScriptEnabled([THIS:CONST,THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                          $r11:[getSettings([THIS:CONST,THIS]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue177706071,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+virtualinvoke $r10.<android.webkit.WebView: void loadUrl(java.lang.String)>($r5):[loadUrl([THIS:CONST,THIS][@0:CONST,NewValue177706071,THIS]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:41 $r12 = new com.android.insecurebankv2.MyWebViewClient
+      [BEFOR]RS:41
+                           $r6:[append([THIS:CONST,NewValue177706071,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setSaveFormData(boolean)>(1):[setSaveFormData([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setBuiltInZoomControls(boolean)>(1):[setBuiltInZoomControls([THIS:CONST,THIS][@0:CONST]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(1):[setJavaScriptEnabled([THIS:CONST,THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                          $r11:[getSettings([THIS:CONST,THIS]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue177706071,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+virtualinvoke $r10.<android.webkit.WebView: void loadUrl(java.lang.String)>($r5):[loadUrl([THIS:CONST,THIS][@0:CONST,NewValue177706071,THIS]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:41
+                          $r12:[NewValue33711018,]
+                           $r6:[append([THIS:CONST,NewValue177706071,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setSaveFormData(boolean)>(1):[setSaveFormData([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setBuiltInZoomControls(boolean)>(1):[setBuiltInZoomControls([THIS:CONST,THIS][@0:CONST]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(1):[setJavaScriptEnabled([THIS:CONST,THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                          $r11:[getSettings([THIS:CONST,THIS]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue177706071,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+virtualinvoke $r10.<android.webkit.WebView: void loadUrl(java.lang.String)>($r5):[loadUrl([THIS:CONST,THIS][@0:CONST,NewValue177706071,THIS]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:42 specialinvoke $r12.<com.android.insecurebankv2.MyWebViewClient: void <init>()>()
+      [BEFOR]RS:42
+                          $r12:[NewValue33711018,]
+                           $r6:[append([THIS:CONST,NewValue177706071,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setSaveFormData(boolean)>(1):[setSaveFormData([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setBuiltInZoomControls(boolean)>(1):[setBuiltInZoomControls([THIS:CONST,THIS][@0:CONST]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(1):[setJavaScriptEnabled([THIS:CONST,THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                          $r11:[getSettings([THIS:CONST,THIS]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue177706071,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+virtualinvoke $r10.<android.webkit.WebView: void loadUrl(java.lang.String)>($r5):[loadUrl([THIS:CONST,THIS][@0:CONST,NewValue177706071,THIS]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:42
+                          $r12:[NewValue33711018,]
+specialinvoke $r12.<com.android.insecurebankv2.MyWebViewClient: void <init>()>():[<init>([THIS:NewValue33711018]),]
+                           $r6:[append([THIS:CONST,NewValue177706071,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setSaveFormData(boolean)>(1):[setSaveFormData([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setBuiltInZoomControls(boolean)>(1):[setBuiltInZoomControls([THIS:CONST,THIS][@0:CONST]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(1):[setJavaScriptEnabled([THIS:CONST,THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                          $r11:[getSettings([THIS:CONST,THIS]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue177706071,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+virtualinvoke $r10.<android.webkit.WebView: void loadUrl(java.lang.String)>($r5):[loadUrl([THIS:CONST,THIS][@0:CONST,NewValue177706071,THIS]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:43 virtualinvoke $r10.<android.webkit.WebView: void setWebViewClient(android.webkit.WebViewClient)>($r12)
+      [BEFOR]RS:43
+                          $r12:[NewValue33711018,]
+specialinvoke $r12.<com.android.insecurebankv2.MyWebViewClient: void <init>()>():[<init>([THIS:NewValue33711018]),]
+                           $r6:[append([THIS:CONST,NewValue177706071,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setSaveFormData(boolean)>(1):[setSaveFormData([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setBuiltInZoomControls(boolean)>(1):[setBuiltInZoomControls([THIS:CONST,THIS][@0:CONST]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(1):[setJavaScriptEnabled([THIS:CONST,THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                          $r11:[getSettings([THIS:CONST,THIS]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue177706071,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+virtualinvoke $r10.<android.webkit.WebView: void loadUrl(java.lang.String)>($r5):[loadUrl([THIS:CONST,THIS][@0:CONST,NewValue177706071,THIS]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:43
+                          $r12:[NewValue33711018,]
+specialinvoke $r12.<com.android.insecurebankv2.MyWebViewClient: void <init>()>():[<init>([THIS:NewValue33711018]),]
+                           $r6:[append([THIS:CONST,NewValue177706071,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setSaveFormData(boolean)>(1):[setSaveFormData([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setBuiltInZoomControls(boolean)>(1):[setBuiltInZoomControls([THIS:CONST,THIS][@0:CONST]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(1):[setJavaScriptEnabled([THIS:CONST,THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                          $r11:[getSettings([THIS:CONST,THIS]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue177706071,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+virtualinvoke $r10.<android.webkit.WebView: void loadUrl(java.lang.String)>($r5):[loadUrl([THIS:CONST,THIS][@0:CONST,NewValue177706071,THIS]),]
+virtualinvoke $r10.<android.webkit.WebView: void setWebViewClient(android.webkit.WebViewClient)>($r12):[setWebViewClient([THIS:CONST,THIS][@0:NewValue33711018]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:44 $r2 = new android.webkit.WebChromeClient
+      [BEFOR]RS:44
+                          $r12:[NewValue33711018,]
+specialinvoke $r12.<com.android.insecurebankv2.MyWebViewClient: void <init>()>():[<init>([THIS:NewValue33711018]),]
+                           $r6:[append([THIS:CONST,NewValue177706071,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setSaveFormData(boolean)>(1):[setSaveFormData([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setBuiltInZoomControls(boolean)>(1):[setBuiltInZoomControls([THIS:CONST,THIS][@0:CONST]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(1):[setJavaScriptEnabled([THIS:CONST,THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                          $r11:[getSettings([THIS:CONST,THIS]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue177706071,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+virtualinvoke $r10.<android.webkit.WebView: void loadUrl(java.lang.String)>($r5):[loadUrl([THIS:CONST,THIS][@0:CONST,NewValue177706071,THIS]),]
+virtualinvoke $r10.<android.webkit.WebView: void setWebViewClient(android.webkit.WebViewClient)>($r12):[setWebViewClient([THIS:CONST,THIS][@0:NewValue33711018]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:44
+                          $r12:[NewValue33711018,]
+specialinvoke $r12.<com.android.insecurebankv2.MyWebViewClient: void <init>()>():[<init>([THIS:NewValue33711018]),]
+                           $r6:[append([THIS:CONST,NewValue177706071,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setSaveFormData(boolean)>(1):[setSaveFormData([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setBuiltInZoomControls(boolean)>(1):[setBuiltInZoomControls([THIS:CONST,THIS][@0:CONST]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(1):[setJavaScriptEnabled([THIS:CONST,THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                          $r11:[getSettings([THIS:CONST,THIS]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue177706071,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r2:[NewValue1390761869,]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+virtualinvoke $r10.<android.webkit.WebView: void loadUrl(java.lang.String)>($r5):[loadUrl([THIS:CONST,THIS][@0:CONST,NewValue177706071,THIS]),]
+virtualinvoke $r10.<android.webkit.WebView: void setWebViewClient(android.webkit.WebViewClient)>($r12):[setWebViewClient([THIS:CONST,THIS][@0:NewValue33711018]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:45 specialinvoke $r2.<android.webkit.WebChromeClient: void <init>()>()
+      [BEFOR]RS:45
+                          $r12:[NewValue33711018,]
+specialinvoke $r12.<com.android.insecurebankv2.MyWebViewClient: void <init>()>():[<init>([THIS:NewValue33711018]),]
+                           $r6:[append([THIS:CONST,NewValue177706071,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setSaveFormData(boolean)>(1):[setSaveFormData([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setBuiltInZoomControls(boolean)>(1):[setBuiltInZoomControls([THIS:CONST,THIS][@0:CONST]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(1):[setJavaScriptEnabled([THIS:CONST,THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                          $r11:[getSettings([THIS:CONST,THIS]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue177706071,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r2:[NewValue1390761869,]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+virtualinvoke $r10.<android.webkit.WebView: void loadUrl(java.lang.String)>($r5):[loadUrl([THIS:CONST,THIS][@0:CONST,NewValue177706071,THIS]),]
+virtualinvoke $r10.<android.webkit.WebView: void setWebViewClient(android.webkit.WebViewClient)>($r12):[setWebViewClient([THIS:CONST,THIS][@0:NewValue33711018]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:45
+                          $r12:[NewValue33711018,]
+specialinvoke $r12.<com.android.insecurebankv2.MyWebViewClient: void <init>()>():[<init>([THIS:NewValue33711018]),]
+                           $r6:[append([THIS:CONST,NewValue177706071,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setSaveFormData(boolean)>(1):[setSaveFormData([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setBuiltInZoomControls(boolean)>(1):[setBuiltInZoomControls([THIS:CONST,THIS][@0:CONST]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(1):[setJavaScriptEnabled([THIS:CONST,THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                          $r11:[getSettings([THIS:CONST,THIS]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue177706071,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r2:[NewValue1390761869,]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+specialinvoke $r2.<android.webkit.WebChromeClient: void <init>()>():[<init>([THIS:NewValue1390761869]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+virtualinvoke $r10.<android.webkit.WebView: void loadUrl(java.lang.String)>($r5):[loadUrl([THIS:CONST,THIS][@0:CONST,NewValue177706071,THIS]),]
+virtualinvoke $r10.<android.webkit.WebView: void setWebViewClient(android.webkit.WebViewClient)>($r12):[setWebViewClient([THIS:CONST,THIS][@0:NewValue33711018]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:46 virtualinvoke $r10.<android.webkit.WebView: void setWebChromeClient(android.webkit.WebChromeClient)>($r2)
+      [BEFOR]RS:46
+                          $r12:[NewValue33711018,]
+specialinvoke $r12.<com.android.insecurebankv2.MyWebViewClient: void <init>()>():[<init>([THIS:NewValue33711018]),]
+                           $r6:[append([THIS:CONST,NewValue177706071,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setSaveFormData(boolean)>(1):[setSaveFormData([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setBuiltInZoomControls(boolean)>(1):[setBuiltInZoomControls([THIS:CONST,THIS][@0:CONST]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(1):[setJavaScriptEnabled([THIS:CONST,THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                          $r11:[getSettings([THIS:CONST,THIS]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue177706071,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r2:[NewValue1390761869,]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+specialinvoke $r2.<android.webkit.WebChromeClient: void <init>()>():[<init>([THIS:NewValue1390761869]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+virtualinvoke $r10.<android.webkit.WebView: void loadUrl(java.lang.String)>($r5):[loadUrl([THIS:CONST,THIS][@0:CONST,NewValue177706071,THIS]),]
+virtualinvoke $r10.<android.webkit.WebView: void setWebViewClient(android.webkit.WebViewClient)>($r12):[setWebViewClient([THIS:CONST,THIS][@0:NewValue33711018]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:46
+virtualinvoke $r10.<android.webkit.WebView: void setWebChromeClient(android.webkit.WebChromeClient)>($r2):[setWebChromeClient([THIS:CONST,THIS][@0:NewValue1390761869]),]
+                          $r12:[NewValue33711018,]
+specialinvoke $r12.<com.android.insecurebankv2.MyWebViewClient: void <init>()>():[<init>([THIS:NewValue33711018]),]
+                           $r6:[append([THIS:CONST,NewValue177706071,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setSaveFormData(boolean)>(1):[setSaveFormData([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setBuiltInZoomControls(boolean)>(1):[setBuiltInZoomControls([THIS:CONST,THIS][@0:CONST]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(1):[setJavaScriptEnabled([THIS:CONST,THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                          $r11:[getSettings([THIS:CONST,THIS]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue177706071,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r2:[NewValue1390761869,]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+specialinvoke $r2.<android.webkit.WebChromeClient: void <init>()>():[<init>([THIS:NewValue1390761869]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+virtualinvoke $r10.<android.webkit.WebView: void loadUrl(java.lang.String)>($r5):[loadUrl([THIS:CONST,THIS][@0:CONST,NewValue177706071,THIS]),]
+virtualinvoke $r10.<android.webkit.WebView: void setWebViewClient(android.webkit.WebViewClient)>($r12):[setWebViewClient([THIS:CONST,THIS][@0:NewValue33711018]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:47 return
+      [BEFOR]RS:47
+virtualinvoke $r10.<android.webkit.WebView: void setWebChromeClient(android.webkit.WebChromeClient)>($r2):[setWebChromeClient([THIS:CONST,THIS][@0:NewValue1390761869]),]
+                          $r12:[NewValue33711018,]
+specialinvoke $r12.<com.android.insecurebankv2.MyWebViewClient: void <init>()>():[<init>([THIS:NewValue33711018]),]
+                           $r6:[append([THIS:CONST,NewValue177706071,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setSaveFormData(boolean)>(1):[setSaveFormData([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setBuiltInZoomControls(boolean)>(1):[setBuiltInZoomControls([THIS:CONST,THIS][@0:CONST]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(1):[setJavaScriptEnabled([THIS:CONST,THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                          $r11:[getSettings([THIS:CONST,THIS]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue177706071,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r2:[NewValue1390761869,]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+specialinvoke $r2.<android.webkit.WebChromeClient: void <init>()>():[<init>([THIS:NewValue1390761869]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+virtualinvoke $r10.<android.webkit.WebView: void loadUrl(java.lang.String)>($r5):[loadUrl([THIS:CONST,THIS][@0:CONST,NewValue177706071,THIS]),]
+virtualinvoke $r10.<android.webkit.WebView: void setWebViewClient(android.webkit.WebViewClient)>($r12):[setWebViewClient([THIS:CONST,THIS][@0:NewValue33711018]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:47
+virtualinvoke $r10.<android.webkit.WebView: void setWebChromeClient(android.webkit.WebChromeClient)>($r2):[setWebChromeClient([THIS:CONST,THIS][@0:NewValue1390761869]),]
+                          $r12:[NewValue33711018,]
+specialinvoke $r12.<com.android.insecurebankv2.MyWebViewClient: void <init>()>():[<init>([THIS:NewValue33711018]),]
+                           $r6:[append([THIS:CONST,NewValue177706071,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setSaveFormData(boolean)>(1):[setSaveFormData([THIS:CONST,THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setBuiltInZoomControls(boolean)>(1):[setBuiltInZoomControls([THIS:CONST,THIS][@0:CONST]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+virtualinvoke $r11.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(1):[setJavaScriptEnabled([THIS:CONST,THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                          $r10:[findViewById([THIS:THIS][@0:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                          $r11:[getSettings([THIS:CONST,THIS]),]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:CONST,NewValue177706071,THIS]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue177706071]),]
+                           $r2:[NewValue1390761869,]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+specialinvoke $r2.<android.webkit.WebChromeClient: void <init>()>():[<init>([THIS:NewValue1390761869]),]
+                           $r9:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+virtualinvoke $r10.<android.webkit.WebView: void loadUrl(java.lang.String)>($r5):[loadUrl([THIS:CONST,THIS][@0:CONST,NewValue177706071,THIS]),]
+virtualinvoke $r10.<android.webkit.WebView: void setWebViewClient(android.webkit.WebViewClient)>($r12):[setWebViewClient([THIS:CONST,THIS][@0:NewValue33711018]),]
+                           $r3:[getExternalStorageDirectory(),]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:48 $r4 = new android.content.Intent
+      [BEFOR]RS:48
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[getIntent([THIS:THIS]),]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:48
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[NewValue1134213765,]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:49 specialinvoke $r4.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/PostLogin")
+      [BEFOR]RS:49
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[NewValue1134213765,]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:49
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[NewValue1134213765,]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+specialinvoke $r4.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/PostLogin"):[<init>([THIS:NewValue1134213765][@0:THIS][@1:CONST]),]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:50 virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void startActivity(android.content.Intent)>($r4)
+      [BEFOR]RS:50
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[NewValue1134213765,]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+specialinvoke $r4.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/PostLogin"):[<init>([THIS:NewValue1134213765][@0:THIS][@1:CONST]),]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:50
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[NewValue1134213765,]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void startActivity(android.content.Intent)>($r4):[startActivity([THIS:THIS][@0:NewValue1134213765]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+specialinvoke $r4.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/PostLogin"):[<init>([THIS:NewValue1134213765][@0:THIS][@1:CONST]),]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:51 $r13 = <com.marcohc.toasteroid.Toasteroid$STYLES: com.marcohc.toasteroid.Toasteroid$STYLES WARNING>
+      [BEFOR]RS:51
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[NewValue1134213765,]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void startActivity(android.content.Intent)>($r4):[startActivity([THIS:THIS][@0:NewValue1134213765]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+specialinvoke $r4.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/PostLogin"):[<init>([THIS:NewValue1134213765][@0:THIS][@1:CONST]),]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:51
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[NewValue1134213765,]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void startActivity(android.content.Intent)>($r4):[startActivity([THIS:THIS][@0:NewValue1134213765]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+specialinvoke $r4.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/PostLogin"):[<init>([THIS:NewValue1134213765][@0:THIS][@1:CONST]),]
+                          $r13:[com.marcohc.toasteroid.Toasteroid$STYLES.WARNING,]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:52 staticinvoke <com.marcohc.toasteroid.Toasteroid: void show(android.app.Activity,java.lang.String,com.marcohc.toasteroid.Toasteroid$STYLES,int)>($r0, "Statement does not Exist!!", $r13, 0)
+      [BEFOR]RS:52
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[NewValue1134213765,]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void startActivity(android.content.Intent)>($r4):[startActivity([THIS:THIS][@0:NewValue1134213765]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+specialinvoke $r4.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/PostLogin"):[<init>([THIS:NewValue1134213765][@0:THIS][@1:CONST]),]
+                          $r13:[com.marcohc.toasteroid.Toasteroid$STYLES.WARNING,]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:52
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[NewValue1134213765,]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+staticinvoke <com.marcohc.toasteroid.Toasteroid: void show(android.app.Activity,java.lang.String,com.marcohc.toasteroid.Toasteroid$STYLES,int)>($r0, "Statement does not Exist!!", $r13, 0):[show([THIS:null][@0:THIS][@1:CONST][@2:com.marcohc.toasteroid.Toasteroid$STYLES.WARNING][@3:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void startActivity(android.content.Intent)>($r4):[startActivity([THIS:THIS][@0:NewValue1134213765]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+specialinvoke $r4.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/PostLogin"):[<init>([THIS:NewValue1134213765][@0:THIS][@1:CONST]),]
+                          $r13:[com.marcohc.toasteroid.Toasteroid$STYLES.WARNING,]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+  UNIT:53 return
+      [BEFOR]RS:53
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[NewValue1134213765,]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+staticinvoke <com.marcohc.toasteroid.Toasteroid: void show(android.app.Activity,java.lang.String,com.marcohc.toasteroid.Toasteroid$STYLES,int)>($r0, "Statement does not Exist!!", $r13, 0):[show([THIS:null][@0:THIS][@1:CONST][@2:com.marcohc.toasteroid.Toasteroid$STYLES.WARNING][@3:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void startActivity(android.content.Intent)>($r4):[startActivity([THIS:THIS][@0:NewValue1134213765]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+specialinvoke $r4.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/PostLogin"):[<init>([THIS:NewValue1134213765][@0:THIS][@1:CONST]),]
+                          $r13:[com.marcohc.toasteroid.Toasteroid$STYLES.WARNING,]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+      [AFTER]RS:53
+                           $r6:[append([THIS:CONST,NewValue786807200,THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+                           $r4:[NewValue1134213765,]
+$r0.<com.android.insecurebankv2.ViewStatement: java.lang.String uname>:[getStringExtra([THIS:THIS][@0:CONST]),]
+specialinvoke $r3.<java.io.File: void <init>(java.io.File,java.lang.String)>($r7, $r5):[<init>([THIS:NewValue1629801302][@0:][@1:CONST,NewValue786807200,THIS]),]
+staticinvoke <com.marcohc.toasteroid.Toasteroid: void show(android.app.Activity,java.lang.String,com.marcohc.toasteroid.Toasteroid$STYLES,int)>($r0, "Statement does not Exist!!", $r13, 0):[show([THIS:null][@0:THIS][@1:CONST][@2:com.marcohc.toasteroid.Toasteroid$STYLES.WARNING][@3:CONST]),]
+                           $z0:[exists([THIS:NewValue1629801302]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void setContentView(int)>(2130968604):[setContentView([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.android.insecurebankv2.ViewStatement: void startActivity(android.content.Intent)>($r4):[startActivity([THIS:THIS][@0:NewValue1134213765]),]
+                           $r8:[java.lang.System.out,]
+                    THIS.uname:[getStringExtra([THIS:THIS][@0:CONST]),]
+                           $r5:[toString([THIS:NewValue1629801302]),]
+specialinvoke $r6.<java.lang.StringBuilder: void <init>()>():[<init>([THIS:NewValue786807200]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>($r5):[println([THIS:java.lang.System.out][@0:NewValue1629801302]),]
+specialinvoke $r4.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/android/insecurebankv2/PostLogin"):[<init>([THIS:NewValue1134213765][@0:THIS][@1:CONST]),]
+                          $r13:[com.marcohc.toasteroid.Toasteroid$STYLES.WARNING,]
+                           $r3:[NewValue1629801302,]
+                           $r7:[getExternalStorageDirectory(),]
+
+@@End onCreate======================

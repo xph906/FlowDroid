@@ -1,0 +1,518 @@
+@@Start analyzing:a
+READ: THIS
+  --Done analyzing:a     private void a()
+    {
+        com.wiyun.game.ComposeTopic $r0;
+        java.lang.Object $r1;
+        android.view.inputmethod.InputMethodManager $r2;
+        android.view.Window $r3;
+        android.view.View $r4;
+        android.os.IBinder $r5;
+
+        $r0 := @this: com.wiyun.game.ComposeTopic;
+
+        $r1 = virtualinvoke $r0.<com.wiyun.game.ComposeTopic: java.lang.Object getSystemService(java.lang.String)>("input_method");
+
+        $r2 = (android.view.inputmethod.InputMethodManager) $r1;
+
+        if $r2 == null goto label1;
+
+        $r3 = virtualinvoke $r0.<com.wiyun.game.ComposeTopic: android.view.Window getWindow()>();
+
+        $r4 = virtualinvoke $r3.<android.view.Window: android.view.View getDecorView()>();
+
+        $r5 = virtualinvoke $r4.<android.view.View: android.os.IBinder getWindowToken()>();
+
+        virtualinvoke $r2.<android.view.inputmethod.InputMethodManager: boolean hideSoftInputFromWindow(android.os.IBinder,int)>($r5, 0);
+
+     label1:
+        return;
+    }
+
+  --Method Body:    private void a()
+    {
+        com.wiyun.game.ComposeTopic $r0;
+        java.lang.Object $r1;
+        android.view.inputmethod.InputMethodManager $r2;
+        android.view.Window $r3;
+        android.view.View $r4;
+        android.os.IBinder $r5;
+
+        $r0 := @this: com.wiyun.game.ComposeTopic;
+
+        $r1 = virtualinvoke $r0.<com.wiyun.game.ComposeTopic: java.lang.Object getSystemService(java.lang.String)>("input_method");
+
+        $r2 = (android.view.inputmethod.InputMethodManager) $r1;
+
+        if $r2 == null goto label1;
+
+        $r3 = virtualinvoke $r0.<com.wiyun.game.ComposeTopic: android.view.Window getWindow()>();
+
+        $r4 = virtualinvoke $r3.<android.view.Window: android.view.View getDecorView()>();
+
+        $r5 = virtualinvoke $r4.<android.view.View: android.os.IBinder getWindowToken()>();
+
+        virtualinvoke $r2.<android.view.inputmethod.InputMethodManager: boolean hideSoftInputFromWindow(android.os.IBinder,int)>($r5, 0);
+
+     label1:
+        return;
+    }
+
+  --Start displaying:a 
+  UNIT:0 $r0 := @this: com.wiyun.game.ComposeTopic
+      [BEFOR]RS:0
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                        THIS.q:[THIS.q,]
+                        THIS.r:[THIS.r,]
+                        THIS.s:[THIS.s,]
+
+      [AFTER]RS:0
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                        THIS.q:[THIS.q,]
+                        THIS.r:[THIS.r,]
+                        THIS.s:[THIS.s,]
+
+  UNIT:1 $r1 = virtualinvoke $r0.<com.wiyun.game.ComposeTopic: java.lang.Object getSystemService(java.lang.String)>("input_method")
+      [BEFOR]RS:1
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                        THIS.q:[THIS.q,]
+                        THIS.r:[THIS.r,]
+                        THIS.s:[THIS.s,]
+
+      [AFTER]RS:1
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                        THIS.q:[THIS.q,]
+                        THIS.r:[THIS.r,]
+                        THIS.s:[THIS.s,]
+                           $r1:[getSystemService([THIS:THIS][@0:CONST]),]
+
+  UNIT:2 $r2 = (android.view.inputmethod.InputMethodManager) $r1
+      [BEFOR]RS:2
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                        THIS.q:[THIS.q,]
+                        THIS.r:[THIS.r,]
+                        THIS.s:[THIS.s,]
+                           $r1:[getSystemService([THIS:THIS][@0:CONST]),]
+
+      [AFTER]RS:2
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                        THIS.q:[THIS.q,]
+                        THIS.r:[THIS.r,]
+                        THIS.s:[THIS.s,]
+                           $r1:[getSystemService([THIS:THIS][@0:CONST]),]
+
+  UNIT:3 if $r2 == null goto return
+      [BEFOR]RS:3
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                        THIS.q:[THIS.q,]
+                        THIS.r:[THIS.r,]
+                        THIS.s:[THIS.s,]
+                           $r1:[getSystemService([THIS:THIS][@0:CONST]),]
+
+      [AFTER]RS:3
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                        THIS.q:[THIS.q,]
+                        THIS.r:[THIS.r,]
+                        THIS.s:[THIS.s,]
+                           $r1:[getSystemService([THIS:THIS][@0:CONST]),]
+
+  UNIT:4 $r3 = virtualinvoke $r0.<com.wiyun.game.ComposeTopic: android.view.Window getWindow()>()
+      [BEFOR]RS:4
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                        THIS.q:[THIS.q,]
+                        THIS.r:[THIS.r,]
+                        THIS.s:[THIS.s,]
+                           $r1:[getSystemService([THIS:THIS][@0:CONST]),]
+
+      [AFTER]RS:4
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                        THIS.q:[THIS.q,]
+                        THIS.r:[THIS.r,]
+                        THIS.s:[THIS.s,]
+                           $r3:[getWindow([THIS:THIS]),]
+                           $r1:[getSystemService([THIS:THIS][@0:CONST]),]
+
+  UNIT:5 $r4 = virtualinvoke $r3.<android.view.Window: android.view.View getDecorView()>()
+      [BEFOR]RS:5
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                        THIS.q:[THIS.q,]
+                        THIS.r:[THIS.r,]
+                        THIS.s:[THIS.s,]
+                           $r3:[getWindow([THIS:THIS]),]
+                           $r1:[getSystemService([THIS:THIS][@0:CONST]),]
+
+      [AFTER]RS:5
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                        THIS.q:[THIS.q,]
+                        THIS.r:[THIS.r,]
+                        THIS.s:[THIS.s,]
+                           $r3:[getWindow([THIS:THIS]),]
+                           $r1:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r4:[getDecorView([THIS:THIS]),]
+
+  UNIT:6 $r5 = virtualinvoke $r4.<android.view.View: android.os.IBinder getWindowToken()>()
+      [BEFOR]RS:6
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                        THIS.q:[THIS.q,]
+                        THIS.r:[THIS.r,]
+                        THIS.s:[THIS.s,]
+                           $r3:[getWindow([THIS:THIS]),]
+                           $r1:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r4:[getDecorView([THIS:THIS]),]
+
+      [AFTER]RS:6
+                           $r5:[getWindowToken([THIS:THIS]),]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                        THIS.q:[THIS.q,]
+                        THIS.r:[THIS.r,]
+                        THIS.s:[THIS.s,]
+                           $r3:[getWindow([THIS:THIS]),]
+                           $r1:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r4:[getDecorView([THIS:THIS]),]
+
+  UNIT:7 virtualinvoke $r2.<android.view.inputmethod.InputMethodManager: boolean hideSoftInputFromWindow(android.os.IBinder,int)>($r5, 0)
+      [BEFOR]RS:7
+                           $r5:[getWindowToken([THIS:THIS]),]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                        THIS.q:[THIS.q,]
+                        THIS.r:[THIS.r,]
+                        THIS.s:[THIS.s,]
+                           $r3:[getWindow([THIS:THIS]),]
+                           $r1:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r4:[getDecorView([THIS:THIS]),]
+
+      [AFTER]RS:7
+                           $r5:[getWindowToken([THIS:THIS]),]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                        THIS.q:[THIS.q,]
+                        THIS.r:[THIS.r,]
+                        THIS.s:[THIS.s,]
+virtualinvoke $r2.<android.view.inputmethod.InputMethodManager: boolean hideSoftInputFromWindow(android.os.IBinder,int)>($r5, 0):[hideSoftInputFromWindow([THIS:CONST,THIS][@0:THIS][@1:CONST]),]
+                           $r3:[getWindow([THIS:THIS]),]
+                           $r1:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r4:[getDecorView([THIS:THIS]),]
+
+  UNIT:8 return
+      [BEFOR]RS:8
+                           $r5:[getWindowToken([THIS:THIS]),]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                        THIS.q:[THIS.q,]
+                        THIS.r:[THIS.r,]
+                        THIS.s:[THIS.s,]
+virtualinvoke $r2.<android.view.inputmethod.InputMethodManager: boolean hideSoftInputFromWindow(android.os.IBinder,int)>($r5, 0):[hideSoftInputFromWindow([THIS:CONST,THIS][@0:THIS][@1:CONST]),]
+                           $r3:[getWindow([THIS:THIS]),]
+                           $r1:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r4:[getDecorView([THIS:THIS]),]
+
+      [AFTER]RS:8
+                           $r5:[getWindowToken([THIS:THIS]),]
+                           $r2:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                        THIS.l:[THIS.l,]
+                        THIS.m:[THIS.m,]
+                        THIS.n:[THIS.n,]
+                        THIS.o:[THIS.o,]
+                        THIS.p:[THIS.p,]
+                        THIS.q:[THIS.q,]
+                        THIS.r:[THIS.r,]
+                        THIS.s:[THIS.s,]
+virtualinvoke $r2.<android.view.inputmethod.InputMethodManager: boolean hideSoftInputFromWindow(android.os.IBinder,int)>($r5, 0):[hideSoftInputFromWindow([THIS:CONST,THIS][@0:THIS][@1:CONST]),]
+                           $r3:[getWindow([THIS:THIS]),]
+                           $r1:[getSystemService([THIS:THIS][@0:CONST]),]
+                           $r4:[getDecorView([THIS:THIS]),]
+
+@@End a======================

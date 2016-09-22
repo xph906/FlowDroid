@@ -1,0 +1,79 @@
+@@Start analyzing:<init>
+READ: THIS
+  --Done analyzing:<init>     public void <init>()
+    {
+        com.android.insecurebankv2.FilePrefActivity $r0;
+
+        $r0 := @this: com.android.insecurebankv2.FilePrefActivity;
+
+        specialinvoke $r0.<android.app.Activity: void <init>()>();
+
+        return;
+    }
+
+  --Method Body:    public void <init>()
+    {
+        com.android.insecurebankv2.FilePrefActivity $r0;
+
+        $r0 := @this: com.android.insecurebankv2.FilePrefActivity;
+
+        specialinvoke $r0.<android.app.Activity: void <init>()>();
+
+        return;
+    }
+
+  --Start displaying:<init> 
+  UNIT:0 $r0 := @this: com.android.insecurebankv2.FilePrefActivity
+      [BEFOR]RS:0
+                   THIS.editor:[THIS.editor,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverport:[com.android.insecurebankv2.FilePrefActivity.edit_serverport,]
+              THIS.preferences:[THIS.preferences,]
+       THIS.submitPref_buttonz:[THIS.submitPref_buttonz,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverip:[com.android.insecurebankv2.FilePrefActivity.edit_serverip,]
+
+      [AFTER]RS:0
+                           $r0:[THIS,]
+                   THIS.editor:[THIS.editor,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverport:[com.android.insecurebankv2.FilePrefActivity.edit_serverport,]
+              THIS.preferences:[THIS.preferences,]
+       THIS.submitPref_buttonz:[THIS.submitPref_buttonz,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverip:[com.android.insecurebankv2.FilePrefActivity.edit_serverip,]
+
+  UNIT:1 specialinvoke $r0.<android.app.Activity: void <init>()>()
+      [BEFOR]RS:1
+                           $r0:[THIS,]
+                   THIS.editor:[THIS.editor,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverport:[com.android.insecurebankv2.FilePrefActivity.edit_serverport,]
+              THIS.preferences:[THIS.preferences,]
+       THIS.submitPref_buttonz:[THIS.submitPref_buttonz,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverip:[com.android.insecurebankv2.FilePrefActivity.edit_serverip,]
+
+      [AFTER]RS:1
+                           $r0:[THIS,]
+                   THIS.editor:[THIS.editor,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverport:[com.android.insecurebankv2.FilePrefActivity.edit_serverport,]
+              THIS.preferences:[THIS.preferences,]
+specialinvoke $r0.<android.app.Activity: void <init>()>():[<init>([THIS:THIS]),]
+       THIS.submitPref_buttonz:[THIS.submitPref_buttonz,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverip:[com.android.insecurebankv2.FilePrefActivity.edit_serverip,]
+
+  UNIT:2 return
+      [BEFOR]RS:2
+                           $r0:[THIS,]
+                   THIS.editor:[THIS.editor,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverport:[com.android.insecurebankv2.FilePrefActivity.edit_serverport,]
+              THIS.preferences:[THIS.preferences,]
+specialinvoke $r0.<android.app.Activity: void <init>()>():[<init>([THIS:THIS]),]
+       THIS.submitPref_buttonz:[THIS.submitPref_buttonz,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverip:[com.android.insecurebankv2.FilePrefActivity.edit_serverip,]
+
+      [AFTER]RS:2
+                           $r0:[THIS,]
+                   THIS.editor:[THIS.editor,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverport:[com.android.insecurebankv2.FilePrefActivity.edit_serverport,]
+              THIS.preferences:[THIS.preferences,]
+specialinvoke $r0.<android.app.Activity: void <init>()>():[<init>([THIS:THIS]),]
+       THIS.submitPref_buttonz:[THIS.submitPref_buttonz,]
+com.android.insecurebankv2.FilePrefActivity.edit_serverip:[com.android.insecurebankv2.FilePrefActivity.edit_serverip,]
+
+@@End <init>======================

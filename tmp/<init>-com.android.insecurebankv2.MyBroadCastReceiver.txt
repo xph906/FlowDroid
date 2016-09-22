@@ -1,0 +1,61 @@
+@@Start analyzing:<init>
+READ: THIS
+  --Done analyzing:<init>     public void <init>()
+    {
+        com.android.insecurebankv2.MyBroadCastReceiver $r0;
+
+        $r0 := @this: com.android.insecurebankv2.MyBroadCastReceiver;
+
+        specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>();
+
+        return;
+    }
+
+  --Method Body:    public void <init>()
+    {
+        com.android.insecurebankv2.MyBroadCastReceiver $r0;
+
+        $r0 := @this: com.android.insecurebankv2.MyBroadCastReceiver;
+
+        specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>();
+
+        return;
+    }
+
+  --Start displaying:<init> 
+  UNIT:0 $r0 := @this: com.android.insecurebankv2.MyBroadCastReceiver
+      [BEFOR]RS:0
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+
+      [AFTER]RS:0
+                           $r0:[THIS,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+
+  UNIT:1 specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>()
+      [BEFOR]RS:1
+                           $r0:[THIS,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+
+      [AFTER]RS:1
+                           $r0:[THIS,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>():[<init>([THIS:THIS]),]
+
+  UNIT:2 return
+      [BEFOR]RS:2
+                           $r0:[THIS,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>():[<init>([THIS:THIS]),]
+
+      [AFTER]RS:2
+                           $r0:[THIS,]
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS:[com.android.insecurebankv2.MyBroadCastReceiver.MYPREFS,]
+specialinvoke $r0.<android.content.BroadcastReceiver: void <init>()>():[<init>([THIS:THIS]),]
+
+@@End <init>======================

@@ -1,0 +1,111 @@
+@@Start analyzing:d
+READ: Param@0.c
+  --Done analyzing:d     static android.view.ViewGroup d(com.wiyun.game.SubmitScore)
+    {
+        com.wiyun.game.SubmitScore $r0;
+        android.view.ViewGroup r1;
+
+        $r0 := @parameter0: com.wiyun.game.SubmitScore;
+
+        r1 = $r0.<com.wiyun.game.SubmitScore: android.view.ViewGroup c>;
+
+        return r1;
+    }
+
+  --Method Body:    static android.view.ViewGroup d(com.wiyun.game.SubmitScore)
+    {
+        com.wiyun.game.SubmitScore $r0;
+        android.view.ViewGroup r1;
+
+        $r0 := @parameter0: com.wiyun.game.SubmitScore;
+
+        r1 = $r0.<com.wiyun.game.SubmitScore: android.view.ViewGroup c>;
+
+        return r1;
+    }
+
+  --Start displaying:d 
+  UNIT:0 $r0 := @parameter0: com.wiyun.game.SubmitScore
+      [BEFOR]RS:0
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+
+      [AFTER]RS:0
+                           $r0:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+
+  UNIT:1 r1 = $r0.<com.wiyun.game.SubmitScore: android.view.ViewGroup c>
+      [BEFOR]RS:1
+                           $r0:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+
+      [AFTER]RS:1
+                           $r0:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                            r1:[Param@0.c,]
+
+  UNIT:2 return r1
+      [BEFOR]RS:2
+                           $r0:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                            r1:[Param@0.c,]
+
+      [AFTER]RS:2
+                           $r0:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                            r1:[Param@0.c,]
+
+@@End d======================

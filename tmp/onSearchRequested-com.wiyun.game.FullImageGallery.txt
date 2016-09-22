@@ -1,0 +1,78 @@
+@@Start analyzing:onSearchRequested
+  --Done analyzing:onSearchRequested     public boolean onSearchRequested()
+    {
+        com.wiyun.game.FullImageGallery $r0;
+
+        $r0 := @this: com.wiyun.game.FullImageGallery;
+
+        return 0;
+    }
+
+  --Method Body:    public boolean onSearchRequested()
+    {
+        com.wiyun.game.FullImageGallery $r0;
+
+        $r0 := @this: com.wiyun.game.FullImageGallery;
+
+        return 0;
+    }
+
+  --Start displaying:onSearchRequested 
+  UNIT:0 $r0 := @this: com.wiyun.game.FullImageGallery
+      [BEFOR]RS:0
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+
+      [AFTER]RS:0
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+
+  UNIT:1 return 0
+      [BEFOR]RS:1
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+
+      [AFTER]RS:1
+                           $r0:[THIS,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+
+@@End onSearchRequested======================

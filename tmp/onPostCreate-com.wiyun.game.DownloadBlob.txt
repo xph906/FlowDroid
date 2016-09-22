@@ -1,0 +1,408 @@
+@@Start analyzing:onPostCreate
+READ: THIS
+READ: Param@0
+  --Done analyzing:onPostCreate     protected void onPostCreate(android.os.Bundle)
+    {
+        com.wiyun.game.DownloadBlob $r0;
+        android.os.Bundle $r1;
+        com.wiyun.game.x $r2;
+
+        $r0 := @this: com.wiyun.game.DownloadBlob;
+
+        $r1 := @parameter0: android.os.Bundle;
+
+        specialinvoke $r0.<android.app.Activity: void onPostCreate(android.os.Bundle)>($r1);
+
+        $r2 = new com.wiyun.game.x;
+
+        specialinvoke $r2.<com.wiyun.game.x: void <init>(com.wiyun.game.DownloadBlob)>($r0);
+
+        virtualinvoke $r2.<java.lang.Thread: void setDaemon(boolean)>(1);
+
+        virtualinvoke $r2.<java.lang.Thread: void setName(java.lang.String)>("Blob Download Thread");
+
+        virtualinvoke $r2.<java.lang.Thread: void setPriority(int)>(1);
+
+        virtualinvoke $r2.<java.lang.Thread: void start()>();
+
+        return;
+    }
+
+  --Method Body:    protected void onPostCreate(android.os.Bundle)
+    {
+        com.wiyun.game.DownloadBlob $r0;
+        android.os.Bundle $r1;
+        com.wiyun.game.x $r2;
+
+        $r0 := @this: com.wiyun.game.DownloadBlob;
+
+        $r1 := @parameter0: android.os.Bundle;
+
+        specialinvoke $r0.<android.app.Activity: void onPostCreate(android.os.Bundle)>($r1);
+
+        $r2 = new com.wiyun.game.x;
+
+        specialinvoke $r2.<com.wiyun.game.x: void <init>(com.wiyun.game.DownloadBlob)>($r0);
+
+        virtualinvoke $r2.<java.lang.Thread: void setDaemon(boolean)>(1);
+
+        virtualinvoke $r2.<java.lang.Thread: void setName(java.lang.String)>("Blob Download Thread");
+
+        virtualinvoke $r2.<java.lang.Thread: void setPriority(int)>(1);
+
+        virtualinvoke $r2.<java.lang.Thread: void start()>();
+
+        return;
+    }
+
+  --Start displaying:onPostCreate 
+  UNIT:0 $r0 := @this: com.wiyun.game.DownloadBlob
+      [BEFOR]RS:0
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+
+      [AFTER]RS:0
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r0:[THIS,]
+
+  UNIT:1 $r1 := @parameter0: android.os.Bundle
+      [BEFOR]RS:1
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:1
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r0:[THIS,]
+
+  UNIT:2 specialinvoke $r0.<android.app.Activity: void onPostCreate(android.os.Bundle)>($r1)
+      [BEFOR]RS:2
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:2
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onPostCreate(android.os.Bundle)>($r1):[onPostCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:3 $r2 = new com.wiyun.game.x
+      [BEFOR]RS:3
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onPostCreate(android.os.Bundle)>($r1):[onPostCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:3
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r2:[NewValue1429681574,]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onPostCreate(android.os.Bundle)>($r1):[onPostCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:4 specialinvoke $r2.<com.wiyun.game.x: void <init>(com.wiyun.game.DownloadBlob)>($r0)
+      [BEFOR]RS:4
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r2:[NewValue1429681574,]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onPostCreate(android.os.Bundle)>($r1):[onPostCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:4
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r2:[NewValue1429681574,]
+specialinvoke $r2.<com.wiyun.game.x: void <init>(com.wiyun.game.DownloadBlob)>($r0):[<init>([THIS:NewValue1429681574][@0:THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onPostCreate(android.os.Bundle)>($r1):[onPostCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:5 virtualinvoke $r2.<java.lang.Thread: void setDaemon(boolean)>(1)
+      [BEFOR]RS:5
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r2:[NewValue1429681574,]
+specialinvoke $r2.<com.wiyun.game.x: void <init>(com.wiyun.game.DownloadBlob)>($r0):[<init>([THIS:NewValue1429681574][@0:THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onPostCreate(android.os.Bundle)>($r1):[onPostCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:5
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r2:[NewValue1429681574,]
+specialinvoke $r2.<com.wiyun.game.x: void <init>(com.wiyun.game.DownloadBlob)>($r0):[<init>([THIS:NewValue1429681574][@0:THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onPostCreate(android.os.Bundle)>($r1):[onPostCreate([THIS:THIS][@0:Param@0]),]
+virtualinvoke $r2.<java.lang.Thread: void setDaemon(boolean)>(1):[setDaemon([THIS:NewValue1429681574][@0:CONST]),]
+
+  UNIT:6 virtualinvoke $r2.<java.lang.Thread: void setName(java.lang.String)>("Blob Download Thread")
+      [BEFOR]RS:6
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r2:[NewValue1429681574,]
+specialinvoke $r2.<com.wiyun.game.x: void <init>(com.wiyun.game.DownloadBlob)>($r0):[<init>([THIS:NewValue1429681574][@0:THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onPostCreate(android.os.Bundle)>($r1):[onPostCreate([THIS:THIS][@0:Param@0]),]
+virtualinvoke $r2.<java.lang.Thread: void setDaemon(boolean)>(1):[setDaemon([THIS:NewValue1429681574][@0:CONST]),]
+
+      [AFTER]RS:6
+                           $r1:[Param@0,]
+virtualinvoke $r2.<java.lang.Thread: void setName(java.lang.String)>("Blob Download Thread"):[setName([THIS:NewValue1429681574][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r2:[NewValue1429681574,]
+specialinvoke $r2.<com.wiyun.game.x: void <init>(com.wiyun.game.DownloadBlob)>($r0):[<init>([THIS:NewValue1429681574][@0:THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onPostCreate(android.os.Bundle)>($r1):[onPostCreate([THIS:THIS][@0:Param@0]),]
+virtualinvoke $r2.<java.lang.Thread: void setDaemon(boolean)>(1):[setDaemon([THIS:NewValue1429681574][@0:CONST]),]
+
+  UNIT:7 virtualinvoke $r2.<java.lang.Thread: void setPriority(int)>(1)
+      [BEFOR]RS:7
+                           $r1:[Param@0,]
+virtualinvoke $r2.<java.lang.Thread: void setName(java.lang.String)>("Blob Download Thread"):[setName([THIS:NewValue1429681574][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r2:[NewValue1429681574,]
+specialinvoke $r2.<com.wiyun.game.x: void <init>(com.wiyun.game.DownloadBlob)>($r0):[<init>([THIS:NewValue1429681574][@0:THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onPostCreate(android.os.Bundle)>($r1):[onPostCreate([THIS:THIS][@0:Param@0]),]
+virtualinvoke $r2.<java.lang.Thread: void setDaemon(boolean)>(1):[setDaemon([THIS:NewValue1429681574][@0:CONST]),]
+
+      [AFTER]RS:7
+                           $r1:[Param@0,]
+virtualinvoke $r2.<java.lang.Thread: void setName(java.lang.String)>("Blob Download Thread"):[setName([THIS:NewValue1429681574][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r2:[NewValue1429681574,]
+specialinvoke $r2.<com.wiyun.game.x: void <init>(com.wiyun.game.DownloadBlob)>($r0):[<init>([THIS:NewValue1429681574][@0:THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r2.<java.lang.Thread: void setPriority(int)>(1):[setPriority([THIS:NewValue1429681574][@0:CONST]),]
+specialinvoke $r0.<android.app.Activity: void onPostCreate(android.os.Bundle)>($r1):[onPostCreate([THIS:THIS][@0:Param@0]),]
+virtualinvoke $r2.<java.lang.Thread: void setDaemon(boolean)>(1):[setDaemon([THIS:NewValue1429681574][@0:CONST]),]
+
+  UNIT:8 virtualinvoke $r2.<java.lang.Thread: void start()>()
+      [BEFOR]RS:8
+                           $r1:[Param@0,]
+virtualinvoke $r2.<java.lang.Thread: void setName(java.lang.String)>("Blob Download Thread"):[setName([THIS:NewValue1429681574][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r2:[NewValue1429681574,]
+specialinvoke $r2.<com.wiyun.game.x: void <init>(com.wiyun.game.DownloadBlob)>($r0):[<init>([THIS:NewValue1429681574][@0:THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r2.<java.lang.Thread: void setPriority(int)>(1):[setPriority([THIS:NewValue1429681574][@0:CONST]),]
+specialinvoke $r0.<android.app.Activity: void onPostCreate(android.os.Bundle)>($r1):[onPostCreate([THIS:THIS][@0:Param@0]),]
+virtualinvoke $r2.<java.lang.Thread: void setDaemon(boolean)>(1):[setDaemon([THIS:NewValue1429681574][@0:CONST]),]
+
+      [AFTER]RS:8
+                           $r1:[Param@0,]
+virtualinvoke $r2.<java.lang.Thread: void setName(java.lang.String)>("Blob Download Thread"):[setName([THIS:NewValue1429681574][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r2:[NewValue1429681574,]
+specialinvoke $r2.<com.wiyun.game.x: void <init>(com.wiyun.game.DownloadBlob)>($r0):[<init>([THIS:NewValue1429681574][@0:THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r2.<java.lang.Thread: void setPriority(int)>(1):[setPriority([THIS:NewValue1429681574][@0:CONST]),]
+specialinvoke $r0.<android.app.Activity: void onPostCreate(android.os.Bundle)>($r1):[onPostCreate([THIS:THIS][@0:Param@0]),]
+virtualinvoke $r2.<java.lang.Thread: void start()>():[start([THIS:NewValue1429681574]),]
+virtualinvoke $r2.<java.lang.Thread: void setDaemon(boolean)>(1):[setDaemon([THIS:NewValue1429681574][@0:CONST]),]
+
+  UNIT:9 return
+      [BEFOR]RS:9
+                           $r1:[Param@0,]
+virtualinvoke $r2.<java.lang.Thread: void setName(java.lang.String)>("Blob Download Thread"):[setName([THIS:NewValue1429681574][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r2:[NewValue1429681574,]
+specialinvoke $r2.<com.wiyun.game.x: void <init>(com.wiyun.game.DownloadBlob)>($r0):[<init>([THIS:NewValue1429681574][@0:THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r2.<java.lang.Thread: void setPriority(int)>(1):[setPriority([THIS:NewValue1429681574][@0:CONST]),]
+specialinvoke $r0.<android.app.Activity: void onPostCreate(android.os.Bundle)>($r1):[onPostCreate([THIS:THIS][@0:Param@0]),]
+virtualinvoke $r2.<java.lang.Thread: void start()>():[start([THIS:NewValue1429681574]),]
+virtualinvoke $r2.<java.lang.Thread: void setDaemon(boolean)>(1):[setDaemon([THIS:NewValue1429681574][@0:CONST]),]
+
+      [AFTER]RS:9
+                           $r1:[Param@0,]
+virtualinvoke $r2.<java.lang.Thread: void setName(java.lang.String)>("Blob Download Thread"):[setName([THIS:NewValue1429681574][@0:CONST]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r2:[NewValue1429681574,]
+specialinvoke $r2.<com.wiyun.game.x: void <init>(com.wiyun.game.DownloadBlob)>($r0):[<init>([THIS:NewValue1429681574][@0:THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r2.<java.lang.Thread: void setPriority(int)>(1):[setPriority([THIS:NewValue1429681574][@0:CONST]),]
+specialinvoke $r0.<android.app.Activity: void onPostCreate(android.os.Bundle)>($r1):[onPostCreate([THIS:THIS][@0:Param@0]),]
+virtualinvoke $r2.<java.lang.Thread: void start()>():[start([THIS:NewValue1429681574]),]
+virtualinvoke $r2.<java.lang.Thread: void setDaemon(boolean)>(1):[setDaemon([THIS:NewValue1429681574][@0:CONST]),]
+
+@@End onPostCreate======================

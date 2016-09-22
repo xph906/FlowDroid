@@ -1,0 +1,595 @@
+@@Start analyzing:<init>
+WRITE: THIS.msg1
+WRITE: THIS.msg2
+WRITE: THIS.msg5
+WRITE: THIS.msg6
+WRITE: THIS.msg3
+WRITE: THIS.WHICH_ACCOUNT
+WRITE: THIS.msg4
+WRITE: THIS.msg7
+  --Done analyzing:<init>     public void <init>()
+    {
+        com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity $r0;
+
+        $r0 := @this: com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity;
+
+        specialinvoke $r0.<android.app.Activity: void <init>()>();
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: boolean WHICH_ACCOUNT> = 1;
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg1> = "New password error!";
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg2> = "Passwords do not match.";
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg3> = "Password must not contain space.";
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg4> = "Password must be atleast 8 digits long.";
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg5> = "Current password error!";
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg6> = "The password you gave is incorrect.";
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg7> = "Password can not contain special characters accept . @ $ _ , -";
+
+        return;
+    }
+
+  --Method Body:    public void <init>()
+    {
+        com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity $r0;
+
+        $r0 := @this: com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity;
+
+        specialinvoke $r0.<android.app.Activity: void <init>()>();
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: boolean WHICH_ACCOUNT> = 1;
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg1> = "New password error!";
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg2> = "Passwords do not match.";
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg3> = "Password must not contain space.";
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg4> = "Password must be atleast 8 digits long.";
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg5> = "Current password error!";
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg6> = "The password you gave is incorrect.";
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg7> = "Password can not contain special characters accept . @ $ _ , -";
+
+        return;
+    }
+
+  --Start displaying:<init> 
+  UNIT:0 $r0 := @this: com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity
+      [BEFOR]RS:0
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+            THIS.etConfirmPass:[THIS.etConfirmPass,]
+            THIS.etCurrentPass:[THIS.etCurrentPass,]
+         THIS.btchangePassword:[THIS.btchangePassword,]
+                     THIS.msg1:[THIS.msg1,]
+                     THIS.msg2:[THIS.msg2,]
+                     THIS.msg3:[THIS.msg3,]
+                     THIS.msg4:[THIS.msg4,]
+                     THIS.msg5:[THIS.msg5,]
+                     THIS.msg6:[THIS.msg6,]
+                     THIS.msg7:[THIS.msg7,]
+             THIS.NEW_PASSWORD:[THIS.NEW_PASSWORD,]
+        THIS.tvChangePassTitle:[THIS.tvChangePassTitle,]
+         THIS.CURRENT_PASSWORD:[THIS.CURRENT_PASSWORD,]
+                THIS.etNewPass:[THIS.etNewPass,]
+            THIS.WHICH_ACCOUNT:[THIS.WHICH_ACCOUNT,]
+     THIS.RE_ENTER_NEW_PASWORD:[THIS.RE_ENTER_NEW_PASWORD,]
+
+      [AFTER]RS:0
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+            THIS.etConfirmPass:[THIS.etConfirmPass,]
+            THIS.etCurrentPass:[THIS.etCurrentPass,]
+         THIS.btchangePassword:[THIS.btchangePassword,]
+                     THIS.msg1:[THIS.msg1,]
+                     THIS.msg2:[THIS.msg2,]
+                     THIS.msg3:[THIS.msg3,]
+                     THIS.msg4:[THIS.msg4,]
+                     THIS.msg5:[THIS.msg5,]
+                     THIS.msg6:[THIS.msg6,]
+                     THIS.msg7:[THIS.msg7,]
+             THIS.NEW_PASSWORD:[THIS.NEW_PASSWORD,]
+        THIS.tvChangePassTitle:[THIS.tvChangePassTitle,]
+                           $r0:[THIS,]
+         THIS.CURRENT_PASSWORD:[THIS.CURRENT_PASSWORD,]
+                THIS.etNewPass:[THIS.etNewPass,]
+            THIS.WHICH_ACCOUNT:[THIS.WHICH_ACCOUNT,]
+     THIS.RE_ENTER_NEW_PASWORD:[THIS.RE_ENTER_NEW_PASWORD,]
+
+  UNIT:1 specialinvoke $r0.<android.app.Activity: void <init>()>()
+      [BEFOR]RS:1
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+            THIS.etConfirmPass:[THIS.etConfirmPass,]
+            THIS.etCurrentPass:[THIS.etCurrentPass,]
+         THIS.btchangePassword:[THIS.btchangePassword,]
+                     THIS.msg1:[THIS.msg1,]
+                     THIS.msg2:[THIS.msg2,]
+                     THIS.msg3:[THIS.msg3,]
+                     THIS.msg4:[THIS.msg4,]
+                     THIS.msg5:[THIS.msg5,]
+                     THIS.msg6:[THIS.msg6,]
+                     THIS.msg7:[THIS.msg7,]
+             THIS.NEW_PASSWORD:[THIS.NEW_PASSWORD,]
+        THIS.tvChangePassTitle:[THIS.tvChangePassTitle,]
+                           $r0:[THIS,]
+         THIS.CURRENT_PASSWORD:[THIS.CURRENT_PASSWORD,]
+                THIS.etNewPass:[THIS.etNewPass,]
+            THIS.WHICH_ACCOUNT:[THIS.WHICH_ACCOUNT,]
+     THIS.RE_ENTER_NEW_PASWORD:[THIS.RE_ENTER_NEW_PASWORD,]
+
+      [AFTER]RS:1
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+            THIS.etConfirmPass:[THIS.etConfirmPass,]
+            THIS.etCurrentPass:[THIS.etCurrentPass,]
+         THIS.btchangePassword:[THIS.btchangePassword,]
+                     THIS.msg1:[THIS.msg1,]
+                     THIS.msg2:[THIS.msg2,]
+                     THIS.msg3:[THIS.msg3,]
+                     THIS.msg4:[THIS.msg4,]
+                     THIS.msg5:[THIS.msg5,]
+                     THIS.msg6:[THIS.msg6,]
+                     THIS.msg7:[THIS.msg7,]
+             THIS.NEW_PASSWORD:[THIS.NEW_PASSWORD,]
+        THIS.tvChangePassTitle:[THIS.tvChangePassTitle,]
+                           $r0:[<init>([THIS]),THIS,]
+         THIS.CURRENT_PASSWORD:[THIS.CURRENT_PASSWORD,]
+                THIS.etNewPass:[THIS.etNewPass,]
+            THIS.WHICH_ACCOUNT:[THIS.WHICH_ACCOUNT,]
+     THIS.RE_ENTER_NEW_PASWORD:[THIS.RE_ENTER_NEW_PASWORD,]
+
+  UNIT:2 $r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: boolean WHICH_ACCOUNT> = 1
+      [BEFOR]RS:2
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+            THIS.etConfirmPass:[THIS.etConfirmPass,]
+            THIS.etCurrentPass:[THIS.etCurrentPass,]
+         THIS.btchangePassword:[THIS.btchangePassword,]
+                     THIS.msg1:[THIS.msg1,]
+                     THIS.msg2:[THIS.msg2,]
+                     THIS.msg3:[THIS.msg3,]
+                     THIS.msg4:[THIS.msg4,]
+                     THIS.msg5:[THIS.msg5,]
+                     THIS.msg6:[THIS.msg6,]
+                     THIS.msg7:[THIS.msg7,]
+             THIS.NEW_PASSWORD:[THIS.NEW_PASSWORD,]
+        THIS.tvChangePassTitle:[THIS.tvChangePassTitle,]
+                           $r0:[<init>([THIS]),THIS,]
+         THIS.CURRENT_PASSWORD:[THIS.CURRENT_PASSWORD,]
+                THIS.etNewPass:[THIS.etNewPass,]
+            THIS.WHICH_ACCOUNT:[THIS.WHICH_ACCOUNT,]
+     THIS.RE_ENTER_NEW_PASWORD:[THIS.RE_ENTER_NEW_PASWORD,]
+
+      [AFTER]RS:2
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+            THIS.etConfirmPass:[THIS.etConfirmPass,]
+            THIS.etCurrentPass:[THIS.etCurrentPass,]
+         THIS.btchangePassword:[THIS.btchangePassword,]
+                     THIS.msg1:[THIS.msg1,]
+                     THIS.msg2:[THIS.msg2,]
+                     THIS.msg3:[THIS.msg3,]
+                     THIS.msg4:[THIS.msg4,]
+                     THIS.msg5:[THIS.msg5,]
+                     THIS.msg6:[THIS.msg6,]
+                     THIS.msg7:[THIS.msg7,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: boolean WHICH_ACCOUNT>:[CONST,]
+             THIS.NEW_PASSWORD:[THIS.NEW_PASSWORD,]
+        THIS.tvChangePassTitle:[THIS.tvChangePassTitle,]
+                           $r0:[<init>([THIS]),THIS,]
+         THIS.CURRENT_PASSWORD:[THIS.CURRENT_PASSWORD,]
+                THIS.etNewPass:[THIS.etNewPass,]
+            THIS.WHICH_ACCOUNT:[CONST,]
+     THIS.RE_ENTER_NEW_PASWORD:[THIS.RE_ENTER_NEW_PASWORD,]
+
+  UNIT:3 $r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg1> = "New password error!"
+      [BEFOR]RS:3
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+            THIS.etConfirmPass:[THIS.etConfirmPass,]
+            THIS.etCurrentPass:[THIS.etCurrentPass,]
+         THIS.btchangePassword:[THIS.btchangePassword,]
+                     THIS.msg1:[THIS.msg1,]
+                     THIS.msg2:[THIS.msg2,]
+                     THIS.msg3:[THIS.msg3,]
+                     THIS.msg4:[THIS.msg4,]
+                     THIS.msg5:[THIS.msg5,]
+                     THIS.msg6:[THIS.msg6,]
+                     THIS.msg7:[THIS.msg7,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: boolean WHICH_ACCOUNT>:[CONST,]
+             THIS.NEW_PASSWORD:[THIS.NEW_PASSWORD,]
+        THIS.tvChangePassTitle:[THIS.tvChangePassTitle,]
+                           $r0:[<init>([THIS]),THIS,]
+         THIS.CURRENT_PASSWORD:[THIS.CURRENT_PASSWORD,]
+                THIS.etNewPass:[THIS.etNewPass,]
+            THIS.WHICH_ACCOUNT:[CONST,]
+     THIS.RE_ENTER_NEW_PASWORD:[THIS.RE_ENTER_NEW_PASWORD,]
+
+      [AFTER]RS:3
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+            THIS.etConfirmPass:[THIS.etConfirmPass,]
+            THIS.etCurrentPass:[THIS.etCurrentPass,]
+         THIS.btchangePassword:[THIS.btchangePassword,]
+                     THIS.msg1:[CONST,]
+                     THIS.msg2:[THIS.msg2,]
+                     THIS.msg3:[THIS.msg3,]
+                     THIS.msg4:[THIS.msg4,]
+                     THIS.msg5:[THIS.msg5,]
+                     THIS.msg6:[THIS.msg6,]
+                     THIS.msg7:[THIS.msg7,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: boolean WHICH_ACCOUNT>:[CONST,]
+             THIS.NEW_PASSWORD:[THIS.NEW_PASSWORD,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg1>:[CONST,]
+        THIS.tvChangePassTitle:[THIS.tvChangePassTitle,]
+                           $r0:[<init>([THIS]),THIS,]
+         THIS.CURRENT_PASSWORD:[THIS.CURRENT_PASSWORD,]
+                THIS.etNewPass:[THIS.etNewPass,]
+            THIS.WHICH_ACCOUNT:[CONST,]
+     THIS.RE_ENTER_NEW_PASWORD:[THIS.RE_ENTER_NEW_PASWORD,]
+
+  UNIT:4 $r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg2> = "Passwords do not match."
+      [BEFOR]RS:4
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+            THIS.etConfirmPass:[THIS.etConfirmPass,]
+            THIS.etCurrentPass:[THIS.etCurrentPass,]
+         THIS.btchangePassword:[THIS.btchangePassword,]
+                     THIS.msg1:[CONST,]
+                     THIS.msg2:[THIS.msg2,]
+                     THIS.msg3:[THIS.msg3,]
+                     THIS.msg4:[THIS.msg4,]
+                     THIS.msg5:[THIS.msg5,]
+                     THIS.msg6:[THIS.msg6,]
+                     THIS.msg7:[THIS.msg7,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: boolean WHICH_ACCOUNT>:[CONST,]
+             THIS.NEW_PASSWORD:[THIS.NEW_PASSWORD,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg1>:[CONST,]
+        THIS.tvChangePassTitle:[THIS.tvChangePassTitle,]
+                           $r0:[<init>([THIS]),THIS,]
+         THIS.CURRENT_PASSWORD:[THIS.CURRENT_PASSWORD,]
+                THIS.etNewPass:[THIS.etNewPass,]
+            THIS.WHICH_ACCOUNT:[CONST,]
+     THIS.RE_ENTER_NEW_PASWORD:[THIS.RE_ENTER_NEW_PASWORD,]
+
+      [AFTER]RS:4
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+            THIS.etConfirmPass:[THIS.etConfirmPass,]
+            THIS.etCurrentPass:[THIS.etCurrentPass,]
+         THIS.btchangePassword:[THIS.btchangePassword,]
+                     THIS.msg1:[CONST,]
+                     THIS.msg2:[CONST,]
+                     THIS.msg3:[THIS.msg3,]
+                     THIS.msg4:[THIS.msg4,]
+                     THIS.msg5:[THIS.msg5,]
+                     THIS.msg6:[THIS.msg6,]
+                     THIS.msg7:[THIS.msg7,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: boolean WHICH_ACCOUNT>:[CONST,]
+             THIS.NEW_PASSWORD:[THIS.NEW_PASSWORD,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg1>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg2>:[CONST,]
+        THIS.tvChangePassTitle:[THIS.tvChangePassTitle,]
+                           $r0:[<init>([THIS]),THIS,]
+         THIS.CURRENT_PASSWORD:[THIS.CURRENT_PASSWORD,]
+                THIS.etNewPass:[THIS.etNewPass,]
+            THIS.WHICH_ACCOUNT:[CONST,]
+     THIS.RE_ENTER_NEW_PASWORD:[THIS.RE_ENTER_NEW_PASWORD,]
+
+  UNIT:5 $r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg3> = "Password must not contain space."
+      [BEFOR]RS:5
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+            THIS.etConfirmPass:[THIS.etConfirmPass,]
+            THIS.etCurrentPass:[THIS.etCurrentPass,]
+         THIS.btchangePassword:[THIS.btchangePassword,]
+                     THIS.msg1:[CONST,]
+                     THIS.msg2:[CONST,]
+                     THIS.msg3:[THIS.msg3,]
+                     THIS.msg4:[THIS.msg4,]
+                     THIS.msg5:[THIS.msg5,]
+                     THIS.msg6:[THIS.msg6,]
+                     THIS.msg7:[THIS.msg7,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: boolean WHICH_ACCOUNT>:[CONST,]
+             THIS.NEW_PASSWORD:[THIS.NEW_PASSWORD,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg1>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg2>:[CONST,]
+        THIS.tvChangePassTitle:[THIS.tvChangePassTitle,]
+                           $r0:[<init>([THIS]),THIS,]
+         THIS.CURRENT_PASSWORD:[THIS.CURRENT_PASSWORD,]
+                THIS.etNewPass:[THIS.etNewPass,]
+            THIS.WHICH_ACCOUNT:[CONST,]
+     THIS.RE_ENTER_NEW_PASWORD:[THIS.RE_ENTER_NEW_PASWORD,]
+
+      [AFTER]RS:5
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+            THIS.etConfirmPass:[THIS.etConfirmPass,]
+            THIS.etCurrentPass:[THIS.etCurrentPass,]
+         THIS.btchangePassword:[THIS.btchangePassword,]
+                     THIS.msg1:[CONST,]
+                     THIS.msg2:[CONST,]
+                     THIS.msg3:[CONST,]
+                     THIS.msg4:[THIS.msg4,]
+                     THIS.msg5:[THIS.msg5,]
+                     THIS.msg6:[THIS.msg6,]
+                     THIS.msg7:[THIS.msg7,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: boolean WHICH_ACCOUNT>:[CONST,]
+             THIS.NEW_PASSWORD:[THIS.NEW_PASSWORD,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg1>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg2>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg3>:[CONST,]
+        THIS.tvChangePassTitle:[THIS.tvChangePassTitle,]
+                           $r0:[<init>([THIS]),THIS,]
+         THIS.CURRENT_PASSWORD:[THIS.CURRENT_PASSWORD,]
+                THIS.etNewPass:[THIS.etNewPass,]
+            THIS.WHICH_ACCOUNT:[CONST,]
+     THIS.RE_ENTER_NEW_PASWORD:[THIS.RE_ENTER_NEW_PASWORD,]
+
+  UNIT:6 $r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg4> = "Password must be atleast 8 digits long."
+      [BEFOR]RS:6
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+            THIS.etConfirmPass:[THIS.etConfirmPass,]
+            THIS.etCurrentPass:[THIS.etCurrentPass,]
+         THIS.btchangePassword:[THIS.btchangePassword,]
+                     THIS.msg1:[CONST,]
+                     THIS.msg2:[CONST,]
+                     THIS.msg3:[CONST,]
+                     THIS.msg4:[THIS.msg4,]
+                     THIS.msg5:[THIS.msg5,]
+                     THIS.msg6:[THIS.msg6,]
+                     THIS.msg7:[THIS.msg7,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: boolean WHICH_ACCOUNT>:[CONST,]
+             THIS.NEW_PASSWORD:[THIS.NEW_PASSWORD,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg1>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg2>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg3>:[CONST,]
+        THIS.tvChangePassTitle:[THIS.tvChangePassTitle,]
+                           $r0:[<init>([THIS]),THIS,]
+         THIS.CURRENT_PASSWORD:[THIS.CURRENT_PASSWORD,]
+                THIS.etNewPass:[THIS.etNewPass,]
+            THIS.WHICH_ACCOUNT:[CONST,]
+     THIS.RE_ENTER_NEW_PASWORD:[THIS.RE_ENTER_NEW_PASWORD,]
+
+      [AFTER]RS:6
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+            THIS.etConfirmPass:[THIS.etConfirmPass,]
+            THIS.etCurrentPass:[THIS.etCurrentPass,]
+         THIS.btchangePassword:[THIS.btchangePassword,]
+                     THIS.msg1:[CONST,]
+                     THIS.msg2:[CONST,]
+                     THIS.msg3:[CONST,]
+                     THIS.msg4:[CONST,]
+                     THIS.msg5:[THIS.msg5,]
+                     THIS.msg6:[THIS.msg6,]
+                     THIS.msg7:[THIS.msg7,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: boolean WHICH_ACCOUNT>:[CONST,]
+             THIS.NEW_PASSWORD:[THIS.NEW_PASSWORD,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg1>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg2>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg3>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg4>:[CONST,]
+        THIS.tvChangePassTitle:[THIS.tvChangePassTitle,]
+                           $r0:[<init>([THIS]),THIS,]
+         THIS.CURRENT_PASSWORD:[THIS.CURRENT_PASSWORD,]
+                THIS.etNewPass:[THIS.etNewPass,]
+            THIS.WHICH_ACCOUNT:[CONST,]
+     THIS.RE_ENTER_NEW_PASWORD:[THIS.RE_ENTER_NEW_PASWORD,]
+
+  UNIT:7 $r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg5> = "Current password error!"
+      [BEFOR]RS:7
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+            THIS.etConfirmPass:[THIS.etConfirmPass,]
+            THIS.etCurrentPass:[THIS.etCurrentPass,]
+         THIS.btchangePassword:[THIS.btchangePassword,]
+                     THIS.msg1:[CONST,]
+                     THIS.msg2:[CONST,]
+                     THIS.msg3:[CONST,]
+                     THIS.msg4:[CONST,]
+                     THIS.msg5:[THIS.msg5,]
+                     THIS.msg6:[THIS.msg6,]
+                     THIS.msg7:[THIS.msg7,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: boolean WHICH_ACCOUNT>:[CONST,]
+             THIS.NEW_PASSWORD:[THIS.NEW_PASSWORD,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg1>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg2>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg3>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg4>:[CONST,]
+        THIS.tvChangePassTitle:[THIS.tvChangePassTitle,]
+                           $r0:[<init>([THIS]),THIS,]
+         THIS.CURRENT_PASSWORD:[THIS.CURRENT_PASSWORD,]
+                THIS.etNewPass:[THIS.etNewPass,]
+            THIS.WHICH_ACCOUNT:[CONST,]
+     THIS.RE_ENTER_NEW_PASWORD:[THIS.RE_ENTER_NEW_PASWORD,]
+
+      [AFTER]RS:7
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+            THIS.etConfirmPass:[THIS.etConfirmPass,]
+            THIS.etCurrentPass:[THIS.etCurrentPass,]
+         THIS.btchangePassword:[THIS.btchangePassword,]
+                     THIS.msg1:[CONST,]
+                     THIS.msg2:[CONST,]
+                     THIS.msg3:[CONST,]
+                     THIS.msg4:[CONST,]
+                     THIS.msg5:[CONST,]
+                     THIS.msg6:[THIS.msg6,]
+                     THIS.msg7:[THIS.msg7,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: boolean WHICH_ACCOUNT>:[CONST,]
+             THIS.NEW_PASSWORD:[THIS.NEW_PASSWORD,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg1>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg2>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg3>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg4>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg5>:[CONST,]
+        THIS.tvChangePassTitle:[THIS.tvChangePassTitle,]
+                           $r0:[<init>([THIS]),THIS,]
+         THIS.CURRENT_PASSWORD:[THIS.CURRENT_PASSWORD,]
+                THIS.etNewPass:[THIS.etNewPass,]
+            THIS.WHICH_ACCOUNT:[CONST,]
+     THIS.RE_ENTER_NEW_PASWORD:[THIS.RE_ENTER_NEW_PASWORD,]
+
+  UNIT:8 $r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg6> = "The password you gave is incorrect."
+      [BEFOR]RS:8
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+            THIS.etConfirmPass:[THIS.etConfirmPass,]
+            THIS.etCurrentPass:[THIS.etCurrentPass,]
+         THIS.btchangePassword:[THIS.btchangePassword,]
+                     THIS.msg1:[CONST,]
+                     THIS.msg2:[CONST,]
+                     THIS.msg3:[CONST,]
+                     THIS.msg4:[CONST,]
+                     THIS.msg5:[CONST,]
+                     THIS.msg6:[THIS.msg6,]
+                     THIS.msg7:[THIS.msg7,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: boolean WHICH_ACCOUNT>:[CONST,]
+             THIS.NEW_PASSWORD:[THIS.NEW_PASSWORD,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg1>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg2>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg3>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg4>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg5>:[CONST,]
+        THIS.tvChangePassTitle:[THIS.tvChangePassTitle,]
+                           $r0:[<init>([THIS]),THIS,]
+         THIS.CURRENT_PASSWORD:[THIS.CURRENT_PASSWORD,]
+                THIS.etNewPass:[THIS.etNewPass,]
+            THIS.WHICH_ACCOUNT:[CONST,]
+     THIS.RE_ENTER_NEW_PASWORD:[THIS.RE_ENTER_NEW_PASWORD,]
+
+      [AFTER]RS:8
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+            THIS.etConfirmPass:[THIS.etConfirmPass,]
+            THIS.etCurrentPass:[THIS.etCurrentPass,]
+         THIS.btchangePassword:[THIS.btchangePassword,]
+                     THIS.msg1:[CONST,]
+                     THIS.msg2:[CONST,]
+                     THIS.msg3:[CONST,]
+                     THIS.msg4:[CONST,]
+                     THIS.msg5:[CONST,]
+                     THIS.msg6:[CONST,]
+                     THIS.msg7:[THIS.msg7,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: boolean WHICH_ACCOUNT>:[CONST,]
+             THIS.NEW_PASSWORD:[THIS.NEW_PASSWORD,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg1>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg2>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg3>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg4>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg5>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg6>:[CONST,]
+        THIS.tvChangePassTitle:[THIS.tvChangePassTitle,]
+                           $r0:[<init>([THIS]),THIS,]
+         THIS.CURRENT_PASSWORD:[THIS.CURRENT_PASSWORD,]
+                THIS.etNewPass:[THIS.etNewPass,]
+            THIS.WHICH_ACCOUNT:[CONST,]
+     THIS.RE_ENTER_NEW_PASWORD:[THIS.RE_ENTER_NEW_PASWORD,]
+
+  UNIT:9 $r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg7> = "Password can not contain special characters accept . @ $ _ , -"
+      [BEFOR]RS:9
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+            THIS.etConfirmPass:[THIS.etConfirmPass,]
+            THIS.etCurrentPass:[THIS.etCurrentPass,]
+         THIS.btchangePassword:[THIS.btchangePassword,]
+                     THIS.msg1:[CONST,]
+                     THIS.msg2:[CONST,]
+                     THIS.msg3:[CONST,]
+                     THIS.msg4:[CONST,]
+                     THIS.msg5:[CONST,]
+                     THIS.msg6:[CONST,]
+                     THIS.msg7:[THIS.msg7,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: boolean WHICH_ACCOUNT>:[CONST,]
+             THIS.NEW_PASSWORD:[THIS.NEW_PASSWORD,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg1>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg2>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg3>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg4>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg5>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg6>:[CONST,]
+        THIS.tvChangePassTitle:[THIS.tvChangePassTitle,]
+                           $r0:[<init>([THIS]),THIS,]
+         THIS.CURRENT_PASSWORD:[THIS.CURRENT_PASSWORD,]
+                THIS.etNewPass:[THIS.etNewPass,]
+            THIS.WHICH_ACCOUNT:[CONST,]
+     THIS.RE_ENTER_NEW_PASWORD:[THIS.RE_ENTER_NEW_PASWORD,]
+
+      [AFTER]RS:9
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+            THIS.etConfirmPass:[THIS.etConfirmPass,]
+            THIS.etCurrentPass:[THIS.etCurrentPass,]
+         THIS.btchangePassword:[THIS.btchangePassword,]
+                     THIS.msg1:[CONST,]
+                     THIS.msg2:[CONST,]
+                     THIS.msg3:[CONST,]
+                     THIS.msg4:[CONST,]
+                     THIS.msg5:[CONST,]
+                     THIS.msg6:[CONST,]
+                     THIS.msg7:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: boolean WHICH_ACCOUNT>:[CONST,]
+             THIS.NEW_PASSWORD:[THIS.NEW_PASSWORD,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg1>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg2>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg3>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg4>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg5>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg6>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg7>:[CONST,]
+        THIS.tvChangePassTitle:[THIS.tvChangePassTitle,]
+                           $r0:[<init>([THIS]),THIS,]
+         THIS.CURRENT_PASSWORD:[THIS.CURRENT_PASSWORD,]
+                THIS.etNewPass:[THIS.etNewPass,]
+            THIS.WHICH_ACCOUNT:[CONST,]
+     THIS.RE_ENTER_NEW_PASWORD:[THIS.RE_ENTER_NEW_PASWORD,]
+
+  UNIT:10 return
+      [BEFOR]RS:10
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+            THIS.etConfirmPass:[THIS.etConfirmPass,]
+            THIS.etCurrentPass:[THIS.etCurrentPass,]
+         THIS.btchangePassword:[THIS.btchangePassword,]
+                     THIS.msg1:[CONST,]
+                     THIS.msg2:[CONST,]
+                     THIS.msg3:[CONST,]
+                     THIS.msg4:[CONST,]
+                     THIS.msg5:[CONST,]
+                     THIS.msg6:[CONST,]
+                     THIS.msg7:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: boolean WHICH_ACCOUNT>:[CONST,]
+             THIS.NEW_PASSWORD:[THIS.NEW_PASSWORD,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg1>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg2>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg3>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg4>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg5>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg6>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg7>:[CONST,]
+        THIS.tvChangePassTitle:[THIS.tvChangePassTitle,]
+                           $r0:[<init>([THIS]),THIS,]
+         THIS.CURRENT_PASSWORD:[THIS.CURRENT_PASSWORD,]
+                THIS.etNewPass:[THIS.etNewPass,]
+            THIS.WHICH_ACCOUNT:[CONST,]
+     THIS.RE_ENTER_NEW_PASWORD:[THIS.RE_ENTER_NEW_PASWORD,]
+
+      [AFTER]RS:10
+     THIS.commandstoredatabase:[THIS.commandstoredatabase,]
+            THIS.etConfirmPass:[THIS.etConfirmPass,]
+            THIS.etCurrentPass:[THIS.etCurrentPass,]
+         THIS.btchangePassword:[THIS.btchangePassword,]
+                     THIS.msg1:[CONST,]
+                     THIS.msg2:[CONST,]
+                     THIS.msg3:[CONST,]
+                     THIS.msg4:[CONST,]
+                     THIS.msg5:[CONST,]
+                     THIS.msg6:[CONST,]
+                     THIS.msg7:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: boolean WHICH_ACCOUNT>:[CONST,]
+             THIS.NEW_PASSWORD:[THIS.NEW_PASSWORD,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg1>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg2>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg3>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg4>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg5>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg6>:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.PasswordChangeActivity: java.lang.String msg7>:[CONST,]
+        THIS.tvChangePassTitle:[THIS.tvChangePassTitle,]
+                           $r0:[<init>([THIS]),THIS,]
+         THIS.CURRENT_PASSWORD:[THIS.CURRENT_PASSWORD,]
+                THIS.etNewPass:[THIS.etNewPass,]
+            THIS.WHICH_ACCOUNT:[CONST,]
+     THIS.RE_ENTER_NEW_PASWORD:[THIS.RE_ENTER_NEW_PASWORD,]
+
+@@End <init>======================

@@ -1,0 +1,231 @@
+@@Start analyzing:onPostCreate
+READ: THIS
+READ: Param@0
+READ: THIS.a
+  --Done analyzing:onPostCreate     protected void onPostCreate(android.os.Bundle)
+    {
+        com.wiyun.game.PurchaseDialog $r0;
+        android.os.Bundle $r1;
+        java.lang.String $r2;
+        com.wiyun.game.model.a.r $r3;
+
+        $r0 := @this: com.wiyun.game.PurchaseDialog;
+
+        $r1 := @parameter0: android.os.Bundle;
+
+        specialinvoke $r0.<android.app.Activity: void onPostCreate(android.os.Bundle)>($r1);
+
+        $r3 = $r0.<com.wiyun.game.PurchaseDialog: com.wiyun.game.model.a.r a>;
+
+        $r2 = virtualinvoke $r3.<com.wiyun.game.model.a.r: java.lang.String a()>();
+
+        staticinvoke <com.wiyun.game.ex: long j(java.lang.String)>($r2);
+
+        return;
+    }
+
+  --Method Body:    protected void onPostCreate(android.os.Bundle)
+    {
+        com.wiyun.game.PurchaseDialog $r0;
+        android.os.Bundle $r1;
+        java.lang.String $r2;
+        com.wiyun.game.model.a.r $r3;
+
+        $r0 := @this: com.wiyun.game.PurchaseDialog;
+
+        $r1 := @parameter0: android.os.Bundle;
+
+        specialinvoke $r0.<android.app.Activity: void onPostCreate(android.os.Bundle)>($r1);
+
+        $r3 = $r0.<com.wiyun.game.PurchaseDialog: com.wiyun.game.model.a.r a>;
+
+        $r2 = virtualinvoke $r3.<com.wiyun.game.model.a.r: java.lang.String a()>();
+
+        staticinvoke <com.wiyun.game.ex: long j(java.lang.String)>($r2);
+
+        return;
+    }
+
+  --Start displaying:onPostCreate 
+  UNIT:0 $r0 := @this: com.wiyun.game.PurchaseDialog
+      [BEFOR]RS:0
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+
+      [AFTER]RS:0
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                           $r0:[THIS,]
+
+  UNIT:1 $r1 := @parameter0: android.os.Bundle
+      [BEFOR]RS:1
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:1
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                           $r0:[THIS,]
+
+  UNIT:2 specialinvoke $r0.<android.app.Activity: void onPostCreate(android.os.Bundle)>($r1)
+      [BEFOR]RS:2
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:2
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onPostCreate(android.os.Bundle)>($r1):[onPostCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:3 $r3 = $r0.<com.wiyun.game.PurchaseDialog: com.wiyun.game.model.a.r a>
+      [BEFOR]RS:3
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onPostCreate(android.os.Bundle)>($r1):[onPostCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:3
+                           $r1:[Param@0,]
+                           $r3:[THIS.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onPostCreate(android.os.Bundle)>($r1):[onPostCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:4 $r2 = virtualinvoke $r3.<com.wiyun.game.model.a.r: java.lang.String a()>()
+      [BEFOR]RS:4
+                           $r1:[Param@0,]
+                           $r3:[THIS.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.Activity: void onPostCreate(android.os.Bundle)>($r1):[onPostCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:4
+                           $r1:[Param@0,]
+                           $r3:[THIS.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                           $r0:[THIS,]
+                           $r2:[a([THIS:THIS.a]),]
+specialinvoke $r0.<android.app.Activity: void onPostCreate(android.os.Bundle)>($r1):[onPostCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:5 staticinvoke <com.wiyun.game.ex: long j(java.lang.String)>($r2)
+      [BEFOR]RS:5
+                           $r1:[Param@0,]
+                           $r3:[THIS.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                           $r0:[THIS,]
+                           $r2:[a([THIS:THIS.a]),]
+specialinvoke $r0.<android.app.Activity: void onPostCreate(android.os.Bundle)>($r1):[onPostCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:5
+                           $r1:[Param@0,]
+                           $r3:[THIS.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+staticinvoke <com.wiyun.game.ex: long j(java.lang.String)>($r2):[j([THIS:null][@0:THIS.a]),]
+                           $r0:[THIS,]
+                           $r2:[a([THIS:THIS.a]),]
+specialinvoke $r0.<android.app.Activity: void onPostCreate(android.os.Bundle)>($r1):[onPostCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:6 return
+      [BEFOR]RS:6
+                           $r1:[Param@0,]
+                           $r3:[THIS.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+staticinvoke <com.wiyun.game.ex: long j(java.lang.String)>($r2):[j([THIS:null][@0:THIS.a]),]
+                           $r0:[THIS,]
+                           $r2:[a([THIS:THIS.a]),]
+specialinvoke $r0.<android.app.Activity: void onPostCreate(android.os.Bundle)>($r1):[onPostCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:6
+                           $r1:[Param@0,]
+                           $r3:[THIS.a,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+staticinvoke <com.wiyun.game.ex: long j(java.lang.String)>($r2):[j([THIS:null][@0:THIS.a]),]
+                           $r0:[THIS,]
+                           $r2:[a([THIS:THIS.a]),]
+specialinvoke $r0.<android.app.Activity: void onPostCreate(android.os.Bundle)>($r1):[onPostCreate([THIS:THIS][@0:Param@0]),]
+
+@@End onPostCreate======================

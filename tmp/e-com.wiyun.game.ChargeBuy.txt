@@ -1,0 +1,115 @@
+@@Start analyzing:e
+READ: Param@0
+  --Done analyzing:e     static void e(com.wiyun.game.ChargeBuy)
+    {
+        com.wiyun.game.ChargeBuy $r0;
+
+        $r0 := @parameter0: com.wiyun.game.ChargeBuy;
+
+        specialinvoke $r0.<com.wiyun.game.ChargeBuy: void a()>();
+
+        return;
+    }
+
+  --Method Body:    static void e(com.wiyun.game.ChargeBuy)
+    {
+        com.wiyun.game.ChargeBuy $r0;
+
+        $r0 := @parameter0: com.wiyun.game.ChargeBuy;
+
+        specialinvoke $r0.<com.wiyun.game.ChargeBuy: void a()>();
+
+        return;
+    }
+
+  --Start displaying:e 
+  UNIT:0 $r0 := @parameter0: com.wiyun.game.ChargeBuy
+      [BEFOR]RS:0
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+
+      [AFTER]RS:0
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                           $r0:[Param@0,]
+
+  UNIT:1 specialinvoke $r0.<com.wiyun.game.ChargeBuy: void a()>()
+      [BEFOR]RS:1
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                           $r0:[Param@0,]
+
+      [AFTER]RS:1
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                           $r0:[Param@0,]
+specialinvoke $r0.<com.wiyun.game.ChargeBuy: void a()>():[a([THIS:Param@0]),]
+
+  UNIT:2 return
+      [BEFOR]RS:2
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                           $r0:[Param@0,]
+specialinvoke $r0.<com.wiyun.game.ChargeBuy: void a()>():[a([THIS:Param@0]),]
+
+      [AFTER]RS:2
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+                           $r0:[Param@0,]
+specialinvoke $r0.<com.wiyun.game.ChargeBuy: void a()>():[a([THIS:Param@0]),]
+
+@@End e======================

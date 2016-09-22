@@ -1,0 +1,68 @@
+@@Start analyzing:onReceive
+  --Done analyzing:onReceive     public void onReceive(android.content.Context, android.content.Intent)
+    {
+        com.google.android.gms.wallet.EnableWalletOptimizationReceiver $r0;
+        android.content.Context $r1;
+        android.content.Intent $r2;
+
+        $r0 := @this: com.google.android.gms.wallet.EnableWalletOptimizationReceiver;
+
+        $r1 := @parameter0: android.content.Context;
+
+        $r2 := @parameter1: android.content.Intent;
+
+        return;
+    }
+
+  --Method Body:    public void onReceive(android.content.Context, android.content.Intent)
+    {
+        com.google.android.gms.wallet.EnableWalletOptimizationReceiver $r0;
+        android.content.Context $r1;
+        android.content.Intent $r2;
+
+        $r0 := @this: com.google.android.gms.wallet.EnableWalletOptimizationReceiver;
+
+        $r1 := @parameter0: android.content.Context;
+
+        $r2 := @parameter1: android.content.Intent;
+
+        return;
+    }
+
+  --Start displaying:onReceive 
+  UNIT:0 $r0 := @this: com.google.android.gms.wallet.EnableWalletOptimizationReceiver
+      [BEFOR]RS:0
+
+      [AFTER]RS:0
+                           $r0:[THIS,]
+
+  UNIT:1 $r1 := @parameter0: android.content.Context
+      [BEFOR]RS:1
+                           $r0:[THIS,]
+
+      [AFTER]RS:1
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+  UNIT:2 $r2 := @parameter1: android.content.Intent
+      [BEFOR]RS:2
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+
+      [AFTER]RS:2
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+
+  UNIT:3 return
+      [BEFOR]RS:3
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+
+      [AFTER]RS:3
+                           $r0:[THIS,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+
+@@End onReceive======================

@@ -1,0 +1,185 @@
+@@Start analyzing:f
+READ: Param@0
+  --Done analyzing:f     static void f(com.wiyun.game.DownloadBlob)
+    {
+        com.wiyun.game.DownloadBlob $r0;
+        com.wiyun.game.w $r1;
+
+        $r0 := @parameter0: com.wiyun.game.DownloadBlob;
+
+        $r1 = new com.wiyun.game.w;
+
+        specialinvoke $r1.<com.wiyun.game.w: void <init>(com.wiyun.game.DownloadBlob)>($r0);
+
+        virtualinvoke $r0.<com.wiyun.game.DownloadBlob: void runOnUiThread(java.lang.Runnable)>($r1);
+
+        return;
+    }
+
+  --Method Body:    static void f(com.wiyun.game.DownloadBlob)
+    {
+        com.wiyun.game.DownloadBlob $r0;
+        com.wiyun.game.w $r1;
+
+        $r0 := @parameter0: com.wiyun.game.DownloadBlob;
+
+        $r1 = new com.wiyun.game.w;
+
+        specialinvoke $r1.<com.wiyun.game.w: void <init>(com.wiyun.game.DownloadBlob)>($r0);
+
+        virtualinvoke $r0.<com.wiyun.game.DownloadBlob: void runOnUiThread(java.lang.Runnable)>($r1);
+
+        return;
+    }
+
+  --Start displaying:f 
+  UNIT:0 $r0 := @parameter0: com.wiyun.game.DownloadBlob
+      [BEFOR]RS:0
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+
+      [AFTER]RS:0
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r0:[Param@0,]
+
+  UNIT:1 $r1 = new com.wiyun.game.w
+      [BEFOR]RS:1
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r0:[Param@0,]
+
+      [AFTER]RS:1
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[NewValue1977486621,]
+                           $r0:[Param@0,]
+
+  UNIT:2 specialinvoke $r1.<com.wiyun.game.w: void <init>(com.wiyun.game.DownloadBlob)>($r0)
+      [BEFOR]RS:2
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[NewValue1977486621,]
+                           $r0:[Param@0,]
+
+      [AFTER]RS:2
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[NewValue1977486621,]
+specialinvoke $r1.<com.wiyun.game.w: void <init>(com.wiyun.game.DownloadBlob)>($r0):[<init>([THIS:NewValue1977486621][@0:Param@0]),]
+                           $r0:[Param@0,]
+
+  UNIT:3 virtualinvoke $r0.<com.wiyun.game.DownloadBlob: void runOnUiThread(java.lang.Runnable)>($r1)
+      [BEFOR]RS:3
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[NewValue1977486621,]
+specialinvoke $r1.<com.wiyun.game.w: void <init>(com.wiyun.game.DownloadBlob)>($r0):[<init>([THIS:NewValue1977486621][@0:Param@0]),]
+                           $r0:[Param@0,]
+
+      [AFTER]RS:3
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[NewValue1977486621,]
+specialinvoke $r1.<com.wiyun.game.w: void <init>(com.wiyun.game.DownloadBlob)>($r0):[<init>([THIS:NewValue1977486621][@0:Param@0]),]
+                           $r0:[Param@0,]
+virtualinvoke $r0.<com.wiyun.game.DownloadBlob: void runOnUiThread(java.lang.Runnable)>($r1):[runOnUiThread([THIS:Param@0][@0:NewValue1977486621]),]
+
+  UNIT:4 return
+      [BEFOR]RS:4
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[NewValue1977486621,]
+specialinvoke $r1.<com.wiyun.game.w: void <init>(com.wiyun.game.DownloadBlob)>($r0):[<init>([THIS:NewValue1977486621][@0:Param@0]),]
+                           $r0:[Param@0,]
+virtualinvoke $r0.<com.wiyun.game.DownloadBlob: void runOnUiThread(java.lang.Runnable)>($r1):[runOnUiThread([THIS:Param@0][@0:NewValue1977486621]),]
+
+      [AFTER]RS:4
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+                        THIS.c:[THIS.c,]
+                        THIS.d:[THIS.d,]
+                        THIS.e:[THIS.e,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                           $r1:[NewValue1977486621,]
+specialinvoke $r1.<com.wiyun.game.w: void <init>(com.wiyun.game.DownloadBlob)>($r0):[<init>([THIS:NewValue1977486621][@0:Param@0]),]
+                           $r0:[Param@0,]
+virtualinvoke $r0.<com.wiyun.game.DownloadBlob: void runOnUiThread(java.lang.Runnable)>($r1):[runOnUiThread([THIS:Param@0][@0:NewValue1977486621]),]
+
+@@End f======================

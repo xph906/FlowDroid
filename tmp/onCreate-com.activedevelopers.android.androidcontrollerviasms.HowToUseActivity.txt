@@ -1,0 +1,319 @@
+@@Start analyzing:onCreate
+READ: Param@0
+READ: THIS
+WRITE: THIS.wvHowToUseWeb
+  --Done analyzing:onCreate     protected void onCreate(android.os.Bundle)
+    {
+        com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity $r0;
+        android.os.Bundle $r1;
+        android.view.View $r2;
+        android.webkit.WebView $r3;
+        android.webkit.WebSettings $r4;
+
+        $r0 := @this: com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity;
+
+        $r1 := @parameter0: android.os.Bundle;
+
+        specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1);
+
+        virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: void setContentView(int)>(2130903041);
+
+        $r2 = virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: android.view.View findViewById(int)>(2131099652);
+
+        $r3 = (android.webkit.WebView) $r2;
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: android.webkit.WebView wvHowToUseWeb> = $r3;
+
+        $r3 = $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: android.webkit.WebView wvHowToUseWeb>;
+
+        $r4 = virtualinvoke $r3.<android.webkit.WebView: android.webkit.WebSettings getSettings()>();
+
+        virtualinvoke $r4.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(0);
+
+        $r3 = $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: android.webkit.WebView wvHowToUseWeb>;
+
+        virtualinvoke $r3.<android.webkit.WebView: void loadData(java.lang.String,java.lang.String,java.lang.String)>("<html><body><p><h3>Follow 3 steps to use Android Controller</h3></p><ol><li>Enable required COMMAND from Settings.</li><li>Know your PASSWORD. Default password is <b>\"myandroid\"</b>.</li><li>Send SMS from any phone: COMMAND with all the spaces removed and PASSWORD. i.e. <b>COMMAND PASSWORD</b></li></ol><p><h3>An example:</h3></p><ul><li>If a you want to silent your Android phone remotely, all you need to do is to get another phone and type a SMS:<br/><b>\"Gosilent myandroid\"</b> without quotes, where myandroid is your password.</li></ul></body></html>", "text/html", "UTF-8");
+
+        return;
+    }
+
+  --Method Body:    protected void onCreate(android.os.Bundle)
+    {
+        com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity $r0;
+        android.os.Bundle $r1;
+        android.view.View $r2;
+        android.webkit.WebView $r3;
+        android.webkit.WebSettings $r4;
+
+        $r0 := @this: com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity;
+
+        $r1 := @parameter0: android.os.Bundle;
+
+        specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1);
+
+        virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: void setContentView(int)>(2130903041);
+
+        $r2 = virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: android.view.View findViewById(int)>(2131099652);
+
+        $r3 = (android.webkit.WebView) $r2;
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: android.webkit.WebView wvHowToUseWeb> = $r3;
+
+        $r3 = $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: android.webkit.WebView wvHowToUseWeb>;
+
+        $r4 = virtualinvoke $r3.<android.webkit.WebView: android.webkit.WebSettings getSettings()>();
+
+        virtualinvoke $r4.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(0);
+
+        $r3 = $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: android.webkit.WebView wvHowToUseWeb>;
+
+        virtualinvoke $r3.<android.webkit.WebView: void loadData(java.lang.String,java.lang.String,java.lang.String)>("<html><body><p><h3>Follow 3 steps to use Android Controller</h3></p><ol><li>Enable required COMMAND from Settings.</li><li>Know your PASSWORD. Default password is <b>\"myandroid\"</b>.</li><li>Send SMS from any phone: COMMAND with all the spaces removed and PASSWORD. i.e. <b>COMMAND PASSWORD</b></li></ol><p><h3>An example:</h3></p><ul><li>If a you want to silent your Android phone remotely, all you need to do is to get another phone and type a SMS:<br/><b>\"Gosilent myandroid\"</b> without quotes, where myandroid is your password.</li></ul></body></html>", "text/html", "UTF-8");
+
+        return;
+    }
+
+  --Start displaying:onCreate 
+  UNIT:0 $r0 := @this: com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity
+      [BEFOR]RS:0
+            THIS.wvHowToUseWeb:[THIS.wvHowToUseWeb,]
+
+      [AFTER]RS:0
+                           $r0:[THIS,]
+            THIS.wvHowToUseWeb:[THIS.wvHowToUseWeb,]
+
+  UNIT:1 $r1 := @parameter0: android.os.Bundle
+      [BEFOR]RS:1
+                           $r0:[THIS,]
+            THIS.wvHowToUseWeb:[THIS.wvHowToUseWeb,]
+
+      [AFTER]RS:1
+                           $r1:[Param@0,]
+                           $r0:[THIS,]
+            THIS.wvHowToUseWeb:[THIS.wvHowToUseWeb,]
+
+  UNIT:2 specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1)
+      [BEFOR]RS:2
+                           $r1:[Param@0,]
+                           $r0:[THIS,]
+            THIS.wvHowToUseWeb:[THIS.wvHowToUseWeb,]
+
+      [AFTER]RS:2
+                           $r1:[Param@0,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+            THIS.wvHowToUseWeb:[THIS.wvHowToUseWeb,]
+
+  UNIT:3 virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: void setContentView(int)>(2130903041)
+      [BEFOR]RS:3
+                           $r1:[Param@0,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+            THIS.wvHowToUseWeb:[THIS.wvHowToUseWeb,]
+
+      [AFTER]RS:3
+                           $r1:[Param@0,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+            THIS.wvHowToUseWeb:[THIS.wvHowToUseWeb,]
+virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: void setContentView(int)>(2130903041):[setContentView([THIS:THIS][@0:CONST]),]
+
+  UNIT:4 $r2 = virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: android.view.View findViewById(int)>(2131099652)
+      [BEFOR]RS:4
+                           $r1:[Param@0,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+            THIS.wvHowToUseWeb:[THIS.wvHowToUseWeb,]
+virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: void setContentView(int)>(2130903041):[setContentView([THIS:THIS][@0:CONST]),]
+
+      [AFTER]RS:4
+                           $r1:[Param@0,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+            THIS.wvHowToUseWeb:[THIS.wvHowToUseWeb,]
+                           $r2:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: void setContentView(int)>(2130903041):[setContentView([THIS:THIS][@0:CONST]),]
+
+  UNIT:5 $r3 = (android.webkit.WebView) $r2
+      [BEFOR]RS:5
+                           $r1:[Param@0,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+            THIS.wvHowToUseWeb:[THIS.wvHowToUseWeb,]
+                           $r2:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: void setContentView(int)>(2130903041):[setContentView([THIS:THIS][@0:CONST]),]
+
+      [AFTER]RS:5
+                           $r1:[Param@0,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST]),]
+            THIS.wvHowToUseWeb:[THIS.wvHowToUseWeb,]
+                           $r2:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: void setContentView(int)>(2130903041):[setContentView([THIS:THIS][@0:CONST]),]
+
+  UNIT:6 $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: android.webkit.WebView wvHowToUseWeb> = $r3
+      [BEFOR]RS:6
+                           $r1:[Param@0,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST]),]
+            THIS.wvHowToUseWeb:[THIS.wvHowToUseWeb,]
+                           $r2:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: void setContentView(int)>(2130903041):[setContentView([THIS:THIS][@0:CONST]),]
+
+      [AFTER]RS:6
+$r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: android.webkit.WebView wvHowToUseWeb>:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST]),]
+            THIS.wvHowToUseWeb:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: void setContentView(int)>(2130903041):[setContentView([THIS:THIS][@0:CONST]),]
+
+  UNIT:7 $r3 = $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: android.webkit.WebView wvHowToUseWeb>
+      [BEFOR]RS:7
+$r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: android.webkit.WebView wvHowToUseWeb>:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST]),]
+            THIS.wvHowToUseWeb:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: void setContentView(int)>(2130903041):[setContentView([THIS:THIS][@0:CONST]),]
+
+      [AFTER]RS:7
+$r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: android.webkit.WebView wvHowToUseWeb>:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST]),]
+            THIS.wvHowToUseWeb:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: void setContentView(int)>(2130903041):[setContentView([THIS:THIS][@0:CONST]),]
+
+  UNIT:8 $r4 = virtualinvoke $r3.<android.webkit.WebView: android.webkit.WebSettings getSettings()>()
+      [BEFOR]RS:8
+$r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: android.webkit.WebView wvHowToUseWeb>:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST]),]
+            THIS.wvHowToUseWeb:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: void setContentView(int)>(2130903041):[setContentView([THIS:THIS][@0:CONST]),]
+
+      [AFTER]RS:8
+$r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: android.webkit.WebView wvHowToUseWeb>:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r4:[getSettings([THIS:CONST,THIS]),]
+            THIS.wvHowToUseWeb:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: void setContentView(int)>(2130903041):[setContentView([THIS:THIS][@0:CONST]),]
+
+  UNIT:9 virtualinvoke $r4.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(0)
+      [BEFOR]RS:9
+$r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: android.webkit.WebView wvHowToUseWeb>:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r4:[getSettings([THIS:CONST,THIS]),]
+            THIS.wvHowToUseWeb:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: void setContentView(int)>(2130903041):[setContentView([THIS:THIS][@0:CONST]),]
+
+      [AFTER]RS:9
+$r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: android.webkit.WebView wvHowToUseWeb>:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r4.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(0):[setJavaScriptEnabled([THIS:CONST,THIS][@0:CONST]),]
+                           $r4:[getSettings([THIS:CONST,THIS]),]
+            THIS.wvHowToUseWeb:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: void setContentView(int)>(2130903041):[setContentView([THIS:THIS][@0:CONST]),]
+
+  UNIT:10 $r3 = $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: android.webkit.WebView wvHowToUseWeb>
+      [BEFOR]RS:10
+$r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: android.webkit.WebView wvHowToUseWeb>:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r4.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(0):[setJavaScriptEnabled([THIS:CONST,THIS][@0:CONST]),]
+                           $r4:[getSettings([THIS:CONST,THIS]),]
+            THIS.wvHowToUseWeb:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: void setContentView(int)>(2130903041):[setContentView([THIS:THIS][@0:CONST]),]
+
+      [AFTER]RS:10
+$r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: android.webkit.WebView wvHowToUseWeb>:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r4.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(0):[setJavaScriptEnabled([THIS:CONST,THIS][@0:CONST]),]
+                           $r4:[getSettings([THIS:CONST,THIS]),]
+            THIS.wvHowToUseWeb:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: void setContentView(int)>(2130903041):[setContentView([THIS:THIS][@0:CONST]),]
+
+  UNIT:11 virtualinvoke $r3.<android.webkit.WebView: void loadData(java.lang.String,java.lang.String,java.lang.String)>("<html><body><p><h3>Follow 3 steps to use Android Controller</h3></p><ol><li>Enable required COMMAND from Settings.</li><li>Know your PASSWORD. Default password is <b>\"myandroid\"</b>.</li><li>Send SMS from any phone: COMMAND with all the spaces removed and PASSWORD. i.e. <b>COMMAND PASSWORD</b></li></ol><p><h3>An example:</h3></p><ul><li>If a you want to silent your Android phone remotely, all you need to do is to get another phone and type a SMS:<br/><b>\"Gosilent myandroid\"</b> without quotes, where myandroid is your password.</li></ul></body></html>", "text/html", "UTF-8")
+      [BEFOR]RS:11
+$r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: android.webkit.WebView wvHowToUseWeb>:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r1:[Param@0,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r4.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(0):[setJavaScriptEnabled([THIS:CONST,THIS][@0:CONST]),]
+                           $r4:[getSettings([THIS:CONST,THIS]),]
+            THIS.wvHowToUseWeb:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: void setContentView(int)>(2130903041):[setContentView([THIS:THIS][@0:CONST]),]
+
+      [AFTER]RS:11
+$r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: android.webkit.WebView wvHowToUseWeb>:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r3.<android.webkit.WebView: void loadData(java.lang.String,java.lang.String,java.lang.String)>("<html><body><p><h3>Follow 3 steps to use Android Controller</h3></p><ol><li>Enable required COMMAND from Settings.</li><li>Know your PASSWORD. Default password is <b>\"myandroid\"</b>.</li><li>Send SMS from any phone: COMMAND with all the spaces removed and PASSWORD. i.e. <b>COMMAND PASSWORD</b></li></ol><p><h3>An example:</h3></p><ul><li>If a you want to silent your Android phone remotely, all you need to do is to get another phone and type a SMS:<br/><b>\"Gosilent myandroid\"</b> without quotes, where myandroid is your password.</li></ul></body></html>", "text/html", "UTF-8"):[loadData([THIS:CONST,THIS][@0:CONST][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r4.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(0):[setJavaScriptEnabled([THIS:CONST,THIS][@0:CONST]),]
+                           $r4:[getSettings([THIS:CONST,THIS]),]
+            THIS.wvHowToUseWeb:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: void setContentView(int)>(2130903041):[setContentView([THIS:THIS][@0:CONST]),]
+
+  UNIT:12 return
+      [BEFOR]RS:12
+$r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: android.webkit.WebView wvHowToUseWeb>:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r3.<android.webkit.WebView: void loadData(java.lang.String,java.lang.String,java.lang.String)>("<html><body><p><h3>Follow 3 steps to use Android Controller</h3></p><ol><li>Enable required COMMAND from Settings.</li><li>Know your PASSWORD. Default password is <b>\"myandroid\"</b>.</li><li>Send SMS from any phone: COMMAND with all the spaces removed and PASSWORD. i.e. <b>COMMAND PASSWORD</b></li></ol><p><h3>An example:</h3></p><ul><li>If a you want to silent your Android phone remotely, all you need to do is to get another phone and type a SMS:<br/><b>\"Gosilent myandroid\"</b> without quotes, where myandroid is your password.</li></ul></body></html>", "text/html", "UTF-8"):[loadData([THIS:CONST,THIS][@0:CONST][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r4.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(0):[setJavaScriptEnabled([THIS:CONST,THIS][@0:CONST]),]
+                           $r4:[getSettings([THIS:CONST,THIS]),]
+            THIS.wvHowToUseWeb:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: void setContentView(int)>(2130903041):[setContentView([THIS:THIS][@0:CONST]),]
+
+      [AFTER]RS:12
+$r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: android.webkit.WebView wvHowToUseWeb>:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r3.<android.webkit.WebView: void loadData(java.lang.String,java.lang.String,java.lang.String)>("<html><body><p><h3>Follow 3 steps to use Android Controller</h3></p><ol><li>Enable required COMMAND from Settings.</li><li>Know your PASSWORD. Default password is <b>\"myandroid\"</b>.</li><li>Send SMS from any phone: COMMAND with all the spaces removed and PASSWORD. i.e. <b>COMMAND PASSWORD</b></li></ol><p><h3>An example:</h3></p><ul><li>If a you want to silent your Android phone remotely, all you need to do is to get another phone and type a SMS:<br/><b>\"Gosilent myandroid\"</b> without quotes, where myandroid is your password.</li></ul></body></html>", "text/html", "UTF-8"):[loadData([THIS:CONST,THIS][@0:CONST][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+                           $r0:[THIS,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r4.<android.webkit.WebSettings: void setJavaScriptEnabled(boolean)>(0):[setJavaScriptEnabled([THIS:CONST,THIS][@0:CONST]),]
+                           $r4:[getSettings([THIS:CONST,THIS]),]
+            THIS.wvHowToUseWeb:[findViewById([THIS:THIS][@0:CONST]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST]),]
+virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.HowToUseActivity: void setContentView(int)>(2130903041):[setContentView([THIS:THIS][@0:CONST]),]
+
+@@End onCreate======================

@@ -1,0 +1,91 @@
+@@Start analyzing:<init>
+READ: THIS
+  --Done analyzing:<init>     public void <init>()
+    {
+        com.android.insecurebankv2.LoginActivity $r0;
+
+        $r0 := @this: com.android.insecurebankv2.LoginActivity;
+
+        specialinvoke $r0.<android.app.Activity: void <init>()>();
+
+        return;
+    }
+
+  --Method Body:    public void <init>()
+    {
+        com.android.insecurebankv2.LoginActivity $r0;
+
+        $r0 := @this: com.android.insecurebankv2.LoginActivity;
+
+        specialinvoke $r0.<android.app.Activity: void <init>()>();
+
+        return;
+    }
+
+  --Start displaying:<init> 
+  UNIT:0 $r0 := @this: com.android.insecurebankv2.LoginActivity
+      [BEFOR]RS:0
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+
+      [AFTER]RS:0
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r0:[THIS,]
+
+  UNIT:1 specialinvoke $r0.<android.app.Activity: void <init>()>()
+      [BEFOR]RS:1
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+            THIS.Password_Text:[THIS.Password_Text,]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:1
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+            THIS.Password_Text:[THIS.Password_Text,]
+specialinvoke $r0.<android.app.Activity: void <init>()>():[<init>([THIS:THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r0:[THIS,]
+
+  UNIT:2 return
+      [BEFOR]RS:2
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+            THIS.Password_Text:[THIS.Password_Text,]
+specialinvoke $r0.<android.app.Activity: void <init>()>():[<init>([THIS:THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:2
+ THIS.usernameBase64ByteString:[THIS.usernameBase64ByteString,]
+            THIS.Password_Text:[THIS.Password_Text,]
+specialinvoke $r0.<android.app.Activity: void <init>()>():[<init>([THIS:THIS]),]
+            THIS.login_buttons:[THIS.login_buttons,]
+       THIS.createuser_buttons:[THIS.createuser_buttons,]
+            THIS.Username_Text:[THIS.Username_Text,]
+          THIS.fillData_button:[THIS.fillData_button,]
+com.android.insecurebankv2.LoginActivity.MYPREFS:[com.android.insecurebankv2.LoginActivity.MYPREFS,]
+                           $r0:[THIS,]
+
+@@End <init>======================

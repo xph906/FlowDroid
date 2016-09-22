@@ -1,0 +1,522 @@
+@@Start analyzing:onStart
+READ: THIS
+WRITE: THIS.k
+  --Done analyzing:onStart     protected void onStart()
+    {
+        com.feedback.ui.FeedbackConversation $r0;
+        com.feedback.ui.b $r1;
+        android.content.IntentFilter $r2;
+
+        $r0 := @this: com.feedback.ui.FeedbackConversation;
+
+        specialinvoke $r0.<android.app.ListActivity: void onStart()>();
+
+        $r1 = new com.feedback.ui.b;
+
+        specialinvoke $r1.<com.feedback.ui.b: void <init>(com.feedback.ui.FeedbackConversation,byte)>($r0, 0);
+
+        $r0.<com.feedback.ui.FeedbackConversation: com.feedback.ui.b k> = $r1;
+
+        $r2 = new android.content.IntentFilter;
+
+        specialinvoke $r2.<android.content.IntentFilter: void <init>()>();
+
+        virtualinvoke $r2.<android.content.IntentFilter: void addAction(java.lang.String)>("postFeedbackFinished");
+
+        virtualinvoke $r2.<android.content.IntentFilter: void addAction(java.lang.String)>("RetrieveReplyBroadcast");
+
+        $r1 = $r0.<com.feedback.ui.FeedbackConversation: com.feedback.ui.b k>;
+
+        virtualinvoke $r0.<com.feedback.ui.FeedbackConversation: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>($r1, $r2);
+
+        return;
+    }
+
+  --Method Body:    protected void onStart()
+    {
+        com.feedback.ui.FeedbackConversation $r0;
+        com.feedback.ui.b $r1;
+        android.content.IntentFilter $r2;
+
+        $r0 := @this: com.feedback.ui.FeedbackConversation;
+
+        specialinvoke $r0.<android.app.ListActivity: void onStart()>();
+
+        $r1 = new com.feedback.ui.b;
+
+        specialinvoke $r1.<com.feedback.ui.b: void <init>(com.feedback.ui.FeedbackConversation,byte)>($r0, 0);
+
+        $r0.<com.feedback.ui.FeedbackConversation: com.feedback.ui.b k> = $r1;
+
+        $r2 = new android.content.IntentFilter;
+
+        specialinvoke $r2.<android.content.IntentFilter: void <init>()>();
+
+        virtualinvoke $r2.<android.content.IntentFilter: void addAction(java.lang.String)>("postFeedbackFinished");
+
+        virtualinvoke $r2.<android.content.IntentFilter: void addAction(java.lang.String)>("RetrieveReplyBroadcast");
+
+        $r1 = $r0.<com.feedback.ui.FeedbackConversation: com.feedback.ui.b k>;
+
+        virtualinvoke $r0.<com.feedback.ui.FeedbackConversation: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>($r1, $r2);
+
+        return;
+    }
+
+  --Start displaying:onStart 
+  UNIT:0 $r0 := @this: com.feedback.ui.FeedbackConversation
+      [BEFOR]RS:0
+                        THIS.b:[THIS.b,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+com.feedback.ui.FeedbackConversation.a:[com.feedback.ui.FeedbackConversation.a,]
+com.feedback.ui.FeedbackConversation.c:[com.feedback.ui.FeedbackConversation.c,]
+com.feedback.ui.FeedbackConversation.d:[com.feedback.ui.FeedbackConversation.d,]
+com.feedback.ui.FeedbackConversation.e:[com.feedback.ui.FeedbackConversation.e,]
+
+      [AFTER]RS:0
+                           $r0:[THIS,]
+                        THIS.b:[THIS.b,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+com.feedback.ui.FeedbackConversation.a:[com.feedback.ui.FeedbackConversation.a,]
+com.feedback.ui.FeedbackConversation.c:[com.feedback.ui.FeedbackConversation.c,]
+com.feedback.ui.FeedbackConversation.d:[com.feedback.ui.FeedbackConversation.d,]
+com.feedback.ui.FeedbackConversation.e:[com.feedback.ui.FeedbackConversation.e,]
+
+  UNIT:1 specialinvoke $r0.<android.app.ListActivity: void onStart()>()
+      [BEFOR]RS:1
+                           $r0:[THIS,]
+                        THIS.b:[THIS.b,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+com.feedback.ui.FeedbackConversation.a:[com.feedback.ui.FeedbackConversation.a,]
+com.feedback.ui.FeedbackConversation.c:[com.feedback.ui.FeedbackConversation.c,]
+com.feedback.ui.FeedbackConversation.d:[com.feedback.ui.FeedbackConversation.d,]
+com.feedback.ui.FeedbackConversation.e:[com.feedback.ui.FeedbackConversation.e,]
+
+      [AFTER]RS:1
+                           $r0:[THIS,]
+                        THIS.b:[THIS.b,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+specialinvoke $r0.<android.app.ListActivity: void onStart()>():[onStart([THIS:THIS]),]
+com.feedback.ui.FeedbackConversation.a:[com.feedback.ui.FeedbackConversation.a,]
+com.feedback.ui.FeedbackConversation.c:[com.feedback.ui.FeedbackConversation.c,]
+com.feedback.ui.FeedbackConversation.d:[com.feedback.ui.FeedbackConversation.d,]
+com.feedback.ui.FeedbackConversation.e:[com.feedback.ui.FeedbackConversation.e,]
+
+  UNIT:2 $r1 = new com.feedback.ui.b
+      [BEFOR]RS:2
+                           $r0:[THIS,]
+                        THIS.b:[THIS.b,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+specialinvoke $r0.<android.app.ListActivity: void onStart()>():[onStart([THIS:THIS]),]
+com.feedback.ui.FeedbackConversation.a:[com.feedback.ui.FeedbackConversation.a,]
+com.feedback.ui.FeedbackConversation.c:[com.feedback.ui.FeedbackConversation.c,]
+com.feedback.ui.FeedbackConversation.d:[com.feedback.ui.FeedbackConversation.d,]
+com.feedback.ui.FeedbackConversation.e:[com.feedback.ui.FeedbackConversation.e,]
+
+      [AFTER]RS:2
+                           $r0:[THIS,]
+                        THIS.b:[THIS.b,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+specialinvoke $r0.<android.app.ListActivity: void onStart()>():[onStart([THIS:THIS]),]
+                           $r1:[NewValue1972126110,]
+com.feedback.ui.FeedbackConversation.a:[com.feedback.ui.FeedbackConversation.a,]
+com.feedback.ui.FeedbackConversation.c:[com.feedback.ui.FeedbackConversation.c,]
+com.feedback.ui.FeedbackConversation.d:[com.feedback.ui.FeedbackConversation.d,]
+com.feedback.ui.FeedbackConversation.e:[com.feedback.ui.FeedbackConversation.e,]
+
+  UNIT:3 specialinvoke $r1.<com.feedback.ui.b: void <init>(com.feedback.ui.FeedbackConversation,byte)>($r0, 0)
+      [BEFOR]RS:3
+                           $r0:[THIS,]
+                        THIS.b:[THIS.b,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+specialinvoke $r0.<android.app.ListActivity: void onStart()>():[onStart([THIS:THIS]),]
+                           $r1:[NewValue1972126110,]
+com.feedback.ui.FeedbackConversation.a:[com.feedback.ui.FeedbackConversation.a,]
+com.feedback.ui.FeedbackConversation.c:[com.feedback.ui.FeedbackConversation.c,]
+com.feedback.ui.FeedbackConversation.d:[com.feedback.ui.FeedbackConversation.d,]
+com.feedback.ui.FeedbackConversation.e:[com.feedback.ui.FeedbackConversation.e,]
+
+      [AFTER]RS:3
+                           $r0:[THIS,]
+                        THIS.b:[THIS.b,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+specialinvoke $r0.<android.app.ListActivity: void onStart()>():[onStart([THIS:THIS]),]
+specialinvoke $r1.<com.feedback.ui.b: void <init>(com.feedback.ui.FeedbackConversation,byte)>($r0, 0):[<init>([THIS:NewValue1972126110][@0:THIS][@1:CONST]),]
+                           $r1:[NewValue1972126110,]
+com.feedback.ui.FeedbackConversation.a:[com.feedback.ui.FeedbackConversation.a,]
+com.feedback.ui.FeedbackConversation.c:[com.feedback.ui.FeedbackConversation.c,]
+com.feedback.ui.FeedbackConversation.d:[com.feedback.ui.FeedbackConversation.d,]
+com.feedback.ui.FeedbackConversation.e:[com.feedback.ui.FeedbackConversation.e,]
+
+  UNIT:4 $r0.<com.feedback.ui.FeedbackConversation: com.feedback.ui.b k> = $r1
+      [BEFOR]RS:4
+                           $r0:[THIS,]
+                        THIS.b:[THIS.b,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[THIS.k,]
+specialinvoke $r0.<android.app.ListActivity: void onStart()>():[onStart([THIS:THIS]),]
+specialinvoke $r1.<com.feedback.ui.b: void <init>(com.feedback.ui.FeedbackConversation,byte)>($r0, 0):[<init>([THIS:NewValue1972126110][@0:THIS][@1:CONST]),]
+                           $r1:[NewValue1972126110,]
+com.feedback.ui.FeedbackConversation.a:[com.feedback.ui.FeedbackConversation.a,]
+com.feedback.ui.FeedbackConversation.c:[com.feedback.ui.FeedbackConversation.c,]
+com.feedback.ui.FeedbackConversation.d:[com.feedback.ui.FeedbackConversation.d,]
+com.feedback.ui.FeedbackConversation.e:[com.feedback.ui.FeedbackConversation.e,]
+
+      [AFTER]RS:4
+                           $r0:[THIS,]
+                        THIS.b:[THIS.b,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[NewValue1972126110,]
+specialinvoke $r0.<android.app.ListActivity: void onStart()>():[onStart([THIS:THIS]),]
+specialinvoke $r1.<com.feedback.ui.b: void <init>(com.feedback.ui.FeedbackConversation,byte)>($r0, 0):[<init>([THIS:NewValue1972126110][@0:THIS][@1:CONST]),]
+$r0.<com.feedback.ui.FeedbackConversation: com.feedback.ui.b k>:[NewValue1972126110,]
+                           $r1:[NewValue1972126110,]
+com.feedback.ui.FeedbackConversation.a:[com.feedback.ui.FeedbackConversation.a,]
+com.feedback.ui.FeedbackConversation.c:[com.feedback.ui.FeedbackConversation.c,]
+com.feedback.ui.FeedbackConversation.d:[com.feedback.ui.FeedbackConversation.d,]
+com.feedback.ui.FeedbackConversation.e:[com.feedback.ui.FeedbackConversation.e,]
+
+  UNIT:5 $r2 = new android.content.IntentFilter
+      [BEFOR]RS:5
+                           $r0:[THIS,]
+                        THIS.b:[THIS.b,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[NewValue1972126110,]
+specialinvoke $r0.<android.app.ListActivity: void onStart()>():[onStart([THIS:THIS]),]
+specialinvoke $r1.<com.feedback.ui.b: void <init>(com.feedback.ui.FeedbackConversation,byte)>($r0, 0):[<init>([THIS:NewValue1972126110][@0:THIS][@1:CONST]),]
+$r0.<com.feedback.ui.FeedbackConversation: com.feedback.ui.b k>:[NewValue1972126110,]
+                           $r1:[NewValue1972126110,]
+com.feedback.ui.FeedbackConversation.a:[com.feedback.ui.FeedbackConversation.a,]
+com.feedback.ui.FeedbackConversation.c:[com.feedback.ui.FeedbackConversation.c,]
+com.feedback.ui.FeedbackConversation.d:[com.feedback.ui.FeedbackConversation.d,]
+com.feedback.ui.FeedbackConversation.e:[com.feedback.ui.FeedbackConversation.e,]
+
+      [AFTER]RS:5
+                           $r0:[THIS,]
+                        THIS.b:[THIS.b,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[NewValue1972126110,]
+                           $r2:[NewValue1945857900,]
+specialinvoke $r0.<android.app.ListActivity: void onStart()>():[onStart([THIS:THIS]),]
+specialinvoke $r1.<com.feedback.ui.b: void <init>(com.feedback.ui.FeedbackConversation,byte)>($r0, 0):[<init>([THIS:NewValue1972126110][@0:THIS][@1:CONST]),]
+$r0.<com.feedback.ui.FeedbackConversation: com.feedback.ui.b k>:[NewValue1972126110,]
+                           $r1:[NewValue1972126110,]
+com.feedback.ui.FeedbackConversation.a:[com.feedback.ui.FeedbackConversation.a,]
+com.feedback.ui.FeedbackConversation.c:[com.feedback.ui.FeedbackConversation.c,]
+com.feedback.ui.FeedbackConversation.d:[com.feedback.ui.FeedbackConversation.d,]
+com.feedback.ui.FeedbackConversation.e:[com.feedback.ui.FeedbackConversation.e,]
+
+  UNIT:6 specialinvoke $r2.<android.content.IntentFilter: void <init>()>()
+      [BEFOR]RS:6
+                           $r0:[THIS,]
+                        THIS.b:[THIS.b,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[NewValue1972126110,]
+                           $r2:[NewValue1945857900,]
+specialinvoke $r0.<android.app.ListActivity: void onStart()>():[onStart([THIS:THIS]),]
+specialinvoke $r1.<com.feedback.ui.b: void <init>(com.feedback.ui.FeedbackConversation,byte)>($r0, 0):[<init>([THIS:NewValue1972126110][@0:THIS][@1:CONST]),]
+$r0.<com.feedback.ui.FeedbackConversation: com.feedback.ui.b k>:[NewValue1972126110,]
+                           $r1:[NewValue1972126110,]
+com.feedback.ui.FeedbackConversation.a:[com.feedback.ui.FeedbackConversation.a,]
+com.feedback.ui.FeedbackConversation.c:[com.feedback.ui.FeedbackConversation.c,]
+com.feedback.ui.FeedbackConversation.d:[com.feedback.ui.FeedbackConversation.d,]
+com.feedback.ui.FeedbackConversation.e:[com.feedback.ui.FeedbackConversation.e,]
+
+      [AFTER]RS:6
+                           $r0:[THIS,]
+                        THIS.b:[THIS.b,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[NewValue1972126110,]
+                           $r2:[NewValue1945857900,]
+specialinvoke $r0.<android.app.ListActivity: void onStart()>():[onStart([THIS:THIS]),]
+specialinvoke $r2.<android.content.IntentFilter: void <init>()>():[<init>([THIS:NewValue1945857900]),]
+specialinvoke $r1.<com.feedback.ui.b: void <init>(com.feedback.ui.FeedbackConversation,byte)>($r0, 0):[<init>([THIS:NewValue1972126110][@0:THIS][@1:CONST]),]
+$r0.<com.feedback.ui.FeedbackConversation: com.feedback.ui.b k>:[NewValue1972126110,]
+                           $r1:[NewValue1972126110,]
+com.feedback.ui.FeedbackConversation.a:[com.feedback.ui.FeedbackConversation.a,]
+com.feedback.ui.FeedbackConversation.c:[com.feedback.ui.FeedbackConversation.c,]
+com.feedback.ui.FeedbackConversation.d:[com.feedback.ui.FeedbackConversation.d,]
+com.feedback.ui.FeedbackConversation.e:[com.feedback.ui.FeedbackConversation.e,]
+
+  UNIT:7 virtualinvoke $r2.<android.content.IntentFilter: void addAction(java.lang.String)>("postFeedbackFinished")
+      [BEFOR]RS:7
+                           $r0:[THIS,]
+                        THIS.b:[THIS.b,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[NewValue1972126110,]
+                           $r2:[NewValue1945857900,]
+specialinvoke $r0.<android.app.ListActivity: void onStart()>():[onStart([THIS:THIS]),]
+specialinvoke $r2.<android.content.IntentFilter: void <init>()>():[<init>([THIS:NewValue1945857900]),]
+specialinvoke $r1.<com.feedback.ui.b: void <init>(com.feedback.ui.FeedbackConversation,byte)>($r0, 0):[<init>([THIS:NewValue1972126110][@0:THIS][@1:CONST]),]
+$r0.<com.feedback.ui.FeedbackConversation: com.feedback.ui.b k>:[NewValue1972126110,]
+                           $r1:[NewValue1972126110,]
+com.feedback.ui.FeedbackConversation.a:[com.feedback.ui.FeedbackConversation.a,]
+com.feedback.ui.FeedbackConversation.c:[com.feedback.ui.FeedbackConversation.c,]
+com.feedback.ui.FeedbackConversation.d:[com.feedback.ui.FeedbackConversation.d,]
+com.feedback.ui.FeedbackConversation.e:[com.feedback.ui.FeedbackConversation.e,]
+
+      [AFTER]RS:7
+                           $r0:[THIS,]
+                        THIS.b:[THIS.b,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[NewValue1972126110,]
+virtualinvoke $r2.<android.content.IntentFilter: void addAction(java.lang.String)>("postFeedbackFinished"):[addAction([THIS:NewValue1945857900][@0:CONST]),]
+                           $r2:[NewValue1945857900,]
+specialinvoke $r0.<android.app.ListActivity: void onStart()>():[onStart([THIS:THIS]),]
+specialinvoke $r2.<android.content.IntentFilter: void <init>()>():[<init>([THIS:NewValue1945857900]),]
+specialinvoke $r1.<com.feedback.ui.b: void <init>(com.feedback.ui.FeedbackConversation,byte)>($r0, 0):[<init>([THIS:NewValue1972126110][@0:THIS][@1:CONST]),]
+$r0.<com.feedback.ui.FeedbackConversation: com.feedback.ui.b k>:[NewValue1972126110,]
+                           $r1:[NewValue1972126110,]
+com.feedback.ui.FeedbackConversation.a:[com.feedback.ui.FeedbackConversation.a,]
+com.feedback.ui.FeedbackConversation.c:[com.feedback.ui.FeedbackConversation.c,]
+com.feedback.ui.FeedbackConversation.d:[com.feedback.ui.FeedbackConversation.d,]
+com.feedback.ui.FeedbackConversation.e:[com.feedback.ui.FeedbackConversation.e,]
+
+  UNIT:8 virtualinvoke $r2.<android.content.IntentFilter: void addAction(java.lang.String)>("RetrieveReplyBroadcast")
+      [BEFOR]RS:8
+                           $r0:[THIS,]
+                        THIS.b:[THIS.b,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[NewValue1972126110,]
+virtualinvoke $r2.<android.content.IntentFilter: void addAction(java.lang.String)>("postFeedbackFinished"):[addAction([THIS:NewValue1945857900][@0:CONST]),]
+                           $r2:[NewValue1945857900,]
+specialinvoke $r0.<android.app.ListActivity: void onStart()>():[onStart([THIS:THIS]),]
+specialinvoke $r2.<android.content.IntentFilter: void <init>()>():[<init>([THIS:NewValue1945857900]),]
+specialinvoke $r1.<com.feedback.ui.b: void <init>(com.feedback.ui.FeedbackConversation,byte)>($r0, 0):[<init>([THIS:NewValue1972126110][@0:THIS][@1:CONST]),]
+$r0.<com.feedback.ui.FeedbackConversation: com.feedback.ui.b k>:[NewValue1972126110,]
+                           $r1:[NewValue1972126110,]
+com.feedback.ui.FeedbackConversation.a:[com.feedback.ui.FeedbackConversation.a,]
+com.feedback.ui.FeedbackConversation.c:[com.feedback.ui.FeedbackConversation.c,]
+com.feedback.ui.FeedbackConversation.d:[com.feedback.ui.FeedbackConversation.d,]
+com.feedback.ui.FeedbackConversation.e:[com.feedback.ui.FeedbackConversation.e,]
+
+      [AFTER]RS:8
+                           $r0:[THIS,]
+                        THIS.b:[THIS.b,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[NewValue1972126110,]
+virtualinvoke $r2.<android.content.IntentFilter: void addAction(java.lang.String)>("RetrieveReplyBroadcast"):[addAction([THIS:NewValue1945857900][@0:CONST]),]
+                           $r2:[NewValue1945857900,]
+specialinvoke $r0.<android.app.ListActivity: void onStart()>():[onStart([THIS:THIS]),]
+specialinvoke $r2.<android.content.IntentFilter: void <init>()>():[<init>([THIS:NewValue1945857900]),]
+specialinvoke $r1.<com.feedback.ui.b: void <init>(com.feedback.ui.FeedbackConversation,byte)>($r0, 0):[<init>([THIS:NewValue1972126110][@0:THIS][@1:CONST]),]
+$r0.<com.feedback.ui.FeedbackConversation: com.feedback.ui.b k>:[NewValue1972126110,]
+                           $r1:[NewValue1972126110,]
+com.feedback.ui.FeedbackConversation.a:[com.feedback.ui.FeedbackConversation.a,]
+com.feedback.ui.FeedbackConversation.c:[com.feedback.ui.FeedbackConversation.c,]
+com.feedback.ui.FeedbackConversation.d:[com.feedback.ui.FeedbackConversation.d,]
+com.feedback.ui.FeedbackConversation.e:[com.feedback.ui.FeedbackConversation.e,]
+
+  UNIT:9 $r1 = $r0.<com.feedback.ui.FeedbackConversation: com.feedback.ui.b k>
+      [BEFOR]RS:9
+                           $r0:[THIS,]
+                        THIS.b:[THIS.b,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[NewValue1972126110,]
+virtualinvoke $r2.<android.content.IntentFilter: void addAction(java.lang.String)>("RetrieveReplyBroadcast"):[addAction([THIS:NewValue1945857900][@0:CONST]),]
+                           $r2:[NewValue1945857900,]
+specialinvoke $r0.<android.app.ListActivity: void onStart()>():[onStart([THIS:THIS]),]
+specialinvoke $r2.<android.content.IntentFilter: void <init>()>():[<init>([THIS:NewValue1945857900]),]
+specialinvoke $r1.<com.feedback.ui.b: void <init>(com.feedback.ui.FeedbackConversation,byte)>($r0, 0):[<init>([THIS:NewValue1972126110][@0:THIS][@1:CONST]),]
+$r0.<com.feedback.ui.FeedbackConversation: com.feedback.ui.b k>:[NewValue1972126110,]
+                           $r1:[NewValue1972126110,]
+com.feedback.ui.FeedbackConversation.a:[com.feedback.ui.FeedbackConversation.a,]
+com.feedback.ui.FeedbackConversation.c:[com.feedback.ui.FeedbackConversation.c,]
+com.feedback.ui.FeedbackConversation.d:[com.feedback.ui.FeedbackConversation.d,]
+com.feedback.ui.FeedbackConversation.e:[com.feedback.ui.FeedbackConversation.e,]
+
+      [AFTER]RS:9
+                           $r0:[THIS,]
+                        THIS.b:[THIS.b,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[NewValue1972126110,]
+virtualinvoke $r2.<android.content.IntentFilter: void addAction(java.lang.String)>("RetrieveReplyBroadcast"):[addAction([THIS:NewValue1945857900][@0:CONST]),]
+                           $r2:[NewValue1945857900,]
+specialinvoke $r0.<android.app.ListActivity: void onStart()>():[onStart([THIS:THIS]),]
+specialinvoke $r2.<android.content.IntentFilter: void <init>()>():[<init>([THIS:NewValue1945857900]),]
+specialinvoke $r1.<com.feedback.ui.b: void <init>(com.feedback.ui.FeedbackConversation,byte)>($r0, 0):[<init>([THIS:NewValue1972126110][@0:THIS][@1:CONST]),]
+$r0.<com.feedback.ui.FeedbackConversation: com.feedback.ui.b k>:[NewValue1972126110,]
+                           $r1:[NewValue1972126110,]
+com.feedback.ui.FeedbackConversation.a:[com.feedback.ui.FeedbackConversation.a,]
+com.feedback.ui.FeedbackConversation.c:[com.feedback.ui.FeedbackConversation.c,]
+com.feedback.ui.FeedbackConversation.d:[com.feedback.ui.FeedbackConversation.d,]
+com.feedback.ui.FeedbackConversation.e:[com.feedback.ui.FeedbackConversation.e,]
+
+  UNIT:10 virtualinvoke $r0.<com.feedback.ui.FeedbackConversation: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>($r1, $r2)
+      [BEFOR]RS:10
+                           $r0:[THIS,]
+                        THIS.b:[THIS.b,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[NewValue1972126110,]
+virtualinvoke $r2.<android.content.IntentFilter: void addAction(java.lang.String)>("RetrieveReplyBroadcast"):[addAction([THIS:NewValue1945857900][@0:CONST]),]
+                           $r2:[NewValue1945857900,]
+specialinvoke $r0.<android.app.ListActivity: void onStart()>():[onStart([THIS:THIS]),]
+specialinvoke $r2.<android.content.IntentFilter: void <init>()>():[<init>([THIS:NewValue1945857900]),]
+specialinvoke $r1.<com.feedback.ui.b: void <init>(com.feedback.ui.FeedbackConversation,byte)>($r0, 0):[<init>([THIS:NewValue1972126110][@0:THIS][@1:CONST]),]
+$r0.<com.feedback.ui.FeedbackConversation: com.feedback.ui.b k>:[NewValue1972126110,]
+                           $r1:[NewValue1972126110,]
+com.feedback.ui.FeedbackConversation.a:[com.feedback.ui.FeedbackConversation.a,]
+com.feedback.ui.FeedbackConversation.c:[com.feedback.ui.FeedbackConversation.c,]
+com.feedback.ui.FeedbackConversation.d:[com.feedback.ui.FeedbackConversation.d,]
+com.feedback.ui.FeedbackConversation.e:[com.feedback.ui.FeedbackConversation.e,]
+
+      [AFTER]RS:10
+                           $r0:[THIS,]
+                        THIS.b:[THIS.b,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[NewValue1972126110,]
+virtualinvoke $r2.<android.content.IntentFilter: void addAction(java.lang.String)>("RetrieveReplyBroadcast"):[addAction([THIS:NewValue1945857900][@0:CONST]),]
+                           $r2:[NewValue1945857900,]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversation: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>($r1, $r2):[registerReceiver([THIS:THIS][@0:NewValue1972126110][@1:NewValue1945857900]),]
+specialinvoke $r0.<android.app.ListActivity: void onStart()>():[onStart([THIS:THIS]),]
+specialinvoke $r2.<android.content.IntentFilter: void <init>()>():[<init>([THIS:NewValue1945857900]),]
+specialinvoke $r1.<com.feedback.ui.b: void <init>(com.feedback.ui.FeedbackConversation,byte)>($r0, 0):[<init>([THIS:NewValue1972126110][@0:THIS][@1:CONST]),]
+$r0.<com.feedback.ui.FeedbackConversation: com.feedback.ui.b k>:[NewValue1972126110,]
+                           $r1:[NewValue1972126110,]
+com.feedback.ui.FeedbackConversation.a:[com.feedback.ui.FeedbackConversation.a,]
+com.feedback.ui.FeedbackConversation.c:[com.feedback.ui.FeedbackConversation.c,]
+com.feedback.ui.FeedbackConversation.d:[com.feedback.ui.FeedbackConversation.d,]
+com.feedback.ui.FeedbackConversation.e:[com.feedback.ui.FeedbackConversation.e,]
+
+  UNIT:11 return
+      [BEFOR]RS:11
+                           $r0:[THIS,]
+                        THIS.b:[THIS.b,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[NewValue1972126110,]
+virtualinvoke $r2.<android.content.IntentFilter: void addAction(java.lang.String)>("RetrieveReplyBroadcast"):[addAction([THIS:NewValue1945857900][@0:CONST]),]
+                           $r2:[NewValue1945857900,]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversation: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>($r1, $r2):[registerReceiver([THIS:THIS][@0:NewValue1972126110][@1:NewValue1945857900]),]
+specialinvoke $r0.<android.app.ListActivity: void onStart()>():[onStart([THIS:THIS]),]
+specialinvoke $r2.<android.content.IntentFilter: void <init>()>():[<init>([THIS:NewValue1945857900]),]
+specialinvoke $r1.<com.feedback.ui.b: void <init>(com.feedback.ui.FeedbackConversation,byte)>($r0, 0):[<init>([THIS:NewValue1972126110][@0:THIS][@1:CONST]),]
+$r0.<com.feedback.ui.FeedbackConversation: com.feedback.ui.b k>:[NewValue1972126110,]
+                           $r1:[NewValue1972126110,]
+com.feedback.ui.FeedbackConversation.a:[com.feedback.ui.FeedbackConversation.a,]
+com.feedback.ui.FeedbackConversation.c:[com.feedback.ui.FeedbackConversation.c,]
+com.feedback.ui.FeedbackConversation.d:[com.feedback.ui.FeedbackConversation.d,]
+com.feedback.ui.FeedbackConversation.e:[com.feedback.ui.FeedbackConversation.e,]
+
+      [AFTER]RS:11
+                           $r0:[THIS,]
+                        THIS.b:[THIS.b,]
+                        THIS.f:[THIS.f,]
+                        THIS.g:[THIS.g,]
+                        THIS.h:[THIS.h,]
+                        THIS.i:[THIS.i,]
+                        THIS.j:[THIS.j,]
+                        THIS.k:[NewValue1972126110,]
+virtualinvoke $r2.<android.content.IntentFilter: void addAction(java.lang.String)>("RetrieveReplyBroadcast"):[addAction([THIS:NewValue1945857900][@0:CONST]),]
+                           $r2:[NewValue1945857900,]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversation: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>($r1, $r2):[registerReceiver([THIS:THIS][@0:NewValue1972126110][@1:NewValue1945857900]),]
+specialinvoke $r0.<android.app.ListActivity: void onStart()>():[onStart([THIS:THIS]),]
+specialinvoke $r2.<android.content.IntentFilter: void <init>()>():[<init>([THIS:NewValue1945857900]),]
+specialinvoke $r1.<com.feedback.ui.b: void <init>(com.feedback.ui.FeedbackConversation,byte)>($r0, 0):[<init>([THIS:NewValue1972126110][@0:THIS][@1:CONST]),]
+$r0.<com.feedback.ui.FeedbackConversation: com.feedback.ui.b k>:[NewValue1972126110,]
+                           $r1:[NewValue1972126110,]
+com.feedback.ui.FeedbackConversation.a:[com.feedback.ui.FeedbackConversation.a,]
+com.feedback.ui.FeedbackConversation.c:[com.feedback.ui.FeedbackConversation.c,]
+com.feedback.ui.FeedbackConversation.d:[com.feedback.ui.FeedbackConversation.d,]
+com.feedback.ui.FeedbackConversation.e:[com.feedback.ui.FeedbackConversation.e,]
+
+@@End onStart======================

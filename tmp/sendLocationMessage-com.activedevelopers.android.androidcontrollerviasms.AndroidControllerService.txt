@@ -1,0 +1,598 @@
+@@Start analyzing:sendLocationMessage
+READ: THIS
+READ: Param@1
+READ: Param@0
+  --Done analyzing:sendLocationMessage     public void sendLocationMessage(java.lang.String, java.lang.String)
+    {
+        com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService $r0;
+        java.lang.String $r1, $r2, $r5;
+        android.content.ContentValues $r3;
+        android.telephony.SmsManager $r4;
+        android.content.Context $r6;
+        android.widget.Toast $r7;
+        android.content.ContentResolver $r8;
+        android.net.Uri $r9;
+
+        $r0 := @this: com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService;
+
+        $r1 := @parameter0: java.lang.String;
+
+        $r2 := @parameter1: java.lang.String;
+
+        $r4 = staticinvoke <android.telephony.SmsManager: android.telephony.SmsManager getDefault()>();
+
+        $r5 = virtualinvoke $r2.<java.lang.String: java.lang.String toString()>();
+
+        virtualinvoke $r4.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r1, null, $r5, null, null);
+
+        $r6 = virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService: android.content.Context getApplicationContext()>();
+
+        $r7 = staticinvoke <android.widget.Toast: android.widget.Toast makeText(android.content.Context,java.lang.CharSequence,int)>($r6, "Replay has been sent", 1);
+
+        virtualinvoke $r7.<android.widget.Toast: void show()>();
+
+        $r3 = new android.content.ContentValues;
+
+        specialinvoke $r3.<android.content.ContentValues: void <init>()>();
+
+        virtualinvoke $r3.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("address", $r1);
+
+        virtualinvoke $r3.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("body", $r2);
+
+        $r8 = virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService: android.content.ContentResolver getContentResolver()>();
+
+        $r9 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>("content://sms/sent");
+
+        virtualinvoke $r8.<android.content.ContentResolver: android.net.Uri insert(android.net.Uri,android.content.ContentValues)>($r9, $r3);
+
+        return;
+    }
+
+  --Method Body:    public void sendLocationMessage(java.lang.String, java.lang.String)
+    {
+        com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService $r0;
+        java.lang.String $r1, $r2, $r5;
+        android.content.ContentValues $r3;
+        android.telephony.SmsManager $r4;
+        android.content.Context $r6;
+        android.widget.Toast $r7;
+        android.content.ContentResolver $r8;
+        android.net.Uri $r9;
+
+        $r0 := @this: com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService;
+
+        $r1 := @parameter0: java.lang.String;
+
+        $r2 := @parameter1: java.lang.String;
+
+        $r4 = staticinvoke <android.telephony.SmsManager: android.telephony.SmsManager getDefault()>();
+
+        $r5 = virtualinvoke $r2.<java.lang.String: java.lang.String toString()>();
+
+        virtualinvoke $r4.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r1, null, $r5, null, null);
+
+        $r6 = virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService: android.content.Context getApplicationContext()>();
+
+        $r7 = staticinvoke <android.widget.Toast: android.widget.Toast makeText(android.content.Context,java.lang.CharSequence,int)>($r6, "Replay has been sent", 1);
+
+        virtualinvoke $r7.<android.widget.Toast: void show()>();
+
+        $r3 = new android.content.ContentValues;
+
+        specialinvoke $r3.<android.content.ContentValues: void <init>()>();
+
+        virtualinvoke $r3.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("address", $r1);
+
+        virtualinvoke $r3.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("body", $r2);
+
+        $r8 = virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService: android.content.ContentResolver getContentResolver()>();
+
+        $r9 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>("content://sms/sent");
+
+        virtualinvoke $r8.<android.content.ContentResolver: android.net.Uri insert(android.net.Uri,android.content.ContentValues)>($r9, $r3);
+
+        return;
+    }
+
+  --Start displaying:sendLocationMessage 
+  UNIT:0 $r0 := @this: com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService
+      [BEFOR]RS:0
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+              THIS.mlocManager:[THIS.mlocManager,]
+
+      [AFTER]RS:0
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r0:[THIS,]
+
+  UNIT:1 $r1 := @parameter0: java.lang.String
+      [BEFOR]RS:1
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:1
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r1:[Param@0,]
+                           $r0:[THIS,]
+
+  UNIT:2 $r2 := @parameter1: java.lang.String
+      [BEFOR]RS:2
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r1:[Param@0,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:2
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                           $r0:[THIS,]
+
+  UNIT:3 $r4 = staticinvoke <android.telephony.SmsManager: android.telephony.SmsManager getDefault()>()
+      [BEFOR]RS:3
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:3
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                           $r4:[getDefault(),]
+                           $r0:[THIS,]
+
+  UNIT:4 $r5 = virtualinvoke $r2.<java.lang.String: java.lang.String toString()>()
+      [BEFOR]RS:4
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                           $r4:[getDefault(),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:4
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                           $r5:[toString([THIS:Param@1]),]
+                           $r4:[getDefault(),]
+                           $r0:[THIS,]
+
+  UNIT:5 virtualinvoke $r4.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r1, null, $r5, null, null)
+      [BEFOR]RS:5
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                           $r5:[toString([THIS:Param@1]),]
+                           $r4:[getDefault(),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:5
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+virtualinvoke $r4.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r1, null, $r5, null, null):[sendTextMessage([THIS][@0:Param@0][@1:CONST][@2:Param@1][@3:CONST][@4:CONST]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                           $r5:[toString([THIS:Param@1]),]
+                           $r4:[getDefault(),]
+                           $r0:[THIS,]
+
+  UNIT:6 $r6 = virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService: android.content.Context getApplicationContext()>()
+      [BEFOR]RS:6
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+             THIS.toastHandler:[THIS.toastHandler,]
+virtualinvoke $r4.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r1, null, $r5, null, null):[sendTextMessage([THIS][@0:Param@0][@1:CONST][@2:Param@1][@3:CONST][@4:CONST]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                           $r5:[toString([THIS:Param@1]),]
+                           $r4:[getDefault(),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:6
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r6:[getApplicationContext([THIS:THIS]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+virtualinvoke $r4.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r1, null, $r5, null, null):[sendTextMessage([THIS][@0:Param@0][@1:CONST][@2:Param@1][@3:CONST][@4:CONST]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                           $r5:[toString([THIS:Param@1]),]
+                           $r4:[getDefault(),]
+                           $r0:[THIS,]
+
+  UNIT:7 $r7 = staticinvoke <android.widget.Toast: android.widget.Toast makeText(android.content.Context,java.lang.CharSequence,int)>($r6, "Replay has been sent", 1)
+      [BEFOR]RS:7
+              THIS.messageFrom:[THIS.messageFrom,]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r6:[getApplicationContext([THIS:THIS]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+virtualinvoke $r4.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r1, null, $r5, null, null):[sendTextMessage([THIS][@0:Param@0][@1:CONST][@2:Param@1][@3:CONST][@4:CONST]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                           $r5:[toString([THIS:Param@1]),]
+                           $r4:[getDefault(),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:7
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r7:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r6:[getApplicationContext([THIS:THIS]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+virtualinvoke $r4.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r1, null, $r5, null, null):[sendTextMessage([THIS][@0:Param@0][@1:CONST][@2:Param@1][@3:CONST][@4:CONST]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                           $r5:[toString([THIS:Param@1]),]
+                           $r4:[getDefault(),]
+                           $r0:[THIS,]
+
+  UNIT:8 virtualinvoke $r7.<android.widget.Toast: void show()>()
+      [BEFOR]RS:8
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r7:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r6:[getApplicationContext([THIS:THIS]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+virtualinvoke $r4.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r1, null, $r5, null, null):[sendTextMessage([THIS][@0:Param@0][@1:CONST][@2:Param@1][@3:CONST][@4:CONST]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                           $r5:[toString([THIS:Param@1]),]
+                           $r4:[getDefault(),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:8
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r7:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r6:[getApplicationContext([THIS:THIS]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+virtualinvoke $r7.<android.widget.Toast: void show()>():[show([THIS:CONST,THIS]),]
+virtualinvoke $r4.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r1, null, $r5, null, null):[sendTextMessage([THIS][@0:Param@0][@1:CONST][@2:Param@1][@3:CONST][@4:CONST]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                           $r5:[toString([THIS:Param@1]),]
+                           $r4:[getDefault(),]
+                           $r0:[THIS,]
+
+  UNIT:9 $r3 = new android.content.ContentValues
+      [BEFOR]RS:9
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r7:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r6:[getApplicationContext([THIS:THIS]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+virtualinvoke $r7.<android.widget.Toast: void show()>():[show([THIS:CONST,THIS]),]
+virtualinvoke $r4.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r1, null, $r5, null, null):[sendTextMessage([THIS][@0:Param@0][@1:CONST][@2:Param@1][@3:CONST][@4:CONST]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                           $r5:[toString([THIS:Param@1]),]
+                           $r4:[getDefault(),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:9
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r7:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r6:[getApplicationContext([THIS:THIS]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+virtualinvoke $r7.<android.widget.Toast: void show()>():[show([THIS:CONST,THIS]),]
+                           $r3:[NewValue1822212882,]
+virtualinvoke $r4.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r1, null, $r5, null, null):[sendTextMessage([THIS][@0:Param@0][@1:CONST][@2:Param@1][@3:CONST][@4:CONST]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                           $r5:[toString([THIS:Param@1]),]
+                           $r4:[getDefault(),]
+                           $r0:[THIS,]
+
+  UNIT:10 specialinvoke $r3.<android.content.ContentValues: void <init>()>()
+      [BEFOR]RS:10
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r7:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r6:[getApplicationContext([THIS:THIS]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+virtualinvoke $r7.<android.widget.Toast: void show()>():[show([THIS:CONST,THIS]),]
+                           $r3:[NewValue1822212882,]
+virtualinvoke $r4.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r1, null, $r5, null, null):[sendTextMessage([THIS][@0:Param@0][@1:CONST][@2:Param@1][@3:CONST][@4:CONST]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                           $r5:[toString([THIS:Param@1]),]
+                           $r4:[getDefault(),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:10
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r7:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r6:[getApplicationContext([THIS:THIS]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+specialinvoke $r3.<android.content.ContentValues: void <init>()>():[<init>([THIS:NewValue1822212882]),]
+virtualinvoke $r7.<android.widget.Toast: void show()>():[show([THIS:CONST,THIS]),]
+                           $r3:[NewValue1822212882,]
+virtualinvoke $r4.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r1, null, $r5, null, null):[sendTextMessage([THIS][@0:Param@0][@1:CONST][@2:Param@1][@3:CONST][@4:CONST]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                           $r5:[toString([THIS:Param@1]),]
+                           $r4:[getDefault(),]
+                           $r0:[THIS,]
+
+  UNIT:11 virtualinvoke $r3.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("address", $r1)
+      [BEFOR]RS:11
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r7:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r6:[getApplicationContext([THIS:THIS]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+specialinvoke $r3.<android.content.ContentValues: void <init>()>():[<init>([THIS:NewValue1822212882]),]
+virtualinvoke $r7.<android.widget.Toast: void show()>():[show([THIS:CONST,THIS]),]
+                           $r3:[NewValue1822212882,]
+virtualinvoke $r4.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r1, null, $r5, null, null):[sendTextMessage([THIS][@0:Param@0][@1:CONST][@2:Param@1][@3:CONST][@4:CONST]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                           $r5:[toString([THIS:Param@1]),]
+                           $r4:[getDefault(),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:11
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r7:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r6:[getApplicationContext([THIS:THIS]),]
+virtualinvoke $r3.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("address", $r1):[put([THIS:NewValue1822212882][@0:CONST][@1:Param@0]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+specialinvoke $r3.<android.content.ContentValues: void <init>()>():[<init>([THIS:NewValue1822212882]),]
+virtualinvoke $r7.<android.widget.Toast: void show()>():[show([THIS:CONST,THIS]),]
+                           $r3:[NewValue1822212882,]
+virtualinvoke $r4.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r1, null, $r5, null, null):[sendTextMessage([THIS][@0:Param@0][@1:CONST][@2:Param@1][@3:CONST][@4:CONST]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                           $r5:[toString([THIS:Param@1]),]
+                           $r4:[getDefault(),]
+                           $r0:[THIS,]
+
+  UNIT:12 virtualinvoke $r3.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("body", $r2)
+      [BEFOR]RS:12
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r7:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r6:[getApplicationContext([THIS:THIS]),]
+virtualinvoke $r3.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("address", $r1):[put([THIS:NewValue1822212882][@0:CONST][@1:Param@0]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+specialinvoke $r3.<android.content.ContentValues: void <init>()>():[<init>([THIS:NewValue1822212882]),]
+virtualinvoke $r7.<android.widget.Toast: void show()>():[show([THIS:CONST,THIS]),]
+                           $r3:[NewValue1822212882,]
+virtualinvoke $r4.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r1, null, $r5, null, null):[sendTextMessage([THIS][@0:Param@0][@1:CONST][@2:Param@1][@3:CONST][@4:CONST]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                           $r5:[toString([THIS:Param@1]),]
+                           $r4:[getDefault(),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:12
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r7:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r6:[getApplicationContext([THIS:THIS]),]
+virtualinvoke $r3.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("body", $r2):[put([THIS:NewValue1822212882][@0:CONST][@1:Param@1]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+specialinvoke $r3.<android.content.ContentValues: void <init>()>():[<init>([THIS:NewValue1822212882]),]
+virtualinvoke $r7.<android.widget.Toast: void show()>():[show([THIS:CONST,THIS]),]
+                           $r3:[NewValue1822212882,]
+virtualinvoke $r4.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r1, null, $r5, null, null):[sendTextMessage([THIS][@0:Param@0][@1:CONST][@2:Param@1][@3:CONST][@4:CONST]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                           $r5:[toString([THIS:Param@1]),]
+                           $r4:[getDefault(),]
+                           $r0:[THIS,]
+
+  UNIT:13 $r8 = virtualinvoke $r0.<com.activedevelopers.android.androidcontrollerviasms.AndroidControllerService: android.content.ContentResolver getContentResolver()>()
+      [BEFOR]RS:13
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r7:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r6:[getApplicationContext([THIS:THIS]),]
+virtualinvoke $r3.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("body", $r2):[put([THIS:NewValue1822212882][@0:CONST][@1:Param@1]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+specialinvoke $r3.<android.content.ContentValues: void <init>()>():[<init>([THIS:NewValue1822212882]),]
+virtualinvoke $r7.<android.widget.Toast: void show()>():[show([THIS:CONST,THIS]),]
+                           $r3:[NewValue1822212882,]
+virtualinvoke $r4.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r1, null, $r5, null, null):[sendTextMessage([THIS][@0:Param@0][@1:CONST][@2:Param@1][@3:CONST][@4:CONST]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                           $r5:[toString([THIS:Param@1]),]
+                           $r4:[getDefault(),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:13
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r7:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r6:[getApplicationContext([THIS:THIS]),]
+virtualinvoke $r3.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("body", $r2):[put([THIS:NewValue1822212882][@0:CONST][@1:Param@1]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+specialinvoke $r3.<android.content.ContentValues: void <init>()>():[<init>([THIS:NewValue1822212882]),]
+virtualinvoke $r7.<android.widget.Toast: void show()>():[show([THIS:CONST,THIS]),]
+                           $r3:[NewValue1822212882,]
+virtualinvoke $r4.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r1, null, $r5, null, null):[sendTextMessage([THIS][@0:Param@0][@1:CONST][@2:Param@1][@3:CONST][@4:CONST]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                           $r5:[toString([THIS:Param@1]),]
+                           $r4:[getDefault(),]
+                           $r8:[getContentResolver([THIS:THIS]),]
+                           $r0:[THIS,]
+
+  UNIT:14 $r9 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>("content://sms/sent")
+      [BEFOR]RS:14
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r7:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r6:[getApplicationContext([THIS:THIS]),]
+virtualinvoke $r3.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("body", $r2):[put([THIS:NewValue1822212882][@0:CONST][@1:Param@1]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+specialinvoke $r3.<android.content.ContentValues: void <init>()>():[<init>([THIS:NewValue1822212882]),]
+virtualinvoke $r7.<android.widget.Toast: void show()>():[show([THIS:CONST,THIS]),]
+                           $r3:[NewValue1822212882,]
+virtualinvoke $r4.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r1, null, $r5, null, null):[sendTextMessage([THIS][@0:Param@0][@1:CONST][@2:Param@1][@3:CONST][@4:CONST]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                           $r5:[toString([THIS:Param@1]),]
+                           $r4:[getDefault(),]
+                           $r8:[getContentResolver([THIS:THIS]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:14
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r7:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r6:[getApplicationContext([THIS:THIS]),]
+virtualinvoke $r3.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("body", $r2):[put([THIS:NewValue1822212882][@0:CONST][@1:Param@1]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+specialinvoke $r3.<android.content.ContentValues: void <init>()>():[<init>([THIS:NewValue1822212882]),]
+virtualinvoke $r7.<android.widget.Toast: void show()>():[show([THIS:CONST,THIS]),]
+                           $r3:[NewValue1822212882,]
+virtualinvoke $r4.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r1, null, $r5, null, null):[sendTextMessage([THIS][@0:Param@0][@1:CONST][@2:Param@1][@3:CONST][@4:CONST]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                           $r5:[toString([THIS:Param@1]),]
+                           $r4:[getDefault(),]
+                           $r8:[getContentResolver([THIS:THIS]),]
+                           $r9:[parse([THIS:null][@0:CONST]),]
+                           $r0:[THIS,]
+
+  UNIT:15 virtualinvoke $r8.<android.content.ContentResolver: android.net.Uri insert(android.net.Uri,android.content.ContentValues)>($r9, $r3)
+      [BEFOR]RS:15
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r7:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r6:[getApplicationContext([THIS:THIS]),]
+virtualinvoke $r3.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("body", $r2):[put([THIS:NewValue1822212882][@0:CONST][@1:Param@1]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+specialinvoke $r3.<android.content.ContentValues: void <init>()>():[<init>([THIS:NewValue1822212882]),]
+virtualinvoke $r7.<android.widget.Toast: void show()>():[show([THIS:CONST,THIS]),]
+                           $r3:[NewValue1822212882,]
+virtualinvoke $r4.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r1, null, $r5, null, null):[sendTextMessage([THIS][@0:Param@0][@1:CONST][@2:Param@1][@3:CONST][@4:CONST]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                           $r5:[toString([THIS:Param@1]),]
+                           $r4:[getDefault(),]
+                           $r8:[getContentResolver([THIS:THIS]),]
+                           $r9:[parse([THIS:null][@0:CONST]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:15
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r7:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r6:[getApplicationContext([THIS:THIS]),]
+virtualinvoke $r3.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("body", $r2):[put([THIS:NewValue1822212882][@0:CONST][@1:Param@1]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+virtualinvoke $r8.<android.content.ContentResolver: android.net.Uri insert(android.net.Uri,android.content.ContentValues)>($r9, $r3):[insert([THIS:THIS][@0:CONST][@1:NewValue1822212882]),]
+specialinvoke $r3.<android.content.ContentValues: void <init>()>():[<init>([THIS:NewValue1822212882]),]
+virtualinvoke $r7.<android.widget.Toast: void show()>():[show([THIS:CONST,THIS]),]
+                           $r3:[NewValue1822212882,]
+virtualinvoke $r4.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r1, null, $r5, null, null):[sendTextMessage([THIS][@0:Param@0][@1:CONST][@2:Param@1][@3:CONST][@4:CONST]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                           $r5:[toString([THIS:Param@1]),]
+                           $r4:[getDefault(),]
+                           $r8:[getContentResolver([THIS:THIS]),]
+                           $r9:[parse([THIS:null][@0:CONST]),]
+                           $r0:[THIS,]
+
+  UNIT:16 return
+      [BEFOR]RS:16
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r7:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r6:[getApplicationContext([THIS:THIS]),]
+virtualinvoke $r3.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("body", $r2):[put([THIS:NewValue1822212882][@0:CONST][@1:Param@1]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+virtualinvoke $r8.<android.content.ContentResolver: android.net.Uri insert(android.net.Uri,android.content.ContentValues)>($r9, $r3):[insert([THIS:THIS][@0:CONST][@1:NewValue1822212882]),]
+specialinvoke $r3.<android.content.ContentValues: void <init>()>():[<init>([THIS:NewValue1822212882]),]
+virtualinvoke $r7.<android.widget.Toast: void show()>():[show([THIS:CONST,THIS]),]
+                           $r3:[NewValue1822212882,]
+virtualinvoke $r4.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r1, null, $r5, null, null):[sendTextMessage([THIS][@0:Param@0][@1:CONST][@2:Param@1][@3:CONST][@4:CONST]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                           $r5:[toString([THIS:Param@1]),]
+                           $r4:[getDefault(),]
+                           $r8:[getContentResolver([THIS:THIS]),]
+                           $r9:[parse([THIS:null][@0:CONST]),]
+                           $r0:[THIS,]
+
+      [AFTER]RS:16
+              THIS.messageFrom:[THIS.messageFrom,]
+                           $r7:[makeText([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+             THIS.mlocListener:[THIS.mlocListener,]
+                           $r6:[getApplicationContext([THIS:THIS]),]
+virtualinvoke $r3.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("body", $r2):[put([THIS:NewValue1822212882][@0:CONST][@1:Param@1]),]
+             THIS.toastHandler:[THIS.toastHandler,]
+virtualinvoke $r8.<android.content.ContentResolver: android.net.Uri insert(android.net.Uri,android.content.ContentValues)>($r9, $r3):[insert([THIS:THIS][@0:CONST][@1:NewValue1822212882]),]
+specialinvoke $r3.<android.content.ContentValues: void <init>()>():[<init>([THIS:NewValue1822212882]),]
+virtualinvoke $r7.<android.widget.Toast: void show()>():[show([THIS:CONST,THIS]),]
+                           $r3:[NewValue1822212882,]
+virtualinvoke $r4.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r1, null, $r5, null, null):[sendTextMessage([THIS][@0:Param@0][@1:CONST][@2:Param@1][@3:CONST][@4:CONST]),]
+              THIS.mlocManager:[THIS.mlocManager,]
+                           $r1:[Param@0,]
+                           $r2:[Param@1,]
+                           $r5:[toString([THIS:Param@1]),]
+                           $r4:[getDefault(),]
+                           $r8:[getContentResolver([THIS:THIS]),]
+                           $r9:[parse([THIS:null][@0:CONST]),]
+                           $r0:[THIS,]
+
+@@End sendLocationMessage======================

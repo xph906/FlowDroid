@@ -1,0 +1,114 @@
+@@Start analyzing:<init>
+READ: THIS
+WRITE: THIS.r
+  --Done analyzing:<init>     public void <init>()
+    {
+        com.andfly.jewelsmagic.JewelsMagic $r0;
+
+        $r0 := @this: com.andfly.jewelsmagic.JewelsMagic;
+
+        specialinvoke $r0.<com.andfly.grid.WiGameBaseActivity: void <init>()>();
+
+        $r0.<com.andfly.jewelsmagic.JewelsMagic: java.lang.Runnable r> = null;
+
+        return;
+    }
+
+  --Method Body:    public void <init>()
+    {
+        com.andfly.jewelsmagic.JewelsMagic $r0;
+
+        $r0 := @this: com.andfly.jewelsmagic.JewelsMagic;
+
+        specialinvoke $r0.<com.andfly.grid.WiGameBaseActivity: void <init>()>();
+
+        $r0.<com.andfly.jewelsmagic.JewelsMagic: java.lang.Runnable r> = null;
+
+        return;
+    }
+
+  --Start displaying:<init> 
+  UNIT:0 $r0 := @this: com.andfly.jewelsmagic.JewelsMagic
+      [BEFOR]RS:0
+                        THIS.n:[THIS.n,]
+                        THIS.r:[THIS.r,]
+com.andfly.jewelsmagic.JewelsMagic.j:[com.andfly.jewelsmagic.JewelsMagic.j,]
+com.andfly.jewelsmagic.JewelsMagic.k:[com.andfly.jewelsmagic.JewelsMagic.k,]
+com.andfly.jewelsmagic.JewelsMagic.l:[com.andfly.jewelsmagic.JewelsMagic.l,]
+com.andfly.jewelsmagic.JewelsMagic.m:[com.andfly.jewelsmagic.JewelsMagic.m,]
+
+      [AFTER]RS:0
+                        THIS.n:[THIS.n,]
+                        THIS.r:[THIS.r,]
+com.andfly.jewelsmagic.JewelsMagic.j:[com.andfly.jewelsmagic.JewelsMagic.j,]
+com.andfly.jewelsmagic.JewelsMagic.k:[com.andfly.jewelsmagic.JewelsMagic.k,]
+com.andfly.jewelsmagic.JewelsMagic.l:[com.andfly.jewelsmagic.JewelsMagic.l,]
+com.andfly.jewelsmagic.JewelsMagic.m:[com.andfly.jewelsmagic.JewelsMagic.m,]
+                           $r0:[THIS,]
+
+  UNIT:1 specialinvoke $r0.<com.andfly.grid.WiGameBaseActivity: void <init>()>()
+      [BEFOR]RS:1
+                        THIS.n:[THIS.n,]
+                        THIS.r:[THIS.r,]
+com.andfly.jewelsmagic.JewelsMagic.j:[com.andfly.jewelsmagic.JewelsMagic.j,]
+com.andfly.jewelsmagic.JewelsMagic.k:[com.andfly.jewelsmagic.JewelsMagic.k,]
+com.andfly.jewelsmagic.JewelsMagic.l:[com.andfly.jewelsmagic.JewelsMagic.l,]
+com.andfly.jewelsmagic.JewelsMagic.m:[com.andfly.jewelsmagic.JewelsMagic.m,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:1
+specialinvoke $r0.<com.andfly.grid.WiGameBaseActivity: void <init>()>():[<init>([THIS:THIS]),]
+                        THIS.n:[THIS.n,]
+                        THIS.r:[THIS.r,]
+com.andfly.jewelsmagic.JewelsMagic.j:[com.andfly.jewelsmagic.JewelsMagic.j,]
+com.andfly.jewelsmagic.JewelsMagic.k:[com.andfly.jewelsmagic.JewelsMagic.k,]
+com.andfly.jewelsmagic.JewelsMagic.l:[com.andfly.jewelsmagic.JewelsMagic.l,]
+com.andfly.jewelsmagic.JewelsMagic.m:[com.andfly.jewelsmagic.JewelsMagic.m,]
+                           $r0:[THIS,]
+
+  UNIT:2 $r0.<com.andfly.jewelsmagic.JewelsMagic: java.lang.Runnable r> = null
+      [BEFOR]RS:2
+specialinvoke $r0.<com.andfly.grid.WiGameBaseActivity: void <init>()>():[<init>([THIS:THIS]),]
+                        THIS.n:[THIS.n,]
+                        THIS.r:[THIS.r,]
+com.andfly.jewelsmagic.JewelsMagic.j:[com.andfly.jewelsmagic.JewelsMagic.j,]
+com.andfly.jewelsmagic.JewelsMagic.k:[com.andfly.jewelsmagic.JewelsMagic.k,]
+com.andfly.jewelsmagic.JewelsMagic.l:[com.andfly.jewelsmagic.JewelsMagic.l,]
+com.andfly.jewelsmagic.JewelsMagic.m:[com.andfly.jewelsmagic.JewelsMagic.m,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:2
+specialinvoke $r0.<com.andfly.grid.WiGameBaseActivity: void <init>()>():[<init>([THIS:THIS]),]
+                        THIS.n:[THIS.n,]
+                        THIS.r:[CONST,]
+com.andfly.jewelsmagic.JewelsMagic.j:[com.andfly.jewelsmagic.JewelsMagic.j,]
+com.andfly.jewelsmagic.JewelsMagic.k:[com.andfly.jewelsmagic.JewelsMagic.k,]
+com.andfly.jewelsmagic.JewelsMagic.l:[com.andfly.jewelsmagic.JewelsMagic.l,]
+com.andfly.jewelsmagic.JewelsMagic.m:[com.andfly.jewelsmagic.JewelsMagic.m,]
+                           $r0:[THIS,]
+$r0.<com.andfly.jewelsmagic.JewelsMagic: java.lang.Runnable r>:[CONST,]
+
+  UNIT:3 return
+      [BEFOR]RS:3
+specialinvoke $r0.<com.andfly.grid.WiGameBaseActivity: void <init>()>():[<init>([THIS:THIS]),]
+                        THIS.n:[THIS.n,]
+                        THIS.r:[CONST,]
+com.andfly.jewelsmagic.JewelsMagic.j:[com.andfly.jewelsmagic.JewelsMagic.j,]
+com.andfly.jewelsmagic.JewelsMagic.k:[com.andfly.jewelsmagic.JewelsMagic.k,]
+com.andfly.jewelsmagic.JewelsMagic.l:[com.andfly.jewelsmagic.JewelsMagic.l,]
+com.andfly.jewelsmagic.JewelsMagic.m:[com.andfly.jewelsmagic.JewelsMagic.m,]
+                           $r0:[THIS,]
+$r0.<com.andfly.jewelsmagic.JewelsMagic: java.lang.Runnable r>:[CONST,]
+
+      [AFTER]RS:3
+specialinvoke $r0.<com.andfly.grid.WiGameBaseActivity: void <init>()>():[<init>([THIS:THIS]),]
+                        THIS.n:[THIS.n,]
+                        THIS.r:[CONST,]
+com.andfly.jewelsmagic.JewelsMagic.j:[com.andfly.jewelsmagic.JewelsMagic.j,]
+com.andfly.jewelsmagic.JewelsMagic.k:[com.andfly.jewelsmagic.JewelsMagic.k,]
+com.andfly.jewelsmagic.JewelsMagic.l:[com.andfly.jewelsmagic.JewelsMagic.l,]
+com.andfly.jewelsmagic.JewelsMagic.m:[com.andfly.jewelsmagic.JewelsMagic.m,]
+                           $r0:[THIS,]
+$r0.<com.andfly.jewelsmagic.JewelsMagic: java.lang.Runnable r>:[CONST,]
+
+@@End <init>======================

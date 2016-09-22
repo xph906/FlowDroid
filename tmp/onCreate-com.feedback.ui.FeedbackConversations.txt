@@ -1,0 +1,1444 @@
+@@Start analyzing:onCreate
+READ: Param@0
+READ: THIS
+WRITE: THIS.b
+  --Done analyzing:onCreate     public void onCreate(android.os.Bundle)
+    {
+        com.feedback.ui.FeedbackConversations $r0;
+        android.os.Bundle $r1;
+        int $i0;
+        android.view.View $r2;
+        android.widget.ImageButton $r3;
+        com.feedback.ui.e $r4;
+        android.widget.TextView $r5;
+        java.lang.String $r6;
+        boolean $z0;
+        com.feedback.c.c $r7;
+        android.widget.ListView $r8;
+        java.util.List $r9;
+        com.feedback.ui.g $r10;
+
+        $r0 := @this: com.feedback.ui.FeedbackConversations;
+
+        $r1 := @parameter0: android.os.Bundle;
+
+        specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1);
+
+        virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1);
+
+        $i0 = staticinvoke <com.a.a.p: int a(android.content.Context,java.lang.String,java.lang.String)>($r0, "layout", "umeng_analyse_feedback_conversations");
+
+        virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0);
+
+        $i0 = staticinvoke <com.a.a.p: int a(android.content.Context,java.lang.String,java.lang.String)>($r0, "id", "umeng_analyse_imgBtn_submitFb");
+
+        $r2 = virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: android.view.View findViewById(int)>($i0);
+
+        $r3 = (android.widget.ImageButton) $r2;
+
+        $r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b> = $r3;
+
+        $r3 = $r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>;
+
+        if $r3 == null goto label1;
+
+        $r3 = $r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>;
+
+        $r4 = new com.feedback.ui.e;
+
+        specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0);
+
+        virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4);
+
+     label1:
+        $i0 = staticinvoke <com.a.a.p: int a(android.content.Context,java.lang.String,java.lang.String)>($r0, "id", "umeng_analyse_um_feedbacklist_title");
+
+        $r2 = virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: android.view.View findViewById(int)>($i0);
+
+        $r5 = (android.widget.TextView) $r2;
+
+        if $r5 == null goto label2;
+
+        $i0 = staticinvoke <com.a.a.p: int a(android.content.Context,java.lang.String,java.lang.String)>($r0, "string", "UMFeedbackListTitle");
+
+        $r6 = virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: java.lang.String getString(int)>($i0);
+
+        virtualinvoke $r5.<android.widget.TextView: void setText(java.lang.CharSequence)>($r6);
+
+     label2:
+        $z0 = staticinvoke <com.feedback.a: boolean a()>();
+
+        if $z0 != 0 goto label3;
+
+        $r7 = new com.feedback.c.c;
+
+        specialinvoke $r7.<com.feedback.c.c: void <init>(android.content.Context)>($r0);
+
+        virtualinvoke $r7.<com.feedback.c.c: void start()>();
+
+     label3:
+        $r8 = virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: android.widget.ListView getListView()>();
+
+        virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void registerForContextMenu(android.view.View)>($r8);
+
+        $r9 = staticinvoke <com.feedback.b.c: java.util.List a(android.content.Context)>($r0);
+
+        $r10 = new com.feedback.ui.g;
+
+        specialinvoke $r10.<com.feedback.ui.g: void <init>(android.content.Context,java.util.List)>($r0, $r9);
+
+        virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setListAdapter(android.widget.ListAdapter)>($r10);
+
+        return;
+    }
+
+  --Method Body:    public void onCreate(android.os.Bundle)
+    {
+        com.feedback.ui.FeedbackConversations $r0;
+        android.os.Bundle $r1;
+        int $i0;
+        android.view.View $r2;
+        android.widget.ImageButton $r3;
+        com.feedback.ui.e $r4;
+        android.widget.TextView $r5;
+        java.lang.String $r6;
+        boolean $z0;
+        com.feedback.c.c $r7;
+        android.widget.ListView $r8;
+        java.util.List $r9;
+        com.feedback.ui.g $r10;
+
+        $r0 := @this: com.feedback.ui.FeedbackConversations;
+
+        $r1 := @parameter0: android.os.Bundle;
+
+        specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1);
+
+        virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1);
+
+        $i0 = staticinvoke <com.a.a.p: int a(android.content.Context,java.lang.String,java.lang.String)>($r0, "layout", "umeng_analyse_feedback_conversations");
+
+        virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0);
+
+        $i0 = staticinvoke <com.a.a.p: int a(android.content.Context,java.lang.String,java.lang.String)>($r0, "id", "umeng_analyse_imgBtn_submitFb");
+
+        $r2 = virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: android.view.View findViewById(int)>($i0);
+
+        $r3 = (android.widget.ImageButton) $r2;
+
+        $r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b> = $r3;
+
+        $r3 = $r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>;
+
+        if $r3 == null goto label1;
+
+        $r3 = $r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>;
+
+        $r4 = new com.feedback.ui.e;
+
+        specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0);
+
+        virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4);
+
+     label1:
+        $i0 = staticinvoke <com.a.a.p: int a(android.content.Context,java.lang.String,java.lang.String)>($r0, "id", "umeng_analyse_um_feedbacklist_title");
+
+        $r2 = virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: android.view.View findViewById(int)>($i0);
+
+        $r5 = (android.widget.TextView) $r2;
+
+        if $r5 == null goto label2;
+
+        $i0 = staticinvoke <com.a.a.p: int a(android.content.Context,java.lang.String,java.lang.String)>($r0, "string", "UMFeedbackListTitle");
+
+        $r6 = virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: java.lang.String getString(int)>($i0);
+
+        virtualinvoke $r5.<android.widget.TextView: void setText(java.lang.CharSequence)>($r6);
+
+     label2:
+        $z0 = staticinvoke <com.feedback.a: boolean a()>();
+
+        if $z0 != 0 goto label3;
+
+        $r7 = new com.feedback.c.c;
+
+        specialinvoke $r7.<com.feedback.c.c: void <init>(android.content.Context)>($r0);
+
+        virtualinvoke $r7.<com.feedback.c.c: void start()>();
+
+     label3:
+        $r8 = virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: android.widget.ListView getListView()>();
+
+        virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void registerForContextMenu(android.view.View)>($r8);
+
+        $r9 = staticinvoke <com.feedback.b.c: java.util.List a(android.content.Context)>($r0);
+
+        $r10 = new com.feedback.ui.g;
+
+        specialinvoke $r10.<com.feedback.ui.g: void <init>(android.content.Context,java.util.List)>($r0, $r9);
+
+        virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setListAdapter(android.widget.ListAdapter)>($r10);
+
+        return;
+    }
+
+  --Start displaying:onCreate 
+  UNIT:0 $r0 := @this: com.feedback.ui.FeedbackConversations
+      [BEFOR]RS:0
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+
+      [AFTER]RS:0
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r0:[THIS,]
+
+  UNIT:1 $r1 := @parameter0: android.os.Bundle
+      [BEFOR]RS:1
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:1
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r0:[THIS,]
+
+  UNIT:2 specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1)
+      [BEFOR]RS:2
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r0:[THIS,]
+
+      [AFTER]RS:2
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:3 virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1)
+      [BEFOR]RS:3
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:3
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:4 $i0 = staticinvoke <com.a.a.p: int a(android.content.Context,java.lang.String,java.lang.String)>($r0, "layout", "umeng_analyse_feedback_conversations")
+      [BEFOR]RS:4
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:4
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:5 virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0)
+      [BEFOR]RS:5
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:5
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:6 $i0 = staticinvoke <com.a.a.p: int a(android.content.Context,java.lang.String,java.lang.String)>($r0, "id", "umeng_analyse_imgBtn_submitFb")
+      [BEFOR]RS:6
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:6
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:7 $r2 = virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: android.view.View findViewById(int)>($i0)
+      [BEFOR]RS:7
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:7
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:8 $r3 = (android.widget.ImageButton) $r2
+      [BEFOR]RS:8
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:8
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:9 $r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b> = $r3
+      [BEFOR]RS:9
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[THIS.b,]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:9
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:10 $r3 = $r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>
+      [BEFOR]RS:10
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:10
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:11 if $r3 == null goto $i0 = staticinvoke <com.a.a.p: int a(android.content.Context,java.lang.String,java.lang.String)>($r0, "id", "umeng_analyse_um_feedbacklist_title")
+      [BEFOR]RS:11
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:11
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:12 $r3 = $r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>
+      [BEFOR]RS:12
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:12
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:13 $r4 = new com.feedback.ui.e
+      [BEFOR]RS:13
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:13
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:14 specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0)
+      [BEFOR]RS:14
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:14
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:15 virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4)
+      [BEFOR]RS:15
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:15
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:16 $i0 = staticinvoke <com.a.a.p: int a(android.content.Context,java.lang.String,java.lang.String)>($r0, "id", "umeng_analyse_um_feedbacklist_title")
+      [BEFOR]RS:16
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:16
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:17 $r2 = virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: android.view.View findViewById(int)>($i0)
+      [BEFOR]RS:17
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:17
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:18 $r5 = (android.widget.TextView) $r2
+      [BEFOR]RS:18
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:18
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:19 if $r5 == null goto $z0 = staticinvoke <com.feedback.a: boolean a()>()
+      [BEFOR]RS:19
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:19
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:20 $i0 = staticinvoke <com.a.a.p: int a(android.content.Context,java.lang.String,java.lang.String)>($r0, "string", "UMFeedbackListTitle")
+      [BEFOR]RS:20
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:20
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:21 $r6 = virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: java.lang.String getString(int)>($i0)
+      [BEFOR]RS:21
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:21
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r6:[getString([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:22 virtualinvoke $r5.<android.widget.TextView: void setText(java.lang.CharSequence)>($r6)
+      [BEFOR]RS:22
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r6:[getString([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:22
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+virtualinvoke $r5.<android.widget.TextView: void setText(java.lang.CharSequence)>($r6):[setText([THIS:CONST,THIS][@0:CONST,THIS]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r6:[getString([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:23 $z0 = staticinvoke <com.feedback.a: boolean a()>()
+      [BEFOR]RS:23
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+virtualinvoke $r5.<android.widget.TextView: void setText(java.lang.CharSequence)>($r6):[setText([THIS:CONST,THIS][@0:CONST,THIS]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r6:[getString([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:23
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+virtualinvoke $r5.<android.widget.TextView: void setText(java.lang.CharSequence)>($r6):[setText([THIS:CONST,THIS][@0:CONST,THIS]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $z0:[a(),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r6:[getString([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:24 if $z0 != 0 goto $r8 = virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: android.widget.ListView getListView()>()
+      [BEFOR]RS:24
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+virtualinvoke $r5.<android.widget.TextView: void setText(java.lang.CharSequence)>($r6):[setText([THIS:CONST,THIS][@0:CONST,THIS]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $z0:[a(),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r6:[getString([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:24
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+virtualinvoke $r5.<android.widget.TextView: void setText(java.lang.CharSequence)>($r6):[setText([THIS:CONST,THIS][@0:CONST,THIS]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $z0:[a(),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r6:[getString([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:25 $r7 = new com.feedback.c.c
+      [BEFOR]RS:25
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+virtualinvoke $r5.<android.widget.TextView: void setText(java.lang.CharSequence)>($r6):[setText([THIS:CONST,THIS][@0:CONST,THIS]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $z0:[a(),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r6:[getString([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:25
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+virtualinvoke $r5.<android.widget.TextView: void setText(java.lang.CharSequence)>($r6):[setText([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r7:[NewValue680021889,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $z0:[a(),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r6:[getString([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:26 specialinvoke $r7.<com.feedback.c.c: void <init>(android.content.Context)>($r0)
+      [BEFOR]RS:26
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+virtualinvoke $r5.<android.widget.TextView: void setText(java.lang.CharSequence)>($r6):[setText([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r7:[NewValue680021889,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $z0:[a(),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r6:[getString([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:26
+specialinvoke $r7.<com.feedback.c.c: void <init>(android.content.Context)>($r0):[<init>([THIS:NewValue680021889][@0:THIS]),]
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+virtualinvoke $r5.<android.widget.TextView: void setText(java.lang.CharSequence)>($r6):[setText([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r7:[NewValue680021889,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $z0:[a(),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r6:[getString([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:27 virtualinvoke $r7.<com.feedback.c.c: void start()>()
+      [BEFOR]RS:27
+specialinvoke $r7.<com.feedback.c.c: void <init>(android.content.Context)>($r0):[<init>([THIS:NewValue680021889][@0:THIS]),]
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+virtualinvoke $r5.<android.widget.TextView: void setText(java.lang.CharSequence)>($r6):[setText([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r7:[NewValue680021889,]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $z0:[a(),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r6:[getString([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:27
+specialinvoke $r7.<com.feedback.c.c: void <init>(android.content.Context)>($r0):[<init>([THIS:NewValue680021889][@0:THIS]),]
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+virtualinvoke $r5.<android.widget.TextView: void setText(java.lang.CharSequence)>($r6):[setText([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r7:[NewValue680021889,]
+virtualinvoke $r7.<com.feedback.c.c: void start()>():[start([THIS:NewValue680021889]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $z0:[a(),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r6:[getString([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:28 $r8 = virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: android.widget.ListView getListView()>()
+      [BEFOR]RS:28
+specialinvoke $r7.<com.feedback.c.c: void <init>(android.content.Context)>($r0):[<init>([THIS:NewValue680021889][@0:THIS]),]
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+virtualinvoke $r5.<android.widget.TextView: void setText(java.lang.CharSequence)>($r6):[setText([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r7:[NewValue680021889,]
+virtualinvoke $r7.<com.feedback.c.c: void start()>():[start([THIS:NewValue680021889]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $z0:[a(),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r6:[getString([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:28
+specialinvoke $r7.<com.feedback.c.c: void <init>(android.content.Context)>($r0):[<init>([THIS:NewValue680021889][@0:THIS]),]
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+virtualinvoke $r5.<android.widget.TextView: void setText(java.lang.CharSequence)>($r6):[setText([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r7:[NewValue680021889,]
+virtualinvoke $r7.<com.feedback.c.c: void start()>():[start([THIS:NewValue680021889]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r8:[getListView([THIS:THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $z0:[a(),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r6:[getString([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:29 virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void registerForContextMenu(android.view.View)>($r8)
+      [BEFOR]RS:29
+specialinvoke $r7.<com.feedback.c.c: void <init>(android.content.Context)>($r0):[<init>([THIS:NewValue680021889][@0:THIS]),]
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+virtualinvoke $r5.<android.widget.TextView: void setText(java.lang.CharSequence)>($r6):[setText([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r7:[NewValue680021889,]
+virtualinvoke $r7.<com.feedback.c.c: void start()>():[start([THIS:NewValue680021889]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r8:[getListView([THIS:THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $z0:[a(),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r6:[getString([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:29
+specialinvoke $r7.<com.feedback.c.c: void <init>(android.content.Context)>($r0):[<init>([THIS:NewValue680021889][@0:THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void registerForContextMenu(android.view.View)>($r8):[registerForContextMenu([THIS:THIS][@0:THIS]),]
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+virtualinvoke $r5.<android.widget.TextView: void setText(java.lang.CharSequence)>($r6):[setText([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r7:[NewValue680021889,]
+virtualinvoke $r7.<com.feedback.c.c: void start()>():[start([THIS:NewValue680021889]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r8:[getListView([THIS:THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $z0:[a(),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r6:[getString([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:30 $r9 = staticinvoke <com.feedback.b.c: java.util.List a(android.content.Context)>($r0)
+      [BEFOR]RS:30
+specialinvoke $r7.<com.feedback.c.c: void <init>(android.content.Context)>($r0):[<init>([THIS:NewValue680021889][@0:THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void registerForContextMenu(android.view.View)>($r8):[registerForContextMenu([THIS:THIS][@0:THIS]),]
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+virtualinvoke $r5.<android.widget.TextView: void setText(java.lang.CharSequence)>($r6):[setText([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r7:[NewValue680021889,]
+virtualinvoke $r7.<com.feedback.c.c: void start()>():[start([THIS:NewValue680021889]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r8:[getListView([THIS:THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $z0:[a(),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r6:[getString([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:30
+specialinvoke $r7.<com.feedback.c.c: void <init>(android.content.Context)>($r0):[<init>([THIS:NewValue680021889][@0:THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void registerForContextMenu(android.view.View)>($r8):[registerForContextMenu([THIS:THIS][@0:THIS]),]
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+virtualinvoke $r5.<android.widget.TextView: void setText(java.lang.CharSequence)>($r6):[setText([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r7:[NewValue680021889,]
+virtualinvoke $r7.<com.feedback.c.c: void start()>():[start([THIS:NewValue680021889]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r8:[getListView([THIS:THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r9:[a([THIS:null][@0:THIS]),]
+                           $z0:[a(),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r6:[getString([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:31 $r10 = new com.feedback.ui.g
+      [BEFOR]RS:31
+specialinvoke $r7.<com.feedback.c.c: void <init>(android.content.Context)>($r0):[<init>([THIS:NewValue680021889][@0:THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void registerForContextMenu(android.view.View)>($r8):[registerForContextMenu([THIS:THIS][@0:THIS]),]
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+virtualinvoke $r5.<android.widget.TextView: void setText(java.lang.CharSequence)>($r6):[setText([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r7:[NewValue680021889,]
+virtualinvoke $r7.<com.feedback.c.c: void start()>():[start([THIS:NewValue680021889]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r8:[getListView([THIS:THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r9:[a([THIS:null][@0:THIS]),]
+                           $z0:[a(),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r6:[getString([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:31
+specialinvoke $r7.<com.feedback.c.c: void <init>(android.content.Context)>($r0):[<init>([THIS:NewValue680021889][@0:THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void registerForContextMenu(android.view.View)>($r8):[registerForContextMenu([THIS:THIS][@0:THIS]),]
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+virtualinvoke $r5.<android.widget.TextView: void setText(java.lang.CharSequence)>($r6):[setText([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r7:[NewValue680021889,]
+virtualinvoke $r7.<com.feedback.c.c: void start()>():[start([THIS:NewValue680021889]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r8:[getListView([THIS:THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r9:[a([THIS:null][@0:THIS]),]
+                           $z0:[a(),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r6:[getString([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+                          $r10:[NewValue1039973376,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:32 specialinvoke $r10.<com.feedback.ui.g: void <init>(android.content.Context,java.util.List)>($r0, $r9)
+      [BEFOR]RS:32
+specialinvoke $r7.<com.feedback.c.c: void <init>(android.content.Context)>($r0):[<init>([THIS:NewValue680021889][@0:THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void registerForContextMenu(android.view.View)>($r8):[registerForContextMenu([THIS:THIS][@0:THIS]),]
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+virtualinvoke $r5.<android.widget.TextView: void setText(java.lang.CharSequence)>($r6):[setText([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r7:[NewValue680021889,]
+virtualinvoke $r7.<com.feedback.c.c: void start()>():[start([THIS:NewValue680021889]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r8:[getListView([THIS:THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r9:[a([THIS:null][@0:THIS]),]
+                           $z0:[a(),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r6:[getString([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+                          $r10:[NewValue1039973376,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:32
+specialinvoke $r7.<com.feedback.c.c: void <init>(android.content.Context)>($r0):[<init>([THIS:NewValue680021889][@0:THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void registerForContextMenu(android.view.View)>($r8):[registerForContextMenu([THIS:THIS][@0:THIS]),]
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+virtualinvoke $r5.<android.widget.TextView: void setText(java.lang.CharSequence)>($r6):[setText([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r7:[NewValue680021889,]
+virtualinvoke $r7.<com.feedback.c.c: void start()>():[start([THIS:NewValue680021889]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r8:[getListView([THIS:THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r9:[a([THIS:null][@0:THIS]),]
+                           $z0:[a(),]
+specialinvoke $r10.<com.feedback.ui.g: void <init>(android.content.Context,java.util.List)>($r0, $r9):[<init>([THIS:NewValue1039973376][@0:THIS][@1:THIS]),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r6:[getString([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+                          $r10:[NewValue1039973376,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:33 virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setListAdapter(android.widget.ListAdapter)>($r10)
+      [BEFOR]RS:33
+specialinvoke $r7.<com.feedback.c.c: void <init>(android.content.Context)>($r0):[<init>([THIS:NewValue680021889][@0:THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void registerForContextMenu(android.view.View)>($r8):[registerForContextMenu([THIS:THIS][@0:THIS]),]
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+virtualinvoke $r5.<android.widget.TextView: void setText(java.lang.CharSequence)>($r6):[setText([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r7:[NewValue680021889,]
+virtualinvoke $r7.<com.feedback.c.c: void start()>():[start([THIS:NewValue680021889]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r8:[getListView([THIS:THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r9:[a([THIS:null][@0:THIS]),]
+                           $z0:[a(),]
+specialinvoke $r10.<com.feedback.ui.g: void <init>(android.content.Context,java.util.List)>($r0, $r9):[<init>([THIS:NewValue1039973376][@0:THIS][@1:THIS]),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r6:[getString([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+                          $r10:[NewValue1039973376,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:33
+specialinvoke $r7.<com.feedback.c.c: void <init>(android.content.Context)>($r0):[<init>([THIS:NewValue680021889][@0:THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void registerForContextMenu(android.view.View)>($r8):[registerForContextMenu([THIS:THIS][@0:THIS]),]
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+virtualinvoke $r5.<android.widget.TextView: void setText(java.lang.CharSequence)>($r6):[setText([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r7:[NewValue680021889,]
+virtualinvoke $r7.<com.feedback.c.c: void start()>():[start([THIS:NewValue680021889]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r8:[getListView([THIS:THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r9:[a([THIS:null][@0:THIS]),]
+                           $z0:[a(),]
+specialinvoke $r10.<com.feedback.ui.g: void <init>(android.content.Context,java.util.List)>($r0, $r9):[<init>([THIS:NewValue1039973376][@0:THIS][@1:THIS]),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r6:[getString([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+                          $r10:[NewValue1039973376,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setListAdapter(android.widget.ListAdapter)>($r10):[setListAdapter([THIS:THIS][@0:NewValue1039973376]),]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+  UNIT:34 return
+      [BEFOR]RS:34
+specialinvoke $r7.<com.feedback.c.c: void <init>(android.content.Context)>($r0):[<init>([THIS:NewValue680021889][@0:THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void registerForContextMenu(android.view.View)>($r8):[registerForContextMenu([THIS:THIS][@0:THIS]),]
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+virtualinvoke $r5.<android.widget.TextView: void setText(java.lang.CharSequence)>($r6):[setText([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r7:[NewValue680021889,]
+virtualinvoke $r7.<com.feedback.c.c: void start()>():[start([THIS:NewValue680021889]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r8:[getListView([THIS:THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r9:[a([THIS:null][@0:THIS]),]
+                           $z0:[a(),]
+specialinvoke $r10.<com.feedback.ui.g: void <init>(android.content.Context,java.util.List)>($r0, $r9):[<init>([THIS:NewValue1039973376][@0:THIS][@1:THIS]),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r6:[getString([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+                          $r10:[NewValue1039973376,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setListAdapter(android.widget.ListAdapter)>($r10):[setListAdapter([THIS:THIS][@0:NewValue1039973376]),]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+      [AFTER]RS:34
+specialinvoke $r7.<com.feedback.c.c: void <init>(android.content.Context)>($r0):[<init>([THIS:NewValue680021889][@0:THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void registerForContextMenu(android.view.View)>($r8):[registerForContextMenu([THIS:THIS][@0:THIS]),]
+                           $i0:[a([THIS:null][@0:THIS][@1:CONST][@2:CONST]),]
+                           $r1:[Param@0,]
+virtualinvoke $r5.<android.widget.TextView: void setText(java.lang.CharSequence)>($r6):[setText([THIS:CONST,THIS][@0:CONST,THIS]),]
+                           $r7:[NewValue680021889,]
+virtualinvoke $r7.<com.feedback.c.c: void start()>():[start([THIS:NewValue680021889]),]
+                        THIS.a:[THIS.a,]
+                        THIS.b:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r8:[getListView([THIS:THIS]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: boolean requestWindowFeature(int)>(1):[requestWindowFeature([THIS:THIS][@0:CONST]),]
+com.feedback.ui.FeedbackConversations.c:[com.feedback.ui.FeedbackConversations.c,]
+                           $r3:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r9:[a([THIS:null][@0:THIS]),]
+                           $z0:[a(),]
+specialinvoke $r10.<com.feedback.ui.g: void <init>(android.content.Context,java.util.List)>($r0, $r9):[<init>([THIS:NewValue1039973376][@0:THIS][@1:THIS]),]
+virtualinvoke $r3.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4):[setOnClickListener([THIS:CONST,THIS][@0:NewValue1480585961]),]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setContentView(int)>($i0):[setContentView([THIS:THIS][@0:CONST,THIS]),]
+                           $r6:[getString([THIS:THIS][@0:CONST,THIS]),]
+specialinvoke $r4.<com.feedback.ui.e: void <init>(com.feedback.ui.FeedbackConversations)>($r0):[<init>([THIS:NewValue1480585961][@0:THIS]),]
+                           $r5:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r4:[NewValue1480585961,]
+                          $r10:[NewValue1039973376,]
+$r0.<com.feedback.ui.FeedbackConversations: android.widget.ImageButton b>:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r2:[findViewById([THIS:THIS][@0:CONST,THIS]),]
+                           $r0:[THIS,]
+virtualinvoke $r0.<com.feedback.ui.FeedbackConversations: void setListAdapter(android.widget.ListAdapter)>($r10):[setListAdapter([THIS:THIS][@0:NewValue1039973376]),]
+specialinvoke $r0.<android.app.ListActivity: void onCreate(android.os.Bundle)>($r1):[onCreate([THIS:THIS][@0:Param@0]),]
+
+@@End onCreate======================

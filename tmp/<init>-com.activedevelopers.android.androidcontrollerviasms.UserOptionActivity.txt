@@ -1,0 +1,154 @@
+@@Start analyzing:<init>
+READ: THIS
+WRITE: THIS.password
+  --Done analyzing:<init>     public void <init>()
+    {
+        com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity $r0;
+
+        $r0 := @this: com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity;
+
+        specialinvoke $r0.<android.app.Activity: void <init>()>();
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity: java.lang.String password> = "myandroid";
+
+        return;
+    }
+
+  --Method Body:    public void <init>()
+    {
+        com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity $r0;
+
+        $r0 := @this: com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity;
+
+        specialinvoke $r0.<android.app.Activity: void <init>()>();
+
+        $r0.<com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity: java.lang.String password> = "myandroid";
+
+        return;
+    }
+
+  --Start displaying:<init> 
+  UNIT:0 $r0 := @this: com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity
+      [BEFOR]RS:0
+                  THIS.swGuest:[THIS.swGuest,]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+
+      [AFTER]RS:0
+                  THIS.swGuest:[THIS.swGuest,]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+
+  UNIT:1 specialinvoke $r0.<android.app.Activity: void <init>()>()
+      [BEFOR]RS:1
+                  THIS.swGuest:[THIS.swGuest,]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+
+      [AFTER]RS:1
+                  THIS.swGuest:[THIS.swGuest,]
+specialinvoke $r0.<android.app.Activity: void <init>()>():[<init>([THIS:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+
+  UNIT:2 $r0.<com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity: java.lang.String password> = "myandroid"
+      [BEFOR]RS:2
+                  THIS.swGuest:[THIS.swGuest,]
+specialinvoke $r0.<android.app.Activity: void <init>()>():[<init>([THIS:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[THIS.password,]
+
+      [AFTER]RS:2
+                  THIS.swGuest:[THIS.swGuest,]
+specialinvoke $r0.<android.app.Activity: void <init>()>():[<init>([THIS:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity: java.lang.String password>:[CONST,]
+
+  UNIT:3 return
+      [BEFOR]RS:3
+                  THIS.swGuest:[THIS.swGuest,]
+specialinvoke $r0.<android.app.Activity: void <init>()>():[<init>([THIS:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity: java.lang.String password>:[CONST,]
+
+      [AFTER]RS:3
+                  THIS.swGuest:[THIS.swGuest,]
+specialinvoke $r0.<android.app.Activity: void <init>()>():[<init>([THIS:THIS]),]
+                 THIS.swOwener:[THIS.swOwener,]
+             THIS.stStepForUse:[THIS.stStepForUse,]
+         THIS.btOwenerSettings:[THIS.btOwenerSettings,]
+                           $r0:[THIS,]
+    THIS.btChangeGuestPassword:[THIS.btChangeGuestPassword,]
+            THIS.wvStepsForUse:[THIS.wvStepsForUse,]
+                  THIS.btAbout:[THIS.btAbout,]
+               THIS.btHowToUse:[THIS.btHowToUse,]
+    THIS.btChangeOwnerPassword:[THIS.btChangeOwnerPassword,]
+          THIS.btGuestSettings:[THIS.btGuestSettings,]
+                 THIS.password:[CONST,]
+$r0.<com.activedevelopers.android.androidcontrollerviasms.UserOptionActivity: java.lang.String password>:[CONST,]
+
+@@End <init>======================
